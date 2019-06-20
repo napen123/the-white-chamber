@@ -1,0 +1,255 @@
+<html>
+<head>
+<title>Studio Trophis - the white chamber</title>
+<style>
+/*	body {
+		background:#000;
+		margin:20px 20px 0px 20px;
+		color:white;
+		}-*/
+	
+	#banner {
+		background:#000;
+		border-top:1px solid #fff;
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:150px;
+		}
+
+	#footer {
+		background:#000;
+		/*height:40px;*/
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:39px;
+		}
+
+	#main {
+		border:1px solid #fff; 
+		background:#000;
+		}
+
+/* Looks like you have to specify the width of #menu
+or IE5 Mac stretches it all the way across the div, and 
+Opera streches it half way. */
+
+	#main #menu {
+		border-right:1px solid #fff; 
+		border-bottom:1px solid #fff;
+		float:left;
+		width:230px;
+		background:#888;
+		margin:0px 10px 10px 0px;
+		}
+	
+	#menu p { font-size:10px}
+
+	#main #news {
+		border-left:1px solid #fff; 
+		border-bottom:1px solid #fff;
+		float:right;
+		width:230px;
+		background:#888;
+		margin:0px 0px 10px 0px;
+		}
+		
+	
+	#news p { font-size:10px}
+
+
+/* THIS IS SOME  PREDEFINED  STUFF I  NICKED */
+body {
+
+
+	margin:20px 20px 0px 20px;
+	padding: 0;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	color:white;
+	background:#000;
+	}
+
+#content {
+	margin: 0em;
+	padding: 4em 6em 2em 6em;/* use padding instead of margin for multicolumn layouts because of a really odd ie5pc bug where it sometimes relates the width of an unrelated menu div to this div. i'll, uh, write about that somewhere. it was hard to figure out what was causing it, so i want this note here to remind me. */
+	}
+	
+/*the following classes are to demonstrate better line heights for narrow columns*/	
+.narrow1{
+	width: 50%;
+	line-height: 1.3em;
+	}
+.narrow2{
+	width: 50%;
+	line-height: 1.5em;
+	}
+		
+/*typography*/
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	}
+a:link {
+	}
+a:visited {
+	}
+a:active {
+	}
+a:hover {
+	text-decoration: underline;
+	}
+h1 {
+	font-size: 26px;
+	line-height: 32px;
+	margin-top: 0px;
+	margin-bottom: 0px;/*both set to zero and padding in header div is used intead to deal with compound ie pc problems that are beyound summary in a simple comment.*/
+	}
+h2 {
+	font-size: 24px;
+	margin: 20px 5px 20px 5px;
+	font-weight: normal;
+	}
+h3 {
+	font-size: 20px;
+	margin: 10px 10px 10px 10px;
+	font-weight: normal;
+	}
+h4 {
+	font-size: 18px;
+	margin: 5px 5px 5px 5px;
+	font-weight: bold;
+	}
+h5 {
+	font-size: 16px;
+	margin: 20px 5px 20px 5px;
+	font-weight: bold;
+	}
+h6 {
+	font-size: 14px;
+	margin: 20px 5px 20px 5px;
+	font-weight: bold;
+	}
+img {
+	border: 0;
+	}
+ol, ul, li {/*
+	list-style: none;*/
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px; 
+	margin-left: 5px;
+	}
+p {
+	font-size: 14px;
+	line-height: 20px;
+	margin: 20px 5px 20px 5px;
+	}
+li > p {
+	margin-top: 0.2em;
+	}
+pre {/*moz 1.0/1.1/1.2.1, net 7.0/7.01 make this way too small, but i'm not going to go larger because monospace tends to run you into overflow pretty quick. prior moz and net are okay.*/
+	font-family: monospace;
+	font-size: 1.0em;
+	}
+strong, b {
+	font-weight: bold;
+	}
+</style>
+</head>
+<body>
+
+<h1>the white chamber</h2>
+
+<hr>
+<h2>Help File - Table of Contents</h2>
+<ul>
+<li><a href="#overview">Game Overview</a></li>
+<li><a href="#movement">Movement</a></li>
+<li><a href="#objects">Interacting With Objects</a></li>
+<li><a href="#symbols">Symbols</a></li>
+<li><a href="#menu">Game Menu</a></li>
+</ul>
+
+<hr>
+<a name="overview"></a><h2>Game Overview</h2>
+<p>The White Chamber is a point-and-click puzzle-solving adventure.</p>
+<p>Your character will explore rooms and environments, finding puzzles and solving clues in order to discover the mystery of ‘the white chamber’.</p>
+<p>She will be able to do this by exploring and investigating his environment</p>
+<p>The game is of the horror, sci-fi and mystery genres and has some violent, bloody and other possibly offensive material.</p>
+<hr>
+<a name="movement"></a><h2>Movement</h2>
+<p>You can move your character around his environment by left-clicking on the part of the screen you wish her to move to with your cursor. </p>
+<center><img src="images\Readme1.png"></center>
+<p>She cannot move to any area blocked by obstacles. If you left-click on an item in your character’s vicinity that he is able to interact with, he will walk up to that item and stand in front of it.</p>
+<h3>Exits</h3>
+<p>When the cursor hovers over an exit, it will become an arrow symbol.</p>
+<center><img src="images\Readme2.png"></center>
+<p>Left-clicking on the screen when the cursor is over an exit will cause your character to leave the location he is in and enter an adjoining location.</p>
+<p>There can be more than one exit to or from any location.</p>
+<h3>Moving Other Things</h3>
+<p>There might be times in the game when you can move something other than yourself. You might want to use the arrow keys on your keyboard for this.</p>
+
+<hr>
+<a name="objects"></a><h2>Interacting With Objects</h2>
+<p>You can have your character interact with objects in your environment in order to use them or to discover information about them. </p>
+<p>If your character is able to interact with an object in his environment, its name will appear in the bottom right hand corner of the screen when you hover the cursor over it.</p>
+<center><img src="images\Readme3.png"></center>
+<p>There are three initial courses of interaction with objects around your character:</p>
+<ul>
+<li>Left-clicking on the object will cause your character to stand in front of it.</li>
+<li>Right-clicking and selecting the eye symbol will cause your character to insect the object.</li>
+<li>Right-clicking and selecting the hand symbol will cause your character to either pick the item up or use the item, as appropriate. Items that your character picks up are placed in his inventory.</li>
+</ul>
+<h3>The Inventory</h3>
+<p>You can access your character’s inventory by moving your cursor to the top of the screen. The inventory bar will appear, showing all objects your character is carrying. If he is carrying a lot of objects, you can use the arrow keys at each end of the inventory bar to scroll left and right.</p>
+<p>When an object is in your inventory, you can interact with it in two ways:</p>
+<ul>
+<li>Right-clicking and selecting the eye symbol will cause your character to inspect the object. This information may be different to the information your character saw before he picked the object up.</li>
+<li>
+Right-clicking and selecting the hand symbol will cause the object to be lifted out of the inventory. Your character can then interact with things in two more ways:
+<ul>
+<li>Clicking on another object within the inventory with the one already selected will make your character attempt to use the first object on the second in some manner.</li>
+<li>The item will move out of the inventory with the cursor. Clicking on an object in your character’s current location with an object from your inventory causes your character to try to use the items with each other in some manner.</li>
+</ul>
+</li>
+</ul>
+<p>To put an object back in your character’s inventory, left-click on the screen.</p>
+<center><img src="images\Readme4.png"></center>
+<h3>Remote Operation</h3>
+<p>It might be possible at some stage to cause actions to be performed in appropriate situations by using the space bar.</p>
+<hr>
+
+<a name="symbols"></a><h2>Symbols</h2>
+<p>The following list is a summary of the main symbols you will see and use in the game.</p>
+<p><img src="images\Readme5.png"> The cross hair cursor is the normal appearance of the cursor. When it is like this it can be used to move your character around his location. There is not an object that your character can interact with directly beneath the cursor when it appears like this.</p>
+<p><img src="images\Readme6.png"> The hand cursor indicates that something that your character can interact with lies directly beneath the cursor. Check for text in the bottom right hand corner of the screen when you see this cursor.</p>
+<p><img src="images\Readme7.png"> An arrow cursor signifies that the cursor is hovering over an exit. The direction of the arrow shows which direction your character will be travelling in if they take that exit. </p>
+<p><img src="images\Readme8.png"> The eye symbol is the icon that you select when you want your character to inspect an object more closely, in order to discover information about it.</p>
+<p><img src="images\Readme9.png"> The hand symbol is the icon that you select when you want your character to interact with (use, manipulate or take) an object.</p>
+
+<hr>
+<a name="menu"></a><h2>Game Menu</h2>
+<p>You can access the game menu by pressing either ‘Escape’ or ‘F1’ on your keyboard. From it you can save the game, load a saved game, or quit the game.</p>
+<h3>Resume Game</h3>
+<p>Exit the game menu and continue playing your current game.</p>
+<h3>Save Game</h3>
+<p>Save your current progress in the game so that you can come back to the current point in the game later.</p>
+<p>When you choose to save the game, you will be shown a screen with several save game slots available. You can use the arrows to scroll up and down the list of available slots.</p>
+<p>You can either overwrite a previously saved game or create a new save game file by selecting the slot you wish to write to with your cursor and clicking ‘OK’. This will take you to another screen, where you can choose to give the save game file a name you will recognise it by. To create the file click on ‘OK’ again.</p>
+<p>If you decide not to create a save game file, clicking ‘Cancel’ on these screens will take you back to the main game menu.</p>
+<h3>Load Game</h3>
+<p>Load a previously saved game and begin playing it.</p>
+<p>When you choose to load a game, you will see a list of saved games (and empty save game slots). By using your cursor to click on one of the available saved game files and clicking on ‘OK’, you will load that game.</p>
+<p>If you decide not to load a game, clicking ‘Cancel’ will take you back to the game menu.</p>
+<h3>Exit Game</h3>
+<p>Quit playing the game and close it down.</p>
+<p>You will be asked if you are sure you want to quit the game. Click ‘Yes’ if you are and click ‘No’ if you wish to return to the game menu.</p>
+
+</body>
+</html>
+
+

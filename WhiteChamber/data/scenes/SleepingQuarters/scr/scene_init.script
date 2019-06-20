@@ -1,0 +1,102 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+PlayAmbient(AMBIENT_SCARY, "SLEEPING");
+
+// here comes the stuff which initializes the scene
+
+// NOTE: Fix starting regions in case player leaves halfway through
+var ShowerClosed = Scene.GetNode("ShowerClosed");
+if ((!ShowerHeadDone) && (CorridorSequenceDone))
+{
+	//PortraitType = PORT_PUZZLED;
+	//actor.Talk("Something's different in here");
+	ShowerClosed.Active = true;
+}
+else
+{
+	ShowerClosed.Active = false;
+}
+
+
+
+// defaults
+actor.SkipTo(900, 420);
+actor.Direction = DI_LEFT;
+
+if (Game.PrevScene == "Beach")
+{
+	var TunnelSprite = Scene.GetNode("TunnelGone");
+	var TunnelRegion = Scene.GetNode("RightDoor");
+	TunnelSprite.Active = true; // This is reversed to the way you think because the sprite in question BLOCKS the tunnel
+	TunnelRegion.Active = false; 
+	actor.SkipTo(140, 440);
+	actor.Direction = DI_RIGHT;
+}
+
+if (Game.PrevScene == "NavigationCentreBleeding")
+{
+	Game.Interface = false;
+
+	// Turn on note and second video disc
+	var Note = Scene.GetNode("Note");
+	var NoteRegion = Scene.GetNode("NoteRegion");
+	var Disc = Scene.GetNode("Disc");
+	var DiscRegion = Scene.GetNode("DiscRegion");
+	Note.Active = true;
+	NoteRegion.Active = true;
+	Disc.Active = true;
+	DiscRegion.Active = true;
+
+	actor.Active = false;
+	var GetUpAnim = Scene.GetNode("GetUp");
+	var GetUpSprite = GetUpAnim.GetSpriteObject();
+	GetUpAnim.Active = true;
+ 	while(true)
+	{
+		if(GetUpSprite.Finished) break;
+		Sleep(20); 
+  	}
+
+	actor.SkipTo(777, 528);
+	actor.Direction = DI_DOWN;
+	GetUpAnim.Active = false;
+
+
+	actor.Active = true;
+
+	Game.Interactive = true;
+
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/SLEEPQ0014/What the hell just happened? Was that real? It felt like all the life drained out of my body.");
+}
+
+actor.Active = true;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateSleepingQuarters;
+
+
+// default values
+if(StateSleepingQuarters==null)
+{
+  StateSleepingQuarters.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateSleepingQuarters.Visited)
+{
+  StateSleepingQuarters.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

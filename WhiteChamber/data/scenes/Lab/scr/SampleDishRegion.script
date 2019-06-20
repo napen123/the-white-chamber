@@ -1,0 +1,42 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+	 	actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0037/Some kind of tissue sample in an air-tight dish. There's a label on it.");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0014/I can't see it properly from here.");
+	}
+
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+		var SampleDish = Scene.GetNode("SampleDish");
+		var SampleDishRegion = Scene.GetNode("SampleDishRegion");
+		SampleDish.Active = false;
+		SampleDishRegion.Active = false;
+		Game.TakeItem("sample");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+}

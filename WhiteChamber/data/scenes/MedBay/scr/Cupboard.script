@@ -1,0 +1,66 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0043/There's a compartment under the laser unit");
+}
+on "take"
+{
+	actor.GoToObject(this);
+
+	var CupboardFull = Scene.GetNode("CupboardFull");
+	var CupboardEmpty = Scene.GetNode("CupboardEmpty");
+
+	// If cupboard is open
+	if ((CupboardFull.Active) || (CupboardEmpty.Active))
+	{
+		// Turn off cupboard sprites
+		CupboardFull.Active = false;
+		CupboardEmpty.Active = false;
+	}
+	else
+	{
+		// If batteries are inserted
+		if (MedBayLaserBatt)
+		{
+			CupboardFull.Active = true;
+		}
+		else
+		{
+			CupboardEmpty.Active = true;
+		}
+	}
+
+
+}
+
+on "batteries"
+{
+	actor.GoToObject(this);
+
+	var CupboardFull = Scene.GetNode("CupboardFull");
+	var CupboardEmpty = Scene.GetNode("CupboardEmpty");
+
+	// If cupboard is open
+	if (CupboardEmpty.Active)
+	{
+		CupboardEmpty.Active = false;
+		CupboardFull.Active = true;
+		MedBayLaserBatt = true;
+		Game.DropItem("batteries");
+		Game.PlaySound("audio\sounds\medbay-batteryhookup.wav");
+
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0044/That worked, the laser should be powered now");
+
+	}
+}

@@ -1,0 +1,50 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	actor.GoToObject(this); 
+
+	if (deadManWalking)
+	{
+  		Game.ChangeScene("scenes\climbingvideo\climbingvideo.scene");
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/THEFAN0006/It's sealed, I can't get through");
+	}
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	if (!deadManWalking)
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THEFAN0007/I wonder if this vent can take me down beneath the lift shaft");
+	}
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	if (!deadManWalking)
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/THEFAN0008/I can't get the panel off");
+	}
+}
+
+on "axe"
+{
+ 	actor.GoToObject(this);
+	if (!deadManWalking)
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/THEFAN0009/Even the axe can't make a dent in it");
+	}
+
+
+}

@@ -1,0 +1,15 @@
+WINDOW
+{
+
+  STATIC
+  {
+    TEXT = ""
+    TEXT_ALIGN = "center"
+    NAME = "type"
+    FONT = "secondaryttf.font"
+    X = 0
+    Y = 0
+    WIDTH = 0
+    HEIGHT = 20
+  }
+}

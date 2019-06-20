@@ -1,0 +1,57 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+
+//Game.PlayMusicChannel(0, "audio\ambient\ambientmain(messedup).ogg", true);
+//Game.PlayMusicChannel(1, "audio\ambient\ambientblackchamber.ogg", true);
+
+PlayAmbient(AMBIENT_SCARY, "BLACKCHAMBER");
+
+//var WindowEntity = Scene.GetNode("WindowAnim");
+//var WindowSprite = WindowEntity.GetSpriteObject;
+//WindowSprite.Pause;
+//PanelBroken.Active = false;
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateBlackChamber;
+
+
+// default values
+if(StateBlackChamber==null)
+{
+  StateBlackChamber.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateBlackChamber.Visited)
+{
+  StateBlackChamber.Visited = true;
+
+  // this is our first visit in this scene...
+	actor.SkipTo(400, 700);
+	actor.Direction = DI_DOWN;
+	actor.Active = true;
+
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/BLACKC0001/What am I doing here?");
+}
+else
+{
+	actor.SkipTo(460, 760);
+	actor.Direction = DI_UP;
+	actor.Active = true;
+}
+

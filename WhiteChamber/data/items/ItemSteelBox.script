@@ -1,0 +1,33 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0041/A steel box that seems to be welded shut");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0042/I can't open it. I wonder what's inside");
+}
+
+on "axe"
+{
+	PortraitType = PORT_PISSED;
+	actor.Talk("/ANITEM0043/Damn! It looks like it's welded shut. Even the axe can't break a box this strong.");
+}
+
+on "scalpel"
+{
+	PortraitType = PORT_PISSED;
+	actor.Talk("/ANITEM0044/It's welded shut. I'm more likely to break the scalpel than it even making a scratch.");
+}
+
+on "fireext"
+{
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/ANITEM0045/It's not on fire, it's just sealed. That wouldn't make any sense.");
+}

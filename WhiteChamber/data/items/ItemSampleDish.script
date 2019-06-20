@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0037/Some kind of tissue sample in an air-tight dish. The labels says 'Commander Trend'.");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0038/I don't want to open it and risk spoling the sample.");
+}

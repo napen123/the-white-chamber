@@ -1,0 +1,31 @@
+#include "scripts\base.inc"
+
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	// Retrieve door entity
+	var DoorAnim = Scene.GetNode("AnimDoor"); 
+	
+	// Retrieve door sprite
+	var DoorSprite = DoorAnim.GetSpriteObject(); 
+
+	// Switch on door entity
+	DoorAnim.Active = true; 
+
+ 	while(true) // An infinite loop
+	{
+			 // Leave the while loop if the door animation is finished
+			if(DoorSprite.Finished) break;
+
+			// otherwise return the control to the engine and continue with the loop
+    			Sleep(20); 
+  	}
+  	
+	// Move slightly into the door
+	actor.GoTo(1410,600); 
+
+	// Jump to different scene
+  	Game.ChangeScene("scenes\navigationcentre\navigationcentre.scene");
+}

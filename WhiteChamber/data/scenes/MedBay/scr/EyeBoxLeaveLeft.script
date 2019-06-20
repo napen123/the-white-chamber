@@ -1,0 +1,19 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var EyeBoxBG = Scene.GetNode("EyeBoxBG");
+	var EyeBoxRegion = Scene.GetNode("EyeBoxRegion");
+	var EyeBoxLeaveLeft = Scene.GetNode("EyeBoxLeaveLeft");
+	var EyeBoxLeaveRight = Scene.GetNode("EyeBoxLeaveRight");
+	var EyeBoxEyes = Scene.GetNode("EyeBoxEyes");
+	var EyeBoxEyesRegion = Scene.GetNode("EyeBoxEyesRegion");
+	EyeBoxBG.Active = false;
+	EyeBoxRegion.Active = false;
+	EyeBoxLeaveLeft.Active = false;
+	EyeBoxLeaveRight.Active = false;
+	EyeBoxEyes.Active = false;
+	EyeBoxEyesRegion.Active = false;
+}

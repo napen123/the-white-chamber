@@ -1,0 +1,34 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	var SpriteCommOverlay = Scene.GetNode("SpriteCommOverlay");
+	var RegionCommBackground = Scene.GetNode("RegionCommBackground");
+	var RegionCommLeaveLeft = Scene.GetNode("RegionCommLeaveLeft");
+	var RegionCommLeaveRight = Scene.GetNode("RegionCommLeaveRight");
+	var Message1 = Scene.GetNode("Message1");
+	var Message2 = Scene.GetNode("Message2");
+	var Message3 = Scene.GetNode("Message3");
+	var Message4 = Scene.GetNode("Message4");
+	var MessageRegion1 = Scene.GetNode("RegionMessage1");
+	var MessageRegion2 = Scene.GetNode("RegionMessage2");
+	var MessageRegion3 = Scene.GetNode("RegionMessage3");
+	var MessageRegion4 = Scene.GetNode("RegionMessage4");
+	SpriteCommOverlay.Active = false;
+	RegionCommBackground.Active = false;
+	RegionCommLeaveLeft.Active = false;
+	RegionCommLeaveRight.Active = false;
+	Message1.Active = false;
+	Message2.Active = false;
+	Message3.Active = false;
+	Message4.Active = false;
+	MessageRegion1.Active = false;
+	MessageRegion2.Active = false;
+	MessageRegion3.Active = false;
+	MessageRegion4.Active = false;
+	SubWindow.Visible = false;
+}
+
+

@@ -1,0 +1,76 @@
+WINDOW
+{
+  X = 200
+  Y = 200
+  WIDTH = 520
+  HEIGHT = 450
+  NAME = "NeoQuit"
+
+  TITLE = "/INTERF0007/Quit Game"
+  TITLE_RECT {60,35,260,70}  
+  TITLE_ALIGN = left
+  DRAG_RECT {58,30,420,70}
+  IMAGE = "interface\system\artwork\guibackground.png"
+  FONT = "primaryttf.font"
+  SCRIPT = "interface\system\NeoQuit.script"
+
+
+  BUTTON
+  {
+    NAME = "close"
+    IMAGE = "interface\system\artwork\guicross.png"
+    IMAGE_HOVER = "interface\system\artwork\guicrossglow.png"
+    X = 420
+    Y = 30
+    PARENT_NOTIFY = TRUE
+  }
+
+
+  BUTTON
+  {
+   NAME = "yes"
+   TEXT = "/INTERF0008/Yes"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 180
+    Y = 290
+    WIDTH = 70
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+   NAME = "close"
+   TEXT = "/INTERF0009/No"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 280
+    Y = 290
+    WIDTH = 70
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+    NAME = "message"
+    TEXT = "/INTERF0010/Are you sure you want to leave?"
+    TEXT_ALIGN = "center"
+    FONT = "secondaryttf.font"
+    X = 30
+    Y = 170
+    WIDTH = 450
+  }
+
+
+  STATIC
+  {
+    NAME = "scanlines"
+    X = 0
+    Y = 0
+    IMAGE = "interface\system\artwork\guiscanlines.png"
+  }
+
+
+}

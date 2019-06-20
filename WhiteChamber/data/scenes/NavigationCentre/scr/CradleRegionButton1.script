@@ -1,0 +1,43 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+on "MouseEntry"
+{
+	// Highlight button
+	var CradleButton1 = Scene.GetNode("CradleButton1");
+	CradleButton1.Active = true;
+}
+
+on "MouseLeave"
+{
+	// Remove highlight from the button
+	var CradleButton1 = Scene.GetNode("CradleButton1");
+	CradleButton1.Active = false;
+}
+
+on "LeftClick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");	
+
+	var CradleSafetyOn = Scene.GetNode("CradleSafetyOn");
+	var CradleSafetyOff = Scene.GetNode("CradleSafetyOff");
+	var CradleRegionSafetyDisplay = Scene.GetNode("CradleRegionSafetyDisplay");
+
+	if (CradleSafety == true)
+	{
+		CradleRegionSafetyDisplay.Caption = "/NAVCEN0027/Safety Lock Offline";
+		CradleSafetyOn.Active = false;
+		CradleSafetyOff.Active = true;
+	}
+	else
+	{
+		CradleRegionSafetyDisplay.Caption = "/NAVCEN0026/Safety Lock Engaged";
+		CradleSafetyOn.Active = true;
+		CradleSafetyOff.Active = false;
+	}
+
+	CradleSafety = !CradleSafety;
+
+}

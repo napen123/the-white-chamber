@@ -1,0 +1,20 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");
+	var Message1 = Scene.GetNode("Message1");
+	var Message2 = Scene.GetNode("Message2");
+	var Message3 = Scene.GetNode("Message3");
+	var Message4 = Scene.GetNode("Message4");
+	Message1.Active = true;
+	Message2.Active = false;
+	Message3.Active = false;
+	Message4.Active = false;
+
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0043/It looks like someone tried to send out an S.O.S. message. It doesn't look like it was transmitted.");
+
+}

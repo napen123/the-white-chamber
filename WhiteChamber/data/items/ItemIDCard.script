@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0021/It's an ID card for use in security scanners");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0022/I can't really do much with it without a DNA sequencer");
+}

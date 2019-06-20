@@ -1,0 +1,46 @@
+#include "scripts\base.inc"
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+ 	actor.GoToObject(this);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+ 	actor.GoToObject(this);
+	if (CoatSearched)
+	{
+    		actor.Talk("/STORER0020/The lab coat's empty now, and I don't need it");
+	}
+	else
+	{
+    		actor.Talk("/STORER0021/A soiled lab coat, it looks like there's something in the pocket");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+ 	actor.GoToObject(this);
+	Game.PlaySound("audio\sounds\coatrustling.wav");
+	if (CoatSearched)
+	{
+    		actor.Talk("/STORER0022/There's nothing else in the coat and it's not my size so I think I'll leave it");
+	}
+	else
+	{
+		Game.TakeItem("overkey");
+		Game.TakeItem("idcard");
+    		actor.Talk("/STORER0023/There's a blank ID card and some kind of override key in the pocket");
+		CoatSearched = true;
+	}
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/STORER0024/I don't think using random items on a coat is going to achieve anything.");
+}

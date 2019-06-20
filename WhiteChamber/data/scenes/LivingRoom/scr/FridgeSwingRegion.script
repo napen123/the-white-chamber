@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/LIVING0024/A fridge hanging from the ceiling, it smells awful. I wish I could get rid of it.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0025/I'll never get it from down here");
+}

@@ -1,0 +1,80 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+ 	actor.GoToObject(this);
+	var ConsoleOffline = Scene.GetNode("ConsoleOffline");
+	var ConsoleActive = Scene.GetNode("ConsoleActive");
+	var ConsolePattern = Scene.GetNode("ConsolePattern");
+	var ConsoleNumbers = Scene.GetNode("ConsoleNumbers");
+	var ConsoleRotate1 = Scene.GetNode("ConsoleRotate1");
+	var ConsoleRotate2 = Scene.GetNode("ConsoleRotate2");
+	var ConsoleRotate3 = Scene.GetNode("ConsoleRotate3");
+	var ConsoleRotate4 = Scene.GetNode("ConsoleRotate4");
+	var ConsoleRotate5 = Scene.GetNode("ConsoleRotate5");
+	var ConsoleRotate6 = Scene.GetNode("ConsoleRotate6");
+	var ConsoleRotate7 = Scene.GetNode("ConsoleRotate7");
+	var ConsoleRotate8 = Scene.GetNode("ConsoleRotate8");
+	var ConsolePowerLight = Scene.GetNode("ConsolePowerLight");
+	var ConsoleRegionBackground = Scene.GetNode("ConsoleRegionBackground");
+	var ConsoleRegionLeave = Scene.GetNode("ConsoleRegionLeave");
+	var ConsoleRegionLeft = Scene.GetNode("ConsoleRegionLeft");
+	var ConsoleRegionRight = Scene.GetNode("ConsoleRegionRight");
+	var ConsoleRegionOn = Scene.GetNode("ConsoleRegionOn");
+	var ConsoleRegionOff = Scene.GetNode("ConsoleRegionOff");
+	var CradleRegionSafetyDisplay = Scene.GetNode("CradleRegionSafetyDisplay");
+	ConsoleOffline.Active = false;
+	ConsoleActive.Active = false;
+	ConsolePattern.Active = false;
+	ConsoleNumbers.Active = false;
+	ConsoleRotate1.Active = false;
+	ConsoleRotate2.Active = false;
+	ConsoleRotate3.Active = false;
+	ConsoleRotate4.Active = false;
+	ConsoleRotate5.Active = false;
+	ConsoleRotate6.Active = false;
+	ConsoleRotate7.Active = false;
+	ConsoleRotate8.Active = false;
+	ConsolePowerLight.Active = false;
+	ConsoleRegionBackground.Active = false;
+	ConsoleRegionLeave.Active = false;
+	ConsoleRegionLeft.Active = false;
+	ConsoleRegionRight.Active = false;
+	ConsoleRegionOn.Active = false;
+	ConsoleRegionOff.Active = false;
+	CradleRegionSafetyDisplay.Active = false;
+
+	SubWindow.Visible = false;
+
+	// If lights are off and station newly powered up play the power up cutscene
+	var LightsOff = Scene.GetNode("LightsOff");
+	if ((StationPowered) && (LightsOff.Active))
+	{
+		Game.Interactive = false;
+
+		var LightAnim = Scene.GetNode("LightAnim");
+		var LightAnimSprite = LightAnim.GetSpriteObject();
+		var PanelPowerUp = Scene.GetNode("PanelPowerUp");
+		var PanelPowerUpSprite = PanelPowerUp.GetSpriteObject();
+		var PanelOn = Scene.GetNode("PanelOn");
+
+		LightAnim.Active = true;
+		PanelPowerUp.Active = true;
+	 	while(true)
+		{
+			if((LightAnimSprite.Finished) && (PanelPowerUpSprite.Finished)) break;
+	  		Sleep(20); 
+  		}
+
+		LightsOff.Active = false;
+		PanelOn.Active = true;
+		LightAnim.Active = false;
+		PanelPowerUp.Active = false;
+
+		Game.Interactive = true;
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/NCHASM0003/A deep chasm, it's impossible");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NCHASM0004/I'm not risking climbing down there");
+}

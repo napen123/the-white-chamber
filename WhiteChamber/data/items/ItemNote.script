@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/ANITEM0031/It's a note I found. It says 'Patience While You Grill Bacon Rind'. That's rather strange. I wonder what it means.");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0032/It could make a nice aeroplane but I might need it later");
+}

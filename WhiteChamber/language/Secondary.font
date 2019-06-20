@@ -1,0 +1,11 @@
+; $EDITOR_PROJECT_ROOT_DIR$ ..\..\
+
+FONT
+{
+  IMAGE = "fonts\FontPretextNEW.bmp"
+  TRANSPARENT = 255,0,0
+  COLUMNS = 16
+  TILE_WIDTH = 32
+  TILE_HEIGHT = 32
+  AUTO_WIDTH = TRUE
+}

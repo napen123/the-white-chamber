@@ -1,0 +1,29 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+// If player takes the video disc in the living room cupboard
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0038/A standard video disc.");
+}
+on "Take"
+{
+	// Add the item to inventory
+	Game.TakeItem("disc1");
+
+	// Set global variable to indicate item has been taken
+	LivingRoomDiscTaken = true;
+
+	// Switch off the disc sprite and region
+	var RightCupboardDisc = Scene.GetNode("RightCupboardDisc");
+	var RegionRightCupboardDisc = Scene.GetNode("RegionRightCupboardDisc");
+	RightCupboardDisc.Active = false;
+	RegionRightCupboardDisc.Active = false;
+
+	// Switching off the region means it's impossible to take the item twice,
+	// hence why there is no conditional logic at the start to check if the item
+	// has already been taken
+
+}

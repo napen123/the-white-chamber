@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0033/This is an override key");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0034/I'd need to find a system this fits");
+}

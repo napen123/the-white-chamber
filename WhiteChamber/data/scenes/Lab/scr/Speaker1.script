@@ -1,0 +1,28 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0041/It's a speaker.");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0042/There's not much I can do with it.");
+	}
+}

@@ -1,0 +1,13 @@
+#include "scripts\base.inc"
+
+
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	Game.StopMusicChannel(3);
+
+	// Jump to different scene
+  	Game.ChangeScene("scenes\sleepingquarters\sleepingquarters.scene");
+}

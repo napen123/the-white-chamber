@@ -1,0 +1,54 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	var BackupOverlay = Scene.GetNode("SpriteBackupOverlay");
+	var BackupOverlayRegion = Scene.GetNode("RegionBackupOverlay");
+	var BackupLeaveRegion = Scene.GetNode("RegionBackupLeave");
+	var BackupSlot1Region = Scene.GetNode("RegionBackupSlot1");
+	var BackupSlot2Region = Scene.GetNode("RegionBackupSlot2");
+	var BackupSlot3Region = Scene.GetNode("RegionBackupSlot3");
+	var BackupSlot4Region = Scene.GetNode("RegionBackupSlot4");
+	var Slot1Sprite = Scene.GetNode("SpriteBackupKey1");
+	var Slot1Key = Scene.GetNode("RegionBackupKey1");
+	var Slot2Sprite = Scene.GetNode("SpriteBackupKey2");
+	var Slot2Key = Scene.GetNode("RegionBackupKey2");
+	var Slot3Sprite = Scene.GetNode("SpriteBackupKey3");
+	var Slot3Key = Scene.GetNode("RegionBackupKey3");
+	var BackupRegionLabel1 = Scene.GetNode("RegionLabel1");
+	var BackupRegionLabel2 = Scene.GetNode("RegionLabel2");
+	var BackupRegionLabel3 = Scene.GetNode("RegionLabel3");
+	var BackupRegionLabel4 = Scene.GetNode("RegionLabel4");
+	var BackupRegionLabel5 = Scene.GetNode("RegionLabel5");
+	var BackupRegionPower1 = Scene.GetNode("RegionPower1");
+	var BackupRegionPower2 = Scene.GetNode("RegionPower2");
+	var BackupRegionPower3 = Scene.GetNode("RegionPower3");
+	var BackupRegionPower4 = Scene.GetNode("RegionPower4");
+	var BackupRegionPower5 = Scene.GetNode("RegionPower5");
+
+	BackupOverlay.Active = false;	
+	BackupOverlayRegion.Active = false;
+	BackupLeaveRegion.Active = false;
+	BackupSlot1Region.Active = false;
+	BackupSlot2Region.Active = false;
+	BackupSlot3Region.Active = false;
+	BackupSlot4Region.Active = false;
+	Slot1Sprite.Active = false;
+	Slot1Key.Active = false;
+	Slot2Sprite.Active = false;
+	Slot2Key.Active = false;
+	Slot3Sprite.Active = false;
+	Slot3Key.Active = false;
+	BackupRegionLabel1.Active = false;
+	BackupRegionLabel2.Active = false;
+	BackupRegionLabel3.Active = false;
+	BackupRegionLabel4.Active = false;
+	BackupRegionLabel5.Active = false;
+	BackupRegionPower1.Active = false;
+	BackupRegionPower2.Active = false;
+	BackupRegionPower3.Active = false;
+	BackupRegionPower4.Active = false;
+	BackupRegionPower5.Active = false;
+}

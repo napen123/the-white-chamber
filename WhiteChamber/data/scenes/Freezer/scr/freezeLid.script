@@ -1,0 +1,35 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0007/It's a large freezing unit");
+}
+on "take"
+{
+	actor.GoToObject(this);
+
+	Game.PlaySound("audio\sounds\freezer-lidopen.wav");
+	Game.PlayMusicChannel(3, "audio\sounds\freezer-shiver.ogg", true);
+
+	var lid = Scene.GetNode("lid");
+	var freezeLid = Scene.GetNode("freezeLid");
+	var freezeMan = Scene.GetNode("freezeMan");
+	var manRegion = Scene.GetNode("manRegion");
+
+	lid.Active = true;
+	freezeLid.Active = false;
+	freezeMan.Active = true;
+	manRegion.Active =  true;
+
+	PortraitType = PORT_POCKING;
+	actor.Talk("/FREEZE0008/What the hell?");
+}

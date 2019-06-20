@@ -1,0 +1,26 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0034/That's the key I put in.");
+}
+
+on "take"
+{
+	Game.PlaySound("audio\sounds\removekey.ogg");
+	var Slot3Sprite = Scene.GetNode("SpriteBackupKey3");
+	var Slot3Region = Scene.GetNode("RegionBackupSlot3");
+	var Slot3Key = Scene.GetNode("RegionBackupKey3");
+	Slot3Sprite.Active = false;
+	Slot3Region.Active = true;
+	Slot3Key.Active = false;
+	ComputerRoomKeyPos = 0;
+	Game.TakeItem("overkey");
+
+	var BackupRegionPower4 = Scene.GetNode("RegionPower4");
+	BackupRegionPower4.Caption = "/COMPUT0060/Waiting";
+
+}

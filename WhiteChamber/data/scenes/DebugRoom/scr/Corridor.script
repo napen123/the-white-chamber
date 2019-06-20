@@ -1,0 +1,12 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick" {
+  actor.GoToObject(this);
+  Game.TakeItem("axe");
+  Game.TakeItem("box");
+  Game.TakeItem("batteries");
+  Game.ChangeScene("scenes\livingroomgrated\livingroomgrated.scene");
+}
+

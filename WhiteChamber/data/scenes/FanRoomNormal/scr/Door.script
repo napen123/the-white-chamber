@@ -1,0 +1,9 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	actor.GoToObject(this); 
+  	Game.ChangeScene("scenes\labnormal\labnormal.scene");
+}

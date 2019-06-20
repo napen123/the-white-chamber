@@ -1,0 +1,34 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	// Setup cupboard variables
+	var LeftCupboardBase = Scene.GetNode("LeftCupboardBase");
+	var LeftCupboardDrSalt = Scene.GetNode("LeftCupboardDrSalt");
+	var LeftCupboardBox = Scene.GetNode("LeftCupboardBox");
+	var LeftCupboardOpen = Scene.GetNode("LeftCupboardOpen");
+	var RegionLeftCupboardArea = Scene.GetNode("RegionLeftCupboardArea");
+	var RegionLeftCupboardDrSalt = Scene.GetNode("RegionLeftCupboardDrSalt");
+	var RegionLeftCupboardBox = Scene.GetNode("RegionLeftCupboardBox");
+	var RegionLeftCupboardJunk1 = Scene.GetNode("RegionLeftCupboardJunk1");
+	var RegionLeftCupboardJunk2 = Scene.GetNode("RegionLeftCupboardJunk2");
+	var RegionLeftCupboardJunk3 = Scene.GetNode("RegionLeftCupboardJunk3");
+	var RegionLeftCupboardLeave1 = Scene.GetNode("RegionLeftCupboardLeave1");
+	var RegionLeftCupboardLeave2 = Scene.GetNode("RegionLeftCupboardLeave2");
+
+	// Disable cupboard stuff
+	LeftCupboardBase.Active = false;
+	LeftCupboardOpen.Active = false;
+	LeftCupboardDrSalt.Active = false;
+	LeftCupboardBox.Active = false;
+	RegionLeftCupboardArea.Active = false;
+	RegionLeftCupboardDrSalt.Active = false;
+	RegionLeftCupboardBox.Active = false;
+	RegionLeftCupboardJunk1.Active = false;
+	RegionLeftCupboardJunk2.Active = false;
+	RegionLeftCupboardJunk3.Active = false;
+	RegionLeftCupboardLeave1.Active = false;
+	RegionLeftCupboardLeave2.Active = false;
+}

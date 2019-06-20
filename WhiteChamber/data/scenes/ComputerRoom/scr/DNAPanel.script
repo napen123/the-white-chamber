@@ -1,0 +1,59 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "sample"
+{
+	actor.GoToObject(this); 
+	Game.DropItem("sample");
+	SampleInserted = true;
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/COMPUT0029/Done. Now I just need to put in the card to be programmed");
+}
+
+on "idcard"
+{
+	actor.GoToObject(this); 
+	if (SampleInserted)
+	{
+		if (!CardProgrammed)
+		{
+			Game.PlaySound("audio\sounds\computerroom-dna.wav");
+			CardProgrammed = true;
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/COMPUT0030/That should have written the sample data on to the card.");
+		}
+		else
+		{
+			Game.PlaySound("audio\sounds\livingroom-warning.wav");
+			PortraitType = PORT_PUZZLED;
+			actor.Talk("/COMPUT0031/The card has already been programmed.");
+		}
+	}
+	else
+	{
+		Game.PlaySound("audio\sounds\livingroom-warning.wav");
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/COMPUT0028/Looks like this won't work unless I insert a DNA sample first.");
+	}
+}
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/COMPUT0026/It's a DNA encoder, used to store data on ID cards");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	Game.PlaySound("audio\sounds\livingroom-warning.wav");
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/COMPUT0027/This won't do anything without a clean DNA sample");
+}

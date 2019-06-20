@@ -1,0 +1,1429 @@
+﻿; Bugs:
+; INTERF0010 doesn't display
+
+
+CONFIG0001	true
+
+; //////////////////////////////////////////////////////////////////////
+; ENGINE SYSTEM STRINGS
+; //////////////////////////////////////////////////////////////////////
+SYSENG0001	Nastavení hry
+SYSENG0002	Zobrazení
+SYSENG0003	Zvuk
+SYSENG0004	Použít hardwarovou akceleraci
+SYSENG0005	Obrazový adaptér:
+SYSENG0006	Barvy:
+SYSENG0007	Spustit v okně
+SYSENG0008	Multisample type:
+SYSENG0009	Use hardware T&&L
+SYSENG0010	Další...
+SYSENG0011	Zvukový adaptér:
+SYSENG0012	Pokročilá nastavení
+SYSENG0013	Poznámka: Tato nastavení slouží pouze k odstraňování potíží. Pokud hra na vašem počítači funguje správně, nemusíte používat žádnou z těchto voleb.
+SYSENG0014	Nastavení textur
+SYSENG0015	Vynutit 16-bitové textury
+SYSENG0016	Vynutit dělení textur
+SYSENG0017	16 bit
+SYSENG0018	32 bit
+SYSENG0019	[bez zvuku]
+SYSENG0020	none
+SYSENG0021	samples
+SYSENG0100	OK
+SYSENG0101	Storno
+
+SYSENG0024	Příště toto okno neukazovat
+SYSENG0025	Tato hra vyžaduje 3D akceleraci, kterou vaše videokarta zřejmě nepodporuje. Prosím, ujistěte se, že máte 3D akcelerovanou videokartu, a že máte nainstalovány nejnovější ovladače.
+SYSENG0026	Tato hra vyžaduje systém Microsoft DirectX 8.0 nebo novější, který není na vašem počítači nainstalován. Prosím, nainstalujte DirectX 8.0 nebo novější a zkuste to znovu. Chcete nyní zobrazit stránku pro stažení DirectX?
+SYSENG0027	Nahrává se...
+
+
+; //////////////////////////////////////////////////////////////////////
+; INTERFACE STRINGS
+; //////////////////////////////////////////////////////////////////////
+
+INTERF0004	Hlavní menu
+INTERF0005	Pokračovat
+INTERF0001	Načíst hru
+INTERF0006	Uložit hru
+INTERF0007	Ukončit hru
+
+INTERF0002	Načíst
+INTERF0011	Uložit
+
+INTERF0010	Skutečně chceš skončit?
+
+INTERF0008	Ano
+INTERF0009	Ne
+INTERF0013	OK
+INTERF0003	Storno
+
+INTERF0012	Jméno pozice
+INTERF0014	Zadej jméno uložené pozice :
+
+INTERF0015	< prázdné >
+
+
+; //////////////////////////////////////////////////////////////////////
+; 00 - COMMON TEXT
+; //////////////////////////////////////////////////////////////////////
+
+; Try to use an object with something that you can't
+COMMON0001	Tyhle věci nemůžu použít dohromady.
+
+; Try to use an object that can't be used
+COMMON0002	Tohle nemůžu sebrat.
+
+; Try to look at an object with nothing to say about it
+COMMON0003	Nevím, co bych o tomhle měla říct.
+
+; //////////////////////////////////////////////////////////////////////
+; 01 - BLACK CHAMBER
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+BLACKC0015	Okna
+BLACKC0016	Kabely
+BLACKC0017	Panel
+BLACKC0018	Rakev
+BLACKC0019	Dveře
+
+; Console Regions
+BLACKC0020	ANO
+BLACKC0021	NE
+BLACKC0022	Už to začalo...
+BLACKC0027	Víš kde jsi?
+BLACKC0028	Lituješ toho?
+BLACKC0029	Jsi připravena?
+
+; Initial comment on awakening in black chamber
+BLACKC0001	Co se to děje? Proč jsem byla v té rakvi?
+
+; Look at coffin
+BLACKC0002	To je ta rakev, ve které jsem se probudila... kde jsem se tam uvnitř vzala?
+; Interact with coffin
+BLACKC0003	Je moc těžká, ani se nehne. Povrch je teplý... cítím jemnou vibraci.
+; Use anything with the coffin
+BLACKC0023	Je to jen velká těžká rakev. Nemyslím, že by se na ni dalo něco použít.
+
+; Look at broken panel
+BLACKC0004	Na panelu svítí hláška, "Chyba propojení".
+; Interact with broken panel
+BLACKC0005	Nefunguje to.
+; Look at fixed panel
+BLACKC0006	Vypadá to, že panel už funguje.
+; Use items on the panel (bear in mind by the time you have any item to use you're already finished with the panel)
+BLACKC0024	Tenhle panel už svoji úlohu splnil.
+
+; Look at split wires
+BLACKC0007	Zdá se, že ty kabely nejsou správně propojené.
+; Interact with split wires
+BLACKC0008	Tak jo... spojila jsem ty kabely.
+; Look at joined wires
+BLACKC0009	Jsou propojené.
+; Interact with joined wires
+BLACKC0010	Už jsem je dala do kupy.
+; Use items on the wires
+BLACKC0025	Nemyslím, že je potřeba s těmi kabely ještě něco dělat.
+
+; Windows open to reveal space outside
+BLACKC0011	Co se to sakra děje? Jsem ve vesmíru!
+
+; Door opens to reveal a way out
+BLACKC0012	To bude cesta ven.
+
+; Look at windows
+BLACKC0013	Tohle je rozhodně vesmír, ale nevidím ani známky po ostatních lodích ani po ničem jiném.
+; Interact with windows
+BLACKC0014	Ta okna jsou naprosto nerozbitná. A i kdybych je nakrásně rozbila, vycuclo by mě to do vesmíru.
+; Use items on windows
+BLACKC0026	Nehodlám na ta okna cokoliv používat. Už jsem viděla, co dokáže s člověkem udělat explozivní dekomprese.
+
+; //////////////////////////////////////////////////////////////////////
+; 02 - NAVIGATION CENTRE
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+NAVCEN0001	Dveře
+NAVCEN0002	Nástěnný panel
+NAVCEN0003	Konzola
+NAVCEN0004	Skvrny
+
+; Navigation Console Regions
+NAVCEN0005	Odejít
+NAVCEN0006	Otočit vlevo
+NAVCEN0007	Otočit vpravo
+NAVCEN0008	Zapnout
+NAVCEN0009	Vypnout
+
+; Cradle Console Regions
+NAVCEN0010	Odejít
+NAVCEN0011	Bezpečnostní zámek
+NAVCEN0012	Spustit kabinu
+NAVCEN0013	Vytáhnout kabinu
+NAVCEN0025	Není cesty zpět
+NAVCEN0026	Bezpečnostní zámek aktivní
+NAVCEN0027	Bezpečnostní zámek odpojen
+NAVCEN0028	Obrazovka
+
+; Look at console
+NAVCEN0014	Nejspíš je to nějaká navigační konzola. Musí nějakým způsobem ovládat stanici.
+; Try to use console while it has no power
+NAVCEN0015	Nevypadá, že by byla funkční. Musím najít nějaký způsob, jak jí dodat energii.
+; Use items with console
+NAVCEN0016	Nemyslím, že by se tu dalo něco použít.
+; SUBTITLE - Console Title
+NAVCEN0024	Otáčení stanice a ovládání solárního pohonu
+
+; Look at stains
+NAVCEN0017	Co to je za skvrny na podlaze? A na zdi?! Vypadá to jako krev!
+; Touch stains
+NAVCEN0018	Ať je to cokoliv, je to připečené k povrchu. Co se tady stalo?
+; Use items with stains
+NAVCEN0019	Čeho bych tím dosáhla?
+
+; Look at wall panel
+NAVCEN0020	Jsem si jistá, že to ovládá nějaký systém, který vysouvá část stanice... jakto, že to vím?
+; Try to use wall panel while it has no power
+NAVCEN0021	Zdá se, že to není pod proudem.
+; Use items with wall panel
+NAVCEN0022	Tady žádné předměty použít nepůjdou. Nejsou tu žádné otvory ani nic jiného.
+; Look at wall panel display
+NAVCEN0029	Zdá se, že tahle část stanice se dá spustit dolů.
+; Use wall panel display
+NAVCEN0030	Myslím, že se to ovládá těmi tlačítky dole.
+
+; Try to walk through top door with power down (Player has been tampering with the power system if this has happened)
+NAVCEN0023	Zvláštní, neotvírají se. Asi bude nějaký problém s napájením.
+
+; //////////////////////////////////////////////////////////////////////
+; 03 - STORE ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+STORER0001	Časopis
+STORER0002	Konzole
+STORER0003	Obrazovka
+STORER0004	Dveře
+STORER0005	Laboratorní plášť
+STORER0006	Skener
+STORER0007	Dveře
+STORER0008	Výbušnina
+STORER0009	Mrazák
+
+; MES Article Regions
+STORER0010	Odejít
+
+; Can't reach various objects because of the locked gate
+STORER0011	Odsud na to pořádně nevidím.
+; Can't properly see various objects because of the locked gate
+STORER0012	Skrz klec na to nedosáhnu.
+
+; Look at explosive
+STORER0013	Kanistr vysoce explozivní látky.
+; Use axe on explosive
+
+; Use items on the explosive
+STORER0014	Nepřipadá mi jako dobrý nápad s tím takhle blbnout.
+
+; Look at big freezer door
+STORER0015	Tyhle velké dveře zřejmě vedou do mrazáku.
+; Attempt to go through door while it's closed
+STORER0016	Nedostanu se dovnitř, dokud jsou dveře zavřené.
+
+; Look at closed gate
+STORER0017	Tyhle dveře mi brání dostat se do skladiště.
+; Touch gate
+STORER0018	Vypadají dost pevně.
+; Use items on gate
+STORER0019	Myslím, že jediná věc, která je otevře, je támhleten skener.
+
+; Look at lab coat
+STORER0021	Špinavý laboratorní plášť. Vypadá to, že je něco v kapse.
+; Look at empty lab coat
+STORER0020	Plášť už je prázdný. Nepotřebuji ho.
+; Search lab coat
+; !!!!! override key
+STORER0023	Byla tam prázdná ID karta a nějaký klíč.
+; Search empty lab coat
+STORER0022	V tom plášti už nic není a navíc smrdí, jako kdyby ho někdo vyválel ve sračkách. Takže ho nechám být.
+; Use items on lab coat
+STORER0024	Neřekla bych, že používat různé věci na plášť by mi v něčem pomohlo.
+
+; Look at MES console
+STORER0026	Tohle je M.E.S. Fakt hodně stará herní konzole.
+; Use MES console 1st time
+STORER0027	Opravdu nemám čas hrát hry.
+; Use MES console 2nd time (The comment about dying in games here is a vital clue)
+STORER0028	Ne, nechci. Tyhle starý hry jsou děsně stupidní. Prostě hraješ a hraješ, dokud neumřeš nebo dokud netřískneš gamepadem o zeď.
+; Use MES console 3rd time (This comment leads into a game easter egg)
+STORER0029	No dobře, tak já to zkusím. Co by se mohlo stát?
+; Use MES console 4th time onwards
+STORER0030	Už nikdy... ne potom co se stalo minule!
+; Use items with MES console
+STORER0025	Uvnitř už je zasunutá hra.
+
+; Look at MES magazine
+STORER0036	Je to retro magazín o videohrách.
+; Use items on MES magazine
+STORER0037	To nemá smysl. Je to jen časopis.
+
+; Look at screen
+STORER0038	Obrazovka připojená k té staré konzoli. Nerozeznám, co to ukazuje.
+; Take screen
+STORER0039	Nemyslím, že bych byla schopná ji sundat, aniž by se rozbila.
+; Use items on screen
+STORER0040	A tím bych jako dosáhla čeho?
+
+; Look at scanner
+STORER0032	Tohle je skener na ID karty, který otvírá dveře.
+; Use scanner
+STORER0033	Budu do toho muset strčit ID kartu.
+; Use unprogrammed ID card on scanner
+STORER0031	Nic to neudělalo. Na té kartě asi není zakódován autorizovaný vzorek DNA.
+; Use override key on scanner
+STORER0034	Ovládá se to ID kartou, ne takovýmhle klíčem.
+; Use any other items on scanner
+STORER0035	Tohle do skeneru nenacpu.
+
+; Return from MES world
+STORER0041	Jsem zpátky! Ani nechci vědět, co se to tam stalo.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 04 - COMPUTER ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+COMPUT0001	Dveře
+COMPUT0002	Sekvencer
+COMPUT0003	Záložní jednotka
+COMPUT0004	Levý počítač
+COMPUT0005	Pravý počítač
+
+; Backup panel regions
+COMPUT0006	Opustit jednotku
+COMPUT0007	Slot pro klíč
+COMPUT0008	Prázdná destička
+COMPUT0009	Klíč
+COMPUT0055	Komunikace
+COMPUT0056	Zdravotní systémy
+COMPUT0057	Spouštění kabiny
+COMPUT0058	Otáčení stanice
+COMPUT0059	Životní podpora
+COMPUT0060	Čeká se
+COMPUT0061	Online
+COMPUT0062	Chyba
+
+; E-Mail computer regions
+COMPUT0010	Odejít
+COMPUT0011	Zpráva 1
+COMPUT0012	Zpráva 2
+COMPUT0013	Zpráva 3
+COMPUT0014	Zpráva 4
+
+; Droid computer regions
+COMPUT0015	Červená
+COMPUT0016	Zelená
+COMPUT0017	Fialová
+COMPUT0018	Žlutá
+COMPUT0019	Bílá
+COMPUT0020	Modrá
+COMPUT0021	Odejít
+
+; Look at back up unit
+COMPUT0022	Vypadá to, že tahle jednotka funguje jako záložní zdroj energie pro různé systémy stanice.
+; Use back up panel once power has been restored to station
+COMPUT0023	Teď, když jsem obnovila dodávku energie v celé stanici, je tahle záložní jednotka poněkud zbytečná.
+; Use override key on backup panel as a whole
+COMPUT0024	Budu muset jít trochu bliž.
+; Use anything else on backup panel as a whole
+COMPUT0025	Moc toho nenadělám, pokud nepůjdu trochu blíž.
+
+; Look at DNA sequencer
+COMPUT0026	Tohle je DNA enkodér, který zapisuje data na ID karty.
+; Touch DNA sequencer
+COMPUT0027	Bez čistého DNA vzorku je to k ničemu.
+; Insert ID card without DNA sample
+COMPUT0028	Zdá se, že to nebude fungovat, pokud nejdřív nevložím vzorek DNA.
+; Insert DNA sample
+COMPUT0029	Hotovo. Teď už musím jen vložit ID kartu, kterou chci naprogramovat.
+; Insert ID card after DNA sample
+COMPUT0030	Tohle by mělo na kartu zapsat DNA ze vzorku.
+; Insert already programmed ID card
+COMPUT0031	Tuhle kartu už jsem naprogramovala.
+
+; Look at communications computer
+COMPUT0032	Tohle je komunikační konzola.
+; Use communications computer without power
+COMPUT0033	Nefunguje. Myslím, že nemá šťávu.
+; SUBTITLE - Initial computer screen
+COMPUT0042	Komunikační konzola - zvolte zprávu.
+; Girl summarises first computer message
+COMPUT0043	Vypadá to, že někdo se pokusil odvysílat S.O.S., ale zpráva nebyla odeslána.
+; Girl summarises second computer message
+COMPUT0044	Podle téhle zprávy by někde měl být lístek s kódem, který odemyká ovládání droida.
+; Girl summarises third computer message
+COMPUT0045	Tohle je jen reklama na nějaký koncert.
+; Girl summarises fourth computer message
+COMPUT0046	V téhle zprávě se někdo ptá na informace o zmizelé lodi.
+
+
+; Look at override key in the backup unit
+COMPUT0034	Tohle je klíč, který jsem tam zasunula.
+
+; Look at slot in backup unit
+COMPUT0035	Vypadá to jako slot na nějaký klíč.
+; Use slot in backup unit
+COMPUT0036	Bez správného klíče to nerozběhnu.
+
+; Look at life support slot
+COMPUT0037	Je prázdný. Narozdíl od slotů v ostatních modulech.
+; Use life support slot
+COMPUT0038	Tenhle už je zapnutý. Což je docela klika.
+; Use override key on life support slot
+COMPUT0039	Zdá se, že životní podpora je vždycky zapnutá. A bylo by docela hloupé ji vypínat, že?
+
+; Look at droid computer
+COMPUT0040	Sakra! Je to bez proudu.
+; Use droid computer without power
+COMPUT0041	Je to označeno jako konzola pro ovládání droida.
+; SUBTITLE - Droid control console
+COMPUT0047	Konzola pro ovládání droida - Vložte barevnou kódovou sekvenci
+
+; Look at analyser
+COMPUT0048	Tahle konzola se používá jako nějaký analyzátor.
+; SUBTITLE - Analyser
+COMPUT0049	Analyzátor vzorků - Odpojeno z důvodu přítomnosti lidské DNA v zařízení.
+; Look at analyser compartment
+COMPUT0050	To je nějaká přihrádka.
+' Girl's comment when opening compartment
+COMPUT0051	Je tu varování, že by to mohlo být nebezpečné. Nevím, jestli je dobrý nápad se v tom hrabat.
+; Look at wire
+COMPUT0052	Vypadá to, že tenhle drátek natvrdo vypne zabezpečení.
+; Take wire
+COMPUT0053	Budu potřebovat něco ostřejšího, abych tohle přeřízla.
+; Try to use axe with wire
+COMPUT0054	Je moc velká, nevejde se tam. Budu potřebovat nějaký menší nástroj.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 05 - LIVING ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+LIVING0001	Řetěz
+LIVING0002	Lednička
+LIVING0003	Propast
+LIVING0004	Torzo
+LIVING0005	Dveře
+LIVING0006	Vypínač
+LIVING0007	Skříňka
+LIVING0008	Obrazovka
+LIVING0009	Hasicí přístroj
+
+; Left cupboard regions
+LIVING0010	Plechovka limonády
+LIVING0011	Podivná krabička
+LIVING0012	Plesnivé jídlo
+LIVING0013	Krabice na jídlo
+LIVING0014	Odpadky
+LIVING0015	Odejít
+
+; Right cupboard regions
+LIVING0016	Ruka
+LIVING0017	Videodisk
+LIVING0018	Odejít
+
+; Look at chain
+LIVING0019	Řetěz drží tu divnou lednici.
+; Break chain with hands
+LIVING0020	Holýma rukama to těžko přetrhnu.
+; Axe chain with chasm closed
+LIVING0021	To by asi lednici uvolnilo, ale na zemi by to smrdělo ještě víc. Nejdřív bych měla najít způsob, jak se té lednice nadobro zbavit.
+; Axe chain with chasm opened
+LIVING0022	Něco se tam zaseklo.
+
+; Look at fire extinguisher
+LIVING0023	Veliký hasicí přístroj.
+
+; Look at swinging fridge
+LIVING0024	Lednice?! ... Visící ze stropu? A strašně to smrdí. Ráda bych se jí nějak zbavila.
+; Reach for swinging fridge
+LIVING0025	Odsud na ni nedosáhnu.
+
+; Look at left cupboard
+LIVING0026	Je to jen obyčejná skříňka.
+
+; Look at floor chasm
+LIVING0027	Co to sakra je?! To je hnus. Nevím, kam to vede a ani to vědět nechci.
+; Touch floor chasm
+LIVING0028	Nehodlám se k tomu přibližovat.
+
+; Look at metal box in cupboard
+LIVING0029	Pevná ocelová krabička. Zdá se, že je zavařená.
+
+; Look at Dr. Salt canned drink in cupboard
+LIVING0030	Jestli se nepletu, je to nějaká limonáda.
+
+; Look at mouldy foods
+LIVING0031	To jídlo pěkně zapáchá. Je celé olezlé plísní.
+; Take mouldy foods
+LIVING0032	Toho se ani nedotknu! Ještě bych z toho něco chytila.
+
+; Look at lunch box
+LIVING0033	Je to zavařená krabice na jídlo. To uvnitř jsou hrozny?
+; Take lunch box
+LIVING0034	Ne, díky. Pochybuji, že budu mít někdy TAK velký hlad.
+
+; Look at garbage
+LIVING0035	Použité ubrousky. Jsou celé špinavé.
+; Take garabage
+LIVING0036	Nevím, proč bych s sebou nosila odpadky.
+
+; Look at severed arm
+LIVING0037	To je utržená ruka! Co se stalo se zbytkem těla?
+
+; Look at video disc #1
+LIVING0038	Normální videodisk.
+
+; Look at right cupboard
+LIVING0039	Je to jen obyčejná skříňka.
+; On discovering severed arm in right cupboard
+LIVING0040	DO PRDELE! T-to je něčí ruka! Co se to tady kurva děje?
+
+; Attemt to go through medbay door while fire is still blazing
+LIVING0041	Místnost byla automaticky zapečetěna. Myslím, že skrz dveře vidím oheň!
+
+; On entering room while fridge is hanging 1st
+LIVING0042	Z té ledničky vychází příšerný puch. Je mi blbě!
+; On entering room while fridge is hanging 2nd
+LIVING0084	Ten smrad je horší a horší. Asi budu zvracet.
+; On entering room while fridge is hanging 3rd
+LIVING0085	Strašně mě pálí v krku. Asi už ten smrad dlouho nevydržím.
+
+; Look at screen
+LIVING0043	To je konzola pro přehrávání videodisků.
+; Take screen
+LIVING0044	Bez videodisku je to k ničemu.
+; Use mirror with screen
+LIVING0045	Zdá se, že na to perfektně pasuje.
+; Use metal box with screen
+LIVING0046	Ne, tak to nepůjde. Tady tu krabičku nepotřebuji. Možná bych na to měla jít víc zpříma.
+
+; Use video disc #1 with screen
+LIVING0047	Tady zastupující laboratorní technik Arthur Anderson. Nahrávám své první hlášení podle plánu. Jsem tu týden a není to takové, jak jsem očekával.
+LIVING0048	Nechávají mě pracovat v horní laboratoři na nějakých rutinních analýzách vzorků. Je to pro mě ztráta času, ale do hlavní laboratorní komory mě nepustí.
+LIVING0049	Řekl jsem veliteli Artemisi Trendovi, že jsem neletěl takovou dálku, abych dělal něco, co by zvládl cvičený šimpanz. Ale velitele to nezajímalo.
+LIVING0050	Ta práce by snad ani nebyla tak hrozná, nebýt toho napětí na palubě. Všichni jsou uzavřeni do sebe a nikdo moc nemluví...
+LIVING0051	Hned utnou hovor, když se snažím stočit řeč na to, co se stalo s mým předchůdcem a na čem tam dole pracují.
+LIVING0052	Ale jedno je jisté, nechtějí mě tady. Snad jen profesorka Ericsonová mi projevuje trochu náklonnosti.
+LIVING0053	Nicméně i ona hovoří vyhýbavě. Ale aspoň je na mě milá. Něco se tady děje... z něčeho mají strach.
+LIVING0054	Zaslechl jsem, že hlavní laboratoři říkají 'Bílá komora', ale nevím proč, jelikož dovnitř nesmím.
+LIVING0055	Goodwin a Wyles se k ní nechtějí ani přiblížit. Goodwina jsem několikrát viděl jít dovnitř, když ho potřebovali, ale vždycky tam byl jen chvíli a moc se mu tam nechtělo.
+LIVING0056	Pokusím se zjistit něco víc, ale nechci na ně moc tlačit. Už takhle je tu hodně stísněná atmosféra.
+; Use video disc #2 with screen
+LIVING0057	Poručík Richard Wyles zmizel! Včera ráno mě vzbudila prof. Ericsonová, že je v obývací místnosti schůze, kde se bude řešit, co se stalo...
+LIVING0058	Dr. Goodwin řekl, že pracoval dlouho do noci. Wylese se vydal hledat, když zjistil, že nefunguje lékařský laser.
+LIVING0059	Tohle místo není dvakrát rozlehlé, takže brzy zjistil, že ho nemůže nikde najít.
+LIVING0060	Potom prý vzbudil velitele a společně celou noc prohledávali stanici. Bezvýsledně. Dokonce i záchranný modul je na svém místě.
+LIVING0061	Jelikož jsme nezjistili nic, všichni jsou ještě víc napjatí než předtím. Dokonce i já začínám být tak paranoidní, jako jsou oni.
+LIVING0062	Myslím, že za dané situace je jen otázka času, než někomu pod tím tlakem povolí nervy. Důrazně doporučuji, abyste sem vyslali nový tým.
+LIVING0063	Pokud ti lidé neopustí tohle místo, bojím se, že se situace ještě zhorší. Nikdo už nikomu nevěří.
+LIVING0064	Nejvíc podezřívají mne, jelikož jsem tu nový. Dokonce Sarah... chci říct, prof. Ericsonová už se se mnou zdráhá mluvit.
+LIVING0065	Tráví víc a víc času dole v Bílé komoře. Vím, že je to nevědecké, ale když se jí podívám do očí, zdá se mi... taková ztracená.
+LIVING0066	Dali jsme si skleničku s Dr. Goodwinem. Za celou dobu co tu jsem to bylo poprvé, co se se mnou pořádně bavil. I když, to co říkal moc nedávalo smysl.
+LIVING0067	Je přesvědčen, že Wylese pohltil 'artefakt', který tam dole zkoumají. Zdá se, že Wyles se je snažil přesvědčit, aby se toho zbavili.
+LIVING0068	Od mého posledního hlášení jsem zaslechl zmínku o tom artefaktu několikrát. Ale zdá se, že se jejich názory na něj různí.
+LIVING0069	Jde mi z toho všeho hlava kolem. Znovu vás prosím, pošlete co nejdříve novou posádku.
+; Use video disc #3 with screen
+LIVING0070	Ne že by to k něčemu bylo, ale tohle nahrávám pro případ, že to někdo najde. Snad si to někdo přehraje. Chci, aby se lidi dozvěděli, co se tady stalo.
+LIVING0071	Zjistil jsem, že velitel zadržel má předchozí dvě hlášení. Chtěl jsem po něm vysvětlení, ale on je přesvědčen, že jsem agent společnosti Cyclavir Hypercorp.
+LIVING0072	Pohádali jsme se, ale on je přesvědčen, že mi prokazuje laskavost už jen tím, že mě nevykopnul hned jak zjistil, že posílám hlášení.
+LIVING0073	Snažil jsem se mu vysvětlit, že si společnost přála, abych odesílal svoje postřehy, ale on nechtěl nic slyšet. Konec konců, asi se mu nemůžu divit.
+LIVING0074	Ale na tom už teď nezáleží. Budu rád, když zůstanu naživu. Dr. Goodwin je mrtev. Sarah ho našla rozsekaného ve ventilačním systému.
+LIVING0075	Každému je jasné, že to nebyla nehoda. Někdo nás tu postupně vyvražďuje. Pochopitelně, všichni to dávají za vinu mně. Trend si myslí, že všechno začalo, když jsem přišel na palubu.
+LIVING0076	Zamkli mě tady v karanténní komoře. Myslím, že zapečetili místnost s ventilátorem. Netuším, čeho tím chtějí dosáhnout.
+LIVING0077	Vůbec nevím, co se tady děje. Jsem sám a mám strach. Nevím, jestli je jeden z nich vrah, nebo jestli za to za všechno může ten zatracený artefakt.
+LIVING0078	Ať tak či tak, mně už je to jedno... Já se jen chci dostat pryč z téhle prokleté stanice. Našel jsem způsob, jak otevřít karanténní komoru a pak honem k záchrannému modulu.
+LIVING0079	Nevím, jestli se mi to podaří, proto tu nechávám tuhle poslední nahrávku jako zprávu o tom, co se tady stalo. Ať už to najde kdokoliv... hodně štěstí.
+
+; Look at table switch
+LIVING0080	Tohle by mělo ovládat stolek.
+; Press table switch with mouth chasm open
+LIVING0081	Nefunguje to. Nemůžu tu tlamu zavřít.
+; Press table switch with mirror in place
+LIVING0082	To nepůjde, teď když je na tom přidělané zrcadlo.
+
+; Look at torso
+LIVING0083	Ta lednice neprojde, jelikož se tam zaseklo to zubožené tělo! Měla jsem ji radši nechat tam nahoře!
+
+
+; //////////////////////////////////////////////////////////////////////
+; 06 - SLEEPING QUARTERS
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+SLEEPQ0001	Sprchový panel
+SLEEPQ0002	Vlasy
+SLEEPQ0003	Zrcadlo
+SLEEPQ0004	Přikrývka
+SLEEPQ0005	Poznámka
+SLEEPQ0006	Videodisk
+SLEEPQ0007	Dveře
+
+; Look at blanket
+SLEEPQ0008	Přikrývka. Vypadá hřejivě.
+
+; Look at video disc
+SLEEPQ0009	Nahraný videodisk.
+
+; After nearly being sucked into space
+SLEEPQ0010	Vesmír!? Co se to sakra děje? Kam se poděla ta pláž?
+
+; Try to go through door after being sucked out once
+SLEEPQ0011	Nehodlám jít ven. Minule jsem to málem nepřežila.
+; Keep trying to go through door
+SLEEPQ0019	Opravdu si nemyslím, že to je dobrý nápad.
+; Keep trying to go through door
+SLEEPQ0020	Dobře, zkusím to.
+
+; Look into mirror
+SLEEPQ0012	Tak to jsem já. Nevypadám zle, když uvážím...
+
+; Look at notes
+SLEEPQ0013	Ručně psaná poznámka. Zvláštní... v dnešní době většina lidí používá počítače.
+
+; After player been stabbed and wakes up in sleeping quarters
+SLEEPQ0014	Co se to zatraceně právě stalo?! Bylo to vůbec doopravdy? Co to se mnou tohle místo dělá?
+
+; Look at head in the water
+SLEEPQ0015	Nejsou to...? Ale no tak, neříkejte mi, že tam jsou vlasy...
+; After head cutscene
+SLEEPQ0016	Useknutá hlava?! Copak ta věc ještě žije? ... Co mě sakra to vůbec napadá?
+
+; Look a at shower control panel
+SLEEPQ0017	Tímhle se ovládá sprchový a záchodový kout.
+; Open shower unit using panel while it is locked
+SLEEPQ0018	Nic se nestalo.
+
+; //////////////////////////////////////////////////////////////////////
+; 07 - LAB
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+THELAB0001	Mikroskop
+THELAB0002	Výtah
+THELAB0003	Reproduktor
+THELAB0004	Nástroje
+THELAB0005	Tabule
+THELAB0006	Projektor
+THELAB0007	Video přehrávač
+THELAB0008	Baterie
+THELAB0009	Laserový řezák
+THELAB0010	Skalpel
+THELAB0011	Mistička na vzorky
+THELAB0012	Dveře
+THELAB0013	Sekera
+
+; Can't see various objects while being tortured
+THELAB0014	Odsud tam nevidím.
+; Can't reach various objects while being tortured
+THELAB0015	Nedosáhnu tam.
+
+; Look at axe
+THELAB0016	Někdo zaseknul sekeru do ovládacího panelu výtahu.
+
+; Look at batteries
+THELAB0017	To jsou ty baterie z videa... to bylo příšerné.
+
+; Look at clean blackboard
+THELAB0018	Tabule je čistá. Až z toho jde hrůza.
+; Look at marked blackboard
+THELAB0019	Na tabuli jsou nějaké divné značky, nakreslené křídou.
+; Look at heavily marked blackboard
+THELAB0020	Ten tvar. Vím, že už jsem ho viděla... ale kde?
+; Wipe clean blackboard
+THELAB0021	Tabule už je smazaná.
+; Wipe marked blackboard
+THELAB0022	Nechci ty značky smazat. Myslím, že mají nějaký význam.
+; Examine fully marked blackboard (This is foreshadowing for the comedy ending)
+THELAB0051	To je ten artefakt. Už si vzpomínám. Tohle všechno už jsem viděla.
+THELAB0052	Ale cítím, že se něco blíží. Něco jiného... něco překvapivého!
+
+; Look at elevator
+THELAB0023	Kam to asi vede?
+; Use elevator
+THELAB0024	Sakra! Nefunguje... Vypadá to, že někdo rozmlátil ovládací panel.
+
+; Look at laser cutter
+THELAB0025	Možná na něj dosáhnu.
+; On taking the cutter
+THELAB0026	Do prdele! Mám sice řezák, ale nefunguje.
+
+; Look at scalpel
+THELAB0027	Lékařský skalpel.
+
+; Look at video player
+THELAB0028	Tohle je pěkně zastaralý kousek. Přehrává to videokazety.
+; Look at video player while strapped down
+THELAB0029	Všechno to začalo, když jsem strčila kazetu do přehrávače.
+; Use video player
+THELAB0030	Bez videokazety je to k ničemu.
+; Use video player while strapped down
+THELAB0031	Kdybych tak mohla nějak zastavit přehrávání. Třeba by to přestalo.
+; After inserting tape into player
+THELAB0032	Co to sakra...? To jsem já!
+; After throwing cutter at video player
+THELAB0033	Je mi blbě... co to sakra bylo?
+; Use video discs with video player
+THELAB0050	Na tomhle videodisk nepřehraju. Je to na přehrávání starých videokazet.
+
+; Look at projector system
+THELAB0034	Vypadá to jako starý projektor. Nejspíš je připojený k tomu stařičkému videu.
+; Look at projector system while strapped down
+THELAB0035	Projektor promítá to úchylné video z přehrávače.
+; Use projector system
+THELAB0036	Sám o sobě mi moc nepomůže. Možná bych měla zkusit spíš ten video přehrávač.
+
+; Look at sample dish
+THELAB0037	Nějaký vzorek tkáně na sklíčku. Je na něm jmenovka.
+
+; Look at scope
+THELAB0038	Tohle poznávám, je to proto-analyzátor Zentradi třídy 7777.
+; Use scope
+THELAB0039	Abych ho mohla použít, potřebovala bych nějakou nádobu se vzorkem tkáně.
+; Use sample with scope
+THELAB0040	Tohle poznávám. Tkáň byla extrahována za účelem uchování vzorku DNA.
+
+; Look at speaker
+THELAB0041	Reproduktor. Taky jsem měla takové, když jsem byla děcko.
+; Use speaker
+THELAB0042	Tady toho moc nenadělám.
+
+; Look at tools
+THELAB0043	Široký výběr krvavých a rezatých laboratorních nástrojů.
+; Take tools
+THELAB0044	Jsou přirezlé ke stolu. Stejně pochybuji, že by v tomhle stavu byly k něčemu dobré.
+
+; Try to walk through welded door
+THELAB0045	Jsou svařené, tudy neprojdu.
+; Try to open welded door
+THELAB0046	Abych se dostala skrz tyhle dveře, budu potřebovat něco opravdu silného.
+; Look at welded door
+THELAB0047	Ty dveře někdo svařil k sobě. Proč asi?
+; Use axe on welded door
+THELAB0048	Tohle nepůjde. Dveře jsou velice tlusté a navíc svařené k sobě.
+; Place explosives in front of welded door
+THELAB0049	To bychom měli. Teď ještě přijít na nějaký způsob, jak to odpálit...
+
+; //////////////////////////////////////////////////////////////////////
+; 08 - MEDBAY
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+MEDBAY0001	Postel
+MEDBAY0002	Špinavá zeď
+MEDBAY0003	Ano
+MEDBAY0004	Ne
+MEDBAY0005	Ovládací panel
+MEDBAY0006	Sprchový kout
+MEDBAY0007	Videodisk
+MEDBAY0008	Tělo
+MEDBAY0009	Stůl s laserem
+MEDBAY0010	Rozříznutá krabička
+MEDBAY0011	Přihrádka na baterie
+MEDBAY0012	Dveře
+MEDBAY0013	Skříňka na dokumenty
+
+; Eye box regions
+MEDBAY0014	Odejít
+MEDBAY0015	Oči
+
+; Filing cabinet regions
+MEDBAY0016	Odejít
+MEDBAY0017	Zásuvky
+MEDBAY0018	Rozbitá zásuvka
+MEDBAY0019	Obálka
+
+; Look at bed with full body
+MEDBAY0020	No, měli bychom to v celku... Ale vůbec netuším, proč jsem to vlastně delala. Vypadá tak chladně.
+; Look at bed with partial body
+MEDBAY0021	Části těla perfektně pasují do těch vytlačených míst na posteli.
+; Look at bed with full body under blanket
+MEDBAY0022	Vypadá mnohem méně strašidelně, když je přes něj deka. Asi bych ho měla nechat na pokoji.
+; Look at bed with nothing on it
+MEDBAY0023	Na posteli jsou vypáleny rýhy ve tvaru těla.
+; Use bed with body parts on it
+MEDBAY0024	Ta postel už je jaksi obsazena.
+; Use bed with nothing on it
+MEDBAY0025	Nemyslím, že bych usnula, ani kdybych chtěla.
+; Use eyes on bed without head
+MEDBAY0026	Nemám kam zasadit oči. O co se to tady vlastně snažím?
+; Complete body message #1
+MEDBAY0027	A je to, je v celku!
+; Complete body message #2
+MEDBAY0028	... ... ... ... nic se nestalo ...
+; Complete body message #3
+MEDBAY0029	Ani nevím, co jsem vlastně čekala. Co to se mnou tohle místo dělá? Proč jsem sem nanosila ty části těla?
+; Use blanket on complete body
+MEDBAY0030	Ano, takhle to vypadá o něco důstojněji.
+; Use blanket on incomplete body
+MEDBAY0031	Ještě není kompletní.
+; Use Dr Salt on complete body
+MEDBAY0032	Tomu už nepomůže ani Dr. Salt.
+; Use Dr Salt on incomplete body
+MEDBAY0033	Nechci namočit prostěradla.
+
+; Look at body in quarantine chamber
+MEDBAY0034	Ty části těla... jak se tam dostaly?
+; After players has become trapped in quarantine chamber
+MEDBAY0035	Jsem v pasti!
+; Try to touch body in chamber
+MEDBAY0036	Dovnitř se nedostanu.
+
+; Look at broken drawer
+MEDBAY0037	Pečeť na zásuvce je porušená.
+
+; Look at locked drawer
+MEDBAY0038	Většina zásuvek je zamčená. Nenapadá mě žádný způsob, jak je odemknout.
+; Try to open locked drawer
+MEDBAY0039	Jsou nečekaně pevné. Pochybuji, že se mi je podaří otevřít.
+; Try to axe locked drawer
+MEDBAY0040	Takhle je neotevřu. Maximálně bych je poškrábala.
+; Try to scalpel locked drawer
+MEDBAY0041	Obávám se, že ten zámek vydrží daleko víc.
+
+; Look at brown envelope
+MEDBAY0042	Hnědá obálka, uvnitř něco je.
+
+; Look at power compartment
+MEDBAY0043	Pod laserovou jednotkou je přihrádka na baterie.
+; Put batteries in compartment
+MEDBAY0044	Jo, pasují tam. Teď by měl být laser pod proudem.
+
+; Look at video disc
+MEDBAY0045	Nahraný videodisk.
+; Try to take video disc in quarantine chamber
+MEDBAY0046	Nedostanu se dovnitř komory.
+
+; Look at eyes in box
+MEDBAY0047	To je hnus! Kterej úchylnej parchant zavařil oči do krabičky?
+
+; Look at filing cabinet
+MEDBAY0048	To je skříňka na dokumenty.
+
+; Look at medical laser
+MEDBAY0049	Lékařský laser.
+; Try to fire laser into fridge
+MEDBAY0050	Nebudu riskovat zásah do té lednice. Nevím, co by se stalo, ale pochybuji, že by to bylo něco pěkného.
+; Try to fire unpowered laser
+MEDBAY0051	Nefunguje. Možná nemá napájení.
+; Box unsealed using laser
+MEDBAY0052	Laser rozřízl krabičku. Doufám, že nepoškodil obsah. Ať už je v ní cokoliv...
+
+; Look at quarantine panel
+MEDBAY0053	Hlasem ovládaný panel, který ovládá karanténní komoru.
+; Use quarantine panel
+MEDBAY0054	Reaguje pouze na hlas autorizovaného lékaře. Tohle v životě nerozchodím.
+; Use head with quarantine panel
+MEDBAY0055	Nevypadá to, že by chtěla mluvit. Počítám, že tenhle člověk už své řekl.
+
+; Look at shower unit
+MEDBAY0056	Standardní sprchová jednotka.
+; Try to use shower unit
+MEDBAY0057	Nejspíš je to rozbité, nedá se otevřít.
+; Try to use shower unit from outside quarantine chamber
+MEDBAY0058	Nedostanu se dovnitř do komory.
+
+; Look at opened metal box
+MEDBAY0059	Laser tu krabičku pěkně rozřízl.
+
+; Look at wall in quarantine chamber
+MEDBAY0060	V té špíně je vytlačen nějaký nápis.
+; SUBTITLE - Wall message 1
+MEDBAY0061	Chceš odsud pryč?
+; SUBTITLE - Wall message 2
+MEDBAY0062	A riskovat rozšíření nákazy?
+; SUBTITLE - Wall message 3
+MEDBAY0063	Běž... Buď připravena nést následky!
+
+; //////////////////////////////////////////////////////////////////////
+; 09 - BEACH
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+ABEACH0001	Dveře
+ABEACH0002	Moře
+ABEACH0003	Les
+
+; Look at forest
+ABEACH0004	Ty stromy jsou skutečné... ale jak je to možné?
+; Use forest
+ABEACH0005	Tudy neprojdu, porost je příliš hustý.
+
+; Look at sea
+ABEACH0006	Tohle fakt vypadá jako moře. Co se to tu děje?
+; Use sea #1
+ABEACH0007	Je to skutečně voda... Nechápu, jak je tohle možné. Vždyť jsem byla na vesmírné stanici...
+; Use sea #2
+ABEACH0008	Možná bych mohla odplavat, ale nezdá se, že by byla v dohledu nějaká pevnina.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 10 - FAN ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+THEFAN0001	Šachta
+THEFAN0002	Ventilátor
+THEFAN0003	Dveře
+
+; Look at grinder
+THEFAN0004	Je to pokroucený ventilátor.
+; Touch grinder
+THEFAN0005	Je pokrytý nějakým svinstvem. Co to je?
+
+; Walk into sealed vent
+THEFAN0006	Je zavařená, nedostanu se tam.
+; Look at vent
+THEFAN0007	Jestlipak bych se tudy dostala dolů pod výtahovou šachtu?
+; Use vent
+THEFAN0008	S tím panelem nehnu.
+; Use axe on vent
+THEFAN0009	Sekera na něm neudělá ani škrábnutí.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 11 - THE WHITE CHAMBER
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+WCHAMB0001	Šachta
+WCHAMB0002	Artefakt
+WCHAMB0003	Tělo
+WCHAMB0004	Přístroje
+
+; Look at artefact
+WCHAMB0005	Tak to je on. To je ten artefakt. Nevím, co říct.
+; Touch artefact
+WCHAMB0006	Je teplý a vibruje. Na omak nepřipomíná stroj.
+
+; Look at body before endgame
+WCHAMB0007	Jeho tvář... chudák! Co se mu sakra stalo?
+; Look at body after endgame
+WCHAMB0008	To jsem udělala já... To já jsem ho zabila! Vypustila jsem do místnosti toxin a dívala jsem se, jak umírá. Už zbyl jenom on a zabít ho se zdálo tak snadné.
+; End game text #01
+WCHAMB0009	Nazdar Sarah. Tak se znovu setkáváme. Ale vypadá to, že se role obrátily. Pokud si vzpomínám, posledně jsem to byl já, kdo byl uvězněn uvnitř a doufal ve slitování.
+; End game text #02
+WCHAMB0010	Záleželo mi na tobě, naletěl jsem ti na ty falešné úsměvy. A za to jsem se stal tou troskou, co leží támhle na podlaze.
+; End game text #03
+WCHAMB0011	Už tomu začínáš rozumět, Sarah? Tomu, co jsi mi povedla... co jsi provedla nám všem? Jakou cenu jsme zaplatili za tvou posedlost mocí artefaktu?
+; End game text #04
+WCHAMB0012	Hmpf, aspoň můžu říct, že jsem dokázal, co se tobě nepodařilo. Artefakt mi odpověděl. Má krev, má nenávist a má touha po odplatě ho aktivovaly.
+; End game text #05
+WCHAMB0013	Dokázal jsem využít tu sílu, pro kterou jsi zabíjela, a teď jsme oba uvězněni v téhle prokleté smyčce. Věčná noční můra, která se bude donekonečna opakovat, dokud si nezasloužíš spasení.
+; End game text #06
+WCHAMB0014	Já jsem tvým soudcem. Prohlédl jsem tvou duši. Dostala jsi další šanci zalitovat svých činů.
+; End game text #07
+WCHAMB0015	Když jsi začala znovu s čistým štítem, našla jsi v sobě soucit a výčitky? Nebo jsi šla opět jen bezohledně za svým cílem?
+; End game text #08
+WCHAMB0016	Než vyslechneme rozsudek, měla by sis vzpomenout... vzpomenout, co jsi mi provedla.
+; End game text #09
+WCHAMB0017	Je dokonáno. Prošli jsme si vším znovu, tam kde vše končí a začíná. Rozhodnutí padlo. A tobě teď zbývá jediné, odejít... hned!
+; End game text #10
+WCHAMB0018	Záchranný modul ve skladišti je nyní odemčen a uvnitř najdeš svůj rozsudek. Cestou tam si na všechno vzpomeneš. Na to, čím sis tohle zasloužila.
+; End game text #11
+WCHAMB0019	Sbohem, Sarah... Doufám, že už se nikdy nebudeme muset setkat.
+; Optional end game text. Only shown if player has good ending
+WCHAMB0025	Změnil jsem orbitu stanice. Za hodinu narazí do blízké planety.
+; Touch body after endgame
+WCHAMB0020	Pořád je teplý. Nehnu s ním. Je to, jako kdyby se jeho krev přitavila k artefaktu. Nemůžu uvěřit, že jsem tohle opravdu udělala.
+
+; Look at equipment #1
+WCHAMB0021	Tenhle přístroj nejspíš zaznamenává jakékoliv výstupy artefaktu.
+; Use equipment #1
+WCHAMB0022	Zdá se, že z artefaktu vychází nějaké podivné záření.
+
+; Look at equipment #2
+WCHAMB0023	Toto zařízení provádí hloubkovou strukturální analýzu.
+; Use equipment #2
+WCHAMB0024	Nezdá se, že by tu byly nějaké použitelné výstupy.
+
+; //////////////////////////////////////////////////////////////////////
+; 12 - NAVIGATION ROOM (BLEEDING)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NBLEED0001	Příšera
+
+; //////////////////////////////////////////////////////////////////////
+; 13 - MED BAY (DROID)
+; //////////////////////////////////////////////////////////////////////
+
+; Action descriptions (chamber refers to quarantine chamber)
+MEDBDR0001	Otevřít dveře
+MEDBDR0002	Otevřít komoru
+MEDBDR0003	Uhasit oheň
+
+; Droid responses
+MEDBDR0004	Jednotka není autorizována porušit karanténu.
+MEDBDR0005	Jednotka není vybavena hasicím přístrojem.
+MEDBDR0006	Dveře byly uzamčeny kvůli požárnímu poplachu.
+
+; //////////////////////////////////////////////////////////////////////
+; 14 - LIVING ROOM (GRATED)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+LGRATE0001	Dveře
+
+; //////////////////////////////////////////////////////////////////////
+; 15 - CORRIDOR
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+CORRID0001	Chodba
+CORRID0002	Oko
+CORRID0003	Tělo
+
+; Look at body
+CORRID0004	Bezhlavé tělo... je... ukřižováno hlavou dolů... Jsem v pekle?
+; Try to touch body
+CORRID0005	Ještě že je mezi námi ten plot.
+
+; Look at eye
+CORRID0006	Do hajzlu... copak tady umřu?
+; Try to touch eye
+CORRID0007	Drž ode mě tu krvavou věc dál!
+
+; //////////////////////////////////////////////////////////////////////
+; 16 - COMPUTER ROOM (BLOODY)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+CBLOOD0001	Trubka
+CBLOOD0002	Ruka
+CBLOOD0003	Dveře
+CBLOOD0004	Panel
+CBLOOD0005	Tělo
+
+; Look at severed arm
+CBLOOD0006	Utržená ruka.
+; Take severed arm
+CBLOOD0007	Další ruka. To je naprosto šílené...
+
+; Look at body chamber
+CBLOOD0008	Někdo je uvězněn uvnitř. Kdybych tak mohla tu komoru nějak rozbít.
+; Break body chamber
+CBLOOD0009	Je to příliš pevné, než aby se to dalo rozbít holou rukou.
+; Axe body chamber
+CBLOOD0010	Zatraceně, ta komora musí být nějak vyztužená.
+
+; Look at cleaning control
+CBLOOD0011	To je ovládání nouzového čištění nádrže.
+; After control used #1
+CBLOOD0012	Do prdele! Snažila jsem se mu pomoct... Odpusť...
+; After control used #2
+CBLOOD0013	Podle zvuku to vypadá, že se něco zaseklo v trubkách. Co jsem to udělala?
+; Use control after body flushed
+CBLOOD0014	Nádrž je prázdná. Nemá smysl ji čistit.
+
+; Look at pipe with arm in it
+CBLOOD0015	Je tam zaseklá ruka, určitě je to ruka toho člověka. Proč jen mám pocit, že to nebyla náhoda?
+; Try to break pipe with hands
+CBLOOD0016	Rukama tu trubku neotevřu.
+
+; //////////////////////////////////////////////////////////////////////
+; 17 - NAVIGATION ROOM (CHASM)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NCHASM0001	Propast
+NCHASM0002	Dveře
+
+; Look at chasm
+NCHASM0003	Ani nedohlédnu na dno! Kde to sakra jsem?
+; Use chasm
+NCHASM0004	Netroufnu si spustit se dolů.
+
+; //////////////////////////////////////////////////////////////////////
+; 18 - FREEZER
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+FREEZE0001	Kusy masa
+FREEZE0002	Mrazák
+FREEZE0003	Dveře
+FREEZE0004	Noha
+FREEZE0005	Uvězněné tělo
+FREEZE0006	Mrznoucí muž
+
+; Look at closed freezer
+FREEZE0007	Je to obrovská mrazící jednotka.
+; On opening freezer and finding shivering body inside
+FREEZE0008	Pro Krista pána...
+
+; Look at leg
+FREEZE0009	Z pod toho... nevím co to je... vyčuhuje noha.
+; Try to take leg
+FREEZE0010	Pokud tu nohu chci... budu ji muset oddělit.
+; Try to scalpel leg
+FREEZE0011	Ne, tím bych nepřesekla kost.
+; Axe leg off
+FREEZE0012	Skvěle... teď mám useknutou nohu.
+
+; Look at freezing man
+FREEZE0013	Vypadá to, že mu je strašná zima. Možná bych ho mohla zahřát.
+; Use blanket on man
+FREEZE0014	Dobrá myšlenka, ale v tomhle stavu už mu to asi moc nepomůže.
+; Use dr salt on man
+FREEZE0015	Už takhle vypadá dost zmrzlý. Nemyslím, že chlazená limonáda je to, co by teď zrovna potřeboval.
+; After player has touchd man and room has transformed
+FREEZE0016	Bože můj, to už se nedá popsat.
+
+; Look at meat
+FREEZE0017	Visí tu kusy čerstvého masa. Vypadá poživatelně.
+; Try to take meat
+FREEZE0018	Ta věc je nejspíš těžší než já. Krom toho, já syrové maso moc nemusím.
+; Axe down meat
+FREEZE0019	Kus masa by se asi dal useknout, ale fakt ho nechci nosit s sebou.
+; Use scalpel on meat
+FREEZE0020	Možná až budu mít hlad, tak si kus masa odkrojím. Ale teď zrovna hlad nemám.
+
+; Look at trapped corpse
+FREEZE0021	Zdá se, že je to tělo uvězněné pod tou plachtou. Pro jeho dobro doufám, že už je po smrti.
+; Touch trapped corpse
+FREEZE0022	Z čeho to je? Nevypadá to jako plastik.
+; Axe trapped corpse
+FREEZE0023	Ani sekera to neprorazí. Nechápu.
+; Use scalpel on meat
+FREEZE0024	Skalpel na tom nenechal ani škrábnutí. Nechápu, co je to za materiál.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 19-26 - NORMAL STATION ROOMS
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NORMAL0001	Dveře
+NORMAL0002	Ventilátor
+NORMAL0018	Chodba
+NORMAL0005	Sprcha
+NORMAL0009	Konzola
+NORMAL0013	Podlahová deska
+NORMAL0017	Záchranný modul
+
+; Look at fan
+NORMAL0003	Hodila jsem Dr. Goodwina do ventilátoru. Ani jsem to dělat nemusela, ale měla jsem pocit, že po mně jde. Pořád žádal kapitána, aby artefakt vystřelil do vesmíru.
+; Touch fan
+NORMAL0004	Potom co jsem udělala Goodwinovi bych musela být blázen, abych se k tomu přiblížila.
+
+; Look at shower #1
+NORMAL0006	Velitel Trend mi nedal na vybranou. V té chvíli už jsme zbyli jen já, on a Arthur. Sice tomu špiclovi nedůvěřoval, ale také nevěřil, že vrah je on.
+; Look at shower #2
+NORMAL0007	Asi mi to viděl v očích... Tak jsem si vzala ty jeho.
+; Touch shower
+NORMAL0008	Nechci se dívat dovnitř.
+
+; Look at console #1
+NORMAL0010	Dick Lee byl první. Byl to můj asistent. Pořád říkal, že je příliš nebezpečné, abychom u artefaktu pracovali sami.
+; Look at console #2
+NORMAL0011	Pohádali jsme se, protože chtěl podpůrný tým. Řekla jsem mu, že to zvládneme sami. Nechtěla jsem... Bylo mi jasné, že by to nikdy nepochopili.
+; Touch shower
+NORMAL0012	Nezvládla bych pohled na jeho ostatky, pokud tam ještě jsou.
+
+; Look at floor panel #1
+NORMAL0014	Když jsem dostala Wylese, zrovna kontroloval záznamy z kamer. Bylo jasné, že by dříve či později objevil Dickovo tělo v navigační konzole.
+; Look at floor panel #2
+NORMAL0015	To s Dickem byla nehoda, takže asi až teď se to všechno vymklo kontrole. Byla jsem v pasti. Nemohla jsem myslet na nic jiného, než na ten zatracený artefakt.
+; Touch floor panel
+NORMAL0016	Teď už je pozdě. Nechci vidět, co je pod tím schované.
+
+; //////////////////////////////////////////////////////////////////////
+; 27 - STORE ROOM (MES)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+STOMES0001	Doleva
+STOMES0002	Výbušnina
+STOMES0003	Dveře
+STOMES0004	MES konzole
+STOMES0005	Odejít
+
+; Look at console
+STOMES0006	TO JE TA MES KONZLE, NA KTERÉ HRAJI.
+; Use console
+STOMES0007	NEROZEZNÁM TLAČÍTKA, ABYCH TO MOHLA VYPNOUT.
+
+; Look at explosive
+STOMES0008	VÝBUŠNINA... VYPADÁ NEBEZPEČNĚ.
+; Use explosive
+STOMES0009	VÍC TOHO NEPOBERU.
+
+; Walk to freezer door
+STOMES0010	DVEŘE JSOU ZAVŘENÉ.
+; Look at freezer door
+STOMES0011	TO JSOU DVEŘE DO MRAZÁKU.
+; Use freezer door
+STOMES0012	NEVIDÍM NA RUKOJEŤ, GRAFIKA JE MÁLO DETAILNÍ!
+
+; Try to leave room
+STOMES0013	OBRAZOVKA SE NEPOSUNUJE. VYPADÁ TO, ŽE JSEM TU UVÍZLA! MUSÍM NAJÍT NĚJAKÝ JINÝ ZPUSOB, JAK TU HRU UKONČIT.
+
+; On entering MES room
+STOMES0014	Co se to sakra děje? Neříkejte mi, že jsem se dostala do té hry!
+
+; //////////////////////////////////////////////////////////////////////
+; 28 - DEBUG ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+DEBUGR0001	Sekvence v koridoru
+DEBUGR0002	Krvavá navigační místnost
+DEBUGR0003	Spustit hru
+DEBUGR0004	Ovládání droida
+DEBUGR0005	Bílá komora
+DEBUGR0006	Hlava ve sprše
+DEBUGR0007	Mrazák
+DEBUGR0008	Ošetřovna
+DEBUGR0009	Normální stanice
+DEBUGR0010	Ladící místnost
+
+; Warning message
+DEBUGR0011	Vítejte v ladící místnosti hry White Chamber. Nechali jsme vám tu tuhle místnost, abyste mohli nahlédnout do zákulisí vývoje hry.
+DEBUGR0012	Nedoporučujeme začít hrát z této místnosti. Slouží jenom k testování jednotlivých pasáží hry.
+
+; //////////////////////////////////////////////////////////////////////
+; 29 - COMEDY ENDING
+; //////////////////////////////////////////////////////////////////////
+
+; Okay this is going to be quite difficult to translate into any language.
+; The comedy ending is meant to be surrealist humor and makes very little sense in English
+; so I don't know how well it will go into other languages. So just do your best really.
+
+; All the character shout surprise to reveal the whole game has been a surprise birthday prank
+COMEDY0001	PŘEVAPENÍ!!!
+; The doctor is explaining it's been a well planned party
+COMEDY0002	Tajně jsme plánovali tuhle narozeninovou párty v temných koutech.
+; The captain is meant to sound very dumb
+COMEDY0003	Ho hoo... Hezký svíčky. Ho ho ho...
+; This character is very excitable. Meant to be a bit like Beavis and Butthead
+COMEDY0004	Jo! Joo! Svíčky!
+; The doctor is talking about cutting the cake in very overly scientific manner.
+COMEDY0005	Přinesl jsem úhloměr, abychom mohli naprosto přesně naporcovat dort.
+; This character talks in bad japanese accent and only talks about Japan
+COMEDY0006	Jako japonskej ninja.
+; Again the captain makes a dumb comment
+COMEDY0007	V Japonsku jsem ještě nebyl. Ho ho ho ho ho...
+; The excitable guy is eager for food
+COMEDY0008	Kurňa! Rozkroj ten dort! Rozkroj ten dort, ty zatracenej všiváku!
+; Another pointless japanese comment
+COMEDY0009	Jako japonskej samurai.
+; The dumb captain is sad about no one attending his birthday.
+COMEDY0010	Škoda, že nikdo nepřišel, když jsem měl narozeniny já. Ho ho oooooh...
+; The doctor says this is because his birthday couldn't be divided by the mathematical value pi
+COMEDY0011	Blázínku. To je přece proto, jelikož tvoje narozeniny připadly na den, který není dělitelný hodnotou Pí.
+; This all ends on a bad pun. The excitable guy assumes the doctor was talking about pie (instead of pi)
+; and comments it's a cake not a pie.
+COMEDY0012	Pí? Sám jdi do pí, ty tupoune! Já chci ten dort!
+
+; //////////////////////////////////////////////////////////////////////
+; 30 - ENDING SCREEN
+; //////////////////////////////////////////////////////////////////////
+
+; Interface message
+ENDING0001	Děkujeme, že sis zahrál naši hru...
+ENDING0002	Konec
+ENDING0003	Ukončit hru...
+
+; Ending descriptions
+ENDING0004	Zakusil jsi 'prokleté' zakončení.
+ENDING0005	Vysloužil sis zakončení 'spasení'.
+ENDING0006	Protrpěl jsi zakončení 'útrpné'.
+ENDING0007	Byl jsi zmaten zakončením 'komediálním'.
+ENDING0008	Čekáš na zakončení 'tlející'.
+ENDING0009	Nadýchal ses zakončení 'jedovatého'.
+ENDING0010	Vypadl jsi do zakončení 'vesmírného'.
+ENDING0011	Neunikl jsi zakončení 'elektrickému'.
+
+; Easter eggs
+ENDING0012	Zkus zadat kód pro ovládání droida předtím, než získáš poznámku.
+ENDING0013	Zkus použít MES konzoli třikrát po sobě.
+ENDING0014	Zkus stisknout klávesu HOME pro vyvolání ladící místnosti vývojářů.
+ENDING0015	Zkus klávesy F10 a F11 pro přepnutí alternativního ovládacího menu.
+
+
+
+; //////////////////////////////////////////////////////////////////////
+; A1 - ITEM TEXT
+; //////////////////////////////////////////////////////////////////////
+
+; Looks at axe
+ANITEM0001	Je to nabroušená sekera. Ta se bude jistě hodit.
+; Touch axe
+ANITEM0002	Mohla bych si ublížit. Opatrně s tím!
+
+; Look at batteries
+ANITEM0003	Průmyslové baterie. Velice silné. A já to zatraceně dobře vím.
+
+; Touch batteries
+ANITEM0004	Už jsem si od nich vytrpěla dost.
+
+; Look at blanket
+ANITEM0005	Pohodlná přikrývka.
+; Touch blanket
+ANITEM0006	Je měkká a příjemná na dotek. Ale smrdí...
+
+; Look at brown envelope
+ANITEM0007	V obálce něco je.
+; Open brown envelope
+ANITEM0008	Uvnitř byla videokazeta.
+
+; Look at video disc
+ANITEM0009	Je to standardní nahraný videodisk. Značka Microcosm Disc, kvalita za nejlepší cenu.
+
+; Use video disc
+ANITEM0010	Abych si ho mohla přehrát, budu potřebovat patřičný přehrávač.
+
+; Look at Dr Salt
+ANITEM0011	Červená plechovka šumivého nápoje.
+; Use Dr Salt
+ANITEM0012	Napila bych se, ale páchne to trochu jako mrtvá ryba.
+
+; Look at explosive
+ANITEM0013	Píše se tu 'vysoce výbušné'.
+; Use explosive
+ANITEM0014	Kdo si hraje s ohněm, ten se spálí. Kdo si hraje s tímhle... raději na to nemyslet.
+
+; Look at extinguisher
+ANITEM0015	Veliký hasicí přístroj.
+; Use extinguisher
+ANITEM0016	Nic tady nehoří, nechci ho zbytečně vyplýtvat.
+
+; Look at eyes
+ANITEM0017	Pár vydloubnutých očí.
+; Use eyes
+ANITEM0018	Mám fobii i z dotýkání se svých očí.
+
+; Look at head
+ANITEM0019	Oddělená hlava. Má vydloubnuté oči.
+; Use head
+ANITEM0020	Je z té sprchy pořád trochu vlhká. A ten zápach...
+
+; Look at ID card
+ANITEM0021	Identifikační karta, která se používá v bezpečnostních skenerech.
+; Use ID card
+ANITEM0022	Bez DNA sekvenceru s ní moc nenadělám.
+
+; Look at laser cutter
+ANITEM0023	Ruční laserový řezák. Myslím, že nefunguje.
+; Use laser cutter
+ANITEM0024	Nejsou v něm baterie.
+
+; Look at left arm
+ANITEM0025	Utržená ruka... Skvělé!
+; Use left arm
+ANITEM0026	Moc toho s ní nenadělám.
+
+; Look at leg
+ANITEM0027	To je noha, kterou jsem usekla v mrazáku.
+; Use leg
+ANITEM0028	Pořád je trochu studená.
+
+; Look at mirror
+ANITEM0029	Vyleštěné zrcadlo.
+; Use mirror
+ANITEM0030	Vypadá hladce, nechci ho zamazat.
+
+; Look at note
+; IMPORTANT NOTE: In English the first letters of the words Patience While You Grill Bacon Rind
+; correspond to Purple White Yellow Green Blue Red on the droid control computer. You will need
+; a nonsensical message that has words starting with the same letter as the words for those
+; colours in your language for the riddle to work. I'm not sure how best to handle this in pictorial
+; languages like Chinese/Japanese.
+ANITEM0031	To je ta poznámka, kterou jsem našla. Stojí tu 'Faleš Bývá Životem Zdolána Mnohem Častěji'. To zní dost divně... co to asi znamená?
+; Use note
+ANITEM0032	Dala by se z ní složit vlaštovka, ale mohla bych ji později postrádat.
+
+
+; Look at override key
+ANITEM0033	To je klíč pro manuální aktivaci systémů stanice.
+; Use override key
+ANITEM0034	Budu muset najít ovládací panel, do kterého ten klíč bude pasovat.
+
+; Look at right arm
+ANITEM0035	Lidská ruka.
+; Use right arm
+ANITEM0036	Je taková měkká...
+
+; Look at sample dish
+ANITEM0037	Vzorek tkáně na sklíčku. Na štítku je napsáno 'Velitel Trend'. Tyhle věcičky se prý špatně shánějí.
+; Use sample dish
+ANITEM0038	Nechci to otvírat, mohla bych ten vzorek zničit.
+
+; Look at scalpel
+ANITEM0039	Je to tupý a rezavý skalpel.
+; Use scalpel
+ANITEM0040	Sice není moc ostrý, ale měla bych si dát pozor. Bůh ví, co s ním kdo naposled řezal.
+
+; Look at steel box
+ANITEM0041	Ocelová krabička. Zdá se být pevně zavřená.
+; Use steel box
+ANITEM0042	Nemůžu ji otevřít. Copak je asi uvnitř?
+; Use scalpel on steel box
+ANITEM0043	Sakra! Je zatraceně pevně zavřená. Dokonce ani sekera ji neotevře.
+; Use axe on steel box
+ANITEM0044	Je pevně zavřená. To se spíš zlomí ten skalpel, než aby se otevřela.
+; Use fire extinguisher on steel box
+ANITEM0045	Ona nehoří, ona je jen pevně zavřená. Tohle nedává smysl.
+
+; Look at torso
+ANITEM0046	To je celé lidské torzo. Sama jsem překvapená, že to vůbec unesu.
+; Use torso
+ANITEM0047	Nechci s tím nic dělat.
+
+; Look at VCR tape
+ANITEM0048	Nepopsaná videokazeta.
+; Use VCR tape
+ANITEM0049	Tohle přehraju jedině na starém videopřehrávači.
+
+
+; //////////////////////////////////////////////////////////////////////
+; A2 - ITEM NAMES
+; //////////////////////////////////////////////////////////////////////
+
+; Names of game items
+ITEMIS0001	Sekera
+ITEMIS0002	Výbušniny
+ITEMIS0003	Hasicí přístroj
+ITEMIS0004	ID karta
+ITEMIS0005	Ovládací klíč
+ITEMIS0006	Baterie
+ITEMIS0007	Přikrývka
+ITEMIS0008	Obálka
+ITEMIS0009	Videodisk #1
+ITEMIS0010	Videodisk #2
+ITEMIS0011	Videodisk #3
+ITEMIS0012	Dr. Salt
+ITEMIS0013	Oči
+ITEMIS0014	Hlava
+ITEMIS0015	Laserový řezák
+ITEMIS0016	Pravá ruka
+ITEMIS0017	Noha
+ITEMIS0018	Zrcadlo
+ITEMIS0019	Poznámka
+ITEMIS0020	Levá ruka
+ITEMIS0021	Vzorek tkáně
+ITEMIS0022	Skalpel
+ITEMIS0023	Ocelová krabička
+ITEMIS0024	Torzo
+
+; //////////////////////////////////////////////////////////////////////
+; A3 - MISSED WORDS
+; //////////////////////////////////////////////////////////////////////
+
+; Text for the analyser in the computer room
+EXTRAS0001	Panel
+EXTRAS0002	Wire
+EXTRAS0003	Leave
+EXTRAS0004	Analyser

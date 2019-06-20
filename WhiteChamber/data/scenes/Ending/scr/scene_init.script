@@ -1,0 +1,192 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(320, 300);
+actor.Direction = DI_DOWN;
+actor.Active = false;
+
+Game.FadeIn();
+Game.Interactive = true;
+
+
+PlayAmbient(AMBIENT_NORMAL, "NONE");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateEnding;
+
+
+// default values
+if(StateEnding==null)
+{
+  StateEnding.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+// Debug variable
+//EndingType = END_GOOD;
+
+var winthanks = Game.LoadWindow("interface\system\endingthanks.window");
+var winquit = Game.LoadWindow("interface\system\endingquit.window");
+var tempwinc = Game.LoadWindow("interface\system\endingtype.window");
+var TypeWindow = tempwinc.GetWidget("type");
+var tempwind = Game.LoadWindow("interface\system\endingeaster.window");
+var EasterWindow = tempwind.GetWidget("easter");
+
+winthanks.Active = true;
+winquit.Active = true;
+
+var BackG = Scene.GetNode("background");
+var Clue1 = Scene.GetNode("Clue1");
+var Clue2 = Scene.GetNode("Clue2");
+var Clue3 = Scene.GetNode("Clue3");
+var Clue4 = Scene.GetNode("Clue4");
+
+BackG.Active = false;
+
+switch (EndingType)
+{
+	case END_GOOD:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0005/You earned the 'redemption' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		EasterWindow.Text = Game.ExpandString("/ENDING0012/Try entering the droid code before you have the note.");
+		EasterWindow.SizeToFit();
+		EasterWindow.X = ((Game.ScreenWidth / 2) - (EasterWindow.Width / 2));
+		EasterWindow.Y = 630;
+		EasterWindow.Visible = true;
+		EasterWindow.Focus();
+
+		BackG.Active = true;
+		Clue1.Active = true;
+		break;
+	}
+	case END_BAD:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0004/You suffered the 'damned' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		EasterWindow.Text = Game.ExpandString("/ENDING0013/Try using the MES console three times.");
+		EasterWindow.SizeToFit();
+		EasterWindow.X = ((Game.ScreenWidth / 2) - (EasterWindow.Width / 2));
+		EasterWindow.Y = 630;
+		EasterWindow.Visible = true;
+		EasterWindow.Focus();
+
+		BackG.Active = true;
+		Clue2.Active = true;
+		break;
+	}
+	case END_TORTURE:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0006/You endured the 'tormented' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		EasterWindow.Text = Game.ExpandString("/ENDING0014/Try pressing HOME to use the developer's debug room.");
+		EasterWindow.SizeToFit();
+		EasterWindow.X = ((Game.ScreenWidth / 2) - (EasterWindow.Width / 2));
+		EasterWindow.Y = 630;
+		EasterWindow.Visible = true;
+		EasterWindow.Focus();
+
+		BackG.Active = true;
+		Clue3.Active = true;
+		break;
+	}
+	case END_COMEDY:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0007/You were confused by the 'comedy' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		EasterWindow.Text = Game.ExpandString("/ENDING0015/Try F10 and F11 to switch to an alternate right-click interface.");
+		EasterWindow.SizeToFit();
+		EasterWindow.X = ((Game.ScreenWidth / 2) - (EasterWindow.Width / 2));
+		EasterWindow.Y = 630;
+		EasterWindow.Visible = true;
+		EasterWindow.Focus();
+
+		BackG.Active = true;
+		Clue4.Active = true;
+		break;
+	}
+	case END_QUAR:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0008/You're waiting for the 'decaying' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		break;
+	}
+	case END_FRIDGE:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0009/You inhaled the 'venemous' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		break;
+	}
+	case END_SPACE:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0010/You fell through the 'space' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		break;
+	}
+	case END_ELEC:
+	{
+		TypeWindow.Text = Game.ExpandString("/ENDING0011/You couldn't escape the 'electrocution' ending.");
+		TypeWindow.SizeToFit();
+		TypeWindow.X = ((Game.ScreenWidth / 2) - (TypeWindow.Width / 2));
+		TypeWindow.Y = 350;
+		TypeWindow.Visible = true;
+		TypeWindow.Focus();
+
+		break;
+	}
+
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateEnding.Visited)
+{
+  StateEnding.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

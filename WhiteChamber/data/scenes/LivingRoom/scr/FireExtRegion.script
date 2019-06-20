@@ -1,0 +1,35 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "Take"
+{
+ 	actor.GoToObject(this);
+
+	// Change the global variable to indicate it has been taken
+	LivingRoomExtTaken = true;
+
+	// Add the extinguisher to user inventory
+	Game.TakeItem("fireext");
+
+	// Switch off the screen objects
+	var ExtSprite = Scene.GetNode("FireExt"); 
+	var ExtRegion = Scene.GetNode("FireExtRegion"); 
+	ExtSprite.Active = false; 
+	ExtRegion.Active = false; 
+
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0023/A large fire extinguisher");
+}

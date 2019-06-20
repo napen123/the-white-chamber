@@ -1,0 +1,25 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/SLEEPQ0013/A hand writen note.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	Game.TakeItem("note");
+	var Note = Scene.GetNode("Note");
+	var NoteRegion = Scene.GetNode("NoteRegion");
+	Note.Active = false;
+	NoteRegion.Active = false;
+}

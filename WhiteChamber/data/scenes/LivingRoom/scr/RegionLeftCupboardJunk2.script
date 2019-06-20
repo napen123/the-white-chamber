@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/LIVING0033/It's a sealed lunchbox. Are those grapes inside?");
+}
+
+on "Take"
+{
+	PortraitType = PORT_PISSED;
+	actor.Talk("/LIVING0034/No thanks. I doubt I'd ever be quite THAT hungry.");
+}

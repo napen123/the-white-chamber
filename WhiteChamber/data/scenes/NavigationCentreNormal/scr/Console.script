@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/NORMAL0010/Dick Lee was the first. He was my research assistant. He thought the artefact was too dangerous for us to work on alone.");
+	actor.Talk("/NORMAL0011/We were arguing because he wanted a support team. I told him we could handle it. I didn't mean to... I knew they'd never understand.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NORMAL0012/I couldn't face seeing his remains if they're still in there.");
+}

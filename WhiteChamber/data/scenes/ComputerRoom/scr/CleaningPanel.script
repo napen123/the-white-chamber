@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0011/This a control for the emergency tank cleansing system.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0014/The tank is empty now, there'd be no point cleaning it.");
+}

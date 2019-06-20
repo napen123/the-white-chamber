@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_POCKING;
+	actor.Talk("/CORRID0006/That eye looks horrible");
+}
+
+on "take"
+{
+	PortraitType = PORT_POCKING;
+	actor.Talk("/CORRID0007/Even if I could get near it I wouldn't want to touch it");
+}

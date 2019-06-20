@@ -1,0 +1,131 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(1400, 600);
+actor.Direction = DI_LEFT;
+actor.Active = true;
+
+Scene.SkipTo(actor);
+
+PlayAmbient(AMBIENT_NORMAL, "NONE");
+
+Scene.SkipTo(actor);
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateComputerRoomNormal;
+
+
+// default values
+if(StateComputerRoomNormal==null)
+{
+  StateComputerRoomNormal.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+	if (!SeenCompDeath)
+	{
+		SeenCompDeath = true;
+		Game.Interactive = false;
+		var Death1 = Scene.GetNode("Death1");
+		var Death2 = Scene.GetNode("Death2");
+		var Death3 = Scene.GetNode("Death3");
+		var FlashOn = Scene.GetNode("FlashOn");
+		var FlashOnSprite = FlashOn.GetSpriteObject();
+		var FlashOff = Scene.GetNode("FlashOff");
+		var FlashOffSprite = FlashOff.GetSpriteObject();
+		var FlashOn2 = Scene.GetNode("FlashOn2");
+		var FlashOn2Sprite = FlashOn2.GetSpriteObject();
+		var FlashOff2 = Scene.GetNode("FlashOff2");
+		var FlashOff2Sprite = FlashOff2.GetSpriteObject();
+		var FlashOn3 = Scene.GetNode("FlashOn3");
+		var FlashOn3Sprite = FlashOn3.GetSpriteObject();
+		var FlashOff3 = Scene.GetNode("FlashOff3");
+		var FlashOff3Sprite = FlashOff3.GetSpriteObject();
+		var FlashOn4 = Scene.GetNode("FlashOn4");
+		var FlashOn4Sprite = FlashOn4.GetSpriteObject();
+		var FlashOff4 = Scene.GetNode("FlashOff4");
+		var FlashOff4Sprite = FlashOff4.GetSpriteObject();
+		Sleep(2000);
+		FlashOn.Active = true;
+		while(true)
+		{
+			if(FlashOnSprite.Finished) break;
+	    		Sleep(20); 
+		}
+		Death1.Active = true;
+		FlashOn.Active = false;
+		FlashOff.Active = true;
+		while(true)
+		{
+			if(FlashOffSprite.Finished) break;
+    			Sleep(20); 
+		}
+		Sleep(2000);
+		FlashOff.Active = false;
+		FlashOn2.Active = true;
+		while(true)
+		{
+			if(FlashOn2Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		Death1.Active = false;
+		Death2.Active = true;
+		FlashOn2.Active = false;
+		FlashOff2.Active = true;
+		while(true)
+		{
+			if(FlashOff2Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		Sleep(2000);
+		FlashOff2.Active = false;
+		FlashOn3.Active = true;
+		while(true)	
+		{
+			if(FlashOn3Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		Death2.Active = false;
+		Death3.Active = true;
+		FlashOn3.Active = false;
+		FlashOff3.Active = true;
+		while(true)
+		{
+			if(FlashOff3Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		Sleep(2000);
+		FlashOff3.Active = false;
+		FlashOn4.Active = true;
+		while(true)
+		{
+			if(FlashOn4Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		Death3.Active = false;
+		FlashOn4.Active = false;
+		FlashOff4.Active = true;
+		while(true)
+		{
+			if(FlashOff4Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		FlashOff4.Active = false;
+		Game.Interactive =true;
+	}
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateComputerRoomNormal.Visited)
+{
+  StateComputerRoomNormal.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

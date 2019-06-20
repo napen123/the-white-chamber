@@ -1,0 +1,20 @@
+#include "scripts\base.inc"
+
+
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	Game.StopMusicChannel(3);
+
+	if (!LivingRoomBloodyNav)
+	{
+		// Jump to different scene
+  		Game.ChangeScene("scenes\navigationcentre\navigationcentre.scene");
+	}
+	else
+	{
+		Game.ChangeScene("scenes\navigationcentrebleeding\navigationcentrebleeding.scene");
+	}
+}

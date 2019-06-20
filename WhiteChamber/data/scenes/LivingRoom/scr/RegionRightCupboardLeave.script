@@ -1,0 +1,28 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	// Setup cupboard variables
+	var RightCupboardBase = Scene.GetNode("RightCupboardBase");
+	var RightCupboardArm = Scene.GetNode("RightCupboardArm");
+	var RightCupboardDisc = Scene.GetNode("RightCupboardDisc");
+	var RightCupboardOpen = Scene.GetNode("RightCupboardOpen");
+	var RegionRightCupboardArea = Scene.GetNode("RegionRightCupboardArea");
+	var RegionRightCupboardArm = Scene.GetNode("RegionRightCupboardArm");
+	var RegionRightCupboardDisc = Scene.GetNode("RegionRightCupboardDisc");
+	var RegionRightCupboardLeave1 = Scene.GetNode("RegionRightCupboardLeave1");
+	var RegionRightCupboardLeave2 = Scene.GetNode("RegionRightCupboardLeave2");
+
+	// Switch off cupboard displays & regions
+	RightCupboardBase.Active = false;
+	RightCupboardOpen.Active = false;
+	RightCupboardArm.Active = false;
+	RightCupboardDisc.Active = false;
+	RegionRightCupboardArea.Active = false;
+	RegionRightCupboardArm.Active = false;
+	RegionRightCupboardDisc.Active = false;
+	RegionRightCupboardLeave1.Active = false;
+	RegionRightCupboardLeave2.Active = false;
+}

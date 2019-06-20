@@ -1,0 +1,51 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+if (Game.PrevScene == "WhiteChamber")
+{
+	actor.SkipTo(857, 564);
+	actor.Direction = DI_DOWN;
+}
+else
+{
+	actor.SkipTo(544, 759);
+	actor.Direction = DI_UP;
+
+}
+actor.Active = true;
+
+PlayAmbient(AMBIENT_SCARY, "FANROOM");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateFanRoom;
+
+
+// default values
+if(StateFanRoom==null)
+{
+  StateFanRoom.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+if (deadManWalking)
+{
+	var brokenvent = Scene.GetNode("brokenvent");
+	brokenvent.Active = true;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateFanRoom.Visited)
+{
+  StateFanRoom.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

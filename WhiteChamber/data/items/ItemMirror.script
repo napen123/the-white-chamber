@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0029/A shiny mirror");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0030/It looks smooth, but I don't want to risk smudging it");
+}

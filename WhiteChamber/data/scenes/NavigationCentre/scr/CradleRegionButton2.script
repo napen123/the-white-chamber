@@ -1,0 +1,99 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+on "MouseEntry"
+{
+	// Highlight button
+	var CradleButton2 = Scene.GetNode("CradleButton2");
+	CradleButton2.Active = true;
+}
+
+on "MouseLeave"
+{
+	// Remove highlight from the button
+	var CradleButton2 = Scene.GetNode("CradleButton2");
+	CradleButton2.Active = false;
+}
+
+on "LeftClick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");	
+
+	if (CradleSafety == false)
+	{
+		// Cutscene 01 #################################
+
+		// Change panel display
+		var CradleDisplayUp = Scene.GetNode("CradleDisplayUp");
+		var CradleDisplayDown = Scene.GetNode("CradleDisplayDown");
+		CradleDisplayUp.Active = false;
+		CradleDisplayDown.Active = true;
+		CradleLowered = true;
+
+		Game.Interactive = false; // Disable control
+		Sleep(1200); // Wait so player can see changed panel
+
+		// Remove panel display
+		var CradleBackground = Scene.GetNode("CradleBackground");
+		var CradleSafetyOn = Scene.GetNode("CradleSafetyOn");
+		var CradleSafetyOff = Scene.GetNode("CradleSafetyOff");
+		var CradleRegionBackground = Scene.GetNode("CradleRegionBackground");
+		var CradleRegionLeaveLeft = Scene.GetNode("CradleRegionLeaveLeft");
+		var CradleRegionLeaveRight = Scene.GetNode("CradleRegionLeaveRight");
+		var CradleRegionButton1 = Scene.GetNode("CradleRegionButton1");
+		var CradleRegionButton2 = Scene.GetNode("CradleRegionButton2");
+		var CradleRegionButton3 = Scene.GetNode("CradleRegionButton3");
+	var CradleRegionSafetyDisplay = Scene.GetNode("CradleRegionSafetyDisplay");
+	var CradleRegionCradleDisplay = Scene.GetNode("CradleRegionCradleDisplay");
+
+		CradleBackground.Active = false;
+		CradleSafetyOff.Active = false;
+		CradleSafetyOn.Active = false;
+		CradleDisplayDown.Active = false;
+		CradleDisplayUp.Active = false;
+		CradleRegionBackground.Active = false;
+		CradleRegionLeaveLeft.Active = false;
+		CradleRegionLeaveRight.Active = false;
+		CradleRegionButton1.Active = false;
+		CradleRegionButton2.Active = false;
+		CradleRegionButton3.Active = false;
+		CradleRegionSafetyDisplay.Active = false;
+		CradleRegionCradleDisplay.Active = false;
+
+		// Prepare for lowering animation
+		actor.TurnTo(DI_UP);
+		Sleep(800); // Wait so player can adjust to changed view (panel is not longer shown)
+
+		// Play sound effect
+		Game.PlaySound("audio\sounds\navroom-cradle.wav");
+
+		// Start window animations
+		var LeftWindowScroll = Scene.GetNode("LeftWindowScroll");
+		var RightWindowScroll = Scene.GetNode("RightWindowScroll");
+		LeftWindowScroll.Active = true;
+		RightWindowScroll.Active = true;
+
+		// Retrieve one of the window animation sprite
+		var LeftWindowSprite = LeftWindowScroll.GetSpriteObject(); 
+	 	while(true) // An infinite loop
+		{
+			 // Leave the while loop if the window animation is finished
+			if(LeftWindowSprite.Finished) break;
+			// otherwise return the control to the engine and continue with the loop
+    			Sleep(20); 
+  		}
+
+		// Switch off animations and turn on lowered window sprites
+		LeftWindowScroll.Active = false;
+		RightWindowScroll.Active = false;
+		var LeftWindowBottom = Scene.GetNode("LeftWindowBottom");
+		var RightWindowBottom = Scene.GetNode("RightWindowBottom");
+		LeftWindowBottom.Active = true;
+		RightWindowBottom.Active = true;
+	
+
+		Game.Interactive = true; // Enable control
+	}
+}

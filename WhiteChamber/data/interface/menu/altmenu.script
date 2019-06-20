@@ -1,0 +1,57 @@
+#include "scripts\base.inc"
+
+global MenuObject;
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+  self.Close();
+  if(MenuObject!=null)
+  {
+    if(MenuObject.CanHandleEvent("Take")) MenuObject.ApplyEvent("Take");
+    else
+	{
+		PortraitType = PORT_NORMAL;
+		if (Scene.Name == "StoreRoomMES"){
+		  actor.Talk("/COMMES0002/I can't take it.");
+		} else {
+		  actor.Talk("/COMMON0002/I can't take it.");
+		}
+	}
+  }
+  MenuObject = null;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+  self.Close();
+  if(MenuObject!=null)
+  {
+    if(MenuObject.CanHandleEvent("LookAt")) MenuObject.ApplyEvent("LookAt");
+    else
+	{
+		PortraitType = PORT_NORMAL;
+		if (Scene.Name == "StoreRoomMES"){
+		  actor.Talk("/COMMES0003/I can't think of anything to say about it.");
+		} else {
+		  actor.Talk("/COMMON0003/I can't think of anything to say about it.");
+		}
+	}
+  }
+  MenuObject = null;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Talk"
+{
+  self.Close();
+  if(MenuObject!=null)
+  {
+    if(MenuObject.CanHandleEvent("Talk")) MenuObject.ApplyEvent("Talk");
+    else actor.Talk("Can't talk to this.");
+  }
+  MenuObject = null;
+}

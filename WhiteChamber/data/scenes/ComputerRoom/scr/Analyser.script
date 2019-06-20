@@ -1,0 +1,46 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+ 	actor.GoToObject(this);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0048/This console is used as some kind of analyser.");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+	actor.GoToObject(this);
+
+	var AnalyserBG = Scene.GetNode("AnalyserBG");
+	var AnalyserMessage1 = Scene.GetNode("AnalyserMessage1");
+	var AnalyserRegion = Scene.GetNode("AnalyserRegion");
+	var AnalyserPanel  = Scene.GetNode("AnalyserPanel");
+	var AnalyserLeaveRight = Scene.GetNode("AnalyserLeaveRight");
+	var AnalyserLeaveLeft = Scene.GetNode("AnalyserLeaveLeft");
+	var AnalyserHorizonLoop = Scene.GetNode("AnalyserHorizonLoop");
+
+	AnalyserBG.Active = true;
+	AnalyserRegion.Active = true;
+	AnalyserPanel.Active = !ComputerRoomCut;
+	AnalyserLeaveRight.Active = true;
+	AnalyserLeaveLeft.Active = true;
+	AnalyserMessage1.Active = true;
+	AnalyserHorizonLoop.Active = ComputerRoomCut;
+
+	SubWindow.Text = Game.ExpandString("/COMPUT0049/Sample Analyser - Disabled due to human DNA lodged in device.");
+      	SubWindow.SizeToFit();
+	SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+	SubWindow.Y = 20;
+	SubWindow.Visible = SubtitleSetting;
+	SubWindow.Focus();
+
+}

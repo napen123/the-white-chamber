@@ -1,0 +1,309 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Language" content="cs">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>Studio Trophis - the white chamber</title>
+<style>
+/*	body {
+		background:#000;
+		margin:20px 20px 0px 20px;
+		color:white;
+		}-*/
+	
+	#banner {
+		background:#000;
+		border-top:1px solid #fff;
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:150px;
+		}
+
+	#footer {
+		background:#000;
+		/*height:40px;*/
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:39px;
+		}
+
+	#main {
+		border:1px solid #fff; 
+		background:#000;
+		}
+
+/* Looks like you have to specify the width of #menu
+or IE5 Mac stretches it all the way across the div, and 
+Opera streches it half way. */
+
+	#main #menu {
+		border-right:1px solid #fff; 
+		border-bottom:1px solid #fff;
+		float:left;
+		width:230px;
+		background:#888;
+		margin:0px 10px 10px 0px;
+		}
+	
+	#menu p { font-size:10px}
+
+	#main #news {
+		border-left:1px solid #fff; 
+		border-bottom:1px solid #fff;
+		float:right;
+		width:230px;
+		background:#888;
+		margin:0px 0px 10px 0px;
+		}
+		
+	
+	#news p { font-size:10px}
+
+
+/* THIS IS SOME  PREDEFINED  STUFF I  NICKED */
+body {
+
+
+	margin:20px 20px 0px 20px;
+	padding: 0;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	color:white;
+	background:#000;
+	}
+
+#content {
+	margin: 0em;
+	padding: 4em 6em 2em 6em;/* use padding instead of margin for multicolumn layouts because of a really odd ie5pc bug where it sometimes relates the width of an unrelated menu div to this div. i'll, uh, write about that somewhere. it was hard to figure out what was causing it, so i want this note here to remind me. */
+	}
+	
+/*the following classes are to demonstrate better line heights for narrow columns*/	
+.narrow1{
+	width: 50%;
+	line-height: 1.3em;
+	}
+.narrow2{
+	width: 50%;
+	line-height: 1.5em;
+	}
+		
+/*typography*/
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	}
+a:link {
+	}
+a:visited {
+	}
+a:active {
+	}
+a:hover {
+	text-decoration: underline;
+	}
+h1 {
+	font-size: 26px;
+	line-height: 32px;
+	margin-top: 0px;
+	margin-bottom: 0px;/*both set to zero and padding in header div is used intead to deal with compound ie pc problems that are beyound summary in a simple comment.*/
+	}
+h2 {
+	font-size: 24px;
+	margin: 20px 5px 20px 5px;
+	font-weight: normal;
+	}
+h3 {
+	font-size: 20px;
+	margin: 10px 10px 10px 10px;
+	font-weight: normal;
+	}
+h4 {
+	font-size: 18px;
+	margin: 5px 5px 5px 5px;
+	font-weight: bold;
+	}
+h5 {
+	font-size: 16px;
+	margin: 20px 5px 20px 5px;
+	font-weight: bold;
+	}
+h6 {
+	font-size: 14px;
+	margin: 20px 5px 20px 5px;
+	font-weight: bold;
+	}
+img {
+	border: 0px none;
+	}
+ol, ul, li {/*
+	list-style: none;*/
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px; 
+	margin-left: 5px;
+	}
+p {
+	font-size: 14px;
+	line-height: 20px;
+	margin: 20px 5px 20px 5px;
+	}
+li > p {
+	margin-top: 0.2em;
+	}
+pre {/*moz 1.0/1.1/1.2.1, net 7.0/7.01 make this way too small, but i'm not going to go larger because monospace tends to run you into overflow pretty quick. prior moz and net are okay.*/
+	font-family: monospace;
+	font-size: 1.0em;
+	}
+strong, b {
+	font-weight: bold;
+	}
+</style>
+</head>
+<body>
+
+<h1>the white chamber</h2>
+
+<hr>
+<h2>Nápověda - obsah</h2>
+<ul>
+<li><a href="#overview">Popis hry</a></li>
+<li><a href="#movement">Pohyb</a></li>
+<li><a href="#objects">Interakce s okolím</a></li>
+<li><a href="#symbols">Symboly</a></li>
+<li><a href="#menu">Herní menu</a></li>
+</ul>
+
+<hr>
+<a name="overview"></a><h2>Popis hry</h2>
+<p>The White Chamber je grafická point-and-click adventure hra.</p>
+<p>Prostřednictvím hlavní postavy budete zkoumat různé místnosti a prostředí, 
+budete nalézat a řešit hádanky, abyste nakonec odhalili tajemství 'bílé komory'.</p>
+<p>Hra spadá do žánru hororu a sci-fi, a obsahuje i násilné a krvavé scény, 
+které by mohly některým hráčům vadit.</p>
+<hr>
+<a name="movement"></a><h2>Pohyb</h2>
+<p>Hlavní postavu můžete navigovat herním prostředím tak, že kliknete levým 
+tlačítkem myši na místo, kam chcete, aby postava došla. </p>
+<center><img src="images\Readme1.png" width="350" height="262"></center>
+<p>Postava nemůže vstoupit do míst, která jsou blokována nějakou překážkou. 
+Pokud kliknete levým tlačítkem myši na objekt, se kterým je možno manipulovat, 
+postava k objektu dojde a automaticky se postaví před něj.</p>
+<h3>Východy</h3>
+<p>Pokud najedete myší na východ z místnosti, ukazatel se změní v symbol šipky.</p>
+<center><img src="images\Readme2.png" width="350" height="262"></center>
+<p>Pokud je ukazatel myši nad východem z místnosti a vy kliknete levým 
+tlačítkem, postava opustí lokaci a vejde do sousedící místnosti.</p>
+<p>Z jedné místnosti může vést několik různých východů.</p>
+<h3>Pohybování jinými věcmi</h3>
+<p>V určitých pasážích hry se může stát, že bude možno pohybovat i něčím jiným, 
+než hlavní postavou. V takovém případě zkuste použít místo myši šipky na 
+klávesnici.</p>
+
+<hr>
+<a name="objects"></a><h2>Interakce s okolím</h2>
+<p>Hlavní postava může manipulovat s různými objekty ve hře, například pokud je 
+chce sebrat, použít, či se o nich dozvědět více informací. </p>
+<p>Pokud najedete ukazatelem myši nad objekt, se kterým lze manipulovat, v 
+pravém dolním rohu obrazovky se objeví jeho název.</p>
+<center><img src="images\Readme3.png" width="350" height="262"></center>
+<p>Hlavní postava může s objekty manipulovat třemi způsoby:</p>
+<ul>
+<li>Pokud na objektu klikneme levým tlačítkem myši, postava k němu dojde a 
+postaví se před něj.</li>
+<li>Pokud na objektu klikneme pravým tlačítkem myší a poté vybereme symbol oka, 
+hlavní postava objekt prozkoumá.</li>
+<li>Pokud na objektu klikneme pravým tlačítkem myši a poté vybereme symbol ruky, 
+hlavní postava objekt podle situace buďto sebere nebo použije. Sebrané předměty 
+se objeví v inventáři.</li>
+</ul>
+<h3>Inventář</h3>
+<p>Inventář obsahuje všechny předměty, které má hlavní postava momentálně u 
+sebe. Zobrazíte jej tak, že najedete ukazatelem myši k hornímu okraji obrazovky. 
+Pokud inventář obsahuje velké množství předmětů, lze se mezi nimi posouvat 
+pomocí šipek po levé a pravé straně inventáře.</p>
+<p>Pokud je nějaký předmět umístěn v inventáři, lze s ním opět manipulovat dvěma 
+způsoby:</p>
+<ul>
+<li>Pokud na předmětu klikneme pravým tlačítkem myši a poté vybereme symbol oka, 
+hlavní postava předmět prozkoumá. Prozkoumáním sebraného předmětu se můžete 
+někdy dozvědět více informací, než před jeho sebráním.</li>
+<li>
+Pokud na předmětu klikneme pravým tlačítkem myši a poté vybereme symbol ruky, 
+vezmeme tak předmět z inventáře a můžeme jej dále použít dvěma způsoby:
+<ul>
+<li>Pokud uchopíme předmět z inventáře a následně jím klikneme na nějaký jiný 
+předmět v inventáři, hlavní postava se pokusí nějak tyto dva předměty vzájemně 
+zkombinovat.</li>
+<li>Vybraný předmět lze použít i mimo inventář. Pokud je nějaký předmět vybrán a 
+klikneme jím na nějaký objekt ve scéně, hlavní postava se opět pokusí tyto dva 
+objekty nějakým způsobem zkombinovat.</li>
+</ul>
+</li>
+</ul>
+<p>Pokud chcete vybraný předmět vrátit zpátky do inventáře, klikněte pravým 
+tlačítkem myši kdekoliv na obrazovce.</p>
+<center><img src="images\Readme4.png" width="350" height="262"></center>
+<h3>Ovládání na dálku</h3>
+<p>V jisté fázi hry budete mít možnost vyvolat určité akce na dálku pomocí 
+mezerníku na klávesnici.</p>
+<hr>
+
+<a name="symbols"></a><h2>Symboly</h2>
+<p>Nyní si popíšeme všechny symboly, na které ve hře narazíte.</p>
+<p><img src="images\Readme5.png" width="50" height="50"> Křížek představuje 
+normální vzhled ukazatele myši. Pokud má ukazatel tento tvar, kliknutím levým 
+tlačítkem myši můžete poslat hlavní postavu na dané místo na obrazovce. Křížek 
+symbolizuje, že pod ukazatelem myši není právě žádný objekt, se kterým by se 
+dalo manipulovat.</p>
+<p><img src="images\Readme6.png" width="50" height="50"> Pokud má ukazatel tvar 
+ruky, znamená to, že přímo pod ukazatelem se nachází objekt, se kterým lze nějak 
+manipulovat. Kdykoliv se ukazatel změní v ruku, v pravé dolní části obrazovky 
+zároveň uvidíte název objektu, na který jste ukázali.</p>
+<p><img src="images\Readme7.png" width="50" height="50"> Ukazatel ve tvaru šipky 
+označuje východy z místnosti. Směr šipky udává směr, kterým postava z místnosti 
+odejde. </p>
+<p><img src="images\Readme8.png" width="250" height="147"> Symbol ruky je ikona, 
+kterou musíte zvolit, pokud chcete, aby postava nějakým způsobem manipulovala s 
+nějakým objektem, tj. aby jej použila nebo sebrala.</p>
+<p><img src="images\Readme9.png" width="240" height="126"> Symbol oka je ikona, 
+kterou musíte zvolit, pokud chcete, aby postava detailně prozkoumala nějaký 
+objekt a dozvěděla se o něm další informace.</p>
+
+<hr>
+<a name="menu"></a><h2>Herní menu</h2>
+<p>Herní menu vyvoláte, pokud v průběhu hry stisknete klávesu 'Escape' nebo 
+'F1'. Pomocí tohoto menu můžete uložit hru, načíst dříve uloženou pozici, nebo 
+hru ukončit.</p>
+<h3>Pokračovat</h3>
+<p>Tento příkaz zavře herní menu a hra bude pokračovat.</p>
+<h3>Uložit hru</h3>
+<p>Uloží vaši aktuální pozici, abyste ji mohli později znovu načíst a pokračovat 
+ve hře ze stejného místa.</p>
+<p>Pokud zvolíte tento příkaz, objeví se okno s několika dostupnými sloty pro 
+uložení hry. Pomocí šipek můžete listovat dostupnými sloty.</p>
+<p>Máte na výběr buďto přepsat některou starší uloženou pozici, nebo vytvořit 
+novou. Klikněte na slot, do kterého chcete hru uložit a  stiskněte tlačítko 
+'OK'. Poté se objeví další okno, ve kterém můžete napsat krátký popis ukládané 
+pozice. Hru uložíte opět stisknutím tlačítka 'OK'.</p>
+<p>Pokud se rozhodnete, že pozici uložit nechcete, jednoduše klikněte na 
+tlačítko 'Storno' a vrátíte se do hlavního menu.</p>
+<h3>Načíst hru</h3>
+<p>Nahraje dříve uloženou pozici a hra bude pokračovat z tohoto místa.</p>
+<p>Pokud zvolíte tento příkaz, uvidíte seznam všech uložených pozic (a dosud 
+nepoužitých slotů). Pomocí ukazatele myši klikněte na jedné z dostupných pozic a 
+poté stiskněte tlačítko 'OK'. Daná pozice bude nahrána.</p>
+<p>Pokud se rozhodnete, že nechcete nahrát uloženou pozici, stiskněte tlačítko 
+'Storno' a vrátíte se do hlavního menu.</p>
+<h3>Ukončit hru</h3>
+<p>Ukončí hru a vrátí se do operačního systému.</p>
+<p>Hra se vás zeptá, zda chcete skutečně skončit. Stiskněte 'Ano', pokud skončit 
+chcete, nebo 'Ne', pokud se chcete vrátit do hlavního menu.</p>
+
+</body>
+</html>

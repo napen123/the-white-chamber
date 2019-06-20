@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_POCKING;
+	actor.Talk("/MEDBAY0047/That's disgusting! Who would seal eyes into a box.");
+}
+
+on "take"
+{
+	
+	// Take eyes
+	MedBayEyesTaken = true;
+	Game.TakeItem("eyes");
+
+	//  Turn off eyes on screen
+	var EyeBoxEyes = Scene.GetNode("EyeBoxEyes");
+	var EyeBoxEyesRegion = Scene.GetNode("EyeBoxEyesRegion");
+	EyeBoxEyes.Active = false;
+	EyeBoxEyesRegion.Active = false;
+
+}

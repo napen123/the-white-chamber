@@ -1,0 +1,30 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0048/It's a filing cabinet");
+}
+on "take"
+{
+	actor.GoToObject(this); 
+
+	var Cabinet = Scene.GetNode("Cabinet");
+	var CabinetOverlay = Scene.GetNode("CabinetOverlay");
+	var CabinetLeave = Scene.GetNode("CabinetLeave");
+	var CabinetDrawer = Scene.GetNode("CabinetDrawer");
+	var CabinetDrawerLocked = Scene.GetNode("CabinetDrawerLocked");
+	Cabinet.Active = true;
+	CabinetOverlay.Active = true;
+	CabinetLeave.Active = true;
+	CabinetDrawer.Active = true;
+	CabinetDrawerLocked.Active = true;
+}

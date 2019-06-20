@@ -1,0 +1,14 @@
+WINDOW
+{
+  STATIC
+  {
+    TEXT = "/ENDING0001/Thanks for playing..."
+    TEXT_ALIGN = "center"
+    NAME = "thanks"
+    FONT = "secondaryttf.font"
+    X = 250
+    Y = 150
+    WIDTH = 500
+    HEIGHT = 50
+  }
+}

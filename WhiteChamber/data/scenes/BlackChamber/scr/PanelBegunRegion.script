@@ -1,0 +1,20 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	// Switch off all the console related images and regions
+	var PanelImage = Scene.GetNode("PanelCloseup");
+	var PanelImageScans = Scene.GetNode("PanelScanLines");
+	var PanelImageBegun = Scene.GetNode("PanelBegun");
+	var PanelRegionBegun = Scene.GetNode("PanelBegunRegion");
+	var PanelRegion = Scene.GetNode("PanelCloseRegion");
+	PanelImage.Active = false;
+	PanelImageScans.Active = false;
+	PanelImageBegun.Active = false;
+	PanelRegionBegun.Active = false;
+	PanelRegion.Active = false;
+	SubWindow.Visible = false;
+
+}

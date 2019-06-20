@@ -1,0 +1,39 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0083/A big piece of human torso is stopping the fridge from descending.");	
+}
+
+on "take"
+{
+
+ 	actor.GoToObject(this);
+	// Take torso
+	Game.TakeItem("torso");
+
+	// Remove fallen fridge and region
+	var FridgeFell = Scene.GetNode("FridgeFell");
+	FridgeFell.Active = false;
+	var TorsoRegion = Scene.GetNode("TorsoRegion");
+	TorsoRegion.Active = false;
+
+	// Playback fridge being sucked away
+	var FridgeSuck = Scene.GetNode("FridgeSuck");
+	var FridgeSuckSprite = FridgeSuck.GetSpriteObject();
+	FridgeSuck.Active = true;
+ 	while(true)
+	{
+		if(FridgeSuckSprite.Finished) break;
+    		Sleep(20); 
+	}
+	FridgeSuck.Active = false;
+
+	// Indicate puzzle is done
+	LivingRoomFridgeDone = true;
+
+}

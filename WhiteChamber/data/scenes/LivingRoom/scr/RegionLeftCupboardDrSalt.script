@@ -1,0 +1,28 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0030/If I understand correctly it's a fizzy drink");
+}
+
+on "Take"
+{
+	// Add the dr.salt to inventory
+	Game.TakeItem("drsalt");
+
+	// Set global variable to indicate dr.salt has been taken
+	LivingRoomDrSaltTaken = true;
+
+	// Switch off the dr.salt sprite and region
+	var LeftCupboardDrSalt = Scene.GetNode("LeftCupboardDrSalt");
+	var RegionLeftCupboardDrSalt = Scene.GetNode("RegionLeftCupboardDrSalt");
+	LeftCupboardDrSalt.Active = false;
+	RegionLeftCupboardDrSalt.Active = false;
+
+	// Switching off the region means it's impossible to take the item twice,
+	// hence why there is no conditional logic at the start to check if the item
+	// has already been taken
+}

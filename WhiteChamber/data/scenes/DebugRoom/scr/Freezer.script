@@ -1,0 +1,10 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+  actor.GoToObject(this);
+  Game.TakeItem("axe");
+  Game.ChangeScene("scenes\freezer\freezer.scene");
+}

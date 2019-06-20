@@ -1,0 +1,58 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var Message1 = Scene.GetNode("Message1");
+	var Message2 = Scene.GetNode("Message2");
+	var Message3 = Scene.GetNode("Message3");
+
+
+	if (Message2.Active)
+	{
+		MedBayQuarDone = true;
+
+		Game.PlaySound("audio\sounds\medbay-field.wav");
+
+		Message2.Active = false;
+		Message3.Active = true;
+
+		var doorFloor = Scene.GetNode("doorFloor");
+		var DoorRed = Scene.GetNode("DoorRed");
+		var DoorGreen = Scene.GetNode("DoorGreen");
+		var Yes = Scene.GetNode("Yes");
+		var No = Scene.GetNode("No");
+
+		Yes.Active = false;
+		No.Active = false;
+		doorFloor.Active = true; 
+		DoorRed.Active = false;
+		DoorGreen.Active = true;
+
+		// turn ambient back on
+		PlayAmbient(AMBIENT_SCARY, "MEDBAY");
+
+		SubWindow.Text = Game.ExpandString("/MEDBAY0063/Leave... Accept the consequences!");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+	}
+
+	if (Message1.Active)
+	{
+		Message1.Active = false;
+		Message2.Active = true;
+
+		SubWindow.Text = Game.ExpandString("/MEDBAY0062/And risk spreading the disease?");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+
+	}
+}

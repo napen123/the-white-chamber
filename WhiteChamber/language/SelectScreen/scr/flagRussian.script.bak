@@ -1,0 +1,18 @@
+#include "scripts\base.inc"
+#include "language\selectscreen\scr\lang.script"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftClick"
+{
+	// Set global options for this language
+	SubtitleSetting = true;
+	TTFFont = true;
+	LangFile = "language\russianstring.tab";
+
+	switchLocale();
+
+	// Load next scene
+	Game.ChangeScene("scenes\introvideo\introvideo.scene");
+
+}

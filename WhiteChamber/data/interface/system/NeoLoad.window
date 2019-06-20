@@ -1,0 +1,182 @@
+WINDOW
+{
+  X = 200
+  Y = 200
+  WIDTH = 520
+  HEIGHT = 450
+  NAME = "NeoLoad"
+
+  TITLE = "/INTERF0001/Load Game"
+  TITLE_RECT {60,35,260,70}  
+  TITLE_ALIGN = left
+  DRAG_RECT {58,30,420,70}
+  IMAGE = "interface\system\artwork\guibackground.png"
+  FONT = "primaryttf.font"
+  SCRIPT = "interface\system\NeoLoad.script"
+
+
+;----- window close button -----
+
+  BUTTON
+  {
+    NAME = "close"
+    IMAGE = "interface\system\artwork\guicross.png"
+    IMAGE_HOVER = "interface\system\artwork\guicrossglow.png"
+    X = 420
+    Y = 30
+    PARENT_NOTIFY = TRUE
+  }
+
+;----- save slot buttons -----
+  BUTTON
+  {
+    NAME = "1"
+    IMAGE = "interface\system\artwork\guislot.png"
+    IMAGE_HOVER = "interface\system\artwork\guislothover.png"
+    IMAGE_PRESS = "interface\system\artwork\guislotselected.png"
+    FONT = "primaryttf.font"
+    TEXT = ""
+    X = 50
+    Y = 101
+    WIDTH = 387
+    HEIGHT = 30
+    PRESSED = TRUE
+    PARENT_NOTIFY = TRUE
+  }
+  BUTTON
+  {
+    NAME = "2"
+    IMAGE = "interface\system\artwork\guislot.png"
+    IMAGE_HOVER = "interface\system\artwork\guislothover.png"
+    IMAGE_PRESS = "interface\system\artwork\guislotselected.png"
+    FONT = "primaryttf.font"
+    TEXT = ""
+    X = 50
+    Y = 141
+    WIDTH = 387
+    HEIGHT = 30
+    PARENT_NOTIFY = TRUE
+  }
+  BUTTON
+  {
+    NAME = "3"
+    IMAGE = "interface\system\artwork\guislot.png"
+    IMAGE_HOVER = "interface\system\artwork\guislothover.png"
+    IMAGE_PRESS = "interface\system\artwork\guislotselected.png"
+    FONT = "primaryttf.font"
+    TEXT = ""
+    X = 50
+    Y = 181
+    WIDTH = 387
+    HEIGHT = 30
+    PARENT_NOTIFY = TRUE
+  }
+  BUTTON
+  {
+    NAME = "4"
+    IMAGE = "interface\system\artwork\guislot.png"
+    IMAGE_HOVER = "interface\system\artwork\guislothover.png"
+    IMAGE_PRESS = "interface\system\artwork\guislotselected.png"
+    FONT = "primaryttf.font"
+    TEXT = ""
+    X = 50
+    Y = 221
+    WIDTH = 387
+    HEIGHT = 30
+    PARENT_NOTIFY = TRUE
+  }
+  BUTTON
+  {
+    NAME = "5"
+    IMAGE = "interface\system\artwork\guislot.png"
+    IMAGE_HOVER = "interface\system\artwork\guislothover.png"
+    IMAGE_PRESS = "interface\system\artwork\guislotselected.png"
+    FONT = "primaryttf.font"
+    TEXT = ""
+    X = 50
+    Y = 261
+    WIDTH = 387
+    HEIGHT = 30
+    PARENT_NOTIFY = TRUE
+  }
+  BUTTON
+  {
+    NAME = "6"
+    IMAGE = "interface\system\artwork\guislot.png"
+    IMAGE_HOVER = "interface\system\artwork\guislothover.png"
+    IMAGE_PRESS = "interface\system\artwork\guislotselected.png"
+    FONT = "primaryttf.font"
+    TEXT = ""
+    X = 50
+    Y = 301
+    WIDTH = 387
+    HEIGHT = 30
+    PARENT_NOTIFY = TRUE
+  }
+
+
+;----- scroll buttons -----
+  BUTTON
+  {
+   NAME = "up"
+   TEXT = "/\"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 440
+    Y = 101
+    WIDTH = 50
+    PARENT_NOTIFY = TRUE
+  }
+  BUTTON
+  {
+   NAME = "down"
+   TEXT = "\/"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 440
+    Y = 301
+    WIDTH = 50
+    PARENT_NOTIFY = TRUE
+  }
+
+;----- load/cancel buttons -----
+  BUTTON
+  {
+   NAME = "load"
+   TEXT = "/INTERF0002/Load"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 140
+    Y = 370
+    WIDTH = 100
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+   NAME = "close"
+   TEXT = "/INTERF0003/Cancel"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 270
+    Y = 370
+    WIDTH = 140
+    PARENT_NOTIFY = TRUE
+  }
+
+
+;----- scanlines -----
+  STATIC
+  {
+    NAME = "scanlines"
+    X = 0
+    Y = 0
+    IMAGE = "interface\system\artwork\guiscanlines.png"
+  }
+
+
+}

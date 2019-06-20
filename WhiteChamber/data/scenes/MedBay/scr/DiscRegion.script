@@ -1,0 +1,34 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0045/A recorded video disc");
+}
+
+on "take"
+{
+	if (deadManWalking)
+	{
+		actor.GoToObject(this); 
+		Game.TakeItem("disc3");
+		var Disc = Scene.GetNode("Disc");
+		var DiscRegion = Scene.GetNode("DiscRegion");
+		Disc.Active = false;
+		DiscRegion.Active= false;
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0046/I can't get inside the chamber");
+	}
+
+}

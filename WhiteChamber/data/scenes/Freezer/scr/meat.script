@@ -1,0 +1,37 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0017/Fresh hanging meat. It looks vaguely edible.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0018/I doubt I could bring it down with hands. I'm not hungry anyway.");
+}
+
+on "axe"
+{
+	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0019/That would probably bring the slab of meat down but I don't really want to carry it with me.");
+
+}
+
+on "scalpel"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0020/Maybe if I'm hungry later I could use the scalpel to cut out a nice chunk. Right now though I really don't want any.");
+}

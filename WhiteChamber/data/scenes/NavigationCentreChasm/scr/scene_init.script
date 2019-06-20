@@ -1,0 +1,45 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+PlayAmbient(AMBIENT_SILENCE, "SEQUENCE7");
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(515, 300);
+actor.Direction = DI_DOWN;
+
+if (Game.PrevScene == "ComputerRoomBloody")
+{
+	actor.SkipTo(237, 418);
+	actor.Direction = DI_RIGHT;
+}
+
+actor.Active = true;
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateNavigationCentreChasm;
+
+
+// default values
+if(StateNavigationCentreChasm==null)
+{
+  StateNavigationCentreChasm.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateNavigationCentreChasm.Visited)
+{
+  StateNavigationCentreChasm.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

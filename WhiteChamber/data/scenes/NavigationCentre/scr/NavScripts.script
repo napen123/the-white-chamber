@@ -1,0 +1,71 @@
+#include "scripts\base.inc"
+
+////////////////////////////////////////////////////////////////
+
+method ShowRotation()
+{
+	var ConsoleRotate1 = Scene.GetNode("ConsoleRotate1");
+	var ConsoleRotate2 = Scene.GetNode("ConsoleRotate2");
+	var ConsoleRotate3 = Scene.GetNode("ConsoleRotate3");
+	var ConsoleRotate4 = Scene.GetNode("ConsoleRotate4");
+	var ConsoleRotate5 = Scene.GetNode("ConsoleRotate5");
+	var ConsoleRotate6 = Scene.GetNode("ConsoleRotate6");
+	var ConsoleRotate7 = Scene.GetNode("ConsoleRotate7");
+	var ConsoleRotate8 = Scene.GetNode("ConsoleRotate8");
+	var ConsolePowerLight = Scene.GetNode("ConsolePowerLight");
+
+	ConsoleRotate1.Active = false;
+	ConsoleRotate2.Active = false;
+	ConsoleRotate3.Active = false;
+	ConsoleRotate4.Active = false;
+	ConsoleRotate5.Active = false;
+	ConsoleRotate6.Active = false;
+	ConsoleRotate7.Active = false;
+	ConsoleRotate8.Active = false;
+	ConsolePowerLight.Active = false;
+	StationPowered = false;
+
+	if (StationRotation == 1)
+	{
+		ConsoleRotate1.Active = true;
+	}
+
+	if (StationRotation == 2)
+	{
+		ConsoleRotate2.Active = true;
+	}
+
+	if (StationRotation == 3)
+	{
+		ConsoleRotate3.Active = true;
+	}
+
+	if (StationRotation == 4)
+	{
+		ConsoleRotate4.Active = true;
+	}
+
+	if (StationRotation == 5)
+	{
+		ConsoleRotate5.Active = true;
+		ConsolePowerLight.Active = true;
+		StationPowered = true;
+		Game.PlaySound("audio\sounds\navroom-solarpowerup.ogg");
+	}
+
+	if (StationRotation == 6)
+	{
+		ConsoleRotate6.Active = true;
+	}
+
+	if (StationRotation == 7)
+	{
+		ConsoleRotate7.Active = true;
+	}
+
+	if (StationRotation == 8)
+	{
+		ConsoleRotate8.Active = true;
+	}
+
+}

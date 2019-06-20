@@ -1,0 +1,112 @@
+#include "scripts\base.inc"
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+ 	actor.GoToObject(this);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0022/It looks like a unit designed to provide backup power to certain systems.");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+	actor.GoToObject(this);
+	if (StationPowered)
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/COMPUT0023/Now that I've powered up the station this backup system is kind of redundant.");
+	}
+	else
+	{
+		var BackupOverlay = Scene.GetNode("SpriteBackupOverlay");
+		var BackupOverlayRegion = Scene.GetNode("RegionBackupOverlay");
+		var BackupLeaveRegion = Scene.GetNode("RegionBackupLeave");
+		var BackupSlot1Region = Scene.GetNode("RegionBackupSlot1");
+		var BackupSlot2Region = Scene.GetNode("RegionBackupSlot2");
+		var BackupSlot3Region = Scene.GetNode("RegionBackupSlot3");
+		var BackupSlot4Region = Scene.GetNode("RegionBackupSlot4");
+		var BackupRegionLabel1 = Scene.GetNode("RegionLabel1");
+		var BackupRegionLabel2 = Scene.GetNode("RegionLabel2");
+		var BackupRegionLabel3 = Scene.GetNode("RegionLabel3");
+		var BackupRegionLabel4 = Scene.GetNode("RegionLabel4");
+		var BackupRegionLabel5 = Scene.GetNode("RegionLabel5");
+		var BackupRegionPower1 = Scene.GetNode("RegionPower1");
+		var BackupRegionPower2 = Scene.GetNode("RegionPower2");
+		var BackupRegionPower3 = Scene.GetNode("RegionPower3");
+		var BackupRegionPower4 = Scene.GetNode("RegionPower4");
+		var BackupRegionPower5 = Scene.GetNode("RegionPower5");
+		BackupOverlay.Active = true;	
+		BackupOverlayRegion.Active = true;
+		BackupLeaveRegion.Active = true;
+		BackupSlot1Region.Active = true;
+		BackupSlot2Region.Active = true;
+		BackupSlot3Region.Active = true;
+		BackupSlot4Region.Active = true;
+		BackupRegionLabel1.Active = true;
+		BackupRegionLabel2.Active = true;
+		BackupRegionLabel3.Active = true;
+		BackupRegionLabel4.Active = true;
+		BackupRegionLabel5.Active = true;
+		BackupRegionPower1.Active = true;
+		BackupRegionPower2.Active = true;
+		BackupRegionPower3.Active = true;
+		BackupRegionPower4.Active = true;
+		BackupRegionPower5.Active = true;
+		BackupRegionPower1.Caption = "/COMPUT0060/Waiting";
+		BackupRegionPower2.Caption = "/COMPUT0060/Waiting";
+		BackupRegionPower4.Caption = "/COMPUT0060/Waiting";
+		if (ComputerRoomKeyPos == 1)
+		{
+			BackupRegionPower1.Caption = "/COMPUT0061/Online";
+			var Slot1Sprite = Scene.GetNode("SpriteBackupKey1");
+			var Slot1Region = Scene.GetNode("RegionBackupSlot1");
+			var Slot1Key = Scene.GetNode("RegionBackupKey1");
+			Slot1Sprite.Active = true;
+			Slot1Region.Active = false;
+			Slot1Key.Active = true;
+			
+		}
+		if (ComputerRoomKeyPos == 2)
+		{
+			BackupRegionPower1.Caption = "/COMPUT0061/Online";
+			var Slot2Sprite = Scene.GetNode("SpriteBackupKey2");
+			var Slot2Region = Scene.GetNode("RegionBackupSlot2");
+			var Slot2Key = Scene.GetNode("RegionBackupKey2");
+			Slot2Sprite.Active = true;
+			Slot2Region.Active = false;
+			Slot2Key.Active = true;
+		}
+		if (ComputerRoomKeyPos == 3)
+		{
+			BackupRegionPower1.Caption = "/COMPUT0061/Online";
+			var Slot3Sprite = Scene.GetNode("SpriteBackupKey3");
+			var Slot3Region = Scene.GetNode("RegionBackupSlot3");
+			var Slot3Key = Scene.GetNode("RegionBackupKey3");
+			Slot3Sprite.Active = true;
+			Slot3Region.Active = false;
+			Slot3Key.Active = true;
+		}
+	}
+
+}
+
+on "overkey"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0024/I'll need to get in closer.");
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/COMPUT0025/I can't do anything without getting in closer.");
+}

@@ -1,0 +1,48 @@
+//#include "scripts\base.inc"
+#include "scenes\navigationcentre\scr\navscripts.script"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");	
+
+	var ConsoleOffline = Scene.GetNode("ConsoleOffline");
+	var ConsoleActive = Scene.GetNode("ConsoleActive");
+	var ConsolePattern = Scene.GetNode("ConsolePattern");
+	var ConsoleNumbers = Scene.GetNode("ConsoleNumbers");
+	var ConsoleRegionLeft = Scene.GetNode("ConsoleRegionLeft");
+	var ConsoleRegionRight = Scene.GetNode("ConsoleRegionRight");
+
+	ConsoleOffline.Active = false;
+	ConsoleActive.Active = true;
+	ConsolePattern.Active = true;
+	ConsoleNumbers.Active = true;
+	ConsoleRegionLeft.Active = true;
+	ConsoleRegionRight.Active = true;
+
+	SubWindow.Text = Game.ExpandString("/NAVCEN0024/Station Rotation and Solar Power Controls");
+      	SubWindow.SizeToFit();
+	SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+	SubWindow.Y = 70;
+	SubWindow.Visible = SubtitleSetting;
+	SubWindow.Focus();
+
+	ShowRotation();
+
+}
+
+on "MouseEntry"
+{
+	// Highlight the ON button
+	var ConsoleOnLight = Scene.GetNode("ConsoleOnLight");
+	ConsoleOnLight.Active = true;
+}
+
+on "MouseLeave"
+{
+	// Remove highlight from the OFF button
+	var ConsoleOnLight = Scene.GetNode("ConsoleOnLight");
+	ConsoleOnLight.Active = false;
+}
+

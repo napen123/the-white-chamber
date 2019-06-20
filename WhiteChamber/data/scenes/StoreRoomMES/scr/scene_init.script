@@ -1,0 +1,50 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+//actor.Active = false;
+//actor = Game.LoadActor("actors\thegirlmes\thegirlmes.actor");
+actor.SkipTo(327, 427);
+actor.Direction = DI_DOWN;
+actor.Active = true;
+
+
+//var MESActor;
+//MESActor = Game.LoadActor("actors\droid\droid.actor");
+//MESActor.SkipTo(327, 427);
+//MESActor.Direction = DI_DOWN;
+//MESActor.Active = true;
+
+PlayAmbient(AMBIENT_SILENCE, "MES");
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateStoreRoomMES;
+
+
+// default values
+if(StateStoreRoomMES==null)
+{
+  StateStoreRoomMES.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateStoreRoomMES.Visited)
+{
+  StateStoreRoomMES.Visited = true;
+
+  // this is our first visit in this scene...
+}
+
+PortraitType = PORT_MES;
+actor.Talk("/STOMES0014/What the hell is going on? I'm in the game!");

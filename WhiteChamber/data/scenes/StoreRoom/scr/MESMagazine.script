@@ -1,0 +1,51 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/STORER0036/It's a retro video gaming magazine.");
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0011/I can't really see from here.");
+	}
+}
+
+on "take"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+		actor.GoToObject(this);
+		Scene.SkipTo(actor);
+		var MESArticle = Scene.GetNode("MESArticle");
+		var MESArticleLeave = Scene.GetNode("MESArticleLeave");
+		MESArticle.Active = true;
+		MESArticleLeave.Active = true;
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0012/I can't reach it through the cage.");
+	}
+
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/STORER0037/That'd be pointless. It's just a magazine.");
+}

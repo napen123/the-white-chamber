@@ -1,0 +1,82 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "axe"
+{
+	var MouthOpen = Scene.GetNode("MouthOpen");
+	if (MouthOpen.Active)
+	{
+	 	actor.GoToObject(this);
+
+		Game.Interactive = false;
+
+		AxeType = AXE_CHAIN;
+		actor.PlayAnim("actors\thegirl\custom\axeswing.sprite");
+
+		// Remove chain and fridge
+		var Chain = Scene.GetNode("Chain");
+		var ChainRegion = Scene.GetNode("ChainRegion");
+		var FridgeSwing = Scene.GetNode("FridgeSwing");
+		var FridgeSwingRegion = Scene.GetNode("FridgeSwingRegion");
+		Chain.Active = false;
+		ChainRegion.Active = false;
+		FridgeSwing.Active = false;
+		FridgeSwingRegion.Active = false;
+
+		// Display cut chain
+		var ChainCut = Scene.GetNode("ChainCut");
+		ChainCut.Active = true;
+		
+		// Animate fridge drop
+		var FridgeFall = Scene.GetNode("FridgeFall");
+		var FridgeFallSprite = FridgeFall.GetSpriteObject();
+		FridgeFall.Active = true;
+	 	while(true)
+		{
+			if(FridgeFallSprite.Finished) break;
+	    		Sleep(20); 
+		}
+		FridgeFall.Active = false;
+
+		// Show fallen fridge
+		var FridgeFell = Scene.GetNode("FridgeFell");
+		FridgeFell.Active = true;
+		var TorsoRegion = Scene.GetNode("TorsoRegion");
+		TorsoRegion.Active = true;
+		var TableBlock = Scene.GetNode("TableBlock");
+		TableBlock.Active = true;
+
+		LivingRoomChainHacked = true;
+
+		Game.Interactive = true;
+
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/LIVING0022/That torso seems to have jammed it in the chasm");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/LIVING0021/That might bring the fridge down but I'd rather find a way to dispose of it first.");
+	}
+
+}
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0019/This chain is holding up that strange fridge");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0020/I doubt I could break this with my hands");
+}

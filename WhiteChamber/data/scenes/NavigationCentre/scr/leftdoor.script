@@ -1,0 +1,36 @@
+#include "scripts\base.inc"
+
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	// Retrieve door entity
+	var LeftDoorAnim = Scene.GetNode("LeftDoorAnim"); 
+	
+	// Retrieve door sprite
+	var LeftDoorSprite = LeftDoorAnim.GetSpriteObject(); 
+
+	// Switch on door entity
+	LeftDoorAnim.Active = true; 
+
+ 	while(true) // An infinite loop
+	{
+			 // Leave the while loop if the door animation is finished
+			if(LeftDoorSprite.Finished) break;
+
+			// otherwise return the control to the engine and continue with the loop
+    			Sleep(20); 
+  	}
+  	
+	// Move slightly into the door
+	actor.GoTo(205,403); 
+
+	// Jump to different scene
+  	Game.ChangeScene("scenes\computerroom\computerroom.scene");
+
+}
+
+// 1 imput a$
+// 2 if a$="gay" then goto 3
+// 3 "Queer gown"

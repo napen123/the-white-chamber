@@ -1,0 +1,30 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0050/It's some kind of compartment.");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+	Game.PlaySound("audio\sounds\computerroom-panelopen.ogg");
+
+	var AnalyserMessage1 = Scene.GetNode("AnalyserMessage1");
+	var AnalyserMessage2 = Scene.GetNode("AnalyserMessage2");
+	var AnalyserPanel  = Scene.GetNode("AnalyserPanel");
+	var AnalyserWire = Scene.GetNode("AnalyserWire");
+	var AnalyserPanelOpen = Scene.GetNode("AnalyserPanelOpen");
+
+	AnalyserMessage1.Active = false;
+	AnalyserMessage2.Active = true;
+	AnalyserPanel.Active = false;
+	AnalyserWire.Active =  true;
+	AnalyserPanelOpen.Active = true;
+
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0051/It's warning this might be dangerous. I'm not sure messing with this is a good idea.");
+}

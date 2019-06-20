@@ -1,0 +1,237 @@
+#include "scripts\base.inc"
+
+global WinSubtitlesMES;
+var Portrait;
+var Border;
+
+// create a window for subtitles if it doesn't exist yet
+if(WinSubtitlesMES==null)
+{
+	WinSubtitlesMES = Game.CreateWindow("subtitles_window");
+	Portrait = WinSubtitlesMES.CreateStatic("speaker_portrait");
+	Border = WinSubtitlesMES.CreateStatic("text_border");
+
+	// set up the subtitles window
+	WinSubtitlesMES.X = 0;
+	WinSubtitlesMES.Y = Game.ScreenHeight - 200;
+	WinSubtitlesMES.Width = Game.ScreenWidth;
+	WinSubtitlesMES.Height = 200;
+	WinSubtitlesMES.Visible = false;
+
+	// set up the speaker portrait
+	Portrait.X = 0;
+	Portrait.Y = -300;
+
+	// set up the border
+	Border.X = 200;
+	Border.Y = 0;
+	Border.SetImage("interface\textborder.png");
+
+}
+//else Static = WinSubtitlesMES.GetControl("speaker_name");
+
+// position of actors' speech subtitles
+this.SubtitlesPosRelative = false;
+this.SubtitlesPosX = (Game.ScreenWidth/2)+75;
+this.SubtitlesPosY = WinSubtitlesMES.Y + 20;
+this.SubtitlesWidth = Game.ScreenWidth - 300;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// an overriden Talk method to display the speaker name
+////////////////////////////////////////////////////////////////////////////////
+method Talk(Text, SoundFilename, Duration, TalkStances, TextAlignment)
+{
+	Game.Interactive = false;
+
+
+	Portrait.SetImage("interface\portraits\portraitmes.png");
+
+	WinSubtitlesMES.Visible = true;
+
+	this.SetFont("fonts\fontocr.font");
+	//this.Talk(Text, SoundFilename, Duration, TalkStances, TextAlignment);
+	this.Talk(Text, SoundFilename, Duration, TalkStances, 0);
+
+	WinSubtitlesMES.Visible = false;
+	Game.Interactive = true;
+}
+
+
+////////////////////////////////////////////////////////
+// Walking sound handler
+///////////////////////////////////////////////////////
+on "footstep"
+{
+
+ // get a region the actor is standing in
+ var Reg = Scene.GetRegionAt(this.X, this.Y);
+ if (Reg!=null)
+ {
+
+   	// play a sound depenging on a surface
+	// "xSurface" is a custom property we defined in SceneEdit
+
+	if (Reg.xSurface == "metal")
+	{
+		switch(Random(1,5))
+		{
+			case 1: this.PlaySound("audio\sounds\walkmetala.ogg",false); break;
+			case 2: this.PlaySound("audio\sounds\walkmetalb.ogg",false); break;
+			case 3: this.PlaySound("audio\sounds\walkmetalc.ogg",false); break;
+			case 4: this.PlaySound("audio\sounds\walkmetald.ogg",false); break;
+			case 5: this.PlaySound("audio\sounds\walkmetale.ogg",false); break;
+		} 
+	}
+
+
+	if (Reg.xSurface == "grating")
+	{
+		switch(Random(1,6))
+		{
+			case 1: this.PlaySound("audio\sounds\walkgratinga.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkgratingb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkgratingc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkgratingd.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkgratinge.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkgratingf.wav"); break;
+		}
+	}
+
+
+	if (Reg.xSurface == "sand")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walksanda.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walksandb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walksandc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walksandd.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walksande.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walksandf.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walksandg.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walksandh.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "carpet")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkcarpeta.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkcarpetb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkcarpetc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkcarpetd.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkcarpete.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkcarpetf.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkcarpetg.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkcarpeth.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "metalecho")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkmetalechoa.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkmetalechob.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkmetalechoc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkmetalechod.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkmetalechoe.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkmetalechof.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkmetalechog.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkmetalechoh.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "glassecho")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkglassechoa.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkglassechob.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkglassechoc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkglassechod.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkglassechoe.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkglassechof.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkglassechog.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkglassechoh.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "blood")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkblooda.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkbloodb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkbloodc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkbloodd.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkbloode.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkbloodf.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkbloodg.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkbloodh.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "gore")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkgorea.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkgoreb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkgorec.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkgored.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkgoree.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkgoref.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkgoreg.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkgoreh.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "padded")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkpaddeda.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkpaddedb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkpaddedc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkpaddedd.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkpaddede.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkpaddedf.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkpaddedg.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkpaddedh.wav"); break;
+		}
+	}
+
+	if (Reg.xSurface == "pebbles")
+	{
+		switch(Random(1,8))
+		{
+			case 1: this.PlaySound("audio\sounds\walkpebblesa.wav"); break;
+			case 2: this.PlaySound("audio\sounds\walkpebblesb.wav"); break;
+			case 3: this.PlaySound("audio\sounds\walkpebblesc.wav"); break;
+			case 4: this.PlaySound("audio\sounds\walkpebblesd.wav"); break;
+			case 5: this.PlaySound("audio\sounds\walkpebblese.wav"); break;
+			case 6: this.PlaySound("audio\sounds\walkpebblesf.wav"); break;
+			case 7: this.PlaySound("audio\sounds\walkpebblesg.wav"); break;
+			case 8: this.PlaySound("audio\sounds\walkpebblesh.wav"); break;
+		}
+	}
+
+
+
+ }
+}
+
+on "axeHit"
+{
+	switch(AxeType)
+	{
+		case 0: break;
+		case 1: this.PlaySound("audio\sounds\livingroom-chainaxe.wav",false); break;
+		case 2: this.PlaySound("audio\sounds\computerroom-axebounce.wav",false); break;
+		case 3: this.PlaySound("audio\sounds\computerroom-axebreak.wav",false); break;
+		case 4: this.PlaySound("audio\sounds\freezer-legaxe.wav",false); break;
+	}
+}

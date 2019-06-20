@@ -1,0 +1,14 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	Game.ChangeScene("scenes\storeroom\storeroom.scene");
+}
+
+// Player is likely to accidently use axe on this region
+on "axe"
+{
+	Game.ChangeScene("scenes\storeroom\storeroom.scene");
+}

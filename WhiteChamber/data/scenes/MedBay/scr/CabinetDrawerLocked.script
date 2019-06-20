@@ -1,0 +1,27 @@
+#include "scripts\base.inc"
+
+
+on "lookat"
+{
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/MEDBAY0038/Most of these drawers are locked. There doesn't seem to be any apparent way to unlock them.");
+}
+
+on "take"
+{
+	PortraitType = PORT_PISSED;
+	actor.Talk("/MEDBAY0039/They're surprisingly sturdy. I doubt I could force them open.");
+
+}
+
+on "axe"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0040/That's not going to get them open. I'll just end up damaging the surface.");
+}
+
+on "scalpel"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0041/I think the lock is a bit more secure than that.");
+}

@@ -1,0 +1,41 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var Overlay = Scene.GetNode("RegionBackupOverlay");
+	var Console = Scene.GetNode("DroidConsole");
+	var LeaveLeft = Scene.GetNode("DroidLeaveLeft");
+	var LeaveRight = Scene.GetNode("DroidLeaveRight");
+	var DroidRed = Scene.GetNode("DroidRed");
+	var DroidGreen = Scene.GetNode("DroidGreen");
+	var DroidPurple = Scene.GetNode("DroidPurple");
+	var DroidYellow = Scene.GetNode("DroidYellow");
+	var DroidWhite = Scene.GetNode("DroidWhite");
+	var DroidBlue = Scene.GetNode("DroidBlue");
+	var DroidConsole1 = Scene.GetNode("DroidConsole1");
+	var DroidConsole2 = Scene.GetNode("DroidConsole2");
+	var DroidConsole3 = Scene.GetNode("DroidConsole3");
+	var DroidConsole4 = Scene.GetNode("DroidConsole4");
+	var DroidConsole5 = Scene.GetNode("DroidConsole5");
+	var DroidConsole6 = Scene.GetNode("DroidConsole6");
+	Overlay.Active = false;
+	Console.Active = false;
+	LeaveLeft.Active = false;
+	LeaveRight.Active = false;
+	DroidRed.Active = false;
+	DroidGreen.Active = false;
+	DroidPurple.Active = false;
+	DroidYellow.Active = false;
+	DroidWhite.Active = false;
+	DroidBlue.Active = false;
+	DroidConsole1.Active = false;
+	DroidConsole2.Active = false;
+	DroidConsole3.Active = false;
+	DroidConsole4.Active = false;
+	DroidConsole5.Active = false;
+	DroidConsole6.Active = false;
+	SubWindow.Visible = false;
+}
+

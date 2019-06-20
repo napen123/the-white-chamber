@@ -1,0 +1,51 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/STORER0015/This big door must lead to the freezer.");
+}
+on "take"
+{
+	actor.GoToObject(this);
+
+	var FreezeDoor = Scene.GetNode("FreezeDoor");
+	
+	if (!FreezeDoor.Active)
+	{
+		Game.PlaySound("audio\sounds\storeroom-freezerdoor.ogg");
+
+		var FreezeDoorAnim = Scene.GetNode("FreezeDoorAnim");
+		var FreezeDoorAnimSprite = FreezeDoorAnim.GetSpriteObject();
+
+		actor.Active = false;
+		FreezeDoorAnim.Active = true;
+		while(true)
+		{
+			if(FreezeDoorAnimSprite.Finished) break;
+			Sleep(20); 
+ 		}
+		FreezeDoorAnim.Active = false;
+		actor.Active = true;
+
+		FreezeDoor.Active = true;
+	}
+}
+
+on "leftclick"
+{
+	actor.GoToObject(this);
+	var FreezeDoor = Scene.GetNode("FreezeDoor");
+	if (FreezeDoor.Active)
+	{
+		Game.ChangeScene("scenes\freezer\freezer.scene");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/STORER0016/I can't get in while the door's closed.");
+	}
+}

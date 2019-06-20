@@ -1,0 +1,13 @@
+//#include "scripts\base.inc"
+#include "scenes\navigationcentre\scr\navscripts.script"
+
+
+////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");	
+
+	StationRotation = StationRotation - 1;
+	if (StationRotation == 0) StationRotation = 8;
+	ShowRotation();
+}

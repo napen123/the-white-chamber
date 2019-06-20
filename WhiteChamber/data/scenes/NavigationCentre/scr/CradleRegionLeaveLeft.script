@@ -1,0 +1,43 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	var CradleBackground = Scene.GetNode("CradleBackground");
+	var CradleSafetyOn = Scene.GetNode("CradleSafetyOn");
+	var CradleSafetyOff = Scene.GetNode("CradleSafetyOff");
+	var CradleDisplayUp = Scene.GetNode("CradleDisplayUp");
+	var CradleDisplayDown = Scene.GetNode("CradleDisplayDown");
+	var CradleRegionBackground = Scene.GetNode("CradleRegionBackground");
+	var CradleRegionLeaveLeft = Scene.GetNode("CradleRegionLeaveLeft");
+	var CradleRegionLeaveRight = Scene.GetNode("CradleRegionLeaveRight");
+	var CradleRegionButton1 = Scene.GetNode("CradleRegionButton1");
+	var CradleRegionButton2 = Scene.GetNode("CradleRegionButton2");
+	var CradleRegionButton3 = Scene.GetNode("CradleRegionButton3");
+	var CradleBackgroundMessed = Scene.GetNode("CradleBackgroundMessed");
+	var CradleStatic = Scene.GetNode("CradleStatic");
+	var CradleMesed = Scene.GetNode("CradleMesed");
+	var CradleRegionNoTurningBack = Scene.GetNode("CradleRegionNoTurningBack");
+	var CradleRegionSafetyDisplay = Scene.GetNode("CradleRegionSafetyDisplay");
+	var CradleRegionCradleDisplay = Scene.GetNode("CradleRegionCradleDisplay");
+
+	
+	CradleBackground.Active = false;
+	CradleSafetyOff.Active = false;
+	CradleSafetyOn.Active = false;
+	CradleDisplayDown.Active = false;
+	CradleDisplayUp.Active = false;
+	CradleRegionBackground.Active = false;
+	CradleRegionLeaveLeft.Active = false;
+	CradleRegionLeaveRight.Active = false;
+	CradleRegionButton1.Active = false;
+	CradleRegionButton2.Active = false;
+	CradleRegionButton3.Active = false;
+	CradleBackgroundMessed.Active = false;
+	CradleStatic.Active = false;
+	CradleMesed.Active = false;
+	CradleRegionNoTurningBack.Active = false;
+	CradleRegionSafetyDisplay.Active = false;
+	CradleRegionCradleDisplay.Active = false;
+}

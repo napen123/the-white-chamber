@@ -1,0 +1,47 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "axe"
+{
+	actor.GoToObject(this); 
+
+	AxeType = AXE_PIPE;
+	actor.PlayAnim("actors\thegirl\custom\axeswing.sprite");
+
+	var PipeArm1 = Scene.GetNode("PipeArm1");
+	var PipeArm2 = Scene.GetNode("PipeArm2");
+	var Blood = Scene.GetNode("BloodPour");
+	var PipeArmRegion = Scene.GetNode("PipeArmRegion");
+	var ArmRegion = Scene.GetNode("ArmRegion");
+	PipeArm1.Active = false;
+	PipeArm2.Active = true;
+	PipeArmRegion.Active = false;
+	ArmRegion.Active = true;
+	Blood.Active = true;
+	
+	// Play blood pouring
+	Game.PlayMusicChannel(3, "audio\sounds\computerroom-blood.ogg", true);
+
+	PortraitType = PORT_NORMAL;
+
+}
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0015/There's an arm trapped in there, it must have been from that guy");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0016/I can't break the pipe open by hand");
+}

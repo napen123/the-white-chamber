@@ -1,0 +1,12 @@
+#include "scripts\base.inc"
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+  Game.ChangeScene("scenes\comedyending\comedyending.scene");
+}
+
+

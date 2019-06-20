@@ -1,0 +1,64 @@
+#include "scripts\base.inc"
+#include "scripts\keys.inc"
+
+self.xResult = false;
+
+////////////////////////////////////////////////////////////////////////////////
+on "close"
+{
+  self.Close();
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "quit"
+{
+  var WinQuit = Game.LoadWindow("interface\system\neoquit.window");
+  WinQuit.Center();
+  WinQuit.GoSystemExclusive();
+
+  if(WinQuit.xResult)
+  {
+    Game.QuitGame();
+  }
+  else Game.UnloadObject(WinQuit);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Keypress"
+{
+  var button;
+
+  if(Keyboard.KeyCode==VK_ESCAPE)
+  {
+    self.Close();
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "load"
+{
+  var WinLoad = Game.LoadWindow("interface\system\neoload.window");
+  WinLoad.Center();
+  WinLoad.GoSystemExclusive();
+  Game.UnloadObject(WinLoad);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "save"
+{
+  var WinSave = Game.LoadWindow("interface\system\neosave.window");
+  WinSave.Center();
+  WinSave.GoSystemExclusive();
+  if(WinSave.xResult==true)
+  {
+    self.Close();
+    Game.UnloadObject(WinSave);
+  }
+  else
+    Game.UnloadObject(WinSave);
+
+}

@@ -1,0 +1,201 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+var BodyEyes = Scene.GetNode("BodyEyes");
+var BodyHead = Scene.GetNode("BodyHead");
+var BodyLeftArm = Scene.GetNode("BodyLeftArm");
+var BodyLeftLeg = Scene.GetNode("BodyLeftLeg");
+var BodyRightArm = Scene.GetNode("BodyRightArm");
+var BodyTorso = Scene.GetNode("BodyTorso");
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	actor.GoToObject(this);
+	if ((BodyEyes.Active) || (BodyHead.Active) || (BodyLeftArm.Active) || (BodyLeftLeg.Active) || (BodyRightArm.Active) || (BodyTorso.Active))
+	{
+		var BodyBlanket =  Scene.GetNode("BodyBlanket");
+		if (!BodyBlanket.Active)
+		{
+			if  (MedBayBodyComplete)
+			{
+				PortraitType = PORT_NORMAL;
+				actor.Talk("/MEDBAY0020/I fully assembled all those body parts, but I don't even know why anymore. He looks so cold.");
+			}
+			else
+			{
+				PortraitType = PORT_NORMAL;
+				actor.Talk("/MEDBAY0021/The body parts seem to fit perfectly into the grooves.");
+			}
+		}
+		else
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/MEDBAY0022/He seems less disturbing with the blanket over him. Maybe I should leave him in peace.");
+		}
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0023/It's a bed with body shaped burn marks across it.");
+	}
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	if ((BodyEyes.Active) || (BodyHead.Active) || (BodyLeftArm.Active) || (BodyLeftLeg.Active) || (BodyRightArm.Active) || (BodyTorso.Active))
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0024/The bed's kind of occupied already.");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0025/I don't think I could sleep even if I wanted to");
+	}
+}
+
+on "eyes"
+{
+	actor.GoToObject(this);
+	if (BodyHead.Active)
+	{
+		BodyEyes.Active = true;
+		Game.PlaySound("audio\sounds\medbay-bodyassembe.ogg");
+		Game.DropItem("eyes");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0026/There's nowhere to fit the eyes. What the hell am I doing anyway?");
+	}
+
+	if ((BodyEyes.Active) && (BodyHead.Active) && (BodyLeftArm.Active) && (BodyLeftLeg.Active) && (BodyRightArm.Active) && (BodyTorso.Active))
+	{
+		Complete();
+	}
+}
+
+on "head"
+{
+	actor.GoToObject(this);
+	BodyHead.Active = true;
+	Game.PlaySound("audio\sounds\medbay-bodyassembe.ogg");
+	Game.DropItem("head");
+
+	if ((BodyEyes.Active) && (BodyHead.Active) && (BodyLeftArm.Active) && (BodyLeftLeg.Active) && (BodyRightArm.Active) && (BodyTorso.Active))
+	{
+		Complete();
+	}
+}
+
+on "leftarm"
+{
+	actor.GoToObject(this);
+	BodyLeftArm.Active = true;
+	Game.PlaySound("audio\sounds\medbay-bodyassembe.ogg");
+	Game.DropItem("leftarm");
+
+	if ((BodyEyes.Active) && (BodyHead.Active) && (BodyLeftArm.Active) && (BodyLeftLeg.Active) && (BodyRightArm.Active) && (BodyTorso.Active))
+	{
+		Complete();
+	}
+}
+
+on "leg"
+{
+	actor.GoToObject(this);
+	BodyLeftLeg.Active = true;
+	Game.PlaySound("audio\sounds\medbay-bodyassembe.ogg");
+	Game.DropItem("leg");
+
+	if ((BodyEyes.Active) && (BodyHead.Active) && (BodyLeftArm.Active) && (BodyLeftLeg.Active) && (BodyRightArm.Active) && (BodyTorso.Active))
+	{
+		Complete();
+	}
+}
+
+on "rightarm"
+{
+	actor.GoToObject(this);
+	BodyRightArm.Active = true;
+	Game.PlaySound("audio\sounds\medbay-bodyassembe.ogg");
+	Game.DropItem("rightarm");
+
+	if ((BodyEyes.Active) && (BodyHead.Active) && (BodyLeftArm.Active) && (BodyLeftLeg.Active) && (BodyRightArm.Active) && (BodyTorso.Active))
+	{
+		Complete();
+	}
+}
+
+on "torso"
+{
+	actor.GoToObject(this);
+	var BodyTorso = Scene.GetNode("BodyTorso");
+	BodyTorso.Active = true;
+	Game.PlaySound("audio\sounds\medbay-bodyassembe.ogg");
+	Game.DropItem("torso");
+
+	if ((BodyEyes.Active) && (BodyHead.Active) && (BodyLeftArm.Active) && (BodyLeftLeg.Active) && (BodyRightArm.Active) && (BodyTorso.Active))
+	{
+		Complete();
+	}
+}
+
+method Complete()
+{
+
+	MedBayBodyComplete = true;
+
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0027/There, it's complete!");
+	actor.Talk("/MEDBAY0028/... ... ... ... Nothing's happening ...");
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/MEDBAY0029/I guess I don't know what I expected. What is this place doing to me? Why did I bring all these body parts here?");
+
+
+}
+
+on "blanket"
+{
+	actor.GoToObject(this);
+
+	if  (MedBayBodyComplete)
+	{
+		var BodyBlanket =  Scene.GetNode("BodyBlanket");
+		BodyBlanket.Active = true;
+		Game.DropItem("blanket");
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0030/There, I guess that seems more respectful.");
+		EndingPoints = EndingPoints + 1;
+		
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0031/It's not finished yet.");
+	}
+}
+
+on "drsalt"
+{
+	actor.GoToObject(this);
+
+	if  (MedBayBodyComplete)
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0032/I think he's beyond thirst at this point.");
+		
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0033/I don't want to get the sheets wet.");
+	}
+}

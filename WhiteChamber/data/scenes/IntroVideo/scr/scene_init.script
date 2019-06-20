@@ -1,0 +1,44 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+// Turn off actor
+actor.Active = false;
+
+// Turn off sound/ambience
+PlayAmbient(AMBIENT_SILENCE, "NONE");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateIntroVideo;
+
+
+// default values
+if(StateIntroVideo==null)
+{
+  StateIntroVideo.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateIntroVideo.Visited)
+{
+  StateIntroVideo.Visited = true;
+
+  // this is our first visit in this scene...
+}
+
+
+// Play intro video
+Game.PlayTheora("assets\data0001.ogg");
+
+// Jump to black chamber
+Game.ChangeScene("scenes\blackchamber\blackchamber.scene");

@@ -1,0 +1,46 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+	 	actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0016/Someone has jammed an axe in the lift control");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0014/I can't see from here");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+		LabAxeTaken = true;
+		Game.TakeItem("axe");
+		var Axe = Scene.GetNode("Axe");
+		var AxeRegion = Scene.GetNode("AxeRegion");
+		Axe.Active = false;
+		AxeRegion.Active = false;
+
+		// If player has axe and blanket switch on bloody nav room
+		LivingRoomBloodyNav = Game.HasItem("blanket");
+
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+}

@@ -1,0 +1,38 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+// Turn off actor
+actor.Active = false;
+
+// Turn off sound/ambience
+PlayAmbient(AMBIENT_SILENCE, "NONE");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateSelectScreen;
+
+
+// default values
+if(StateSelectScreen==null)
+{
+  StateSelectScreen.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateSelectScreen.Visited)
+{
+  StateSelectScreen.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

@@ -1,0 +1,87 @@
+; $EDITOR_PROJECT_ROOT_DIR$ ..\..\..\
+
+ACTOR {
+  NAME = "droid"
+  CAPTION=""
+  SCALABLE = TRUE
+  INTERACTIVE = FALSE
+  X = 400
+  Y = 460
+  SCRIPT="actors\droid\droid.script"
+
+  FONT = "fonts\outline_red.font"
+;-------------------------------------------------------------------------------
+  WALK {
+    SPRITESET {
+      LEFT       = "actors\droid\ll\walk.sprite"
+      RIGHT      = "actors\droid\rr\walk.sprite"
+      UP         = "actors\droid\uu\walk.sprite"
+      DOWN       = "actors\droid\dd\walk.sprite"
+
+      UP_LEFT    = "actors\droid\ll\walk.sprite"
+      UP_RIGHT   = "actors\droid\rr\walk.sprite"
+      DOWN_LEFT  = "actors\droid\ll\walk.sprite"
+      DOWN_RIGHT = "actors\droid\rr\walk.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  STAND {
+    SPRITESET {
+      LEFT       = "actors\droid\ll\stand.sprite"
+      RIGHT      = "actors\droid\rr\stand.sprite"
+      UP         = "actors\droid\uu\stand.sprite"
+      DOWN       = "actors\droid\dd\stand.sprite"
+
+      UP_LEFT    = "actors\droid\ll\stand.sprite"
+      UP_RIGHT   = "actors\droid\rr\stand.sprite"
+      DOWN_LEFT  = "actors\droid\ll\stand.sprite"
+      DOWN_RIGHT = "actors\droid\rr\stand.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  TURN_LEFT {
+    SPRITESET {
+      LEFT       = "actors\droid\ll\turn.sprite"
+      RIGHT      = "actors\droid\rr\turn.sprite"
+      UP         = "actors\droid\uu\turn.sprite"
+      DOWN       = "actors\droid\dd\turn.sprite"
+
+      UP_LEFT    = "actors\droid\ll\turn.sprite"
+      UP_RIGHT   = "actors\droid\rr\turn.sprite"
+      DOWN_LEFT  = "actors\droid\ll\turn.sprite"
+      DOWN_RIGHT = "actors\droid\lr\turn.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  TURN_RIGHT {
+    SPRITESET {
+      LEFT       = "actors\droid\ll\turn.sprite"
+      RIGHT      = "actors\droid\rr\turn.sprite"
+      UP         = "actors\droid\uu\turn.sprite"
+      DOWN       = "actors\droid\dd\turn.sprite"
+
+      UP_LEFT    = "actors\droid\ll\turn.sprite"
+      UP_RIGHT   = "actors\droid\rr\turn.sprite"
+      DOWN_LEFT  = "actors\droid\ll\turn.sprite"
+      DOWN_RIGHT = "actors\droid\rr\turn.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  TALK {
+    SPRITESET {
+      LEFT       = "actors\droid\ll\stand.sprite"
+      RIGHT      = "actors\droid\rr\stand.sprite"
+      UP         = "actors\droid\uu\stand.sprite"
+      DOWN       = "actors\droid\dd\stand.sprite"
+
+      UP_LEFT    = "actors\droid\ll\stand.sprite"
+      UP_RIGHT   = "actors\droid\rr\stand.sprite"
+      DOWN_LEFT  = "actors\droid\ll\stand.sprite"
+      DOWN_RIGHT = "actors\droid\rr\stand.sprite"
+    }
+  }
+}

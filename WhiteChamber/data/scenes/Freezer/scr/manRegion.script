@@ -1,0 +1,110 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/FREEZE0013/It looks like he's freezing, maybe I could warm him up?");
+}
+
+on "take"
+{
+	actor.GoToObject(this);
+
+	Game.Interactive = false;
+
+	//remove guy shivering and meat region
+	var freezeMan = Scene.GetNode("freezeMan");
+	var manRegion = Scene.GetNode("manRegion");
+	var meat = Scene.GetNode("meat");
+	manRegion.Active = false;
+	freezeMan.Active = false;
+	meat.Active = false;
+	Game.StopMusicChannel(3);
+
+	//show guy screaming (with wait)
+	var freezeScream = Scene.GetNode("freezeScream");
+	var freezeScreamSprite = freezeScream.GetSpriteObject();
+	freezeScream.Active = true;
+ 	while(true)
+	{
+		if(freezeScreamSprite.Finished) break;
+		Sleep(20); 
+  	}  
+
+	//flash on
+	var FlashOn = Scene.GetNode("FlashOn");
+	var FlashOnSprite = FlashOn.GetSpriteObject();
+	FlashOn.Active = true;
+ 	while(true)
+	{
+		if(FlashOnSprite.Finished) break;
+		Sleep(20); 
+  	}  
+
+	//remove all on-screen stuff
+	var lid = Scene.GetNode("lid");
+	var background = Scene.GetNode("background");
+	lid.Active = false;
+	background.Active = false;
+	freezeScream.Active = false;
+	FlashOn.Active = false;
+
+	//put on messed up stuff
+	PlayAmbient(AMBIENT_SCARY, "FREEZERGORE");
+	var background2 = Scene.GetNode("background2");
+	var floor = Scene.GetNode("floor");
+	var floor2 = Scene.GetNode("floor2");
+	var leg = Scene.GetNode("leg");
+	var legRegion = Scene.GetNode("legRegion");
+	var trappedMan = Scene.GetNode("trappedMan");
+	floor.Active = false;
+	floor2.Active = true;
+	background2.Active = true;
+	leg.Active = true;
+	legRegion.Active = true;
+	trappedMan.Active = true;
+
+	//flash off
+	var FlashOff = Scene.GetNode("FlashOff");
+	var FlashOffSprite = FlashOff.GetSpriteObject();
+	FlashOff.Active = true;
+ 	while(true)
+	{
+		if(FlashOffSprite.Finished) break;
+		Sleep(20); 
+  	}  
+	FlashOff.Active = false;
+
+	Game.Interactive = true;
+
+	PortraitType = PORT_POCKING;
+	actor.Talk("/FREEZE0016/What is going on here?");
+}
+
+on "blanket"
+{
+	actor.GoToObject(this);
+	if (FreezerBlanketMan == false)
+	{
+		EndingPoints = EndingPoints + 1;
+		FreezerBlanketMan = true;
+	}
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0014/A nice thought, but it probably won't help him at this point");
+}
+
+on "drsalt"
+{
+	actor.GoToObject(this);
+
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0015/He looks cold enough already. I don't think a chilled soft drink is what he needs.");
+}

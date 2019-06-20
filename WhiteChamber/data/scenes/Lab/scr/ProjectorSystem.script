@@ -1,0 +1,39 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0034/This looks like an old projector system. I think it's connected to that old video player.");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0035/It's projecting the torture video from the casette player.");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/THELAB0036/I can't get it to do anything on its own. Maybe I should try the video player.");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it.");
+	}
+}
+

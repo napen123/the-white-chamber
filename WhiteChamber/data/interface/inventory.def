@@ -1,0 +1,45 @@
+INVENTORY_BOX
+{
+  ITEM_WIDTH = 100
+  ITEM_HEIGHT = 100
+  SPACING = 0
+  SCROLL_BY = 1
+  HIDE_SELECTED = TRUE
+
+  AREA { 12, 0, 1012, 100 }
+  EXCLUSIVE = FALSE
+;  ALWAYS_VISIBLE = TRUE
+
+  WINDOW
+  {
+    X = 0
+    Y = 0
+    WIDTH = 1024
+    HEIGHT = 100
+    IMAGE = "interface\Inventory.png"
+  
+    BUTTON
+    {
+      NAME = "prev"
+      IMAGE = "interface\inventoryleft.png"
+      IMAGE_HOVER = "interface\inventoryleftglow.png"
+      X = 0
+      Y = 0
+      WIDTH = 12
+      HEIGHT = 100
+      PARENT_NOTIFY = TRUE
+    }
+
+    BUTTON
+    {
+      NAME = "next"
+      IMAGE = "interface\inventoryright.png"
+      IMAGE_HOVER = "interface\inventoryrightglow.png"
+      X = 1012
+      Y = 0
+      WIDTH = 12
+      HEIGHT = 100
+      PARENT_NOTIFY = TRUE
+    }
+  }
+}

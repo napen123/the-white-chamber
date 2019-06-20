@@ -1,0 +1,25 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var Cabinet = Scene.GetNode("Cabinet");
+	var CabinetOverlay = Scene.GetNode("CabinetOverlay");
+	var CabinetLeave = Scene.GetNode("CabinetLeave");
+	var CabinetDrawer = Scene.GetNode("CabinetDrawer");
+	var CabinetOpen = Scene.GetNode("CabinetOpen");
+	var CabinetEnvelope = Scene.GetNode("CabinetEnvelope");
+	var CabinetEnvRegion = Scene.GetNode("CabinetEnvRegion");
+	var CabinetDrawerLocked = Scene.GetNode("CabinetDrawerLocked");
+	Cabinet.Active = false;
+	CabinetOverlay.Active = false;
+	CabinetLeave.Active = false;
+	CabinetDrawer.Active = false;
+	CabinetEnvelope.Active = false;
+	CabinetOpen.Active = false;
+	CabinetEnvRegion.Active = false;
+	CabinetDrawerLocked.Active = false;
+
+
+}

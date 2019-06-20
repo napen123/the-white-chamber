@@ -1,0 +1,46 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+	 	actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0038/I recognise this, it's a 7777 Zentradi series proto-analyser");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0014/I can't see it properly from here.");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+	 	actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0039/I'd need some kind of sample dish to use with it");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+
+}
+
+on "sample"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/THELAB0040/I recognise this. The tissue has been extracted specially to store a clean sample of DNA.");
+}

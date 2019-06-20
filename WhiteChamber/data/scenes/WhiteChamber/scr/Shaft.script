@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	actor.GoToObject(this);
+
+	if (gameFinished)
+	{
+		if (EndingPoints > 5)
+		{
+			Game.ChangeScene("scenes\comedyending\comedyending.scene");
+		}
+		else
+		{
+			Game.ChangeScene("scenes\fanroomnormal\fanroomnormal.scene");
+		}
+	}
+	else
+	{
+		Game.ChangeScene("scenes\fanroom\fanroom.scene");
+	}
+}

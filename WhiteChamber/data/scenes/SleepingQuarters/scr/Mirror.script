@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/SLEEPQ0012/So that's me.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	Game.TakeItem("mirror");
+	var Mirror = Scene.GetNode("Mirror");
+	Mirror.Active = false;
+
+}

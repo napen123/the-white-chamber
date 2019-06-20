@@ -1,0 +1,90 @@
+WINDOW
+{
+  X = 200
+  Y = 200
+  WIDTH = 520
+  HEIGHT = 450
+  NAME = "NeoMainMenu"
+
+  TITLE = "/INTERF0004/Main Menu"
+  TITLE_RECT {60,35,260,70}  
+  TITLE_ALIGN = left
+  DRAG_RECT {58,30,420,70}
+  IMAGE = "interface\system\artwork\guibackground.png"
+  FONT = "primaryttf.font"
+  SCRIPT = "interface\system\NeoMainMenu.script"
+
+
+  BUTTON
+  {
+   NAME = "close"
+   TEXT = "/INTERF0005/Resume Game"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 115
+    Y = 130
+    WIDTH = 300
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+    NAME = "close"
+    IMAGE = "interface\system\artwork\guicross.png"
+    IMAGE_HOVER = "interface\system\artwork\guicrossglow.png"
+    X = 420
+    Y = 30
+    PARENT_NOTIFY = TRUE
+  }
+
+
+  BUTTON
+  {
+   NAME = "load"
+   TEXT = "/INTERF0001/Load Game"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 115
+    Y = 200
+    WIDTH = 300
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+   NAME = "save"
+   TEXT = "/INTERF0006/Save Game"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 115
+    Y = 270
+    WIDTH = 300
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+   NAME = "quit"
+   TEXT = "/INTERF0007/Quit Game"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 115
+    Y = 340
+    WIDTH = 300
+    PARENT_NOTIFY = TRUE
+  }
+
+  STATIC
+  {
+    NAME = "scanlines"
+    X = 0
+    Y = 0
+    IMAGE = "interface\system\artwork\guiscanlines.png"
+  }
+
+
+}

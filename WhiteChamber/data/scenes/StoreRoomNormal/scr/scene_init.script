@@ -1,0 +1,39 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(150, 440);
+actor.Direction = DI_RIGHT;
+actor.Active = true;
+
+PlayAmbient(AMBIENT_NORMAL, "NONE");
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateStoreRoomNormal;
+
+
+// default values
+if(StateStoreRoomNormal==null)
+{
+  StateStoreRoomNormal.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateStoreRoomNormal.Visited)
+{
+  StateStoreRoomNormal.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

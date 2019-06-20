@@ -1,0 +1,281 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+	 	actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0028/This looks like antique equipment. It's for playing video tapes.");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0029/It started when I put the tape in that player.");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+	 	actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0030/It won't do anything without a video casette.");
+	}
+	else
+	{
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/THELAB0031/Maybe if I could stop that casette it might end all this.");
+	}
+}
+
+on "tape"
+{
+
+	// Walk to player
+	actor.GoToObject(this); 
+
+	// Disable player control
+	Game.Interactive = false;
+
+	Game.DropItem("tape");
+
+	// Mark torture scene as being carried out
+	TortureDone = true;
+
+	// Screen open animation
+	var ScreenOpen = Scene.GetNode("ScreenOpen");
+	var ScreenOpenSprite = ScreenOpen.GetSpriteObject(); 
+	ScreenOpen.Active = true;
+ 	while(true)
+	{
+		if(ScreenOpenSprite.Finished) break;
+		Sleep(20); 
+  	}
+	ScreenOpen.Active = false;
+
+	// Turn screen on
+	var Screen = Scene.GetNode("Screen");
+	Screen.Active = true;
+
+	Sleep(1000);
+
+	// Play video
+	var ProjectorPlayback = Scene.GetNode("ProjectorPlayback");
+	ProjectorPlayback.Active = true;
+	Game.PlayMusicChannel(3, "audio\sounds\lab-projector.wav", true);
+
+	// Delay and text
+	PortraitType = PORT_POCKING;
+	actor.Talk("/THELAB0032/What the...?  That's me!");
+
+	Sleep(1000);
+
+	// Flash on
+	var FlashOn = Scene.GetNode("FlashOn");
+	FlashOn.Active = true;
+	var FlashOnSprite = FlashOn.GetSpriteObject();
+ 	while(true)
+	{
+		if(FlashOnSprite.Finished) break;
+		Sleep(20); 
+  	}
+
+	// Turn off actor
+	//actor.Active = false;
+	actor.SkipTo(-100, 0);
+	Strapped = true;
+
+	// Turn on torture animation
+	var Elec = Scene.GetNode("Elec");
+	Elec.Active = true;
+
+	// Turn on tortue looping sound
+	Game.PlayMusicChannel(4, "audio\sounds\lab-torture.ogg", true);
+
+	// Turn on props and regions
+	var Gun = Scene.GetNode("Gun");
+	var GunRegion = Scene.GetNode("GunRegion");
+	Gun.Active = true;
+	GunRegion.Active = true;
+	var Knife = Scene.GetNode("Knife");
+	var KnifeRegion = Scene.GetNode("KnifeRegion");
+	Knife.Active = true;
+	KnifeRegion.Active = true;
+	var SampleDish = Scene.GetNode("SampleDish");
+	var SampleDishRegion = Scene.GetNode("SampleDishRegion");
+	SampleDish.Active = true;
+	SampleDishRegion.Active = true;
+
+	// Flash off
+	FlashOn.Active = false;
+	var FlashOff = Scene.GetNode("FlashOff");
+	var FlashOffSprite = FlashOff.GetSpriteObject();
+	FlashOff.Active = true;
+ 	while(true)
+	{
+		if(FlashOffSprite.Finished) break;
+		Sleep(20); 
+  	}
+	FlashOff.Active = false;
+
+	// Return game control
+	Game.Interactive = true;
+
+	// Show life bar
+	//var LifeFace1 = Scene.GetNode("LifeFace1");
+	//var LifeFace2 = Scene.GetNode("LifeFace2");
+	//LifeFace1.Active = true;
+	//LifeFace2.Active = true;
+
+	// Display life bar
+	var LifeFace = Scene.GetNode("LifeFace");
+	var LifeFaceSprite = LifeFace.GetSpriteObject(); 
+	LifeFace.Active = true;
+ 	while(true)
+	{
+		if(LifeFaceSprite.Finished) break;
+		if(Strapped == false) break;
+		Sleep(20); 
+  	}
+	LifeFace.Active = false;
+
+	// If player failed to escape
+	if (Strapped == true)
+	{
+		// Disable control
+		Game.Interactive = false;
+
+		// Turn off torture sound
+		Game.StopMusicChannel(4);
+
+		// Show death image
+		var DeathOverlay = Scene.GetNode("DeathOverlay");
+		DeathOverlay.Active = true;
+		Sleep(5000);
+
+		// Jump to game over screen
+		EndingType = END_ELEC;
+		Game.ChangeScene("scenes\ending\ending.scene");		
+	}
+
+
+}
+
+on "laser"
+{
+
+	Game.Interactive = false;
+	Game.DropItem("laser");
+	Strapped = false;
+
+	// Turn off torture animation with gun
+	var ElecWithGun = Scene.GetNode("ElecWithGun");
+	ElecWithGun.Active = false;
+
+	// Turn on torture animation gun throw
+	var ElecThrowGun = Scene.GetNode("ElecThrowGun");
+	var ElecSprite = ElecThrowGun.GetSpriteObject();
+	ElecThrowGun.Active = true;
+ 	while(true)
+	{
+		if(ElecSprite.Finished) break;
+		Sleep(20); 
+  	}
+
+	// Stop video
+	var ProjectorPlayback = Scene.GetNode("ProjectorPlayback");
+	ProjectorPlayback.Active = false;
+	Game.StopMusicChannel(3);
+
+	// Delay
+	Sleep(1200);
+
+	// Flash on
+	var FlashOn = Scene.GetNode("FlashOn2");
+	var FlashOnSprite = FlashOn.GetSpriteObject();
+	FlashOn.Active = true;
+ 	while(true)
+	{
+		if(FlashOnSprite.Finished) break;
+		Sleep(20); 
+  	}
+
+	// Turn off throw animation
+	ElecThrowGun.Active = false;
+
+	// Turn off torture sound
+	Game.StopMusicChannel(4);
+
+	// Turn actor back on
+	actor.Active = true;
+	actor.SkipTo(510, 730);
+	actor.Direction = DI_DOWN;
+	
+
+	// Turn batteries on
+	var Batteries = Scene.GetNode("Batteries");
+	var BatteriesRegion = Scene.GetNode("BatteriesRegion");
+	var BatteriesBlock = Scene.GetNode("BatteriesBlock");
+	Batteries.Active = true;
+	BatteriesRegion.Active = true;
+	BatteriesBlock.Active = true;
+	
+	// Flash off
+	var FlashOff = Scene.GetNode("FlashOff2");
+	var FlashOffSprite = FlashOff.GetSpriteObject();
+	FlashOn.Active = false;
+	FlashOff.Active = true;
+ 	while(true)
+	{
+		if(FlashOffSprite.Finished) break;
+		Sleep(20); 
+  	}
+	FlashOff.Active = false;
+
+	Game.Interactive = true;
+
+	PortraitType = PORT_POCKING;
+	actor.Talk("/THELAB0033/I feel sick... what the hell was that?");
+}
+
+on "disc1"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0050/This doesn't play video discs. It's designed for old video tapes.");
+	}
+}
+
+
+on "disc2"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0050/This doesn't play video discs. It's designed for old video tapes.");
+	}
+}
+
+
+on "disc3"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0050/This doesn't play video discs. It's designed for old video tapes.");
+	}
+}
+

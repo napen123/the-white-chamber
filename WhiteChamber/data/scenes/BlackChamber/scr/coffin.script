@@ -1,0 +1,41 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_PUZZLED;
+  actor.Talk("/BLACKC0002/That's the coffin I woke up in, why was I in there?");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/BLACKC0003/It's too heavy to move");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+  actor.GoToObject(this);
+}
+
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_PUZZLED;
+  actor.Talk("/BLACKC0023/It's just a big heavy coffin. I don't think I can use anything on it.");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//function GoToObject()
+//{
+//  actor.GoTo(200, 200);
+//  actor.TurnTo(DI_UP);
+//}

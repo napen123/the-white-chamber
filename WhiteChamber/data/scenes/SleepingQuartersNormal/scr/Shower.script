@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/NORMAL0006/Commander Trend gave me little choice. It was just me, him and Arthur left at that point. He didn't trust the spy but he didn't believe he was the killer.");
+	actor.Talk("/NORMAL0007/I think he saw it in my eyes... So I took his.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NORMAL0008/I don't want to look inside.");
+}

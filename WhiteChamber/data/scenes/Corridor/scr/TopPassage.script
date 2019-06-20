@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	CorridorDirection = 1;
+
+	if (CorridorSegment == 1)
+	{
+	  	Game.ChangeScene("scenes\livingroomgrated\livingroomgrated.scene");
+	}
+	else
+	{
+		CorridorSegment = CorridorSegment - 1;
+	  	Game.ChangeScene("scenes\corridor\corridor.scene");
+	}	
+
+}

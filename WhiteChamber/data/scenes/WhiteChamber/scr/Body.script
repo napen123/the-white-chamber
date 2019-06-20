@@ -1,0 +1,198 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	if (!gameFinished)
+	{
+		PortraitType = PORT_POCKING;
+		actor.Talk("/WCHAMB0007/That's disgusting it looks like his face has melted");
+	}
+	else
+	{
+		PortraitType = PORT_POCKING;
+		actor.Talk("/WCHAMB0008/I did this... I killed him! I released a toxin in here and watched him die. He was the only one left and by that point it seemed so easy to end his life.");
+	}
+}
+
+on "take"
+{
+
+	actor.GoToObject(this);
+
+	if (!gameFinished)
+	{
+		Game.Interactive = false;
+		
+		Sleep(100);
+
+		gameFinished = true;
+
+		var Face = Scene.GetNode("Face");
+
+		var Death1 = Scene.GetNode("Death1");
+		var Death2 = Scene.GetNode("Death2");
+		var Death3 = Scene.GetNode("Death3");
+
+		var FlashOn = Scene.GetNode("FlashOn");
+		var FlashOnSprite = FlashOn.GetSpriteObject();
+		var FlashOff = Scene.GetNode("FlashOff");
+		var FlashOffSprite = FlashOff.GetSpriteObject();
+
+		var FlashOn2 = Scene.GetNode("FlashOn2");
+		var FlashOn2Sprite = FlashOn2.GetSpriteObject();
+		var FlashOff2 = Scene.GetNode("FlashOff2");
+		var FlashOff2Sprite = FlashOff2.GetSpriteObject();
+
+		var FlashOn3 = Scene.GetNode("FlashOn3");
+		var FlashOn3Sprite = FlashOn3.GetSpriteObject();
+		var FlashOff3 = Scene.GetNode("FlashOff3");
+		var FlashOff3Sprite = FlashOff3.GetSpriteObject();
+
+		var FlashOn4 = Scene.GetNode("FlashOn4");
+		var FlashOn4Sprite = FlashOn4.GetSpriteObject();
+		var FlashOff4 = Scene.GetNode("FlashOff4");
+		var FlashOff4Sprite = FlashOff4.GetSpriteObject();
+
+		// show face
+		Face.Active = true;
+
+		// text sequnce
+		PortraitType = PORT_ARTHUR;	
+		actor.Talk("/WCHAMB0009/Hello Sarah. So here we are again. The situations are now reversed it seems, as I recall last time it was me trapped in there hoping for mercy.");
+		actor.Talk("/WCHAMB0010/I cared for you, fell for your false smiles. Now that mess you left of me on the floor there is what I have become.");
+		actor.Talk("/WCHAMB0011/I hope you're beginning to understand now. What you did to me... to all of us. The price we paid for your obsession with its power.");
+		actor.Talk("/WCHAMB0012/At least I can say that I did what you failed to. The artefact responded to me. My blood, my hatred and my desire for justice activated it.");
+		actor.Talk("/WCHAMB0013/I unleashed the power you killed for and now we're both trapped here in this cursed cycle. An eternal repeating nightmare until you've earned salvation.");
+		actor.Talk("/WCHAMB0014/I stand as your judge as always, and I will look into your soul once more. Were your sins born from a madness you couldn't control?");
+		actor.Talk("/WCHAMB0015/Given this clean slate did you demonstrate compassion and regret, or once again have you just shown a selfish drive towards your goal?");
+		actor.Talk("/WCHAMB0016/While I make my decision it's time for you to remember... remember what you did to me.");
+
+		Game.Interactive = false;
+		Sleep(1600);
+		Game.Interactive = false;
+
+		// flash 1 on (wait)
+		FlashOn.Active = true;
+		while(true)
+		{
+			if(FlashOnSprite.Finished) break;
+	    		Sleep(20); 
+		}
+
+		// show death 1
+		Death1.Active = true;
+
+		// flash 1 off (wait)
+		FlashOn.Active = false;
+		FlashOff.Active = true;
+		while(true)
+		{
+			if(FlashOffSprite.Finished) break;
+	    		Sleep(20); 
+		}
+
+		// pause
+		Sleep(2000);
+
+		// flash 2 on (wait)
+		FlashOff.Active = false;
+		FlashOn2.Active = true;
+		while(true)
+		{
+			if(FlashOn2Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+
+		// show death 2
+		Death1.Active = false;
+		Death2.Active = true;
+
+		// flash 2 off (wait)
+		FlashOn2.Active = false;
+		FlashOff2.Active = true;
+		while(true)
+		{
+			if(FlashOff2Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+
+		// pause
+		Sleep(2000);
+
+		// flash 3 on (wait)
+		FlashOff2.Active = false;
+		FlashOn3.Active = true;
+		while(true)
+		{
+			if(FlashOn3Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+
+		// show death 3
+		Death2.Active = false;
+		Death3.Active = true;
+
+		// flash 3 off (wait)
+		FlashOn3.Active = false;
+		FlashOff3.Active = true;
+		while(true)
+		{
+			if(FlashOff3Sprite.Finished) break;
+    			Sleep(20); 
+		}
+
+		// pause
+		Sleep(2000);
+
+		// flash 4 on (wait)
+		FlashOff3.Active = false;
+		FlashOn4.Active = true;
+		while(true)
+		{
+			if(FlashOn4Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+
+		// unshow death 3
+		Death3.Active = false;
+
+		// flash 4 off (wait)
+		FlashOn4.Active = false;
+		FlashOff4.Active = true;
+		while(true)
+		{
+			if(FlashOff4Sprite.Finished) break;
+	    		Sleep(20); 
+		}
+		FlashOff4.Active = false;
+
+		// more text
+		PortraitType = PORT_ARTHUR;	
+		actor.Talk("/WCHAMB0017/It is done. We have come full circle back to where this starts and ends and I have made my decision.  All that is left is for you to leave... now!");
+		actor.Talk("/WCHAMB0018/The life-pod in the store room has been unsealed and inside you will find my judgement. On your way you should remember it all. What you did to deserve this.");
+		if ((EndingPoints > 3) && (EndingPoints < 6))
+		{
+			actor.Talk("/WCHAMB0025/I have changed the orbit of the station. It will crash into the nearby planet within an hour.");
+		}
+		actor.Talk("/WCHAMB0019/Goodbye Sarah... I hope we never have to meet again.");
+		Sleep(500);
+
+		// turn off face
+		Face.Active = false;
+
+		Game.Interactive =true;
+	}
+	else
+	{
+		PortraitType = PORT_POCKING;
+		actor.Talk("/WCHAMB0020/He's still warm. I can't move him. It's like his blood has fused to the artefact.");
+	}
+}

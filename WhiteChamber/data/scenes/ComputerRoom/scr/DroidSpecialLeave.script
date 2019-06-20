@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var DroidEarly = Scene.GetNode("DroidEarly");
+	var DroidSpaceBG = Scene.GetNode("DroidSpaceBG");
+	var DroidSpaceAnim = Scene.GetNode("DroidSpaceAnim");
+	var DroidSpecialLeave = Scene.GetNode("DroidSpecialLeave");
+	DroidEarly.Active = false;
+	DroidSpaceBG.Active = false;
+	DroidSpaceAnim.Active = false;
+	DroidSpecialLeave.Active = false;
+}

@@ -1,0 +1,21 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");
+	var Message1 = Scene.GetNode("Message1");
+	var Message2 = Scene.GetNode("Message2");
+	var Message3 = Scene.GetNode("Message3");
+	var Message4 = Scene.GetNode("Message4");
+	Message1.Active = false;
+	Message2.Active = false;
+	Message3.Active = true;
+	Message4.Active = false;
+
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0045/This just look like promotional spam for some concert.");
+
+}
+

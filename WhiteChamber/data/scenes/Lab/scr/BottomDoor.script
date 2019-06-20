@@ -1,0 +1,18 @@
+#include "scripts\base.inc"
+
+// Opening door code
+on "LeftClick" {
+
+	if (!Strapped)
+	{
+		// Move to door
+		actor.GoToObject(this); 
+		// Jump to different scene
+  		Game.ChangeScene("scenes\livingroom\livingroom.scene");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+}

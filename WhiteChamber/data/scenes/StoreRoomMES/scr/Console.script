@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0006/THE MES CONSOLE I'M PLAYING.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0007/I CAN'T MAKE OUT THE BUTTONS TO SWITCH IT OFF.");
+}

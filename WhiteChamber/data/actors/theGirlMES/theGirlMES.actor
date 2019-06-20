@@ -1,0 +1,87 @@
+; $EDITOR_PROJECT_ROOT_DIR$ ..\..\..\
+
+ACTOR {
+  NAME = "theGirlMES"
+  CAPTION=""
+  SCALABLE = TRUE
+  INTERACTIVE = FALSE
+  X = 400
+  Y = 460
+  SCRIPT="actors\thegirlMES\theGirlMES.script"
+
+  FONT = "fonts\outline_red.font"
+;-------------------------------------------------------------------------------
+  WALK {
+    SPRITESET {
+      LEFT       = "actors\thegirlMES\ll\walk.sprite"
+      RIGHT      = "actors\thegirlMES\rr\walk.sprite"
+      UP         = "actors\thegirlMES\uu\walk.sprite"
+      DOWN       = "actors\thegirlMES\dd\walk.sprite"
+
+      UP_LEFT    = "actors\thegirlMES\ll\walk.sprite"
+      UP_RIGHT   = "actors\thegirlMES\rr\walk.sprite"
+      DOWN_LEFT  = "actors\thegirlMES\ll\walk.sprite"
+      DOWN_RIGHT = "actors\thegirlMES\rr\walk.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  STAND {
+    SPRITESET {
+      LEFT       = "actors\thegirlMES\ll\stand.sprite"
+      RIGHT      = "actors\thegirlMES\rr\stand.sprite"
+      UP         = "actors\thegirlMES\uu\stand.sprite"
+      DOWN       = "actors\thegirlMES\dd\stand.sprite"
+
+      UP_LEFT    = "actors\thegirlMES\ll\stand.sprite"
+      UP_RIGHT   = "actors\thegirlMES\rr\stand.sprite"
+      DOWN_LEFT  = "actors\thegirlMES\ll\stand.sprite"
+      DOWN_RIGHT = "actors\thegirlMES\rr\stand.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  TURN_LEFT {
+    SPRITESET {
+      LEFT       = "actors\thegirlMES\ll\turn.sprite"
+      RIGHT      = "actors\thegirlMES\rr\turn.sprite"
+      UP         = "actors\thegirlMES\uu\turn.sprite"
+      DOWN       = "actors\thegirlMES\dd\turn.sprite"
+
+      UP_LEFT    = "actors\thegirlMES\ll\turn.sprite"
+      UP_RIGHT   = "actors\thegirlMES\rr\turn.sprite"
+      DOWN_LEFT  = "actors\thegirlMES\ll\turn.sprite"
+      DOWN_RIGHT = "actors\thegirlMES\rr\turn.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  TURN_RIGHT {
+    SPRITESET {
+      LEFT       = "actors\thegirlMES\ll\turn.sprite"
+      RIGHT      = "actors\thegirlMES\rr\turn.sprite"
+      UP         = "actors\thegirlMES\uu\turn.sprite"
+      DOWN       = "actors\thegirlMES\dd\turn.sprite"
+
+      UP_LEFT    = "actors\thegirlMES\ll\turn.sprite"
+      UP_RIGHT   = "actors\thegirlMES\rr\turn.sprite"
+      DOWN_LEFT  = "actors\thegirlMES\ll\turn.sprite"
+      DOWN_RIGHT = "actors\thegirlMES\rr\turn.sprite"
+    }
+  }
+
+;-------------------------------------------------------------------------------
+  TALK {
+    SPRITESET {
+      LEFT       = "actors\thegirlMES\ll\stand.sprite"
+      RIGHT      = "actors\thegirlMES\rr\stand.sprite"
+      UP         = "actors\thegirlMES\uu\stand.sprite"
+      DOWN       = "actors\thegirlMES\dd\stand.sprite"
+
+      UP_LEFT    = "actors\thegirlMES\ll\stand.sprite"
+      UP_RIGHT   = "actors\thegirlMES\rr\stand.sprite"
+      DOWN_LEFT  = "actors\thegirlMES\ll\stand.sprite"
+      DOWN_RIGHT = "actors\thegirlMES\rr\stand.sprite"
+    }
+  }
+}

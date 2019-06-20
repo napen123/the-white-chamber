@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/NORMAL0014/Wyles was checking the video logs when I got to him. It was obvious he'd found Dick's body in the Nav console by how he was acting.");
+	actor.Talk("/NORMAL0015/Dick had been an accident so I guess this is when things went out of control. I was so trapped all I could think about was the artefact.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NORMAL0016/It's too late now. I don't want to see what's under there.");
+}

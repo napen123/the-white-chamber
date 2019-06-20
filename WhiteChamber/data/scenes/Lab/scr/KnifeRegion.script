@@ -1,0 +1,42 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+  	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	if (!Strapped)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0027/A sharp medical scalpel");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0014/I can't see from here");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+		var Knife = Scene.GetNode("Knife");
+		var KnifeRegion = Scene.GetNode("KnifeRegion");
+		Knife.Active = false;
+		KnifeRegion.Active = false;
+		Game.TakeItem("scalpel");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+}
+

@@ -1,0 +1,82 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "idcard"
+{
+	if (CardProgrammed)
+	{
+		actor.GoToObject(this); 
+
+		Game.Interactive = false;
+
+		// switch off gate
+		var GateClosed = Scene.GetNode("GateClosed");
+		var GateDoor = Scene.GetNode("GateDoor");
+		GateClosed.Active = false;
+		GateDoor.Active = false;
+
+		// play opening animation
+		var GateOpening  = Scene.GetNode("GateOpening");
+		var GateOpeningSprite = GateOpening.GetSpriteObject();
+		GateOpening.Active =  true;
+ 		while(true)
+		{
+			if(GateOpeningSprite.Finished) break;
+			Sleep(20); 
+  		}
+		GateOpening.Active = false;
+
+		// switch off gateblock
+		var gateFloor = Scene.GetNode("gateBlock");
+		gateFloor.Active =false;
+
+		// switch off scanner
+		var Scanner = Scene.GetNode("Scanner");
+		Scanner.Active = false;
+
+		Game.Interactive = true;
+
+	}
+	else
+	{
+	 	actor.GoToObject(this);
+		Game.PlaySound("audio\sounds\livingroom-warning.wav");
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0031/It didn't work, looks like this card isn't encoded with an authorised DNA sample");
+	}
+
+}
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/STORER0032/It's an ID card scanner for the gate");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/STORER0033/I'll need to use an ID card with it.");
+}
+
+on "overkey"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/STORER0034/It's operated by ID card, not this kind of key.");
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/STORER0035/That won't fit in the scanner.");
+}

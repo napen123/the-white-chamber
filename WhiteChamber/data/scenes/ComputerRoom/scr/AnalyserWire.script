@@ -1,0 +1,40 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0052/It looks like this wire controls the security override.");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0053/I'll need something sharper to cut this.");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "scalpel"
+{
+	Game.PlaySound("audio\sounds\computerroom-wirecut.ogg");
+
+	var AnalyserHorizon = Scene.GetNode("AnalyserHorizon");
+	var AnalyserWire = Scene.GetNode("AnalyserWire");
+	var AnalyserPanelCut = Scene.GetNode("AnalyserPanelCut");
+
+	AnalyserHorizon.Active = true;
+	AnalyserWire.Active =  false;
+	AnalyserPanelCut.Active = true;
+
+	ComputerRoomCut = true;
+	EndingPoints = EndingPoints - 1;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Axe"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0054/It's too big to fit in the panel. I'll need a smaller cutting instrument.");
+}

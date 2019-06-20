@@ -1,0 +1,28 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/SLEEPQ0008/A warm looking blanket.");
+}
+on "take"
+{
+ 	actor.GoToObject(this);
+	Game.TakeItem("blanket");
+	var Blanket = Scene.GetNode("Blanket");
+	var BlanketRegion = Scene.GetNode("BlanketRegion");
+	Blanket.Active = false;
+	BlanketRegion.Active = false;
+
+	// If player has axe and blanket switch on bloody nav room
+	LivingRoomBloodyNav = Game.HasItem("axe");
+
+}

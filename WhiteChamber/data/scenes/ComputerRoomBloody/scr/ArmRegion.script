@@ -1,0 +1,30 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0006/A severed arm");
+}
+on "take"
+{
+	actor.GoToObject(this); 
+	var PipeArm2 = Scene.GetNode("PipeArm2");
+	var PipeArm3 = Scene.GetNode("PipeArm3");
+	var ArmRegion = Scene.GetNode("ArmRegion");
+	PipeArm2.Active = false;
+	PipeArm3.Active = true;
+	ArmRegion.Active = false;
+	CorridorSequenceDone = true;
+	Game.TakeItem("rightarm");
+
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0007/Another arm. This is horrible");
+}

@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/WCHAMB0021/This machine seems to be monitoring any output from the machine.");
+}
+
+on "take"
+{
+
+	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/WCHAMB0022/There seems to be some very strange radiation readings coming from the artefact.");
+
+}

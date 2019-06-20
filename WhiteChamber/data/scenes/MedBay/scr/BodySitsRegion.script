@@ -1,0 +1,97 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	Game.Interactive = false;
+
+	actor.GoToObject(this);
+
+	deadManWalking = true;
+
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/MEDBAY0034/Those body parts... how did they get in there?");
+
+	Sleep(1800);
+
+	// Make sure screen is aligned for flash
+	Scene.SkipTo(actor);
+
+	// flash 1 on
+	var FlashOn = Scene.GetNode("FlashOn");
+	var FlashOnSprite = FlashOn.GetSpriteObject();
+	var FlashOff = Scene.GetNode("FlashOff");
+	FlashOn.Active = true;
+ 	while(true)
+	{
+		if(FlashOnSprite.Finished) break;
+ 		Sleep(20); 
+  	}
+
+	// move actor
+	actor.SkipTo(1000, 400);
+	actor.Direction = DI_DOWN;
+
+	// turn off sitting man
+	var BodySits = Scene.GetNode("BodySits");
+	var BodySitsRegion = Scene.GetNode("BodySitsRegion");
+	BodySits.Active = false;
+	BodySitsRegion.Active = false;
+
+	// turn on standing man
+
+	// flash 1 off
+	FlashOn.Active = false;
+	FlashOff.Active = true;
+
+	// turn off ambience
+	PlayAmbient(AMBIENT_SILENCE, "NONE");
+
+	// some what the hell text and a wait
+	var BodyStands = Scene.GetNode("BodyStands");
+	BodyStands.Active = true;
+	Sleep(1800);
+
+	// flash 2 on
+	var FlashOn2 = Scene.GetNode("FlashOn2");
+	var FlashOn2Sprite = FlashOn2.GetSpriteObject();
+	var FlashOff2 = Scene.GetNode("FlashOff2");
+	var FlashOff2Sprite = FlashOff2.GetSpriteObject();
+	FlashOn2.Active = true;
+ 	while(true)
+	{
+		if(FlashOn2Sprite.Finished) break;
+ 		Sleep(20); 
+  	}
+
+	// turn off standing man
+	BodyStands.Active = false;
+
+	// turn on internal control panel and any other relevant regions
+	var Wall = Scene.GetNode("Wall");
+	Wall.Active = true;
+
+	// flash 2 off
+	FlashOn2.Active = false;
+	FlashOff2.Active = true;
+ 	while(true)
+	{
+		if(FlashOff2Sprite.Finished) break;
+ 		Sleep(20); 
+  	}
+
+	Game.Interactive = true;
+
+
+	PortraitType = PORT_POCKING;
+	actor.Talk("/MEDBAY0035/I'm trapped!");
+
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0036/I can't get inside there.");
+}

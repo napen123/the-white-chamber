@@ -1,0 +1,29 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/NAVCEN0017/What are these stains on the floor and on the walls too? They look like blood!");
+}
+
+on "Take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NAVCEN0018/Whatever they are, they feel encrusted into the surface.");
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_PUZZLED;
+  actor.Talk("/NAVCEN0019/What would be the point?");
+}

@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/THEFAN0004/It's some twisted grinder");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/THEFAN0005/It's covered in filth, what is this stuff?");
+}

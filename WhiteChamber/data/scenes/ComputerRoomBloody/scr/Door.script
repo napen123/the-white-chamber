@@ -1,0 +1,21 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	// Turn off blood pouring
+	Game.StopMusicChannel(3);
+
+	if (CorridorSequenceDone)
+	{
+	  	Game.ChangeScene("scenes\navigationcentre\navigationcentre.scene");
+	}
+	else
+	{
+	  	Game.ChangeScene("scenes\navigationcentrechasm\navigationcentrechasm.scene");
+	}
+}

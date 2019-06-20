@@ -1,0 +1,160 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+
+  actor.GoToObject(this);
+  if (BlackChamberWiresFixed)
+  {
+    PortraitType = PORT_NORMAL;
+    actor.Talk("/BLACKC0006/The panel seems to be working now");
+  }
+  else
+  {
+    PortraitType = PORT_NORMAL;
+    actor.Talk("/BLACKC0004/There's a message on the panel: Connection Error");
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+  actor.GoToObject(this);
+  if (BlackChamberWiresFixed)
+  {
+	var PanelImageYESNO = Scene.GetNode("PanelYESNO");
+	var PanelRegionYES = Scene.GetNode("PanelYes");
+	var PanelRegionNO = Scene.GetNode("PanelNo");
+
+	var PanelImage = Scene.GetNode("PanelCloseup");
+	var PanelImageScans = Scene.GetNode("PanelScanLines");
+	var PanelRegion = Scene.GetNode("PanelCloseRegion");
+	PanelImage.Active = true;
+	PanelImageScans.Active = true;
+	PanelRegion.Active = true;
+
+	if (BlackChamberPanelState == 0)
+	{
+
+		SubWindow.Text = Game.ExpandString("/BLACKC0027/");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+
+		var PanelImageWhere = Scene.GetNode("PanelWhere");
+		PanelImageWhere.Active = true;
+		PanelImageYESNO.Active = true;
+		PanelRegionYES.Active = true;
+		PanelRegionNO.Active = true;
+	}
+
+	if (BlackChamberPanelState == 1)
+	{
+		SubWindow.Text = Game.ExpandString("/BLACKC0028/");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+
+		var PanelImageRegret = Scene.GetNode("PanelRegret");
+		PanelImageRegret.Active = true;
+		PanelImageYESNO.Active = true;
+		PanelRegionYES.Active = true;
+		PanelRegionNO.Active = true;
+	}
+
+	if (BlackChamberPanelState == 2)
+	{
+		SubWindow.Text = Game.ExpandString("/BLACKC0029/");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+
+		var PanelImageReady = Scene.GetNode("PanelReady");
+		PanelImageReady.Active = true;
+		PanelImageYESNO.Active = true;
+		PanelRegionYES.Active = true;
+		PanelRegionNO.Active = true;
+	}
+
+	if (BlackChamberPanelState == 3)
+	{
+		SubWindow.Text = Game.ExpandString("/BLACKC0022/");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+
+		var PanelImageBegun = Scene.GetNode("PanelBegun");
+		var PanelRegionBegun = Scene.GetNode("PanelBegunRegion");
+		PanelImageBegun.Active = true;
+		PanelRegionBegun.Active = true;
+	}
+
+
+//    if (BlackChamberWindowsOpen)
+//    {
+//      if (BlackChamberDoorOpen)
+//      {
+//        actor.Talk("The panel doesn't seem to do anything else");
+//      }
+//      else
+//      {
+//        BlackChamberDoorOpen = true;
+//        var DoorAnim = Scene.GetNode("DoorAnim");
+//        var DoorRegion = Scene.GetNode("Door");
+//        DoorAnim.Active = true;
+//        DoorRegion.Active = true;
+//        actor.Talk("It looks like there's a way out");
+//      }
+//    }
+//    else
+//    {
+//      BlackChamberWindowsOpen = true;
+//      var WindowClosed = Scene.GetNode("WindowClosed");
+//      var WindowAnim = Scene.GetNode("WindowAnim");
+//      var WindowRegion = Scene.GetNode("Window");
+//      WindowClosed.Active = false;
+//      WindowAnim.Active = true;
+//      WindowRegion.Active = true;
+//      actor.Talk("What the hell is going on? I'm in space");
+//    }
+
+  }
+  else
+  {
+    PortraitType = PORT_PISSED;
+    actor.Talk("/BLACKC0005/It seems to be broken");
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+  actor.GoToObject(this);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//function GoToObject()
+//{
+//  actor.GoTo(200, 200);
+//  actor.TurnTo(DI_UP);
+//}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_PUZZLED;
+  actor.Talk("/BLACKC0024/The panel already seems to have served it's purpose.");
+}

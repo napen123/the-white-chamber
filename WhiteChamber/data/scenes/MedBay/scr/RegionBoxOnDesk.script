@@ -1,0 +1,36 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0059/The laser cut the box open nicely.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	
+	//MedBayEyesTaken = false
+	var EyeBoxBG = Scene.GetNode("EyeBoxBG");
+	var EyeBoxRegion = Scene.GetNode("EyeBoxRegion");
+	var EyeBoxLeaveLeft = Scene.GetNode("EyeBoxLeaveLeft");
+	var EyeBoxLeaveRight = Scene.GetNode("EyeBoxLeaveRight");
+	var EyeBoxEyes = Scene.GetNode("EyeBoxEyes");
+	var EyeBoxEyesRegion = Scene.GetNode("EyeBoxEyesRegion");
+	EyeBoxBG.Active = true;
+	EyeBoxRegion.Active = true;
+	EyeBoxLeaveLeft.Active = true;
+	EyeBoxLeaveRight.Active = true;
+	EyeBoxEyes.Active = !MedBayEyesTaken;
+	EyeBoxEyesRegion.Active = !MedBayEyesTaken;
+	
+
+}

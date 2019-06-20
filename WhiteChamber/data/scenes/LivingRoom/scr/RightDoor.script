@@ -1,0 +1,41 @@
+#include "scripts\base.inc"
+
+
+// Opening door code
+on "LeftClick" {
+	if (FireOut)
+	{
+		// Move to door
+		actor.GoToObject(this); 
+
+		Game.StopMusicChannel(3);
+
+		// Retrieve door entity
+		var RightDoorAnim = Scene.GetNode("AnimRightDoor"); 	
+		// Retrieve door sprite
+		var RightDoorSprite = RightDoorAnim.GetSpriteObject(); 
+		// Switch on door entity
+		RightDoorAnim.Active = true; 
+	 	while(true) // An infinite loop
+		{
+			 // Leave the while loop if the door animation is finished
+			if(RightDoorSprite.Finished) break;
+			// otherwise return the control to the engine and continue with the loop
+    			Sleep(20); 
+	  	}  	
+		// Move slightly into the door
+		actor.GoTo(870,411); 
+		// Jump to different scene
+	  	Game.ChangeScene("scenes\medbay\medbay.scene");
+	}
+	else
+	{
+		actor.GoToObject(this); 
+		Game.PlaySound("audio\sounds\livingroom-warning.wav");
+
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/LIVING0041/The room has been automatically sealed, I think I can see a fire through the door");
+
+		// Door won't open
+	}
+}

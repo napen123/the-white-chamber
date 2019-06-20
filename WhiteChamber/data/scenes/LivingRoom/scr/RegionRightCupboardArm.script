@@ -1,0 +1,42 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+// If player tries to take the arm from the right-side living room cupboard
+on "lookat"
+{
+	PortraitType = PORT_POCKING;
+	actor.Talk("/LIVING0037/It's a severed arm! What happened to the rest of the body?");
+}
+
+on "Take"
+{
+	// Add arm to inventory
+	Game.TakeItem("leftarm");
+
+	// Set global variable to indicate arm has been taken
+	LivingRoomArmTaken = true;
+
+	// Switch off the arm sprite and region
+	var RightCupboardArm = Scene.GetNode("RightCupboardArm");
+	var RegionRightCupboardArm = Scene.GetNode("RegionRightCupboardArm");
+	RightCupboardArm.Active = false;
+	RegionRightCupboardArm.Active = false;
+
+	// If the arm is still holding the disc, take that too
+	if (LivingRoomDiscTaken == false)
+	{
+		// Add the disc to inventory
+		Game.TakeItem("disc1");
+
+		// Set global variable to indicate disc has been taken
+		LivingRoomDiscTaken = true;
+
+		// Switch off the disc sprite and region
+		var RightCupboardDisc = Scene.GetNode("RightCupboardDisc");
+		var RegionRightCupboardDisc = Scene.GetNode("RegionRightCupboardDisc");
+		RightCupboardDisc.Active = false;
+		RegionRightCupboardDisc.Active = false;
+	}
+
+}

@@ -1,0 +1,97 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(450, 750);
+actor.Direction = DI_UP;
+
+if (Game.PrevScene == "FanRoom")
+{
+	actor.SkipTo(420, 280);
+	actor.Direction = DI_DOWN;	
+}
+
+actor.Active = true;
+
+PlayAmbient(AMBIENT_SCARY, "LAB");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateLab;
+
+
+// default values
+if(StateLab==null)
+{
+  StateLab.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+if (deadManWalking)
+{
+	var BloodPrints = Scene.GetNode("BloodPrints");
+	BloodPrints.Active = true;
+}
+
+if (LabBlown)
+{
+	var ExplodedDoor = Scene.GetNode("ExplodedDoor");
+	var Bomb = Scene.GetNode("Bomb");
+	ExplodedDoor.Active = true;
+	Bomb.Active =false;
+}
+
+
+var Chalk1 = Scene.GetNode("Chalk1");
+var Chalk2 = Scene.GetNode("Chalk2");
+var Chalk3 = Scene.GetNode("Chalk3");
+var Chalk4 = Scene.GetNode("Chalk4");
+var Chalk5 = Scene.GetNode("Chalk5");
+var Chalk6 = Scene.GetNode("Chalk6");
+Chalk1.Active = false;
+Chalk2.Active = false;
+Chalk3.Active = false;
+Chalk4.Active = false;
+Chalk5.Active = false;
+Chalk6.Active = false;
+
+if (EndingPoints  == 1)
+{
+	Chalk1.Active = true;
+}
+if (EndingPoints  == 2)
+{
+	Chalk2.Active = true;
+}
+if (EndingPoints  == 3)
+{
+	Chalk3.Active = true;
+}
+if (EndingPoints  == 4)
+{
+	Chalk4.Active = true;
+}
+if (EndingPoints  == 5)
+{
+	Chalk5.Active = true;
+}
+if (EndingPoints  > 5)
+{
+	Chalk6.Active = true;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateLab.Visited)
+{
+  StateLab.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

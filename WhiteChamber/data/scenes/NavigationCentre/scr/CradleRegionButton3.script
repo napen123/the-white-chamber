@@ -1,0 +1,23 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+on "MouseEntry"
+{
+	// Highlight button
+	var CradleButton3 = Scene.GetNode("CradleButton3");
+	CradleButton3.Active = true;
+}
+
+on "MouseLeave"
+{
+	// Remove highlight from the button
+	var CradleButton3 = Scene.GetNode("CradleButton3");
+	CradleButton3.Active = false;
+}
+
+on "LeftClick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");	
+}

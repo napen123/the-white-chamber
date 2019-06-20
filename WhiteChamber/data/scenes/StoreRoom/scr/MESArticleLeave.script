@@ -1,0 +1,11 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var MESArticle = Scene.GetNode("MESArticle");
+	var MESArticleLeave = Scene.GetNode("MESArticleLeave");
+	MESArticle.Active = false;
+	MESArticleLeave.Active = false;
+}

@@ -1,0 +1,168 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0049/It's a medical laser");
+}
+
+on "take"
+{
+
+	// walk to desk
+	actor.GoToObject(this); 
+
+	// check for batteries
+	if (MedBayLaserBatt)
+	{
+	
+		// Check if fridge is out there, waiting
+		if ((!LivingRoomFridgeDone) && (TortureDone))
+		{
+			// no no, now with my fridge
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/MEDBAY0050/I don't want to risk firing it at that fridge. I don't know what might happen, but I doubt it would be good.");
+			
+		}
+		else
+		{
+			Game.Interactive = false;
+
+			// play animation
+			Game.PlaySound("audio\sounds\medbay-laserdoor.ogg");
+			var LaserDoor = Scene.GetNode("LaserDoor");
+			LaserDoor.Reset();
+			var LaserDoorSprite = LaserDoor.GetSpriteObject();
+			LaserDoor.Active = true;
+ 			while(true)
+			{
+				if(LaserDoorSprite.Finished) break;
+				Sleep(20); 
+	 		}
+			LaserDoor.Active = false;
+
+			// show background
+			var LaserSceneBG =  Scene.GetNode("LaserSceneBG");
+			var LaserScene1 =  Scene.GetNode("LaserScene1");
+			var LaserScene2 =  Scene.GetNode("LaserScene2");
+			var LaserScene3 =  Scene.GetNode("LaserScene3");
+			var LaserBlast = Scene.GetNode("LaserBlast");
+			var LaserBlastSprite = LaserBlast.GetSpriteObject();
+			LaserSceneBG.Active = true;
+
+			// if table raised [LivingRoomTableUp]
+			if (LivingRoomTableUp)
+			{
+
+				// if mirror on desk [LivingRoomMirror]
+				if (LivingRoomMirror)
+				{
+					// if explosives in place [LabBomb]
+					if (LabBomb)
+					{
+						LaserScene3.Active = true;
+						// play explosion
+						Game.PlaySound("audio\sounds\medbay-explosion.ogg");
+						// play blast animation
+						LaserBlast.Active = true;
+				 		while(true)
+						{
+							if(LaserBlastSprite.Finished) break;
+							Sleep(20); 
+					  	}
+						// set blast variable
+						LabBlown = true;
+						LabBomb = false;
+					}
+					else
+					{
+						LaserScene3.Active = true;
+					}
+
+				}
+				else
+				{
+					LaserScene2.Active = true;
+				}
+
+			}
+			else
+			{
+				LaserScene1.Active = true;
+			}
+
+			// Wait and remove overlays
+			Sleep(2000);
+			LaserSceneBG.Active = false;
+			LaserScene1.Active = false;
+			LaserScene2.Active = false;
+			LaserScene3.Active = false;
+			LaserBlast.Active = false;
+
+			Game.Interactive = true;
+		}
+	}
+	else
+	{
+		// Say battery problem message
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/MEDBAY0051/Not working, could be the power source");
+	}
+}
+
+on "box"
+{
+	// walk to desk
+	actor.GoToObject(this); 
+
+	// check for batteries
+	if (MedBayLaserBatt)
+	{
+		Game.Interactive = false;
+
+		// drop box
+		Game.DropItem("box");
+
+		// take eyes
+		// Game.TakeItem("eyes");
+
+		// play animation
+		var LaserBox = Scene.GetNode("LaserBox");
+		var LaserBoxSprite = LaserBox.GetSpriteObject();
+		LaserBox.Active = true;
+ 		while(true)
+		{
+			if(LaserBoxSprite.Finished) break;
+			Sleep(20); 
+	  	}
+		LaserBox.Active = false;
+
+		// Put box on table
+		MedBayBoxOnDesk = true;
+		var BoxOnDesk = Scene.GetNode("BoxOnDesk");
+		var RegionBoxOnDesk = Scene.GetNode("RegionBoxOnDesk");
+		BoxOnDesk.Active = true;
+		RegionBoxOnDesk.Active = true;
+
+		Game.Interactive = true;
+
+
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0052/The laser cut through the seal on the box. I hope it hasn't damaged the contents. Whatever they are...");
+	}
+	else
+	{
+		// Say battery problem message
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/MEDBAY0051/Not working, could be the power source");
+	}
+
+}

@@ -1,0 +1,9 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick" {
+  actor.GoToObject(this);
+  EndingPoints = 6;
+  Game.ChangeScene("scenes\whitechamber\whitechamber.scene");
+}

@@ -1,0 +1,148 @@
+#include "scripts\base.inc"
+
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	var TunnelSprite = Scene.GetNode("TunnelGone");
+	if ((Game.PrevScene == "Beach")  && (TunnelSprite.Active))
+	{
+		Game.Interactive = false;
+
+		var DoorOpenAnim = Scene.GetNode("SpaceDoorOpen");
+		var SuckedAnim = Scene.GetNode("GirlSuck");
+		var FlashOn = Scene.GetNode("FlashOn");
+		var FlashOff = Scene.GetNode("FlashOff");
+		var TunnelRegion = Scene.GetNode("RightDoor");
+		
+		// Open space door
+		var DoorOpenSprite = DoorOpenAnim.GetSpriteObject();
+		DoorOpenAnim.Active = true;
+	 	while(true)
+		{
+			if(DoorOpenSprite.Finished) break;
+    			Sleep(20); 
+	  	}
+
+		// Turn off actor
+		actor.Active = false;
+
+		// Suck animation (try to trigger close from within)
+		var SuckedSprite = SuckedAnim.GetSpriteObject();
+		SuckedAnim.Active = true;
+	 	while(true)
+		{
+			if(SuckedSprite.Finished) break;
+    			Sleep(20); 
+	  	}
+
+		// Flash on
+		var FlashOnSprite = FlashOn.GetSpriteObject();
+		FlashOn.Active = true;
+	 	while(true)
+		{
+			if(FlashOnSprite.Finished) break;
+    			Sleep(20); 
+	  	}
+
+		// Switch off the suck/door animation
+		SuckedAnim.Active = false;
+		DoorOpenAnim.Active = false;
+		DoorOpenAnim.Reset();
+		// Actor on
+		actor.SkipTo(177, 446);
+		actor.Direction = DI_DOWN;
+		actor.Active = true;
+		// Tunnel on
+		TunnelSprite.Active = false;
+		TunnelRegion.Active = true;
+		// Turn on blanket (Changed to be on by default in Internation Version)
+		//var Blanket = Scene.GetNode("Blanket");
+		//var BlanketRegion = Scene.GetNode("BlanketRegion");
+		//Blanket.Active = true;
+		//BlanketRegion.Active = true;
+
+
+		// Flash off
+		FlashOn.Active = false;
+		var FlashOffSprite = FlashOff.GetSpriteObject();
+		FlashOff.Active = true;
+	 	while(true)
+		{
+			if(FlashOffSprite.Finished) break;
+    			Sleep(20); 
+	  	}
+
+		Game.Interactive = true;
+		FlashOff.Active = false;
+
+		PortraitType = PORT_POCKING;
+		actor.Talk("/SLEEPQ0010/I was nearly sucked into space!");
+
+	}
+	else
+	{
+		if (!BeachSeen)
+		{
+			// Jump to different scene
+  			Game.ChangeScene("scenes\beach\beach.scene");
+		}
+		else
+		{
+			ExtDoorCount = ExtDoorCount + 1;
+			if (ExtDoorCount == 1)
+			{
+				PortraitType = PORT_PISSED;
+				actor.Talk("/SLEEPQ0011/I don't want to go back out there, I barely survived last time");
+			}
+			if (ExtDoorCount == 2)
+			{
+				PortraitType = PORT_PISSED;
+				actor.Talk("/SLEEPQ0019/I really don't think that's a good idea.");
+			}
+			if (ExtDoorCount > 2)
+			{
+				PortraitType = PORT_NORMAL;
+				actor.Talk("/SLEEPQ0020/Okay. I'll give it a try.");
+
+				Game.Interactive = false;
+
+				var DoorOpenAnimB = Scene.GetNode("SpaceDoorOpen");
+				var SuckedAnimAgain = Scene.GetNode("GirlSuckAgain");
+			
+				// Open space door
+				var DoorOpenSpriteB = DoorOpenAnimB.GetSpriteObject();
+				DoorOpenAnimB.Active = true;
+	 			while(true)
+				{
+					if(DoorOpenSpriteB.Finished) break;
+    					Sleep(20); 
+	  			}
+
+				// Turn off actor
+				actor.Active = false;
+
+				// Suck animation (try to trigger close from within)
+				var SuckedSpriteAgain = SuckedAnimAgain.GetSpriteObject();
+				SuckedAnimAgain.Active = true;
+	 			while(true)
+				{
+					if(SuckedSpriteAgain.Finished) break;
+    					Sleep(20); 
+	  			}
+
+				Game.FadeOut();
+
+				Game.PlayTheora("assets\data0006.ogg");
+
+				// Jump to game over screen
+				EndingType = END_SPACE;
+				Game.ChangeScene("scenes\ending\ending.scene");		
+
+			}
+		}
+	}
+}
+
+

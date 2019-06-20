@@ -1,0 +1,49 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/SLEEPQ0017/This controls the shower and toilet compartment.");
+}
+
+on "take"
+{
+	actor.GoToObject(this); 
+	if ((!ShowerHeadDone) && (CorridorSequenceDone))
+	{
+		Game.Interactive = false;
+		var ShowerClosed = Scene.GetNode("ShowerClosed");
+		var ShowerOpening = Scene.GetNode("ShowerOpening");
+		var ShowerOpeningSprite = ShowerOpening.GetSpriteObject();
+		var ShowerOpen = Scene.GetNode("ShowerOpen");
+		var ShowerHead = Scene.GetNode("ShowerHead");
+		var ShowerBlocked = Scene.GetNode("ShowerBlocked");
+		var RightDoor = Scene.GetNode("RightDoor");
+		RightDoor.Active = false;
+		ShowerClosed.Active = false;
+		ShowerOpening.Active = true;
+	 	while(true)
+		{
+			if(ShowerOpeningSprite.Finished) break;
+    			Sleep(20); 
+	  	}
+		ShowerOpening.Active = false;
+		ShowerOpen.Active = true;
+		ShowerHead.Active = true;
+		ShowerBlocked.Active = true;
+		Game.Interactive = true;
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/SLEEPQ0018/It's not responding");
+	}
+}

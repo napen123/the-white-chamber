@@ -1,0 +1,33 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0035/It looks like a slot for some kind of key.");
+}
+
+on "Take"
+{
+	PortraitType = PORT_PUZZLED;
+    	actor.Talk("/COMPUT0036/I can't get it working without the right key.");
+}
+
+on "overkey"
+{
+	Game.PlaySound("audio\sounds\insertkey.ogg");
+	var Slot2Sprite = Scene.GetNode("SpriteBackupKey2");
+	var Slot2Region = Scene.GetNode("RegionBackupSlot2");
+	var Slot2Key = Scene.GetNode("RegionBackupKey2");
+	Slot2Sprite.Active = true;
+	Slot2Region.Active = false;
+	Slot2Key.Active = true;
+	ComputerRoomKeyPos = 2;
+	Game.DropItem("overkey");
+
+	var BackupRegionPower2 = Scene.GetNode("RegionPower2");
+	BackupRegionPower2.Caption = "/COMPUT0061/Online";
+
+}
+

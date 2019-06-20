@@ -1,0 +1,30 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0053/Voice controlled panel that operate the quarantine chamber.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PISSED;
+	actor.Talk("/MEDBAY0054/It'll only respond to the voice of an authorised doctor. I'll never get this working.");
+}
+
+on "head"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0055/Looks like it's not going to talk. I suppose he's already said the last he has to say.");
+}
+

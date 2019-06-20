@@ -1,0 +1,37 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0021/It looks like a corpse is trapped in that sheet.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0022/What is this made of? It doesn't feel like plastic.");
+}
+
+on "axe"
+{
+	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0023/Even the axe won't tear it open. It doesn't make sense.");
+
+}
+
+on "scalpel"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0024/The scalpel won't even scratch it. I can't figure out what the sheet is made of.");
+}

@@ -1,0 +1,105 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// Start room specific ambience
+PlayAmbient(AMBIENT_SCARY, "NAVROOM");
+
+// here comes the stuff which initializes the scene
+
+// Reset door animations
+var LeftDoorAnim = Scene.GetNode("LeftDoorAnim"); 
+LeftDoorAnim.Active = false; 
+LeftDoorAnim.Reset();
+var RightDoorAnim = Scene.GetNode("RightDoorAnim"); 
+RightDoorAnim.Active = false; 
+RightDoorAnim.Reset();
+var TopDoorAnim = Scene.GetNode("TopDoorAnim"); 
+TopDoorAnim.Active = false; 
+TopDoorAnim.Reset();
+var TopDoorAnim2 = Scene.GetNode("TopDoorAnim2"); 
+TopDoorAnim2.Active = false; 
+TopDoorAnim2.Reset();
+
+// Set up character to default position then reposition based on previous room if found
+actor.SkipTo(510, 300);
+actor.Direction = DI_DOWN;
+switch(Game.PrevScene)
+{
+	case "BlackChamber":
+	{
+		actor.SkipTo(510, 300);
+		actor.Direction = DI_DOWN;
+		break;
+	}
+	case "LivingRoom":
+	{
+		actor.SkipTo(510, 300);
+		actor.Direction = DI_DOWN;
+		break;
+	}
+	case "ComputerRoom":
+	{
+		actor.SkipTo(260, 390);
+		actor.Direction = DI_RIGHT;
+		break;
+	}
+	case "ComputerRoomBloody":
+	{
+		actor.SkipTo(260, 390);
+		actor.Direction = DI_RIGHT;
+		break;
+	}
+	case "StoreRoom":
+	{
+		actor.SkipTo(780, 410);
+		actor.Direction = DI_LEFT;
+		break;
+	}
+	break;
+}
+
+actor.Active = true;
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateNavigationCentre;
+
+
+// default values
+if(StateNavigationCentre==null)
+{
+  StateNavigationCentre.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+// turn on correct colour nav console
+var ConsoleRed = Scene.GetNode("ConsoleRed");
+var ConsoleGreen = Scene.GetNode("ConsoleGreen");
+if ((ComputerRoomKeyPos == 3) || (StationPowered))
+{
+	ConsoleGreen.Active = true;
+	ConsoleRed.Active = false;
+}
+else
+{
+	ConsoleGreen.Active = false;
+	ConsoleRed.Active = true;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateNavigationCentre.Visited)
+{
+  StateNavigationCentre.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

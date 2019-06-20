@@ -1,0 +1,21 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0037/It's a blank plate unlike the slots in the other modules.");
+}
+
+on "Take"
+{
+	PortraitType = PORT_PUZZLED;
+    	actor.Talk("/COMPUT0038/It's already online.");
+}
+
+on "overkey"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/COMPUT0039/Looks like life support is always online");
+}

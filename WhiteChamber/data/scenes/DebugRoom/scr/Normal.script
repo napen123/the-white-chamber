@@ -1,0 +1,10 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+  actor.GoToObject(this);
+  EndingPoints = 0;
+  Game.ChangeScene("scenes\fanroomnormal\fanroomnormal.scene");
+}

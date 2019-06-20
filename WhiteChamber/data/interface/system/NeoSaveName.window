@@ -1,0 +1,91 @@
+WINDOW
+{
+  X = 200
+  Y = 200
+  WIDTH = 520
+  HEIGHT = 450
+  NAME = "NeoSaveName"
+
+  TITLE = "/INTERF0012/Save Game Name"
+  TITLE_RECT {60,35,370,70}  
+  TITLE_ALIGN = left
+  DRAG_RECT {58,30,420,70}
+  IMAGE = "interface\system\artwork\guibackground.png"
+  FONT = "primaryttf.font"
+  SCRIPT = "interface\system\NeoSaveName.script"
+
+
+  BUTTON
+  {
+    NAME = "close"
+    IMAGE = "interface\system\artwork\guicross.png"
+    IMAGE_HOVER = "interface\system\artwork\guicrossglow.png"
+    X = 420
+    Y = 30
+    PARENT_NOTIFY = TRUE
+  }
+
+
+  BUTTON
+  {
+   NAME = "ok"
+   TEXT = "/INTERF0013/OK"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 160
+    Y = 340
+    WIDTH = 70
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+   NAME = "close"
+   TEXT = "/INTERF0003/Cancel"
+   TEXT_ALIGN = "center"
+   FONT = "secondaryttf.font"
+   FONT_HOVER = "secondaryinvertttf.font"
+    X = 250
+    Y = 340
+    WIDTH = 130
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+    NAME = "message"
+    TEXT = "/INTERF0014/Enter a name for your save game :"
+    TEXT_ALIGN = "center"
+    FONT = "secondaryttf.font"
+    X = 90
+    Y = 150
+    WIDTH = 350
+  }
+
+
+  EDIT
+  {
+    NAME = "desc"
+    IMAGE = "interface\system\artwork\guislot.png"
+    FONT = "primaryttf.font"
+    X = 70
+    Y = 241
+    WIDTH = 387
+    HEIGHT = 33
+    FRAME_WIDTH = 2
+    TEXT = ""
+    MAX_LENGTH = 100
+    PARENT_NOTIFY = TRUE
+  }
+
+  STATIC
+  {
+    NAME = "scanlines"
+    X = 0
+    Y = 0
+    IMAGE = "interface\system\artwork\guiscanlines.png"
+  }
+
+
+}

@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/WCHAMB0023/This device is performing a deep structural analysis.");
+}
+
+on "take"
+{
+
+	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/WCHAMB0024/It doesn't seem to be producing any solid results.");
+
+}

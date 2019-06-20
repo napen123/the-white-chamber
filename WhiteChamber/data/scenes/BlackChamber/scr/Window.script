@@ -1,0 +1,41 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_PUZZLED;
+  actor.Talk("/BLACKC0013/This is definitely space. I can't see any signs of planets, ships or anything at all!");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/BLACKC0014/The windows are totally solid");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+  actor.GoToObject(this);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//function GoToObject()
+//{
+//  actor.GoTo(200, 200);
+//  actor.TurnTo(DI_UP);
+//}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/BLACKC0026/I don't want to use anything on these windows. It would be the end if I broke them.");
+}

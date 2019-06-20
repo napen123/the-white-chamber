@@ -1,0 +1,25 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/SLEEPQ0009/A pre-recorded video disc");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	Game.TakeItem("disc2");
+	var Disc = Scene.GetNode("Disc");
+	var DiscRegion = Scene.GetNode("DiscRegion");
+	Disc.Active = false;
+	DiscRegion.Active = false;
+}

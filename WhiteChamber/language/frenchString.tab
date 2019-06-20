@@ -1,0 +1,1418 @@
+﻿CONFIG0001	true
+
+; //////////////////////////////////////////////////////////////////////
+; ENGINE SYSTEM STRINGS
+; //////////////////////////////////////////////////////////////////////
+SYSENG0001	Réglages du jeu
+SYSENG0002	Affichage
+SYSENG0003	Son
+SYSENG0004	Utiliser accélération matérielle
+SYSENG0005	Dispositif d'affichage:
+SYSENG0006	Couleurs:
+SYSENG0007	Fenêtre
+SYSENG0008	Multisample type:
+SYSENG0009	Utiliser le matériel T&&L
+SYSENG0010	Plus...
+SYSENG0011	Dispositif de son:
+SYSENG0012	Réglages Avancés
+SYSENG0013	Note: Ces réglages sont disponibles à des fins de dépannages seulement. Si le jeu apparaît correctement à votre ordinateur, ces options ne sont pas nécessaires.
+SYSENG0014	Réglage des textures
+SYSENG0015	Forcer textures 16bit
+SYSENG0016	Forcer sousdivision des textures
+SYSENG0017	16 bit
+SYSENG0018	32 bit
+SYSENG0019	[pas de son]
+SYSENG0020	Aucun
+SYSENG0021	Échantillons
+SYSENG0100	OK
+SYSENG0101	Annuler
+
+; //////////////////////////////////////////////////////////////////////
+; INTERFACE STRINGS
+; //////////////////////////////////////////////////////////////////////
+
+INTERF0004	Menu
+INTERF0005	Retourner au jeu
+INTERF0001	Charger
+INTERF0006	Sauvegarder
+INTERF0007	Quitter
+
+INTERF0002	Charge
+INTERF0011	Sauver
+
+INTERF0010	Quitter?
+
+INTERF0008	Oui
+INTERF0009	Non
+INTERF0013	OK
+INTERF0003	Annuler
+
+INTERF0012	Nom de la partie enregistrée
+INTERF0014	Entrer un nom pour vôtre sauvegarde :
+
+INTERF0015	< vide >
+
+
+; //////////////////////////////////////////////////////////////////////
+; 00 - COMMON TEXT
+; //////////////////////////////////////////////////////////////////////
+
+; Try to use an object with something that you can't
+COMMON0001	Je ne peux pas utiliser ces objets ensemble.
+COMMES0001	Je ne peux pas utiliser ces objets ensemble.
+
+; Try to use an object that can't be used
+COMMON0002	Je ne peux pas prendre ça.
+COMMES0002	Je ne peux pas prendre ça.
+
+; Try to look at an object with nothing to say about it
+COMMON0003	Je ne sais pas quoi dire à propos de ça.
+COMMES0003	Je ne sais pas quoi dire à propos de ça.
+
+; //////////////////////////////////////////////////////////////////////
+; 01 - BLACK CHAMBER
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+BLACKC0015	Hublots
+BLACKC0016	Câbles
+BLACKC0017	Tableau de Bord
+BLACKC0018	Cercueil
+BLACKC0019	Porte
+
+; Console Regions
+BLACKC0020	OUI
+BLACKC0021	NON
+BLACKC0022	C'est commencé...
+BLACKC0027	Sais-tu où tu es?
+BLACKC0028	As-tu des regrets?
+BLACKC0029	Est-tu prête?
+
+; Initial comment on awakening in black chamber
+BLACKC0001	Que se passe-t-il? Pourquoi étais-je dans ce cercueil?
+
+; Look at coffin
+BLACKC0002	C'est le cercueil dans lequel je me suis réveillée... Pourquoi étais-je là-dedans?
+; Interact with coffin
+BLACKC0003	C'est trop lourd à déplacer. La surface est chaude... il y a une légère vibration.
+; Use anything with the coffin
+BLACKC0023	Ce n'est rien qu'un gros cercueil pesant. Je ne crois pas pouvoir utiliser quoi que ce soit dessus.
+
+; Look at broken panel
+BLACKC0004	Il y a un message sur le tableau de bord, "Erreur de Branchement".
+; Interact with broken panel
+BLACKC0005	Je n'arrive pas à le faire fonctionner.
+; Look at fixed panel
+BLACKC0006	Le tableau de bord semble fonctionner maintenant.
+; Use items on the panel (bear in mind by the time you have any item to use you're already finished with the panel)
+BLACKC0024	Le tableau de bord semble avoir déjà rempli ses fonctions.
+
+; Look at split wires
+BLACKC0007	Les câbles n'ont pas l'air branchés correctement.
+; Interact with split wires
+BLACKC0008	Voilà... J'ai branché les câbles ensemble.
+; Look at joined wires
+BLACKC0009	Ils sont branchés ensemble maintenant.
+; Interact with joined wires
+BLACKC0010	Je les ai déjà réparés.
+; Use items on the wires
+BLACKC0025	Je ne croît pas avoir autre chose à faire avec ces câbles.
+
+; Windows open to reveal space outside
+BLACKC0011	Mais qu'est-ce qui ce passe? Je suis dans l'espace!
+
+; Door opens to reveal a way out
+BLACKC0012	Il semble y avoir une sortie.
+
+; Look at windows
+BLACKC0013	C'est définitivement l'espace, mais je ne vois aucun signe d'autre vaissaux où de quoi que ce soit.
+; Interact with windows
+BLACKC0014	Les fenêtres sont amovibles. De toutes façons, si je les brisais, je serais aspirée dans l'espace.
+; Use items on windows
+BLACKC0026	Je ne veux rien utiliser sur les fenêtres. J'ai vu ce que la dépressurisation explosive fait aux gens.
+
+; //////////////////////////////////////////////////////////////////////
+; 02 - NAVIGATION CENTRE
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+NAVCEN0001	Porte
+NAVCEN0002	Écran Mural
+NAVCEN0003	Console
+NAVCEN0004	Taches
+
+; Navigation Console Regions
+NAVCEN0005	Quitter
+NAVCEN0006	Rotation à Gauche
+NAVCEN0007	Rotation à Droite
+NAVCEN0008	On
+NAVCEN0009	Off
+
+; Cradle Console Regions
+NAVCEN0010	Quitter
+NAVCEN0011	Vérrouillage de Sécurité
+NAVCEN0012	Abaisser Plateforme
+NAVCEN0013	Élever Plateforme
+NAVCEN0025	Point de Non-Retour
+NAVCEN0026	Vérouillage Actif
+NAVCEN0027	Vérouillage Hors-Tension
+NAVCEN0028	Écran d'Affichage
+
+; Look at console
+NAVCEN0014	Ca semble être une sorte de console de navigation. Ca doit certainement contrôler la station.
+; Try to use console while it has no power
+NAVCEN0015	Elle ne marche pas présentement. Je devrais trouver un moyen de l'alimenter.
+; Use items with console
+NAVCEN0016	Je doute qu'utiliser quelque chose ici puisse aider.
+; SUBTITLE - Console Title
+NAVCEN0024	Rotation de la Station et Contrôles de l'Énergie Solaire
+
+; Look at stains
+NAVCEN0017	C'est quoi ces taches sur le plancher? Il y en a sur le mur aussi?! On dirait du sang!
+; Touch stains
+NAVCEN0018	Peut importe ce que c'est , elles se sont incrustées dans la surface. Que s'est-il passé ici?
+; Use items with stains
+NAVCEN0019	c'est quoi le bût?
+
+; Look at wall panel
+NAVCEN0020	Je suis sûre que ça contrôle un système de plateforme qui élève une partie de la station... comment je fais pour savoir ça?
+; Try to use wall panel while it has no power
+NAVCEN0021	Il ne semble pas y avoir d'alimentation
+; Use items with wall panel
+NAVCEN0022	Je ne peux rien utiliser ici. Il n'y a pas de fente ou quoi que ce soit.
+; Look at wall panel display
+NAVCEN0029	On dirait que cette section de la station peut être abaissée.
+; Use wall panel display
+NAVCEN0030	Je crois que c'est contrôlé par les boutons en dessous.
+
+; Try to walk through top door with power down (Player has been tampering with the power system if this has happened)
+NAVCEN0023	Bizzare, ça ne veut pas ouvrir. J'imagine qu'il y a un problème avec l'alimentation.
+
+; //////////////////////////////////////////////////////////////////////
+; 03 - STORE ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+STORER0001	Magazine
+STORER0002	Console
+STORER0003	Écran
+STORER0004	Porte
+STORER0005	Veste de Laboratoire
+STORER0006	Scanner
+STORER0007	Porte
+STORER0008	Explosifs
+STORER0009	Congélateur
+
+; MES Article Regions
+STORER0010	Quitter
+
+; Can't reach various objects because of the locked gate
+STORER0011	Je ne peux pas voir d'ici.
+; Can't properly see various objects because of the locked gate
+STORER0012	Je ne peux pas l'atteindre à travers la cage.
+
+; Look at explosive
+STORER0013	Un baril de puissants explosifs.
+; Use axe on explosive
+
+; Use items on the explosive
+STORER0014	Ca ne me semble pas une bonne idée de toucher à ça.
+
+; Look at big freezer door
+STORER0015	Cette grosse porte doit mener au congélateur.
+; Attempt to go through door while it's closed
+STORER0016	Je ne pourrai pas entrer tant que la porte sera fermée.
+
+; Look at closed gate
+STORER0017	La porte m'empêche d'aller dans la salle d'entreposage.
+; Touch gate
+STORER0018	Elle semble assez robuste.
+; Use items on gate
+STORER0019	Je crois que la seule chose qui ouvrira cette porter est ce scanner.
+
+; Look at lab coat
+STORER0021	Une veste de laboratoire sale, on dirait qu'il y a quelque chose dans la poche.
+; Look at empty lab coat
+STORER0020	La veste de laboratoire est vide maintenant, et je n'en ai pas besoin.
+; Search lab coat
+STORER0023	Il y a une carte d'identité vierge et une sorte de clé de contact dans la poche.
+; Search empty lab coat
+STORER0022	Il n'y a rien d'autre dans la veste et on dirait qu'elle a trempé dans des excréments ou je ne sais quoi, alors je vais la laisser ici.
+; Use items on lab coat
+STORER0024	Je ne pense pas qu'utiliser des objets au hasard sur une veste mènera quelque part.
+
+; Look at MES console
+STORER0026	Un M.E.S. C'est une très vieille console de jeux video.
+; Use MES console 1st time
+STORER0027	Je n'ai pas vraiment le temps de jouer à des jeux.
+; Use MES console 2nd time (The comment about dying in games here is a vital clue)
+STORER0028	Je ne veux pas. Ces vieux jeux sont carrément stupides. Ils n'arrêtent jamais jusqu'à ce que tu meures ou que tu balances ta manette sur le mur.
+; Use MES console 3rd time (This comment leads into a game easter egg)
+STORER0029	J'imagine que je peux y jeter un oeil. Après tout, ca ne peux pas me faire de mal?
+; Use MES console 4th time onwards
+STORER0030	Pas necore... Pas après la dernière fois!
+; Use items with MES console
+STORER0025	Il y a déjà une cassètte de jeu dedans.
+
+; Look at MES magazine
+STORER0036	C'est un magazine de jeu rétro.
+; Use items on MES magazine
+STORER0037	Ça n'aurait pas de sens. c'est juste un magazine.
+
+; Look at screen
+STORER0038	Un écran attaché à cette vieille console. Je n'arrive pas à déchiffrer l'image.
+; Take screen
+STORER0039	Je doute être capable de la descendre de là sans la briser.
+; Use items on screen
+STORER0040	C'est quoi le bût?
+
+; Look at scanner
+STORER0032	c'est un scanner de carte d'identité pour la porte.
+; Use scanner
+STORER0033	Je dois utiliser une carte d'identité avec.
+; Use unprogrammed ID card on scanner
+STORER0031	Ça n'a pas marché, cette carte n'est pas encodée avec un échantillon d'ADN autorisé.
+; Use override key on scanner
+STORER0034	Ça fonctionne avec une carte d'identité, pas par ce genre de clé.
+; Use any other items on scanner
+STORER0035	Ça ne passera pas dans le scanner.
+
+; Return from MES world
+STORER0041	Je suis de retour! Je ne veux même pas savoir ce qui c'est passé ici.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 04 - COMPUTER ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+COMPUT0001	Porte
+COMPUT0002	Séquenceur
+COMPUT0003	Unité de Sûreté 
+COMPUT0004	Ordinateur de Gauche
+COMPUT0005	Ordinateur de Droite
+
+; Backup panel regions
+COMPUT0006	Quitter l'Unité
+COMPUT0007	Fente pour Clé
+COMPUT0008	Plaque
+COMPUT0009	Clé de contact
+COMPUT0055	Communication
+COMPUT0056	Systèmes Medicaux
+COMPUT0057	Plateforme
+COMPUT0058	Rotation de la Station
+COMPUT0059	Support Vitaux
+COMPUT0060	En attente 
+COMPUT0061	Allumé
+COMPUT0062	Erreur
+
+; E-Mail computer regions
+COMPUT0010	Quitter
+COMPUT0011	Message 1
+COMPUT0012	Message 2
+COMPUT0013	Message 3
+COMPUT0014	Message 4
+
+; Droid computer regions
+COMPUT0015	Red
+COMPUT0016	Green
+COMPUT0017	Purple
+COMPUT0018	Yellow
+COMPUT0019	White
+COMPUT0020	Blue
+COMPUT0021	Quitter
+
+; Look at back up unit
+COMPUT0022	Ça semble être une unité conçue pour l'alimentation de sûreté de certains systèmes.
+; Use back up panel once power has been restored to station
+COMPUT0023	Maintenant que j'ai restauré l'alimentation à la station, ce système de sûreté est devenu superflu.
+; Use override key on backup panel as a whole
+COMPUT0024	Il faudrait que je vois ça de plus près.
+; Use anything else on backup panel as a whole
+COMPUT0025	Je ne pourrai rien faire tant que je verrai pas ca de plus près.
+
+; Look at DNA sequencer
+COMPUT0026	C'est un encodeur d'ADN, on s'en sert pour enregistrer des données sur les cartes d'identité.
+; Touch DNA sequencer
+COMPUT0027	Ca ne sert à rien sans un échantillon d'ADN propre.
+; Insert ID card without DNA sample
+COMPUT0028	Ca ne marchera pas à moins que j'y insère un échantillon d'ADN d'abord.
+; Insert DNA sample
+COMPUT0029	C'est fait. À présent il faut que j'insère la carte à programmer.
+; Insert ID card after DNA sample
+COMPUT0030	Les données de l'échantillon devraient être inscrites sur la carte.
+; Insert already programmed ID card
+COMPUT0031	La carte a déja été programmée.
+
+; Look at communications computer
+COMPUT0032	C'est une console de programmation.
+; Use communications computer without power
+COMPUT0033	Ne fonctionne pas. J'imagine qu'il n'est pas alimenté.
+; SUBTITLE - Initial computer screen
+COMPUT0042	Console de communication - Choisisez un message.
+; Girl summarises first computer message
+COMPUT0043	On dirait que quelqu'un a essayé d'envoyer un message S.O.S. mais il ne fut pas transmit
+; Girl summarises second computer message
+COMPUT0044	D'après ce message, il y a une note quelque part pour déverrouiller les contrôles droide.
+; Girl summarises third computer message
+COMPUT0045	Ca m'a l'air d'un pourriel pour la promotion d'un concert.
+; Girl summarises fourth computer message
+COMPUT0046	Ce message est une demande d'information à propos d'un vaisseau manquant.
+
+
+; Look at override key in the backup unit
+COMPUT0034	C'est la clé que j'ai trouvée.
+
+; Look at slot in backup unit
+COMPUT0035	On dirait une fente pour une sorte de clé.
+; Use slot in backup unit
+COMPUT0036	Je ne peux pas la faire marcher sans la bonne clé.
+
+; Look at life support slot
+COMPUT0037	Il n'y a rien, contrairement aux autres modules
+; Use life support slot
+COMPUT0038	C'est déja allumé. Quel soulagement!
+; Use override key on life support slot
+COMPUT0039	Je vois que les supports vitaux sont toujours allumés. Ça serait idiôt de les éteindre
+
+; Look at droid computer
+COMPUT0040	Zut, pas d'alimentation.
+; Use droid computer without power
+COMPUT0041	C'est écrit: console de contrôle du droide.
+; SUBTITLE - Droid control console
+COMPUT0047	Console de Contrôle du Droide - Entrer la séquence du code de couleurs
+
+; Look at analyser
+COMPUT0048	Cette console est utilisée comme analyseur, en quelque sorte.
+; SUBTITLE - Analyser
+COMPUT0049	Analyseur - Hors service: ADN humain coincé dans l'appareil.
+; Look at analyser compartment
+COMPUT0050	C'est une sorte de compartiment.
+' Girl's comment when opening compartment
+COMPUT0051	Ils m'avertissent que ça pourrait être dangereux. Je ne suis pas sûre que ce soit une si bonne idée de jouer avec ça
+; Look at wire
+COMPUT0052	Ce câble semble contrôler le vérouillage de sécurité.
+; Take wire
+COMPUT0053	J'ai besoin de quelque chose de plus affuté pour couper ça.
+; Try to use axe with wire
+COMPUT0054	C'est trop gros pour entrer dans le panneau. Je vais avoir besoin d'un instrument plus petit pour couper le câble.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 05 - LIVING ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+LIVING0001	Chaine
+LIVING0002	Réfrigérateur
+LIVING0003	Abîme
+LIVING0004	Torse
+LIVING0005	Porte
+LIVING0006	Interrupteur
+LIVING0007	Armoire
+LIVING0008	Écran Video
+LIVING0009	Extincteur
+
+; Left cupboard regions
+LIVING0010	Canette de Liqueur
+LIVING0011	Boîte étrange
+LIVING0012	Bouffe Moisie
+LIVING0013	Boîte à Lunch
+LIVING0014	Déchets
+LIVING0015	Quitter
+
+; Right cupboard regions
+LIVING0016	Bras
+LIVING0017	Disque video
+LIVING0018	Quitter
+
+; Look at chain
+LIVING0019	Cette chaine retient en l'air cet étrange réfrigérateur.
+; Break chain with hands
+LIVING0020	Impossible de briser cette chaine avec mes mains.
+; Axe chain with chasm closed
+LIVING0021	Ça pourrait descendre le réfrigérateur. Mais l'odeur serait bien pire à terre. Je dois trouver un moyen de m'en débarrasser avant de la couper.
+; Axe chain with chasm opened
+LIVING0022	Quelque chose le retient.
+
+; Look at fire extinguisher
+LIVING0023	Un gros extincteur.
+
+; Look at swinging fridge
+LIVING0024	Un réfrigérateur?! ... Pendu au plafond? Qu'est-ce que ca pue! J'espère que je peux m'en débarrasser.
+; Reach for swinging fridge
+LIVING0025	Je ne l'aurai jamais d'ici.
+
+; Look at left cupboard
+LIVING0026	C'est juste une armoire.
+
+; Look at floor chasm
+LIVING0027	Mais qu'est que c'est que ça?! C'est dégeulasse. Je ne sais pas où ça mène, et je ne veux pas le savoir.
+; Touch floor chasm
+LIVING0028	Je ne m'approche pas de ça.
+
+; Look at metal box in cupboard
+LIVING0029	Une boîte de métal très solide. Elle a l'air d'avoir été soudée.
+
+; Look at Dr. Salt canned drink in cupboard
+LIVING0030	Si je comprends bien, c'est une boisson gazeuse.
+
+; Look at mouldy foods
+LIVING0031	Cette nourriture est moisie. Ca pue.
+; Take mouldy foods
+LIVING0032	Je ne touche pas à ça! Qui sais ce que je pourrais attraper?
+
+; Look at lunch box
+LIVING0033	c'est une boîte à lunch scellée. Je me demande si ce sont des raisins à l'intérieur?
+; Take lunch box
+LIVING0034	Non merci. Je doute avoir un jour ASSEZ faim pour manger ça.
+
+; Look at garbage
+LIVING0035	Emballages, contenants. Ils sont couverts de poussière.
+; Take garabage
+LIVING0036	Je n'ai pas besoin de traîner ces déchets avec moi.
+
+; Look at severed arm
+LIVING0037	C'est un bras coupé! Qu'est-il arrivé au reste du corps?
+
+; Look at video disc #1
+LIVING0038	Un disque vidéo standard.
+
+; Look at right cupboard
+LIVING0039	C'est juste une armoire.
+; On discovering severed arm in right cupboard
+LIVING0040	MERDE! Ce... ce bras appartenait à quelqu'un! Mais que ce passe-t-il ici?
+
+; Attemt to go through medbay door while fire is still blazing
+LIVING0041	Cette pièce a été automatiquement scellée. Je pense apercevoir un feu à travers la porte!
+
+; On entering room while fridge is hanging 1st
+LIVING0042	Il y a une odeur horrible provenant de ce réfrigérateur. Je pense que je vais être malade!
+; On entering room while fridge is hanging 2nd
+LIVING0084	La puanteur empire de plus en plus. J'ai envie de vomir.
+; On entering room while fridge is hanging 3rd
+LIVING0085	Ma gorge brûle. Je ne crois pas que je puisse supporter cette odeur plus longtemps.
+
+; Look at screen
+LIVING0043	C'est une console pour visionner des disques video.
+; Take screen
+LIVING0044	Ça ne sert à rien sans un disque video.
+; Use mirror with screen
+LIVING0045	Le miroir tient bien là-dessus.
+; Use metal box with screen
+LIVING0046	Ce n'est pas correct. Je n'ai pas besoin de la boîte là. Peut-être que je pense de façon trop indirecte.
+; Use video disc #1 with screen
+LIVING0047	Ici Arthur Anderson, le Technicien de Laboratoire de Remplacement pour mon premier rapport routinier. J'ai été ici pendant une semaine et les choses ne se sont pas déroulées comme prévues.
+LIVING0048	Ils me gardent dans le laboratoire supérieur à travailler sur des inspections de routine. Pour moi c'est une perte de temps mais ils ne veulent pas me laisser entrer dans le laboratoire principal...
+LIVING0049	J'ai dit au Commandant Artemis que je n'ai pas voyagé jusqu'ici pour faire un travail de singe, mais il n'était pas intéressé.
+LIVING0050	Ça ne serait pas si pire, si ce n'était pas de la tension à bord. Tout le monde est sur la défensive et aucun d'entre eux ne veut trop parler...
+LIVING0051	Ils sont très rapides pour détourner toutes conversations à propos de ce qui est arrivé à mon prédécesseur ou de l'objet de leur travail en bas.
+LIVING0052	La chose dont je suis sûr c'est qu'ils ne veulent pas de moi ici. Il n'y a que la professeure Ericson qui soit la moindrement acceuillante envers moi.
+LIVING0053	Même elle devient évasive. Au moins elle est amicale avec moi. Il se passe définitivement quelque chose ici... ils ont peur de quelque chose. 
+LIVING0054	Je les ai entendus appeler le laboratoire principal la 'White Chamber', mais je ne sais pas pourquoi car je n'ai pas accès là-bas.
+LIVING0055	Goodwin et Wyles détestent approcher du labo. J'ai vu Goodwin y aller quelques fois, quand ils avaient besoin de lui mais toujours brièvement et à contrecoeur.
+LIVING0056	Je vais continuer d'enquêter, mais je ne veux pas les pousser à bout. L'atmosphère ici est déjà bien assez tendue.
+; Use video disc #2 with screen
+LIVING0057	L'officer Richard Wyles a disparu! Prof. Ericson m'a réveillé hier matin pour une réunion dans le salon, question de discuter de ce qui s'était passé ...
+LIVING0058	Le Dr. Goodwin a dit qu'il avait travaillé tard durant la nuit et qu'il est allé chercher Wyles quand il s'est aperçu que son laser médical ne fonctionnait plus.
+LIVING0059	Cet endroit est si petit qu'il ne lui fallut pas beaucoup de temps pour réaliser que Wyles était introuvable.
+LIVING0060	Il a dit avoir réveillé le Commandant, et ensemble, ils passèrent la nuit à fouiller la station en vain; même la nacelle de sauvetage n'avait pas bougé.
+LIVING0061	Avec ce mystère sans réponse, tout le monde est sur le point de craquer. Même moi je commence à me sentir aussi paranoîaque et tendu que le reste d'entre eux.
+LIVING0062	Je pense qu'à ce point, ce n'est plus qu'une question de savoir qui va crouler sous la pression en premier. Je vous conseille fortement d'envoyer une nouvelle équipe ici.
+LIVING0063	S'ils ne partent pas de cet endroit, j'ai bien peur que les choses ne fassent qu'empirer. Plus personne ne se fait confiance.
+LIVING0064	Ils sont particulièrement méfiant à propos de moi, étant le dernier arrivé. Même Sarah... Je veux dire Prof. Ericson, devient de plus en plus réticente à me parler.
+LIVING0065	Elle s'est mise à passer la majorité de son temps en bas dans la White Chamber. Je sais que ce n'est pas scientifique, mais quand je regarde dans ses yeux elle semble... perdue.
+LIVING0066	J'ai pris un verre avec le Dr.Goodwin. C'est la première fois qu'il me parle convenablement depuis que je suis arrivé. Par contre ce qu'il disait n'avait pas beaucoup de sens.
+LIVING0067	Il était convaincu que Wyles avait été enlevé par 'l'artéfact' qu'ils étudient au laboratoire. Apparamment Wyles voulait qu'ils s'en débarrassent.
+LIVING0068	Depuis mon dernier rapport, je les ai entendus mentionner l'artéfact quelques fois. Leur opinions semblent divergentes et sources de conflit.
+LIVING0069	Tout ceci me préoccupe. Encore une fois, je vous suggère, s'il vous plait, de nous envoyer une équipe de relais aussitôt que possible.
+; Use video disc #3 with screen
+LIVING0070	Je fais cet enregistrement au cas où quelqu'un le retrouverait, même si ça ne m'avance en rien. J'espère que quelqu'un le verra car je veux que les gens sachent ce qui s'est passé ici.
+LIVING0071	J'ai découvert que le Commandant a intercepté mes deux derniers rapports. Je l'ai confronté à ce propos, mais il est convaincu que je suis un agent de la Cyclavir Hypercorp.
+LIVING0072	Je me suis obstiné avec lui. Mais il pense qu'il est assez généreux de ne pas m'avoir propulsé dans l'espace au moment où il a découvert que j'envoyais des rapports.
+LIVING0073	J'ai essayé de lui expliquer que la compagnie m'avait juste demandé de soumettre mes observations, mais il ne voulait rien savoir. Je suppose que je ne peux pas le blâmer.
+LIVING0074	Mais plus rien de tout ça ne compte maintenant. Je serai chanceux si je survis encore longtemps. Dr. Goodwin est mort. Sarah l'a retrouvé déchiqueté dans le système de ventilation principal.
+LIVING0075	Tout le monde sait que ce n'était pas un accident. On se fait tuer ici. Inevitablement, ils se sont retournés contre moi. Trend pense que tout ça a commencé quand je suis monté à bord.
+LIVING0076	Ils m'ont enfermé ici dans la chambre de quarantaine. Je pense qu'il sont en train de sceller la salle de ventilation. Je ne suis pas sûr où ils veulent en venir.
+LIVING0077	Je ne sais pas ce qui se passe ici, je suis effrayé et seul. Je ne sais pas si l'un d'entre eux est un meurtrier ou si c'est ce maudit artéfact qui est responsable de tout ça.
+LIVING0078	D'une façon ou d'une autre, je ne m'en soucie plus... Je veux juste décoller de cette station maudite. J'ai trouvé un moyen d'ouvrir le sceau de quarantaine et je me dirige vers la nacelle de secours.
+LIVING0079	Je ne sais pas si je vais y arriver alors je laisse cet enregistrement final de ce qui c'est passé ici. À qui que ce soit qui le trouvera ... bonne chance.
+
+; Look at table switch
+LIVING0080	Ça devrait contrôler la table.
+; Press table switch with mouth chasm open
+LIVING0081	Ça ne fonctionne pas. Je ne peux pas fermer l'orifice.
+; Press table switch with mirror in place
+LIVING0082	Ça ne marchera pas avec le miroir en place.
+
+; Look at torso
+LIVING0083	Ce réfrigérateur ne s'en ira nulle part avec un corps mutilé coincé dedans! J'aurais dû le laisser en haut!
+
+
+; //////////////////////////////////////////////////////////////////////
+; 06 - SLEEPING QUARTERS
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+SLEEPQ0001	Contrôle de Douche
+SLEEPQ0002	Cheveux
+SLEEPQ0003	Miroir
+SLEEPQ0004	Couverture
+SLEEPQ0005	Note
+SLEEPQ0006	Disque Video
+SLEEPQ0007	Porte
+
+; Look at blanket
+SLEEPQ0008	Une couverture à l'aspect douillet.
+
+; Look at video disc
+SLEEPQ0009	un disque video pré-enregistré.
+
+; After nearly being sucked into space
+SLEEPQ0010	L'espace!? Comment-ça! Où est allée la plage?
+
+; Try to go through door after being sucked out once
+SLEEPQ0011	Je ne veux pas retourner là-dehors. J'y ai à peine survécu la dernière fois.
+; Keep trying to go through door
+SLEEPQ0019	Je ne crois vraiment pas que ce soit une bonne idée.
+; Keep trying to go through door
+SLEEPQ0020	OK. Je vais essayer.
+
+; Look into mirror
+SLEEPQ0012	Alors, c'est moi. Pas mal, considerant...
+
+; Look at notes
+SLEEPQ0013	Une note écrite à la main. Bizzare... la plupart des gens utilisent des ordinateurs aujourd'hui.
+
+; After player been stabbed and wakes up in sleeping quarters
+SLEEPQ0014	Mais que s'est-il passé?! Était-ce bien vrai? Qu'est ce que cet endroit est en train de me faire?
+
+; Look at head in the water
+SLEEPQ0015	Serait-ce..? Oh non, ne me dites pas que ce sont des cheveux la dedans...
+; After head cutscene
+SLEEPQ0016	Une tête coupée!? Cette chose est-elle encore vivante? ... Mais pourquoi suis-je même en train d'y penser?
+
+; Look a at shower control panel
+SLEEPQ0017	Ça contrôle la douche et le compartiment des toilettes.
+; Open shower unit using panel while it is locked
+SLEEPQ0018	Pas de réponse.
+
+; //////////////////////////////////////////////////////////////////////
+; 07 - LAB
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+THELAB0001	Microscope
+THELAB0002	Ascenceur
+THELAB0003	Haut-Parleur
+THELAB0004	Outils
+THELAB0005	Tableau
+THELAB0006	Système de Projecteur
+THELAB0007	Magnétoscope
+THELAB0008	Batteries
+THELAB0009	Coupeur Laser
+THELAB0010	Scalpel
+THELAB0011	Plat à Échantillon
+THELAB0012	Porte
+THELAB0013	Hache
+
+; Can't see various objects while being tortured
+THELAB0014	Je ne peux pas voir d'ici.
+; Can't reach various objects while being tortured
+THELAB0015	Je ne peux pas l'atteindre.
+
+; Look at axe
+THELAB0016	Quelqu'un a coincé une hache dans le panneau de contrôle de l'acenseur.
+
+; Look at batteries
+THELAB0017	Ce sont les batteries du vidéo... c'était horrible.
+
+; Look at clean blackboard
+THELAB0018	Le tableau a l'air propre. Je trouve ça plutôt inquiétant.
+; Look at marked blackboard
+THELAB0019	Il y a d'étranges marques de craie sur le tableau.
+; Look at heavily marked blackboard
+THELAB0020	Cette forme. Je sais, je la reconnais... mais de où?
+; Wipe clean blackboard
+THELAB0021	Le tableau est déja propre.
+; Wipe marked blackboard
+THELAB0022	Je ne veux pas essuyer les marques de craie. Je crois qu'elles veulent dire quelque chose.
+; Examine fully marked blackboard (This is foreshadowing for the comedy ending)
+THELAB0051	C'est l'artéfact. Je m'en souviens maintenant. Je suis sûre que j'ai déja vu tout ca auparavent.
+THELAB0052	Mais je sens comme si quelque chose approchait. Quelque chose de différent... quelque chose de surprenant!
+
+; Look at elevator
+THELAB0023	je me demande où cela peut bien mener?
+; Use elevator
+THELAB0024	Zut! C'est brisé... On dirait que le panneau de contrôle a été enfoncé.
+
+; Look at laser cutter
+THELAB0025	Je peux arriver à l'atteindre.
+; On taking the cutter
+THELAB0026	Fuck! J'ai le coupeur laser, mais il ne marche pas.
+
+; Look at scalpel
+THELAB0027	un scalpel médical.
+
+; Look at video player
+THELAB0028	On dirait de l'équipement ancien. C'est pour regarder des videocassettes.
+; Look at video player while strapped down
+THELAB0029	Ça a commencé  quand j'ai mis la cassette dans le magnétoscope.
+; Use video player
+THELAB0030	Il ne se passera rien sans cassette video.
+; Use video player while strapped down
+THELAB0031	Si au moins je pouvais arrêter la cassette. Peut-être que ça marcherait.
+; After inserting tape into player
+THELAB0032	Mais qu'est-ce...?  C'est moi!
+; After throwing cutter at video player
+THELAB0033	Je me sens malade... mais qu'est-ce que c'était ça?
+; Use video discs with video player
+THELAB0050	Ça ne fonctionne pas avec les disques video. Ça a été conçu pour les vieilles videocassettes.	
+
+; Look at projector system
+THELAB0034	Ça a l'air d'un ancien système de projecteur. Je crois qu'il est branché à ce vieux magnétoscope.
+; Look at projector system while strapped down
+THELAB0035	Ça projette le video de torture du magnétoscope.
+; Use projector system
+THELAB0036	Je ne peux pas le faire fonctionner seul. Peut-être devrais-je essayer le magnétoscope.
+
+; Look at sample dish
+THELAB0037	Une sorte d'échantillon de tissu dans un plat hermétique. Il y a une étiquette dessus.
+
+; Look at scope
+THELAB0038	Je reconnais ça, c'est un '7777 Zentradi series proto-analyser'.
+; Use scope
+THELAB0039	J'ai besoin d'un genre de plat à échantillon pour m'en servir.
+; Use sample with scope
+THELAB0040	Je reconnais ça. Le tissu a été extrait spécialement pour contenir un échantillon propre d'ADN.
+
+; Look at speaker
+THELAB0041	C'est un haut-parleur. Je me souviens avoir eu des haut-parleurs comme ceux-ci quand j'étais jeune.
+; Use speaker
+THELAB0042	Il n'y a pas grand chose que je puisse faire avec ça.
+
+; Look at tools
+THELAB0043	Un étalage d'instruments de laboratoire tachés de sang et rouillés.
+; Take tools
+THELAB0044	Il ont rouillés en surface. Je doute qu'ils auraient grande utilité dans cet état.
+
+; Try to walk through welded door
+THELAB0045	C'est soudé, je ne peux pas traverser.
+; Try to open welded door
+THELAB0046	Je vais avoir besoin de quelque chose de très puissant pour enfoncer cette porte.
+; Look at welded door
+THELAB0047	La serrure de cette porte a été soudée. Je me demande pourquoi?
+; Use axe on welded door
+THELAB0048	Ça ne fera pas l'affaire. C'est une porte très épaisse et elle a été bien soudée.
+; Place explosives in front of welded door
+THELAB0049	Voilà. Maintenant je dois trouver un moyen d'allumer ça...
+
+; //////////////////////////////////////////////////////////////////////
+; 08 - MEDBAY
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+MEDBAY0001	Lit
+MEDBAY0002	Mur Sale
+MEDBAY0003	Oui
+MEDBAY0004	Non
+MEDBAY0005	Panneau de Contrôle
+MEDBAY0006	Douche
+MEDBAY0007	Disque Video
+MEDBAY0008	Corps
+MEDBAY0009	Bureau Laser
+MEDBAY0010	Boîte Déscellée
+MEDBAY0011	Compartiment d'alimentation
+MEDBAY0012	Porte
+MEDBAY0013	Classeur
+
+; Eye box regions
+MEDBAY0014	Quitter
+MEDBAY0015	Yeux
+
+; Filing cabinet regions
+MEDBAY0016	Quitter
+MEDBAY0017	Tiroirs
+MEDBAY0018	Tiroir Brisé
+MEDBAY0019	Enveloppe
+
+; Look at bed with full body
+MEDBAY0020	Bien, tout est là... mais je ne sais même pas pourquoi je l'ai fait en premier lieu. Il a l'air si froid.
+; Look at bed with partial body
+MEDBAY0021	Les membres du cadavre semblent s'insérer parfaitement dans les creux.
+; Look at bed with full body under blanket
+MEDBAY0022	Il est moins perturbant sous une couverture. Peut-être devrais-je le laisser en paix.
+; Look at bed with nothing on it
+MEDBAY0023	C'est un lit avec des marques de brûlures en formes de corps dessus.
+; Use bed with body parts on it
+MEDBAY0024	Le lit est comme, déjà occupé.
+; Use bed with nothing on it
+MEDBAY0025	Je pense que je ne pourrais pas dormir, même si je voulais.
+; Use eyes on bed without head
+MEDBAY0026	Il n'y a nulle part pour mettre les yeux. Mais que suis-je en train de faire de toute façon?
+; Complete body message #1
+MEDBAY0027	Voilà, c'est complet!
+; Complete body message #2
+MEDBAY0028	... ... ... ... Rien de se produit ...
+; Complete body message #3
+MEDBAY0029	Je ne sais même pas à quoi je m'attendais. Qu'est-ce que cet endroit est en train de me faire? Pourquoi ai-je transporté tous ces membres ici?
+; Use blanket on complete body
+MEDBAY0030	Comme ça, Ça me semble plus respectueux, j'imagine.
+; Use blanket on incomplete body
+MEDBAY0031	Ce n'est pas encore fini.
+; Use Dr Salt on complete body
+MEDBAY0032	Même le Dr. Salt ne peut lui venir en aide à présent.
+; Use Dr Salt on incomplete body
+MEDBAY0033	Je ne veux pas tremper les draps.
+
+; Look at body in quarantine chamber
+MEDBAY0034	Ses membres... comment sont-ils arrivés ici?
+; After players has become trapped in quarantine chamber
+MEDBAY0035	Je suis coincée!
+; Try to touch body in chamber
+MEDBAY0036	Je ne peux pas entrer ici.
+
+; Look at broken drawer
+MEDBAY0037	La serrure de ce tiroir est brisée.
+
+; Look at locked drawer
+MEDBAY0038	La plupart de ces tiroirs sont scellés. Il ne semble pas y avoir de moyens évidents de les ouvrir.
+; Try to open locked drawer
+MEDBAY0039	Ils sont étonnament robustes. Je doute pouvoir arriver les ouvrir par la force.
+; Try to axe locked drawer
+MEDBAY0040	Ça ne va pas les ouvrir. Je vais seulement finir par endommager la surface.
+; Try to scalpel locked drawer
+MEDBAY0041	Je crois que la serrure est faite un peu plus solide que ça.
+
+; Look at brown envelope
+MEDBAY0042	Une enveloppe brune avec quelque chose à l'intérieur.
+
+; Look at power compartment
+MEDBAY0043	Il y a un compartiment sous l'unité laser.
+; Put batteries in compartment
+MEDBAY0044	Ça fonctionne, le laser devrait être alimenté à présent.
+
+; Look at video disc
+MEDBAY0045	Un disque vidéo enregistré.
+; Try to take video disc in quarantine chamber
+MEDBAY0046	Je ne peux pas entrer dans la cellule.
+
+; Look at eyes in box
+MEDBAY0047	C'est dégoutant! Quel espèce de malade va sceller des yeux dans une boîte?
+
+; Look at filing cabinet
+MEDBAY0048	C'est un classeur.
+
+; Look at medical laser
+MEDBAY0049	C'est un laser médical.
+; Try to fire laser into fridge
+MEDBAY0050	Je ne veux pas risquer de tirer sur le réfrigérateur. Je ne sais pas ce qui pourrait arriver, mais je doute que ça soit bon.
+; Try to fire unpowered laser
+MEDBAY0051	Ne fonctionne pas. Ça pourrait être la source d'alimentation. 
+; Box unsealed using laser
+MEDBAY0052	Le laser a coupé le sceau de la boîte. J'espère que ça n'a pas endommagé le contenu. peu importe ce que c'est...
+
+; Look at quarantine panel
+MEDBAY0053	Un panneau de contrôle vocal qui opère la cellule de quarantaine.
+; Use quarantine panel
+MEDBAY0054	Ça ne répond qu'à la voix d'un docteur autorisé. Je n'arriverai jamais à le faire marcher.
+; Use head with quarantine panel
+MEDBAY0055	Je ne crois pas qu'il parle. Je suppose qu'il a déja dit tout ce qu'il avait à dire.
+
+; Look at shower unit
+MEDBAY0056	C'est une douche standard.
+; Try to use shower unit
+MEDBAY0057	Je crois qu'elle est brisée. Je n'arrive pas à l'ouvrir.
+; Try to use shower unit from outside quarantine chamber
+MEDBAY0058	Je ne peux pas entrer dans la cellule
+
+; Look at opened metal box
+MEDBAY0059	Le laser a coupé la boite avec précision.
+
+; Look at wall in quarantine chamber
+MEDBAY0060	Il y a quelque chose d'écrit dans la poussière.
+; SUBTITLE - Wall message 1
+MEDBAY0061	Voulez vous quitter?
+; SUBTITLE - Wall message 2
+MEDBAY0062	Et risquer de répandre l'épidémie?
+; SUBTITLE - Wall message 3
+MEDBAY0063	Sors... Accepte les conséquences!
+
+; //////////////////////////////////////////////////////////////////////
+; 09 - BEACH
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+ABEACH0001	Porte
+ABEACH0002	Mer
+ABEACH0003	Forêt
+
+; Look at forest
+ABEACH0004	Ce sont des vrais arbres n'est-ce pas... mais comment est-ce possible?
+; Use forest
+ABEACH0005	Je n'arrive pas à me faire un chemin. Les arbres sont trop serrés.
+
+; Look at sea
+ABEACH0006	On dirait vraiment la mer. Que se passe-t-il?
+; Use sea #1
+ABEACH0007	C'est de la vraie eau... Je n'arrive pas à comprendre comment tout cela est possible. j'étais sur une station spatiale...
+; Use sea #2
+ABEACH0008	Peut-être que je pourrais me sauver à la nage, mais je ne vois nulle part où aller.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 10 - FAN ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+THEFAN0001	Conduit d'aération
+THEFAN0002	Broyeur
+THEFAN0003	Porte
+
+; Look at grinder
+THEFAN0004	C'est un broyeur hélicoidal.
+; Touch grinder
+THEFAN0005	C'est couvert de saleté, qu'est-ce que c'est que cette matière?
+
+; Walk into sealed vent
+THEFAN0006	C'est scellé, je ne peux pas passer.
+; Look at vent
+THEFAN0007	Je me demande si ce conduit d'aération peut me mener derrière l'arbre d'ascenceur.
+; Use vent
+THEFAN0008	Je n'arrive pas à enlever ce panneau.
+; Use axe on vent
+THEFAN0009	Même avec la hache, je ne parviens pas à l'écorcher.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 11 - THE WHITE CHAMBER
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+WCHAMB0001	Arbre
+WCHAMB0002	Artéfact
+WCHAMB0003	Corps
+WCHAMB0004	Equipement
+
+; Look at artefact
+WCHAMB0005	Alors, c'est ça. C'est l'artéfact. Je ne sais pas quoi dire.
+; Touch artefact
+WCHAMB0006	C'est chaud et ca vibre. Ce n'est pas comme une machine.
+
+; Look at body before endgame
+WCHAMB0007	Son visage... pauvre gars! Mais qu'est-ce qui a bien pu lui arriver?
+; Look at body after endgame
+WCHAMB0008	J'ai fait ça... Je l'ai tué! J'ai relaché une toxine ici et je l'ai regardé mourir. C'était le dernier survivant et rendu à ce point, ça me semblait si facile d'en finir sa vie.
+; End game text #01
+WCHAMB0009	Bonjour Sarah. Comme on se retrouve! Il me semble que les rôles se soient inversés. Si je ne m'abuse, la dernière fois c'était moi qui était piégé ici, espérant que tu ais pitié.
+; End game text #02
+WCHAMB0010	Je m'en faisais pour toi, j'ai cru à tous tes faux sourires. Et pour çela, je suis devenu le déchet que tu vois par terre.
+; End game text #03
+WCHAMB0011	Commences-tu à comprendre Sarah? Ce que tu m'as fait... ce que tu nous as fais? Le prix que nous avons payé pour ton obsession du pouvoir.
+; End game text #04
+WCHAMB0012	Hmph, au moins je peux dire que j'ai réussi là où tu as échoué. L'artéfact m'a répondu. Mon sang, ma haine et mon désir de chatîment l'a activé.
+; End game text #05
+WCHAMB0013	J'ai relâché le pouvoir auquel tu aspirais, et à présent nous sommes tous les deux pris dans ce cycle maudit. Un cauchemar sans fin, continuant éternellement jusqu'à ce que nous ayons mérité le salut.
+; End game text #06
+WCHAMB0014	Je suis ton juge. Et j'ai vu dans ton âme. Nous t'avons donné une seconde chance de te repentir de tes actions.
+; End game text #07
+WCHAMB0015	La page est maintenant tournée, as-tu démontré de la compassion ou du regret? Ou est-ce qu'encore une fois tu t'es comportée de façon égoiste, juste pour atteindre tes buts?
+; End game text #08
+WCHAMB0016	Pendant que nous rendons un verdict, Souviens toi... souviens toi de ce que tu m'as fait.
+; End game text #09
+WCHAMB0017	C'est fait. Nous avons fait le tour, du début jusqu'à la fin. Nous avons pris une décision. La seule chose qui te reste à faire est partir... maintenant!
+; End game text #10
+WCHAMB0018	La nacelle de secours de la salle d'entrepot a été ouverte et à l'intérieur, tu y trouveras notre jugement. Sur ton chemin, tu te souviendra de tout ce que tu as fait pour mériter cela.
+; End game text #11
+WCHAMB0019	Adieu Sarah... J'espère que nous ne nous reverrons jamais.
+; Optional end game text. Only shown if player has good ending
+WCHAMB0025	J'ai changé l'orbite de la station. Elle va s'écraser sur une planète avoisinante.
+; Touch body after endgame
+WCHAMB0020	Il est encore chaud. Je n'arrive pas à le bouger. C'est comme si son sang avait fusionné à l'artéfact. Je ne peux pas croire que j'aie réellement fait ça.
+
+; Look at equipment #1
+WCHAMB0021	Cette machine sert à enregistrer toute manifestation venant de l'artéfact.
+; Use equipment #1
+WCHAMB0022	Il semble y avoir de drôles de lectures de radiation provenant de l'artéfact.
+
+; Look at equipment #2
+WCHAMB0023	Cet appareil sert à donner une profonde analyse de la structure.
+; Use equipment #2
+WCHAMB0024	Il ne semble pas y avoir de résultat concret.
+
+; //////////////////////////////////////////////////////////////////////
+; 12 - NAVIGATION ROOM (BLEEDING)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NBLEED0001	Créature
+
+; //////////////////////////////////////////////////////////////////////
+; 13 - MED BAY (DROID)
+; //////////////////////////////////////////////////////////////////////
+
+; Action descriptions (chamber refers to quarantine chamber)
+MEDBDR0001	Ouvrir la Porte
+MEDBDR0002	Ouvrir la Chambre
+MEDBDR0003	Éteindre le feu
+
+; Droid responses
+MEDBDR0004	Non-autorisé à briser le sceau de quarantaine.
+MEDBDR0005	Unité non-équipée d'extincteur.
+MEDBDR0006	La porte a été scellée pour cause d'incendie.
+
+; //////////////////////////////////////////////////////////////////////
+; 14 - LIVING ROOM (GRATED)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+LGRATE0001	Porte
+
+; //////////////////////////////////////////////////////////////////////
+; 15 - CORRIDOR
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+CORRID0001	Passage
+CORRID0002	Oeil
+CORRID0003	Cadavre
+
+; Look at body
+CORRID0004	Un cadavre décapité... il a été... crucifié à l'envers... Suis-je en enfer?
+; Try to touch body
+CORRID0005	Je suis heureuse qu'il y ait une barrière qui nous sépare.
+
+; Look at eye
+CORRID0006	Et merde... est-ce que je vais mourir ici?
+; Try to touch eye
+CORRID0007	Garde cet espèce de truc sanguignolant loin de moi!
+
+; //////////////////////////////////////////////////////////////////////
+; 16 - COMPUTER ROOM (BLOODY)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+CBLOOD0001	Conduit
+CBLOOD0002	Bras
+CBLOOD0003	Porte
+CBLOOD0004	Panneau de Contrôle
+CBLOOD0005	Cadavre
+
+; Look at severed arm
+CBLOOD0006	Un bras coupé.
+; Take severed arm
+CBLOOD0007	Un autre bras. C'est absolument cinglé...
+
+; Look at body chamber
+CBLOOD0008	Il y a quelqu'un de coincé là dedans. Si seulement je pouvais enfoncer la cellule.
+; Break body chamber
+CBLOOD0009	C'est trop solide pour être brisé à la main.
+; Axe body chamber
+CBLOOD0010	Zut, la cellule doit être renforcée.
+
+; Look at cleaning control
+CBLOOD0011	C'est le contrôle pour le système de nettoyage du réservoir d'urgence.
+; After control used #1
+CBLOOD0012	Et merde! J'essayais seulement de l'aider... Je suis si désolée...
+; After control used #2
+CBLOOD0013	On dirait qu'il y a quelque chose de coincé dans les tuyaux. Qu'aie-je fais?
+; Use control after body flushed
+CBLOOD0014	Le réservoir est vide maintenant, je ne vois pas pourquoi j'aurais besoin de le nettoyer.
+
+; Look at pipe with arm in it
+CBLOOD0015	Il y a un bras coincé là dedans, il doit venir de cet homme. Pourquoi aie-je le préssentiment que ce n'est pas une coincidence?
+; Try to break pipe with hands
+CBLOOD0016	Je n'arrive pas à le casser avec mes mains.
+
+; //////////////////////////////////////////////////////////////////////
+; 17 - NAVIGATION ROOM (CHASM)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NCHASM0001	Abîme
+NCHASM0002	Porte
+
+; Look at chasm
+NCHASM0003	Je ne vois pas le fond! Mais où est-ce que je suis?
+; Use chasm
+NCHASM0004	Je ne me risquerai pas à descendre là-dedans.
+
+; //////////////////////////////////////////////////////////////////////
+; 18 - FREEZER
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+FREEZE0001	Viande Accrochée
+FREEZE0002	Congélateur
+FREEZE0003	Porte
+FREEZE0004	Jambe
+FREEZE0005	Corps Coincé
+FREEZE0006	Homme gelé
+
+; Look at closed freezer
+FREEZE0007	C'est une grosse unité de congélation.
+; On opening freezer and finding shivering body inside
+FREEZE0008	C'est quoi ça?
+
+; Look at leg
+FREEZE0009	Il y a une jambe qui sort de peu importe ce que c'est.
+; Try to take leg
+FREEZE0010	Si je veux la jambe... je vais devoir la couper.
+; Try to scalpel leg
+FREEZE0011	Non, je n'arriverais pas à traverser l'os.
+; Axe leg off
+FREEZE0012	Super... Maintenant j'ai une jambe coupée
+
+; Look at freezing man
+FREEZE0013	On dirait qu'il gèle. Peut-être pourrais-je le réchauffer?
+; Use blanket on man
+FREEZE0014	Une bonne pensée, mais ça ne vas pas l'aider à ce point.
+; Use dr salt on man
+FREEZE0015	Il a déjà l'air assez froid. Je ne crois pas qu'une liqueur fraîche lui ferait du bien.
+; After player has touchd man and room has transformed
+FREEZE0016	Oh mon Dieu, c'est indescriptible.
+
+; Look at meat
+FREEZE0017	Viande fraîche accrochée. Ça semble vaguement comestible.
+; Try to take meat
+FREEZE0018	Cette chose est probablement plus lourde que moi. La viande crue n'est pas mon truc de toute façon.
+; Axe down meat
+FREEZE0019	Ça pourrait probablement descendre le morceau de viande but mais je ne tiens pas à le transporter.
+; Use scalpel on meat
+FREEZE0020	Peut-être que si j'ai faim plus tard je pourrai utiliser le scalpel pour m'en couper un bout. Pour le moment je n'en veux pas vraiment.
+
+; Look at trapped corpse
+FREEZE0021	On dirait qu'un cadavre est coincé sous ce drap. J'espère pour lui qu'il est déjà mort.
+; Touch trapped corpse
+FREEZE0022	De quoi est-ce fait? Ce n'est pas comme du plastique.
+; Axe trapped corpse
+FREEZE0023	Même la hache ne l'ouvre pas. Ça n'a aucun sens.
+; Use scalpel on meat
+FREEZE0024	Le scalpel ne va même pas l'égratigner. Je n'arrive pas à figurer de quoi est fait ce drap.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 19-26 - NORMAL STATION ROOMS
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NORMAL0001	Porte
+NORMAL0002	Hélice
+NORMAL0018	Passage
+NORMAL0005	Douche
+NORMAL0009	Console
+NORMAL0013	Plaque du Plancher
+NORMAL0017	Nacelle de Secours
+
+; Look at fan
+NORMAL0003	J'ai poussé le Dr. Goodwin dans l'hélice. Je n'avais même pas besoin de le faire mais j'étais sûre qu'il était contre moi. Il n'arrêtait pas de demander au Commandant d'éjecter l'artéfact.
+; Touch fan
+NORMAL0004	Après tout ce que j'ai fait à Goodwin je serais folle de m'en aprocher.
+
+; Look at shower #1
+NORMAL0006	Le Commandant Trend ne m'a pas donné le choix. Il ne restait plus que moi, lui et Arthur à ce moment. Il ne faisait pas confiance à l'espion mais il ne pensait pas qu'il était le tueur.
+; Look at shower #2
+NORMAL0007	Je crois qu'il l'a vu dans mes yeux... Alors j'ai pris les siens.
+; Touch shower
+NORMAL0008	Je ne veux pas voir à l'intérieur.
+
+; Look at console #1
+NORMAL0010	Dick Lee fût le premier. C'était mon assistant de recherche. Il pensait que l'artéfact était trop dangereux pour qu'on travaille dessus seuls.
+; Look at console #2
+NORMAL0011	Nous nous obstinions car il voulait une équipe de support. Je lui ai dit qu'on pouvait se débrouiller. Je ne voulais pas le... je savais qu'ils ne comprendraient jamais.
+; Touch shower
+NORMAL0012	Je ne pourrais pas supporter de voir ses entrailles si elles sont encore là-dedans.
+
+; Look at floor panel #1
+NORMAL0014	Wyles regardait les vidéos de surveillance quand je l'ai eu. C'était clair qu'il avait trouvé le corps de Dick dans la console de Nav, de la façon dont il se comportait.
+; Look at floor panel #2
+NORMAL0015	La mort de Dick avait été un accident alors je crois que c'est là que les choses sont devenues hors de contrôle. J'étais tellement piégée. La seule chose à laquelle je pensais était l'artéfact.
+; Touch floor panel
+NORMAL0016	Il est trop tard à présent. Je ne veux pas voir ce qu'il y a en dessous de ça.
+
+; //////////////////////////////////////////////////////////////////////
+; 27 - STORE ROOM (MES)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+STOMES0001	Gauche
+STOMES0002	Explosifs
+STOMES0003	Porte
+STOMES0004	Console MES
+STOMES0005	Quitter	
+
+; Look at console
+STOMES0006	C'EST LA CONSOLE MES À LAQUELLE JE JOUE.
+; Use console
+STOMES0007	JE N'ARRIVE PAS À TROUVER LES BOUTONS POUR ÉTEINDRE.
+
+; Look at explosive
+STOMES0008	CE SONT DES EXPLOSIFS... ILS ONT L'AIR DANGEREUX.
+; Use explosive
+STOMES0009	JE NE PEUX PAS TRANSPORTER PLUS D'OBJETS.
+
+; Walk to freezer door
+STOMES0010	LA PORTE EST FERMÉE.
+; Look at freezer door
+STOMES0011	C'EST LA PORTE DU CONGÉLATEUR.
+; Use freezer door
+STOMES0012	JE N'ARRIVE PAS À VOIR LA POIGNÉE. PERDUE DANS LES PIXELS!
+
+; Try to leave room
+STOMES0013	L'ÉCRAN NE VEUT PAS DÉFILER. ON DIRAIT QUE JE SUIS COINCÉE ICI! JE VAIS DEVOIR TROUVER UN AUTRE MOYEN DE TERMINER LA PARTIE.
+
+; On entering MES room
+STOMES0014	Mais qu'est-ce qui se passe? Ne me dites pas que c'est l'intérieur du jeu!
+
+; //////////////////////////////////////////////////////////////////////
+; 28 - DEBUG ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+DEBUGR0001	Sequence des Corridors
+DEBUGR0002	Salle de Nav ensanglantée
+DEBUGR0003	Débuter la partie
+DEBUGR0004	Contrôles du Droide
+DEBUGR0005	White Chamber
+DEBUGR0006	Salle de Douche
+DEBUGR0007	Congélateur
+DEBUGR0008	MedBay
+DEBUGR0009	Station Normale
+DEBUGR0010	Salle de Débug
+
+; Warning message
+DEBUGR0011	Bienvenue à la salle de débug de White Chamber. Cette pièce a été laissée là pour vous donner une vue sur le processus de développement.
+DEBUGR0012	Jouer à partir de cette pièce est déconseillé. Elle a été conçue pour tester des points particuliers du jeu.
+
+; //////////////////////////////////////////////////////////////////////
+; 29 - COMEDY ENDING
+; //////////////////////////////////////////////////////////////////////
+
+; Okay this is going to be quite difficult to translate into any language.
+; The comedy ending is meant to be surrealist humor and makes very little sense in English
+; so I don't know how well it will go into other languages. So just do your best really.
+
+; All the character shout surprise to reveal the whole game has been a surprise birthday prank
+COMEDY0001	SURPRISE!!!                   
+; The doctor is explaining it's been a well planned party
+COMEDY0002	Nous avoins planifié cette fête surprise dans les profondeurs des ténèbres.
+; The captain is meant to sound very dumb
+COMEDY0003	Ho Ho... Moi, eh bien, j'aime les bougies. Ho ho ho...
+; This character is very excitable. Meant to be a bit like Beavis and Butthead
+COMEDY0004	Yeah! Yeah! Bougies!
+; The doctor is talking about cutting the cake in very overly scientific manner.
+COMEDY0005	J'ai amené un huissier avec qui j'ai réquisitionné le gâteau au nom de la science.
+; This character talks in bad japanese accent and only talks about Japan
+COMEDY0006	Comme un ninja du Japon.
+; Again the captain makes a dumb comment
+COMEDY0007	Je n'ai jamais été au Japon. Ho ho ho ho ho...
+; The excitable guy is eager for food
+COMEDY0008	Frappe moi! Coupe le gâteau! Coupe le gâteau p'tain' d'sac à mmm!
+; Another pointless japanese comment
+COMEDY0009	Comme un samurai du Japon.
+; The dumb captain is sad about no one attending his birthday.
+COMEDY0010	C'est plate que personne ne soit venu à ma fête. Ho ho oooooh...
+; The doctor says this is because his birthday couldn't be divided by the mathematical value pi
+COMEDY0011	Maudit malade. C'est parce que ta fête est tombée sur une journée qui n'était pas divisable par PI.
+; This all ends on a bad pun. The excitable guy assumes the doctor was talking about pie (instead of pi)
+; and comments it's a cake not a pie.
+COMEDY0012	Ca vaut pas le pie d'une vache! C'est un gâteau! Tête de noeud! Yo' momma!	
+
+; //////////////////////////////////////////////////////////////////////
+; 30 - ENDING SCREEN
+; //////////////////////////////////////////////////////////////////////
+
+; Interface message
+ENDING0001	Merci d'avoir joué...
+ENDING0002	Quitter
+ENDING0003	Sortir jeu...
+
+; Ending descriptions
+ENDING0004	Vous avez souffert de la fin 'Maudite'.
+ENDING0005	Vous avez acquis la 'rédemption'. Fin.
+ENDING0006	Vous avez enduré une fin 'tourmentée'.
+ENDING0007	Vous avez été confus par la fin 'comedie'.
+ENDING0008	Vous attendez la 'putréfaction'. Fin.
+ENDING0009	Vous avez respiré la fin 'empoisonnée'.
+ENDING0010	Vous êtes tombés dans la fin de 'l'espace'.
+ENDING0011	Vous ne pouviez échapper à la fin 'électrocution'.
+
+; Easter eggs
+ENDING0012	Essayez d'entrer le code du droide avant d'avoir la note.
+ENDING0013	Essayez d'utiliser la console MES trois fois.
+ENDING0014	Essayez d'appuyer sur HOME pour utiliser la salle de débug des développeurs.
+ENDING0015	Essayez F10 et F11 pour changer l'interface du bouton droit.
+
+
+
+; //////////////////////////////////////////////////////////////////////
+; A1 - ITEM TEXT
+; //////////////////////////////////////////////////////////////////////
+
+; Looks at axe
+ANITEM0001	C'est une hache bien aiguisée. Ça devrait être utile.
+; Touch axe
+ANITEM0002	Je pourrais me faire mal avec ça. Je devrais faire attention!
+
+; Look at batteries
+ANITEM0003	Batteries format industriel. Très puissantes. Je devrais le savoir.
+; Touch batteries
+ANITEM0004	J'ai déjà été assez électrocutée par celles ci.
+
+; Look at blanket
+ANITEM0005	Une couverture confortable.
+; Touch blanket
+ANITEM0006	Elle est douce et douillette. Mais elle sent...
+
+; Look at brown envelope
+ANITEM0007	Il y a quelque chose dans l'enveloppe.
+; Open brown envelope
+ANITEM0008	Il y avait une videocassette à l'intérieur.
+
+; Look at video disc
+ANITEM0009	C'est un disque vidéo standand pré-enregistré. Un disque Microcosm, hein? Bonne qualité.
+; Use video disc
+ANITEM0010	J'ai besoin de l'écran approprié pour le jouer.
+
+; Look at Dr Salt
+ANITEM0011	C'est une cannette de boisson gazeuse rouge.
+; Use Dr Salt
+ANITEM0012	Je la boirais mais ça sent un peu le poisson mort.
+
+; Look at explosive
+ANITEM0013	C'est écrit: explosif puissant.
+; Use explosive
+ANITEM0014	Quand on joue avec le feu, on se brûle. Joue avec ça... et je ne veux même pas y penser.
+
+; Look at extinguisher
+ANITEM0015	Un gros extincteur.
+; Use extinguisher
+ANITEM0016	Il n'y a pas de feu ici alors je ne veux pas le gaspiller.
+
+; Look at eyes
+ANITEM0017	Une paire d'yeux détachés. Ils ont un regard si intense.
+; Use eyes
+ANITEM0018	J'ai bien assez de ma phobie de toucher mes propres yeux.
+
+; Look at head
+ANITEM0019	Une tête coupée. Les yeux ont été arrachés.
+; Use head
+ANITEM0020	Encore humide à cause de la douche, et l'odeur...
+
+; Look at ID card
+ANITEM0021	C'est une carte d'identité pour utiliser dans les scanners de sécurité.
+; Use ID card
+ANITEM0022	Je ne peux pas faire grand chose sans un séquenceur d'ADN.
+
+; Look at laser cutter
+ANITEM0023	C'est une torche laser en forme de pistolet, je ne crois pas qu'il marche.
+; Use laser cutter
+ANITEM0024	le compartiment pour batterie est vide.
+
+; Look at left arm
+ANITEM0025	Un bras détaché... Bien!
+; Use left arm
+ANITEM0026	Il n'y a pas grand chose à faire avec ça.
+
+; Look at leg
+ANITEM0027	C'est la jambe que j'ai hachée dans la salle du congélateur.
+; Use leg
+ANITEM0028	Elle est encore un peu froide.
+
+; Look at mirror
+ANITEM0029	Un mirroir bien propre.
+; Use mirror
+ANITEM0030	Il a l'air flexible, mais je ne veux pas risquer de le casser.
+
+; Look at note
+; IMPORTANT NOTE: In English the first letters of the words Patience While You Grill Bacon Rind
+; correspond to Purple White Yellow Green Blue Red on the droid control computer. You will need
+; a nonsensical message that has words starting with the same letter as the words for those
+; colours in your language for the riddle to work. I'm not sure how best to handle this in pictorial
+; languages like Chinese/Japanese.
+ANITEM0031	C'est une note que j'ai trouvée. Elle dit 'Patience While You Grill Bacon Rind'. C'est plutot bizzare. Je me demande ce que ça signifie.
+; Use note
+ANITEM0032	Je pourrais en faire un bel avion mais je pourrais en avoir besoin plus tard.
+
+; Look at override key
+ANITEM0033	C'est une clé de contact.
+; Use override key
+ANITEM0034	Je dois trouver le système qui va avec.
+
+; Look at right arm
+ANITEM0035	Un bras humain.
+; Use right arm
+ANITEM0036	C'est assez doux.
+
+; Look at sample dish
+ANITEM0037	Un échantillon de tissu dans un plat hermétique. L'étiquette dit 'Commandant Trend'. On dit que ces choses sont rares.
+; Use sample dish
+ANITEM0038	Je ne veux pas l'ouvrir et risquer de gâcher l'échantillon.
+
+; Look at scalpel
+ANITEM0039	C'est un scalpel émoussé et rouillé.
+; Use scalpel
+ANITEM0040	Il n'est pas si coupant mais je devrais quand même être prudente. Qui sait à quoi il a servi en dernier?
+
+; Look at steel box
+ANITEM0041	Un boîte de métal qui semble avoir été soudée.
+; Use steel box
+ANITEM0042	Je ne peux pas l'ouvrir. Je me demande ce qu'il y a dedans.
+; Use scalpel on steel box
+ANITEM0043	Zut! On dirait que c'est soudé. Même la hache ne peut pas briser un boîte aussi solide.
+; Use axe on steel box
+ANITEM0044	C'est soudé. J'ai plus de chances de briser le scalpel que la boite.
+; Use fire extinguisher on steel box
+ANITEM0045	C'est pas en feu, c'est juste soudé. Ça n'aurait aucun sens.
+
+; Look at torso
+ANITEM0046	C'est un torse humain complet. Même moi je suis surprise d'arriver à le traîner.
+; Use torso
+ANITEM0047	Je n'ai rien à faire avec.
+
+; Look at VCR tape
+ANITEM0048	Une vidéocassette non étiquetée.
+; Use VCR tape
+ANITEM0049	Je vais avoir besoin d'un vieux magnétoscope pour faire jouer ça.
+
+
+; //////////////////////////////////////////////////////////////////////
+; A2 - ITEM NAMES
+; //////////////////////////////////////////////////////////////////////
+
+; Names of game items
+ITEMIS0001	hache
+ITEMIS0002	explosifs
+ITEMIS0003	extincteur
+ITEMIS0004	carte d'identité
+ITEMIS0005	clé de contact
+ITEMIS0006	batteries
+ITEMIS0007	couverture
+ITEMIS0008	enveloppe brune
+ITEMIS0009	disque vidéo #1
+ITEMIS0010	disque vidéo #2
+ITEMIS0011	disque vidéo #3
+ITEMIS0012	Dr Salt
+ITEMIS0013	yeux
+ITEMIS0014	tête
+ITEMIS0015	torche laser
+ITEMIS0016	bras droit
+ITEMIS0017	jambe
+ITEMIS0018	miroir
+ITEMIS0019	note
+ITEMIS0020	bras gauche
+ITEMIS0021	échantillon
+ITEMIS0022	scalpel
+ITEMIS0023	boite en métal
+ITEMIS0024	torse
+ITEMIS0025	vidéocassette
+
+; //////////////////////////////////////////////////////////////////////
+; A3 - MISSED WORDS
+; //////////////////////////////////////////////////////////////////////
+
+; Text for the analyser in the computer room
+EXTRAS0001	Panneau
+EXTRAS0002	Câble
+EXTRAS0003	Quitter
+EXTRAS0004	Analyseur

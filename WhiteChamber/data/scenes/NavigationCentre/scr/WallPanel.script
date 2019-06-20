@@ -1,0 +1,99 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/NAVCEN0020/I'm sure this controls some sort of cradle system that elevates part of the station. How do I know that?");
+}
+
+on "Take"
+{
+ 	actor.GoToObject(this);
+
+	if (StationRotation == 5)
+	{
+		var CradleBackground = Scene.GetNode("CradleBackground");
+		var CradleBackgroundMessed = Scene.GetNode("CradleBackgroundMessed");
+		var CradleStatic = Scene.GetNode("CradleStatic");
+		var CradleMesed = Scene.GetNode("CradleMesed");
+		var CradleSafetyOn = Scene.GetNode("CradleSafetyOn");
+		var CradleSafetyOff = Scene.GetNode("CradleSafetyOff");
+		var CradleDisplayUp = Scene.GetNode("CradleDisplayUp");
+		var CradleDisplayDown = Scene.GetNode("CradleDisplayDown");
+		var CradleRegionBackground = Scene.GetNode("CradleRegionBackground");
+		var CradleRegionLeaveLeft = Scene.GetNode("CradleRegionLeaveLeft");
+		var CradleRegionLeaveRight = Scene.GetNode("CradleRegionLeaveRight");
+		var CradleRegionButton1 = Scene.GetNode("CradleRegionButton1");
+		var CradleRegionButton2 = Scene.GetNode("CradleRegionButton2");
+		var CradleRegionButton3 = Scene.GetNode("CradleRegionButton3");
+		var CradleRegionNoTurningBack = Scene.GetNode("CradleRegionNoTurningBack");
+		var CradleRegionSafetyDisplay = Scene.GetNode("CradleRegionSafetyDisplay");
+		var CradleRegionCradleDisplay = Scene.GetNode("CradleRegionCradleDisplay");
+
+		if (!CradleLowered)
+		{
+	
+			CradleBackground.Active = true;
+			CradleRegionSafetyDisplay.Active = true;
+			if (CradleSafety == true)
+			{
+				CradleRegionSafetyDisplay.Caption = "/NAVCEN0026/Safety Lock Engaged";
+				CradleSafetyOn.Active = true;
+				CradleSafetyOff.Active = false;
+			}
+			else
+			{
+				CradleRegionSafetyDisplay.Caption = "/NAVCEN0027/Safety Lock Offline";
+				CradleSafetyOn.Active = false;
+				CradleSafetyOff.Active = true;
+			}
+			if (CradleLowered == false)
+			{
+				CradleDisplayUp.Active = true;
+				CradleDisplayDown.Active = false;
+			}
+			else
+			{
+				CradleDisplayUp.Active = false;
+				CradleDisplayDown.Active = true;
+			}
+			CradleRegionBackground.Active = true;
+			CradleRegionLeaveLeft.Active = true;
+			CradleRegionLeaveRight.Active = true;
+			CradleRegionButton1.Active = true;
+			CradleRegionButton2.Active = true;
+			CradleRegionButton3.Active = true;
+			CradleRegionCradleDisplay.Active = true;
+		}
+		else
+		{
+			CradleBackgroundMessed.Active = true;
+			CradleStatic.Active = true;
+			CradleMesed.Active = true;
+			CradleRegionBackground.Active = true;
+			CradleRegionLeaveLeft.Active = true;
+			CradleRegionLeaveRight.Active = true;
+			CradleRegionNoTurningBack.Active = true;
+		}
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/NAVCEN0021/It doesn't seem to have any power");
+	}
+}
+
+on "default-use"
+{
+	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NAVC0022/There's no openings or anything to allow me to use items here.");
+}

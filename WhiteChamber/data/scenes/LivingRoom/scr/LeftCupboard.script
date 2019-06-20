@@ -1,0 +1,63 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0026/It's just a cupboard");
+}
+
+on "Take"
+{
+	// Walk actor to cupboard
+ 	actor.GoToObject(this);
+
+	// Setup cupboard variables
+	var LeftCupboardBase = Scene.GetNode("LeftCupboardBase");
+	var LeftCupboardDrSalt = Scene.GetNode("LeftCupboardDrSalt");
+	var LeftCupboardBox = Scene.GetNode("LeftCupboardBox");
+	var LeftCupboardOpen = Scene.GetNode("LeftCupboardOpen");
+	var RegionLeftCupboardArea = Scene.GetNode("RegionLeftCupboardArea");
+	var RegionLeftCupboardDrSalt = Scene.GetNode("RegionLeftCupboardDrSalt");
+	var RegionLeftCupboardBox = Scene.GetNode("RegionLeftCupboardBox");
+	var RegionLeftCupboardJunk1 = Scene.GetNode("RegionLeftCupboardJunk1");
+	var RegionLeftCupboardJunk2 = Scene.GetNode("RegionLeftCupboardJunk2");
+	var RegionLeftCupboardJunk3 = Scene.GetNode("RegionLeftCupboardJunk3");
+	var RegionLeftCupboardLeave1 = Scene.GetNode("RegionLeftCupboardLeave1");
+	var RegionLeftCupboardLeave2 = Scene.GetNode("RegionLeftCupboardLeave2");
+
+	// Switch on cupboard background
+	LeftCupboardBase.Active = true;
+
+	// Reset opening animation
+	LeftCupboardOpen.SetSprite("scenes\livingroom\sprites\leftcupboardopen.sprite");
+	LeftCupboardOpen.Active = true;
+
+	// Show objects if neccesary
+	if (LivingRoomDrSaltTaken == false)
+	{
+		LeftCupboardDrSalt.Active = true;
+		RegionLeftCupboardDrSalt.Active = true;
+	}	
+	if (LivingRoomBoxTaken == false)
+	{
+		LeftCupboardBox.Active = true;
+		RegionLeftCupboardBox.Active = true;
+	}
+
+	// Switch on cupboard regions
+	RegionLeftCupboardArea.Active = true;
+	RegionLeftCupboardJunk1.Active = true;
+	RegionLeftCupboardJunk2.Active = true;
+	RegionLeftCupboardJunk3.Active = true;
+	RegionLeftCupboardLeave1.Active = true;
+	RegionLeftCupboardLeave2.Active = true;
+}

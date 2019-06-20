@@ -1,0 +1,1419 @@
+CONFIG0001	true
+
+; //////////////////////////////////////////////////////////////////////
+; ENGINE SYSTEM STRINGS
+; //////////////////////////////////////////////////////////////////////
+SYSENG0001	Game settings
+SYSENG0002	Display
+SYSENG0003	Sound
+SYSENG0004	Use hardware acceleration
+SYSENG0005	Display device:
+SYSENG0006	Colors:
+SYSENG0007	Run in window
+SYSENG0008	Multisample type:
+SYSENG0009	Use hardware T&&L
+SYSENG0010	More...
+SYSENG0011	Sound device:
+SYSENG0012	Advanced settings
+SYSENG0013	Note: These settings are provided for troubleshooting purposes only. If the game displays correctly on your computer, you don't need to select any of these options.
+SYSENG0014	Texture settings
+SYSENG0015	Force 16bit textures
+SYSENG0016	Force texture subdivision
+SYSENG0017	16 bit
+SYSENG0018	32 bit
+SYSENG0019	[no sound]
+SYSENG0020	none
+SYSENG0021	samples
+SYSENG0100	OK
+SYSENG0101	Cancel
+
+
+; //////////////////////////////////////////////////////////////////////
+; INTERFACE STRINGS
+; //////////////////////////////////////////////////////////////////////
+
+INTERF0004	Main Menu
+INTERF0005	Resume Game
+INTERF0001	Load Game
+INTERF0006	Save Game
+INTERF0007	Quit Game
+
+INTERF0002	Load
+INTERF0011	Save
+
+INTERF0010	Are you sure you want to leave?
+
+INTERF0008	Yes
+INTERF0009	No
+INTERF0013	OK
+INTERF0003	Cancel
+
+INTERF0012	Save Game Name
+INTERF0014	Enter a name for your save game :
+
+INTERF0015	< empty >
+
+
+; //////////////////////////////////////////////////////////////////////
+; 00 - COMMON TEXT
+; //////////////////////////////////////////////////////////////////////
+
+; Try to use an object with something that you can't
+COMMON0001	I can't use these things together.
+COMMES0001	I can't use these things together.
+
+; Try to use an object that can't be used
+COMMON0002	I can't take it.
+COMMES0002	I can't take it.
+
+; Try to look at an object with nothing to say about it
+COMMON0003	I can't think of anything to say about it.
+COMMES0003	I can't think of anything to say about it.
+
+; //////////////////////////////////////////////////////////////////////
+; 01 - BLACK CHAMBER
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+BLACKC0015	Windows
+BLACKC0016	Wires
+BLACKC0017	Panel
+BLACKC0018	Coffin
+BLACKC0019	Door
+
+; Console Regions
+BLACKC0020	YES
+BLACKC0021	NO
+BLACKC0022	It has begun...
+BLACKC0027	Do you know where you are?
+BLACKC0028	Do you regret?
+BLACKC0029	Are you ready?
+
+; Initial comment on awakening in black chamber
+BLACKC0001	What's going on? Why was I in that coffin?
+
+; Look at coffin
+BLACKC0002	That's the coffin I woke up in... why was I in there?
+; Interact with coffin
+BLACKC0003	It's too heavy to move. The surface is warm... there's a slight vibration.
+; Use anything with the coffin
+BLACKC0023	It's just a big heavy coffin. I don't think I can use anything on it.
+
+; Look at broken panel
+BLACKC0004	There's a message on the panel, "Connection Error".
+; Interact with broken panel
+BLACKC0005	I can't get it to work.
+; Look at fixed panel
+BLACKC0006	The panel seems to be working now.
+; Use items on the panel (bear in mind by the time you have any item to use you're already finished with the panel)
+BLACKC0024	The panel already seems to have served it's purpose.
+
+; Look at split wires
+BLACKC0007	The wires look like they're not connected properly.
+; Interact with split wires
+BLACKC0008	There... I've connected the wires together.
+; Look at joined wires
+BLACKC0009	They're connected together now.
+; Interact with joined wires
+BLACKC0010	I've already fixed them.
+; Use items on the wires
+BLACKC0025	I don't think I need to do anything more with these wires.
+
+; Windows open to reveal space outside
+BLACKC0011	What the hell is going on? I'm in space!
+
+; Door opens to reveal a way out
+BLACKC0012	It looks like there's a way out.
+
+; Look at windows
+BLACKC0013	This is definitely space, but I can't see any signs of other ships or anything.
+; Interact with windows
+BLACKC0014	The windows are totally solid. Besides, if I broke them I'd be sucked out into space.
+; Use items on windows
+BLACKC0026	I don't want to use anything on the windows. I've seen what explosive depressurization does to people.
+
+; //////////////////////////////////////////////////////////////////////
+; 02 - NAVIGATION CENTRE
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+NAVCEN0001	Door
+NAVCEN0002	Wall Panel
+NAVCEN0003	Console
+NAVCEN0004	Stains
+
+; Navigation Console Regions
+NAVCEN0005	Leave
+NAVCEN0006	Rotate Left
+NAVCEN0007	Rotate Right
+NAVCEN0008	On
+NAVCEN0009	Off
+
+; Cradle Console Regions
+NAVCEN0010	Leave
+NAVCEN0011	Safety Lock
+NAVCEN0012	Lower Cradle
+NAVCEN0013	Raise Cradle
+NAVCEN0025	No Turning Back
+NAVCEN0026	Safety Lock Engaged
+NAVCEN0027	Safety Lock Offline
+NAVCEN0028	Display Screen
+
+; Look at console
+NAVCEN0014	It seems to be some kind of navigation console. It must control the station somehow.
+; Try to use console while it has no power
+NAVCEN0015	It doesn't seem to be working at the moment. I'll need to find some way to power it up.
+; Use items with console
+NAVCEN0016	I doubt using anything here will be helpful.
+; SUBTITLE - Console Title
+NAVCEN0024	Station Rotation and Solar Power Controls
+
+; Look at stains
+NAVCEN0017	What are these stains on the floor? On the wall too?! They look like blood!
+; Touch stains
+NAVCEN0018	Whatever they are, they feel encrusted into the surface. What happened here?
+; Use items with stains
+NAVCEN0019	What would be the point?
+
+; Look at wall panel
+NAVCEN0020	I'm sure this controls some sort of cradle system that elevates part of the station... why do I know that?
+; Try to use wall panel while it has no power
+NAVCEN0021	It doesn't seem to have any power
+; Use items with wall panel
+NAVCEN0022	I can't use any items here. There are no openings or anything.
+; Look at wall panel display
+NAVCEN0029	It looks like this section of the station can be lowered down.
+; Use wall panel display
+NAVCEN0030	I think it's controlled by the buttons below.
+
+; Try to walk through top door with power down (Player has been tampering with the power system if this has happened)
+NAVCEN0023	That's strange, it won't open. I'd guess it's a problem with the power system.
+
+; //////////////////////////////////////////////////////////////////////
+; 03 - STORE ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+STORER0001	Magazine
+STORER0002	Console
+STORER0003	Screen
+STORER0004	Door
+STORER0005	Lab Coat
+STORER0006	Scanner
+STORER0007	Door
+STORER0008	Explosive
+STORER0009	Freezer
+
+; MES Article Regions
+STORER0010	Leave
+
+; Can't reach various objects because of the locked gate
+STORER0011	I can't really see from here.
+; Can't properly see various objects because of the locked gate
+STORER0012	I can't reach it through the cage.
+
+; Look at explosive
+STORER0013	A canister of high explosive.
+; Use axe on explosive
+
+; Use items on the explosive
+STORER0014	Doesn't seem like a good idea to try to tamper with this.
+
+; Look at big freezer door
+STORER0015	This big door must lead to the freezer.
+; Attempt to go through door while it's closed
+STORER0016	I can't get in while the door's closed.
+
+; Look at closed gate
+STORER0017	This gate's stopping me from getting in the store room.
+; Touch gate
+STORER0018	It seems pretty sturdy.
+; Use items on gate
+STORER0019	I think the only thing that's going to open this gate is that scanner.
+
+; Look at lab coat
+STORER0021	A soiled lab coat, it looks like there's something in the pocket.
+; Look at empty lab coat
+STORER0020	The lab coat's empty now, and I don't need it.
+; Search lab coat
+STORER0023	There's a blank ID card and some kind of override key in the pocket.
+; Search empty lab coat
+STORER0022	There's nothing else in the coat and it smells like it's smeared with faeces or something, so I think I'll leave it.
+; Use items on lab coat
+STORER0024	I don't think using random items on a coat is going to achieve anything.
+
+; Look at MES console
+STORER0026	An M.E.S. It's a really old video gaming console.
+; Use MES console 1st time
+STORER0027	I don't really have time to play games.
+; Use MES console 2nd time (The comment about dying in games here is a vital clue)
+STORER0028	I don't want to. Those old games are really stupid. They just go on and on until you die or throw the pad at the wall.
+; Use MES console 3rd time (This comment leads into a game easter egg)
+STORER0029	I guess I can have a quick look. What harm can it do?
+; Use MES console 4th time onwards
+STORER0030	Not again... Not after last time!
+; Use items with MES console
+STORER0025	It's already got a game loaded into it.
+
+; Look at MES magazine
+STORER0036	It's a retro video gaming magazine.
+; Use items on MES magazine
+STORER0037	That'd be pointless. It's just a magazine.
+
+; Look at screen
+STORER0038	A screen attached to that old console. I can't make out the image.
+; Take screen
+STORER0039	I doubt I could get it down from there without breaking it.
+; Use items on screen
+STORER0040	What would be the point of that?
+
+; Look at scanner
+STORER0032	It's an ID card scanner for the gate.
+; Use scanner
+STORER0033	I'll need to use an ID card with it.
+; Use unprogrammed ID card on scanner
+STORER0031	It didn't work, looks like this card isn't encoded with an authorised DNA sample.
+; Use override key on scanner
+STORER0034	It's operated by ID card, not this kind of key.
+; Use any other items on scanner
+STORER0035	That won't fit in the scanner.
+
+; Return from MES world
+STORER0041	I'm back! I don't even wanna know what happened there.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 04 - COMPUTER ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+COMPUT0001	Door
+COMPUT0002	Sequencer
+COMPUT0003	Backup Unit
+COMPUT0004	Left Computer
+COMPUT0005	Right Computer
+
+; Backup panel regions
+COMPUT0006	Leave Unit
+COMPUT0007	Key Slot
+COMPUT0008	Blank Plate
+COMPUT0009	Override Key
+COMPUT0055	Communications
+COMPUT0056	Medical Systems
+COMPUT0057	Docking Cradle
+COMPUT0058	Station Rotation
+COMPUT0059	Life Support
+COMPUT0060	Waiting
+COMPUT0061	Online
+COMPUT0062	Error
+
+; E-Mail computer regions
+COMPUT0010	Leave
+COMPUT0011	Message 1
+COMPUT0012	Message 2
+COMPUT0013	Message 3
+COMPUT0014	Message 4
+
+; Droid computer regions
+COMPUT0015	Red
+COMPUT0016	Green
+COMPUT0017	Purple
+COMPUT0018	Yellow
+COMPUT0019	White
+COMPUT0020	Blue
+COMPUT0021	Leave
+
+; Look at back up unit
+COMPUT0022	It looks like a unit designed to provide backup power to certain systems.
+; Use back up panel once power has been restored to station
+COMPUT0023	Now that I've powered up the station this backup system is kind of redundant.
+; Use override key on backup panel as a whole
+COMPUT0024	I'll need to get in closer.
+; Use anything else on backup panel as a whole
+COMPUT0025	I can't do anything without getting in closer.
+
+; Look at DNA sequencer
+COMPUT0026	It's a DNA encoder, used to store data on ID cards.
+; Touch DNA sequencer
+COMPUT0027	This won't do anything without a clean DNA sample.
+; Insert ID card without DNA sample
+COMPUT0028	Looks like this won't work unless I insert a DNA sample first.
+; Insert DNA sample
+COMPUT0029	Done. Now I just need to put in the card to be programmed.
+; Insert ID card after DNA sample
+COMPUT0030	That should have written the sample data on to the card.
+; Insert already programmed ID card
+COMPUT0031	The card has already been programmed.
+
+; Look at communications computer
+COMPUT0032	It's a communications console.
+; Use communications computer without power
+COMPUT0033	Not working. I guess there's no power.
+; SUBTITLE - Initial computer screen
+COMPUT0042	Communications Console - Select a message.
+; Girl summarises first computer message
+COMPUT0043	Looks like someone was trying to send out an S.O.S. message but it wasn't transmitted.
+; Girl summarises second computer message
+COMPUT0044	According to this there's a note somewhere to unlock the droid software.
+; Girl summarises third computer message
+COMPUT0045	This just look like promotional spam for some concert.
+; Girl summarises fourth computer message
+COMPUT0046	The message is asking about for information about a missing ship.
+
+
+; Look at override key in the backup unit
+COMPUT0034	That's the key I put in.
+
+; Look at slot in backup unit
+COMPUT0035	It looks like a slot for some kind of key.
+; Use slot in backup unit
+COMPUT0036	I can't get it working without the right key.
+
+; Look at life support slot
+COMPUT0037	It's blank, unlike the slots in the other modules.
+; Use life support slot
+COMPUT0038	It's already online. That's one relief.
+; Use override key on life support slot
+COMPUT0039	It looks like the life support is always online. It'd be kinda stupid to turn it off anyway.
+
+; Look at droid computer
+COMPUT0040	Damn! No power.
+; Use droid computer without power
+COMPUT0041	It's marked as being a droid control console.
+; SUBTITLE - Droid control console
+COMPUT0047	Droid Control Console - Enter colour code sequence
+
+; Look at analyser
+COMPUT0048	This console is used as some kind of analyser.
+; SUBTITLE - Analyser
+COMPUT0049	Sample Analyser - Disabled due to human DNA lodged in device.
+; Look at analyser compartment
+COMPUT0050	It's some kind of compartment.
+' Girl's comment when opening compartment
+COMPUT0051	It's warning this might be dangerous. I'm not sure messing with this is a good idea.
+; Look at wire
+COMPUT0052	It looks like this wire controls the security override.
+; Take wire
+COMPUT0053	I'll need something sharper to cut this.
+; Try to use axe with wire
+COMPUT0054	It's too big to fit in the panel. I'll need a smaller cutting instrument.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 05 - LIVING ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+LIVING0001	Chain
+LIVING0002	Fridge
+LIVING0003	Chasm
+LIVING0004	Torso
+LIVING0005	Door
+LIVING0006	Switch
+LIVING0007	Cupboard
+LIVING0008	Video Screen
+LIVING0009	Extinguisher
+
+; Left cupboard regions
+LIVING0010	Can of Drink
+LIVING0011	Strange Box
+LIVING0012	Mouldy Foods
+LIVING0013	Lunchbox
+LIVING0014	Garbage
+LIVING0015	Leave
+
+; Right cupboard regions
+LIVING0016	Arm
+LIVING0017	Video Disc
+LIVING0018	Leave
+
+; Look at chain
+LIVING0019	This chain is holding up that strange fridge.
+; Break chain with hands
+LIVING0020	I doubt I could break this with my hands.
+; Axe chain with chasm closed
+LIVING0021	That might bring the fridge down. But it'd smell worse on the floor. I'd rather find a way to dispose of it before cutting it down.
+; Axe chain with chasm opened
+LIVING0022	Something's jamming it.
+
+; Look at fire extinguisher
+LIVING0023	A large fire extinguisher.
+
+; Look at swinging fridge
+LIVING0024	A fridge?! ... Hanging from the ceiling? It absolutely stinks. I wish I could get rid of it.
+; Reach for swinging fridge
+LIVING0025	I'll never get it from down here.
+
+; Look at left cupboard
+LIVING0026	It's just a cupboard.
+
+; Look at floor chasm
+LIVING0027	What the hell is that?! That's gross. I don't know where it leads, and I don't wanna know.
+; Touch floor chasm
+LIVING0028	I'm not going anywhere near that.
+
+; Look at metal box in cupboard
+LIVING0029	A strong metal box. It looks sealed.
+
+; Look at Dr. Salt canned drink in cupboard
+LIVING0030	If I understand correctly it's a fizzy drink.
+
+; Look at mouldy foods
+LIVING0031	This food stinks. It's all gone mouldy.
+; Take mouldy foods
+LIVING0032	I'm not touching that! Who knows what I might catch?
+
+; Look at lunch box
+LIVING0033	It's a sealed lunchbox. Are those grapes inside?
+; Take lunch box
+LIVING0034	No thanks. I doubt I'd ever be quite THAT hungry.
+
+; Look at garbage
+LIVING0035	Used junk-food wrappers. They're covered in dirt.
+; Take garabage
+LIVING0036	I don't need to carry garbage around with me.
+
+; Look at severed arm
+LIVING0037	It's a severed arm! What happened to the rest of the body?
+
+; Look at video disc #1
+LIVING0038	A standard video disc.
+
+; Look at right cupboard
+LIVING0039	It's just a cupboard.
+; On discovering severed arm in right cupboard
+LIVING0040	OH SHIT! Thathat's someone's arm! What the hell is going on here?
+
+; Attemt to go through medbay door while fire is still blazing
+LIVING0041	The room has been automatically sealed. I think I can see a fire through the door!
+
+; On entering room while fridge is hanging 1st
+LIVING0042	There's a horrible smell coming from that fridge. I feel sick!
+; On entering room while fridge is hanging 2nd
+LIVING0084	The stench is getting worse and worse. I feel like puking.
+; On entering room while fridge is hanging 3rd
+LIVING0085	My throat feels like it's burning. I don't think I can take this smell much longer.
+
+; Look at screen
+LIVING0043	It's a console for viewing video discs.
+; Take screen
+LIVING0044	It won't do anything without a video disc.
+; Use mirror with screen
+LIVING0045	Seems to fit perfectly on there.
+; Use metal box with screen
+LIVING0046	That's not right. I don't need the box there. Maybe I'm thinking about things too indirectly.
+; Use video disc #1 with screen
+LIVING0047	This is Replacement Lab Technician Arthur Anderson making my first scheduled report. I've been here a week and things haven't been as I expected.
+LIVING0048	They keep me working in the upper lab doing routine sample analyses. It's a waste of my time but they don't want me to go into the main lab chamber.
+LIVING0049	I told Commander Artemis Trend that I hadn't travelled all this way to do monkey work, but he wasn't interested.
+LIVING0050	The work wouldn't be so bad were it not for the tension on board. Everyone is keeping to themselves and none of them want to talk much...
+LIVING0051	They're quick to dismiss any talk about what happened to my predecessor or what it is they're working on down there.
+LIVING0052	One thing I'm sure of is that they really don't want me here. Only Professor Ericson is remotely hospitable towards me.
+LIVING0053	But even she's evasive. At least she's kind to me though. Something is definitely going on here... they're scared of something. 
+LIVING0054	I've heard them calling the main lab the 'White Chamber', I don't know why since I'm not allowed in there.
+LIVING0055	Goodwin and Wyles hate going anywhere near it. I've seen Goodwin go in a couple of times when they've needed him but always briefly and reluctantly.
+LIVING0056	I'll keep investigating, but I don't want to push them too hard. The atmosphere around here is tense enough as it is.
+; Use video disc #2 with screen
+LIVING0057	Officer Richard Wyles is missing! Prof. Ericson woke me up yesterday morning for a meeting in the living room to discuss what had happened...
+LIVING0058	Dr. Goodwin said he was working late into the night and went looking for Wyles when he realised his medical laser wasn't working.
+LIVING0059	This place is small so it wasn't long before he realised he wasn't anywhere to be found.
+LIVING0060	He said he woke the Commander and the pair spent the night searching the station to no avail; even the lifepod is still docked.
+LIVING0061	With no answers to this mystery, everyone's reaching breaking point. Even I'm starting to feel just as paranoid and tense as the rest of them.
+LIVING0062	I think at this point it's becoming just a question of who will snap under the pressure first. I strongly urge you to send a new team here.
+LIVING0063	If these guys don't get away from this place I fear things are only going to get worse. No one trusts anyone anymore.
+LIVING0064	They're particularly suspicious of me, as I'm the new arrival. Even Sarah... I mean Prof. Ericson, is growing more wary of talking to me.
+LIVING0065	She's been spending more and more of her time down in the White Chamber. I know it's not scientific, but when I look in her eyes she seems... lost somehow.
+LIVING0066	I had a drink with Dr. Goodwin. It's the first time he's really talked to me properly since I arrived. Though what he said made little sense.
+LIVING0067	He's convinced Wyles was taken by the 'artefact' they're studying down there. Apparently Wyles wanted them to get rid of it.
+LIVING0068	Since my last report I've overheard mention of the artefact several times. Their opinions on it seem mixed and conflicting.
+LIVING0069	This all worries me. Again I urge you please send a relief crew as soon as possible.
+; Use video disc #3 with screen
+LIVING0070	I'm making this recording just in case someone finds it, not that it'll do any good. I hope someone watches this. I want people to know what happened here.
+LIVING0071	I found out the Commander intercepted my last two reports. I confronted him about it, but he's convinced I'm an agent working for Cyclavir Hypercorp.
+LIVING0072	I argued with him. But he thinks he's being generous enough by not just spacing me the moment he found out I was sending reports back.
+LIVING0073	I tried to explain that the company had just asked me to submit observations, but he wasn't having any of it. I suppose I can't really blame him.
+LIVING0074	But none of that matters now. I'll be lucky if I'm alive much longer. Dr. Goodwin is dead. Sarah found him chewed up in the main ventilation system.
+LIVING0075	Everyone knows it wasn't an accident. We're being killed out here. Inevitably, they turned on me. Trend thinks it all started when I came on board.
+LIVING0076	They've locked me here in the quarantine chamber. I think they're sealing off the vent room. I'm not sure what they think that will achieve.
+LIVING0077	I don't know what's going on here, I'm scared and alone. I don't know if one of them is a murderer or if that damned artefact is responsible for all of this.
+LIVING0078	Either way I no longer care... I just want to get off this cursed station. I found a way to open the quarantine seal and I'll be heading for the life-pod.
+LIVING0079	I don't know if I'll make it so I'm leaving this final recording as a record of what happened here. To whoever finds this... good luck.
+
+; Look at table switch
+LIVING0080	This should control the table.
+; Press table switch with mouth chasm open
+LIVING0081	It's not working. I can't close the mouth.
+; Press table switch with mirror in place
+LIVING0082	It won't work with the mirror in place.
+
+; Look at torso
+LIVING0083	That fridge isn't going anywhere with that mangled body jammed in there! I wish I'd left it up there now!
+
+
+; //////////////////////////////////////////////////////////////////////
+; 06 - SLEEPING QUARTERS
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+SLEEPQ0001	Shower Panel
+SLEEPQ0002	Hair
+SLEEPQ0003	Mirror
+SLEEPQ0004	Blanket
+SLEEPQ0005	Note
+SLEEPQ0006	Video Disc
+SLEEPQ0007	Door
+
+; Look at blanket
+SLEEPQ0008	A warm looking blanket.
+
+; Look at video disc
+SLEEPQ0009	A pre-recorded video disc.
+
+; After nearly being sucked into space
+SLEEPQ0010	Space!? What the hell! Where did the beach go?
+
+; Try to go through door after being sucked out once
+SLEEPQ0011	I don't want to go back out there. I barely survived last time.
+; Keep trying to go through door
+SLEEPQ0019	I really don't think that's a good idea.
+; Keep trying to go through door
+SLEEPQ0020	Okay. I'll give it a try.
+
+; Look into mirror
+SLEEPQ0012	So that's me. Not bad, considering...
+
+; Look at notes
+SLEEPQ0013	A hand written note. Weird... most people use computers nowadays.
+
+; After player been stabbed and wakes up in sleeping quarters
+SLEEPQ0014	What the hell just happened?! Was that even real? What is this place doing to me?
+
+; Look at head in the water
+SLEEPQ0015	Is that..? Oh come on, don't tell me that's hair in there...
+; After head cutscene
+SLEEPQ0016	A severed head!? Is this thing still alive? ... What the hell am I even thinking?
+
+; Look a at shower control panel
+SLEEPQ0017	This controls the shower and toilet compartment.
+; Open shower unit using panel while it is locked
+SLEEPQ0018	It's not responding.
+
+; //////////////////////////////////////////////////////////////////////
+; 07 - LAB
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+THELAB0001	Scope
+THELAB0002	Elevator
+THELAB0003	Speaker
+THELAB0004	Tools
+THELAB0005	Blackboard
+THELAB0006	Projector System
+THELAB0007	Video Player
+THELAB0008	Batteries
+THELAB0009	Laser Cutter
+THELAB0010	Scalpel
+THELAB0011	Sample Dish
+THELAB0012	Door
+THELAB0013	Axe
+
+; Can't see various objects while being tortured
+THELAB0014	I can't see from here.
+; Can't reach various objects while being tortured
+THELAB0015	I can't reach it.
+
+; Look at axe
+THELAB0016	Someone has jammed an axe in the lift control panel.
+
+; Look at batteries
+THELAB0017	They're the batteries from the video... that was horrible.
+
+; Look at clean blackboard
+THELAB0018	The blackboard looks clean. Somehow that feels ominous.
+; Look at marked blackboard
+THELAB0019	There are some strange chalk marks on the board.
+; Look at heavily marked blackboard
+THELAB0020	That shape. I know I remember it... but from where?
+; Wipe clean blackboard
+THELAB0021	The blackboard is clean already.
+; Wipe marked blackboard
+THELAB0022	I don't want to wipe away the chalk markings. I think they mean something.
+; Examine fully marked blackboard (This is foreshadowing for the comedy ending)
+THELAB0051	That's the artefact. I remember now. I'm sure I've seen all of this before.
+THELAB0052	But I feel like something is coming. Something different... something surprising!
+
+; Look at elevator
+THELAB0023	I wonder where this leads?
+; Use elevator
+THELAB0024	Damn! It's broken... Looks like the panel's been smashed.
+
+; Look at laser cutter
+THELAB0025	I might be able to reach it.
+; On taking the cutter
+THELAB0026	Fuck! I got the cutter, but it's not working.
+
+; Look at scalpel
+THELAB0027	A medical scalpel.
+
+; Look at video player
+THELAB0028	This looks like antique equipment. It's for playing video tapes.
+; Look at video player while strapped down
+THELAB0029	It started when I put the tape in that player.
+; Use video player
+THELAB0030	It won't do anything without a video cassette.
+; Use video player while strapped down
+THELAB0031	If only I could stop the tape. Maybe that'd work.
+; After inserting tape into player
+THELAB0032	What the...?  That's me!
+; After throwing cutter at video player
+THELAB0033	I feel sick... what the hell was that?
+; Use video discs with video player
+THELAB0050	This doesn't play video discs. It's designed for old video tapes.	
+
+; Look at projector system
+THELAB0034	This looks like an old projector system. I think it's connected to that old video player.
+; Look at projector system while strapped down
+THELAB0035	It's projecting that sick torture video from the cassette player.
+; Use projector system
+THELAB0036	I can't get it to do anything on its own. Maybe I should try the video player.
+
+; Look at sample dish
+THELAB0037	Some kind of tissue sample in an air-tight dish. There's a label on it.
+
+; Look at scope
+THELAB0038	I recognise this, it's a 7777 Zentradi series proto-analyser.
+; Use scope
+THELAB0039	I'd need some kind of sample dish to use with it.
+; Use sample with scope
+THELAB0040	I recognise this. The tissue has been extracted specially to store a clean sample of DNA.
+
+; Look at speaker
+THELAB0041	It's a speaker. I remember having speakers like this when I was a kid.
+; Use speaker
+THELAB0042	There's not much I can do with it.
+
+; Look at tools
+THELAB0043	A selection of bloody and rusted lab instruments.
+; Take tools
+THELAB0044	They've rusted to the surface. I doubt they'd be of much use in that state anyway.
+
+; Try to walk through welded door
+THELAB0045	It's welded shut so I can't get through.
+; Try to open welded door
+THELAB0046	I'm going to need something really powerful to get through this door.
+; Look at welded door
+THELAB0047	The seal on the door has been welded shut. I wonder why?
+; Use axe on welded door
+THELAB0048	That's not going to do it. This is a very thick door that's been welded shut.
+; Place explosives in front of welded door
+THELAB0049	There. Now if I could find some way to ignite this...
+
+; //////////////////////////////////////////////////////////////////////
+; 08 - MEDBAY
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+MEDBAY0001	Bed
+MEDBAY0002	Dirty Wall
+MEDBAY0003	Yes
+MEDBAY0004	No
+MEDBAY0005	Control Panel
+MEDBAY0006	Shower Unit
+MEDBAY0007	Video Disc
+MEDBAY0008	Body
+MEDBAY0009	Laser Desk
+MEDBAY0010	Unsealed Box
+MEDBAY0011	Power Compartment
+MEDBAY0012	Door
+MEDBAY0013	Filing Cabinet
+
+; Eye box regions
+MEDBAY0014	Leave
+MEDBAY0015	Eyes
+
+; Filing cabinet regions
+MEDBAY0016	Leave
+MEDBAY0017	Drawers
+MEDBAY0018	Broken Drawer
+MEDBAY0019	Envelope
+
+; Look at bed with full body
+MEDBAY0020	Well it's all there... but I don't even know why I was doing it in the first place. He looks so cold.
+; Look at bed with partial body
+MEDBAY0021	The body parts seem to fit perfectly into the grooves.
+; Look at bed with full body under blanket
+MEDBAY0022	He seems less disturbing with the blanket over him. Maybe I should leave him in peace.
+; Look at bed with nothing on it
+MEDBAY0023	It's a bed with body shaped burn marks across it.
+; Use bed with body parts on it
+MEDBAY0024	The bed's kind of occupied already.
+; Use bed with nothing on it
+MEDBAY0025	I don't think I could sleep even if I wanted to.
+; Use eyes on bed without head
+MEDBAY0026	There's nowhere to fit the eyes. What the hell am I doing anyway?
+; Complete body message #1
+MEDBAY0027	There, it's complete!
+; Complete body message #2
+MEDBAY0028	... ... ... ... Nothing's happening ...
+; Complete body message #3
+MEDBAY0029	I guess I don't know what I expected. What is this place doing to me? Why did I bring all these body parts here?
+; Use blanket on complete body
+MEDBAY0030	There, I guess that seems more respectful.
+; Use blanket on incomplete body
+MEDBAY0031	It's not finished yet.
+; Use Dr Salt on complete body
+MEDBAY0032	Not even Dr. Salt can help him now.
+; Use Dr Salt on incomplete body
+MEDBAY0033	I don't want to get the sheets wet.
+
+; Look at body in quarantine chamber
+MEDBAY0034	Those body parts... how did they get in there?
+; After players has become trapped in quarantine chamber
+MEDBAY0035	I'm trapped!
+; Try to touch body in chamber
+MEDBAY0036	I can't get inside there.
+
+; Look at broken drawer
+MEDBAY0037	The seal on this drawer is broken.
+
+; Look at locked drawer
+MEDBAY0038	Most of these drawers are locked. There doesn't seem to be any obvious way to unlock them.
+; Try to open locked drawer
+MEDBAY0039	They're surprisingly sturdy. I doubt I could force them open.
+; Try to axe locked drawer
+MEDBAY0040	That's not going to get them open. I'll just end up damaging the surface.
+; Try to scalpel locked drawer
+MEDBAY0041	I think the lock is a bit more secure than that.
+
+; Look at brown envelope
+MEDBAY0042	A brown envelope with something inside.
+
+; Look at power compartment
+MEDBAY0043	There's a compartment under the laser unit.
+; Put batteries in compartment
+MEDBAY0044	That worked, the laser should be powered now.
+
+; Look at video disc
+MEDBAY0045	A recorded video disc.
+; Try to take video disc in quarantine chamber
+MEDBAY0046	I can't get inside the chamber.
+
+; Look at eyes in box
+MEDBAY0047	That's disgusting! What kind of sick bastard seals eyes into a box?
+
+; Look at filing cabinet
+MEDBAY0048	It's a filing cabinet.
+
+; Look at medical laser
+MEDBAY0049	It's a medical laser.
+; Try to fire laser into fridge
+MEDBAY0050	I don't want to risk firing it at that fridge. I don't know what might happen, but I doubt it would be good.
+; Try to fire unpowered laser
+MEDBAY0051	Not working. Could be the power source. 
+; Box unsealed using laser
+MEDBAY0052	The laser cut through the seal on the box. I hope it hasn't damaged the contents. Whatever they are...
+
+; Look at quarantine panel
+MEDBAY0053	Voice controlled panel that operates the quarantine chamber.
+; Use quarantine panel
+MEDBAY0054	It'll only respond to the voice of an authorised doctor. I'll never get this working.
+; Use head with quarantine panel
+MEDBAY0055	Looks like it's not going to talk. I suppose he's already said the last he has to say.
+
+; Look at shower unit
+MEDBAY0056	It's a standard shower unit.
+; Try to use shower unit
+MEDBAY0057	I think it's broken. I can't get it to open.
+; Try to use shower unit from outside quarantie chamber
+MEDBAY0058	I can't get inside the chamber
+
+; Look at opened metal box
+MEDBAY0059	The laser cut the box open nicely.
+
+; Look at wall in quarantine chamber
+MEDBAY0060	There's something etched in the dirt.
+; SUBTITLE - Wall message 1
+MEDBAY0061	Do you want to leave?
+; SUBTITLE - Wall message 2
+MEDBAY0062	And risk spreading the disease?
+; SUBTITLE - Wall message 3
+MEDBAY0063	Leave... Accept the consequences!
+
+; //////////////////////////////////////////////////////////////////////
+; 09 - BEACH
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+ABEACH0001	Door
+ABEACH0002	Sea
+ABEACH0003	Forest
+
+; Look at forest
+ABEACH0004	These are real trees alright... but how is that possible?
+; Use forest
+ABEACH0005	I can't make a path through. The trees are too dense.
+
+; Look at sea
+ABEACH0006	This really looks like the sea. What's going on?
+; Use sea #1
+ABEACH0007	This feels like real water... I don't understand how any of this is possible. I was on a space station...
+; Use sea #2
+ABEACH0008	Maybe I could swim away from here, but it doesn't look there's anything around to swim to.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 10 - FAN ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+THEFAN0001	Vent
+THEFAN0002	Grinder
+THEFAN0003	Door
+
+; Look at grinder
+THEFAN0004	It's some twisted grinder.
+; Touch grinder
+THEFAN0005	It's covered in filth, what is this stuff?
+
+; Walk into sealed vent
+THEFAN0006	It's sealed, I can't get through.
+; Look at vent
+THEFAN0007	I wonder if this vent can take me down beneath the lift shaft.
+; Use vent
+THEFAN0008	I can't get the panel off.
+; Use axe on vent
+THEFAN0009	Even the axe can't make a dent in it.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 11 - THE WHITE CHAMBER
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+WCHAMB0001	Shaft
+WCHAMB0002	Artefact
+WCHAMB0003	Body
+WCHAMB0004	Equipment
+
+; Look at artefact
+WCHAMB0005	So this is it. This is the artefact. I don't know what to say.
+; Touch artefact
+WCHAMB0006	It's warm and vibrating. It doesn't feel like a machine.
+
+; Look at body before endgame
+WCHAMB0007	His face... poor guy! What the hell happened to him?
+; Look at body after endgame
+WCHAMB0008	I did this... I killed him! I released a toxin in here and watched him die. He was the only one left and by that point it seemed so easy to end his life.
+; End game text #01
+WCHAMB0009	Hello Sarah. So here we are again. The situations are now reversed it seems. As I recall, last time it was me trapped in there hoping for mercy.
+; End game text #02
+WCHAMB0010	I cared for you, I fell for your false smiles. And for that, the mess on the floor there is what I've become.
+; End game text #03
+WCHAMB0011	Are you beginning to understand now Sarah? What you did to me... what you did to all of us? The price we paid for your obsession with its power.
+; End game text #04
+WCHAMB0012	Hmph, at least I can say that I did what you failed to. The artefact responded to me. My blood, my hatred and my desire for retribution activated it.
+; End game text #05
+WCHAMB0013	I unleashed the power you killed for, and now we're both trapped here in this cursed cycle. An eternal nightmare, continuing endlessly until you've earned salvation.
+; End game text #06
+WCHAMB0014	I stand as your judge. And I have looked into your soul. You were given another chance to perhaps redeem your actions.
+; End game text #07
+WCHAMB0015	Given this clean slate did you demonstrate compassion and regret? Or once again have you just shown a selfish drive towards your goal?
+; End game text #08
+WCHAMB0016	While we reach a verdict, you shall remember... remember what you did to me.
+; End game text #09
+WCHAMB0017	It is done. We have come full circle back to where this starts and ends. We have made our decision. All that is left is for you to leave... now!
+; End game text #10
+WCHAMB0018	The life-pod in the store room has been unsealed and inside you will find our decree. On your way you shall remember it all. What you did to deserve this.
+; End game text #11
+WCHAMB0019	Goodbye Sarah... I hope we never have to meet again.
+; Optional end game text. Only shown if player has good ending
+WCHAMB0025	I have changed the orbit of the station. It will crash into the nearby planet within an hour.
+; Touch body after endgame
+WCHAMB0020	He's still warm. I can't move him. It's like his blood has fused to the artefact. I can't believe that I really did this.
+
+; Look at equipment #1
+WCHAMB0021	This machine seems to be monitoring any output from the artefact.
+; Use equipment #1
+WCHAMB0022	There seem to be some very strange radiation readings coming from the artefact.
+
+; Look at equipment #2
+WCHAMB0023	This device is performing a deep structural analysis.
+; Use equipment #2
+WCHAMB0024	It doesn't seem to be producing any solid results.
+
+; //////////////////////////////////////////////////////////////////////
+; 12 - NAVIGATION ROOM (BLEEDING)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NBLEED0001	Creature
+
+; //////////////////////////////////////////////////////////////////////
+; 13 - MED BAY (DROID)
+; //////////////////////////////////////////////////////////////////////
+
+; Action descriptions (chamber refers to quarantine chamber)
+MEDBDR0001	Open Door
+MEDBDR0002	Open Chamber
+MEDBDR0003	Extinguish Fire
+
+; Droid responses
+MEDBDR0004	Not authorized to break a quarantine seal.
+MEDBDR0005	Unit not equipped with fire suppressor.
+MEDBDR0006	Door has been sealed due to a fire hazard.
+
+; //////////////////////////////////////////////////////////////////////
+; 14 - LIVING ROOM (GRATED)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+LGRATE0001	Door
+
+; //////////////////////////////////////////////////////////////////////
+; 15 - CORRIDOR
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+CORRID0001	Passage
+CORRID0002	Eye
+CORRID0003	Body
+
+; Look at body
+CORRID0004	A decapitated body... it's... crucified upside down... Am I in hell?
+; Try to touch body
+CORRID0005	I'm glad there's a fence keeping it away from me.
+
+; Look at eye
+CORRID0006	Oh shit... am I gonna die in here?
+; Try to touch eye
+CORRID0007	Keep that bloody thing away from me!
+
+; //////////////////////////////////////////////////////////////////////
+; 16 - COMPUTER ROOM (BLOODY)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+CBLOOD0001	Pipe
+CBLOOD0002	Arm
+CBLOOD0003	Door
+CBLOOD0004	Panel
+CBLOOD0005	Body
+
+; Look at severed arm
+CBLOOD0006	A severed arm.
+; Take severed arm
+CBLOOD0007	Another arm. This is absolutely sick...
+
+; Look at body chamber
+CBLOOD0008	There's someone trapped in there. If only I could break the chamber open.
+; Break body chamber
+CBLOOD0009	It's too strong to break by hand.
+; Axe body chamber
+CBLOOD0010	Damn, the chamber must be reinforced.
+
+; Look at cleaning control
+CBLOOD0011	This is the control for the emergency tank cleansing system.
+; After control used #1
+CBLOOD0012	Oh shit! I was trying to help him... I'm so sorry...
+; After control used #2
+CBLOOD0013	It sounds like something got jammed in the pipes. What have I done?
+; Use control after body flushed
+CBLOOD0014	The tank is empty now, there'd be no point cleaning it.
+
+; Look at pipe with arm in it
+CBLOOD0015	There's an arm trapped in there, it must have been from that guy. Why do I get the feeling this isn't a coincidence?
+; Try to break pipe with hands
+CBLOOD0016	I can't break the pipe open by hand.
+
+; //////////////////////////////////////////////////////////////////////
+; 17 - NAVIGATION ROOM (CHASM)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NCHASM0001	Chasm
+NCHASM0002	Door
+
+; Look at chasm
+NCHASM0003	I can't see the bottom! Where the hell am I?
+; Use chasm
+NCHASM0004	I'm not risking climbing down there.
+
+; //////////////////////////////////////////////////////////////////////
+; 18 - FREEZER
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+FREEZE0001	Hanging Meat
+FREEZE0002	Freezer
+FREEZE0003	Door
+FREEZE0004	Leg
+FREEZE0005	Trapped Body
+FREEZE0006	Freezing Man
+
+; Look at closed freezer
+FREEZE0007	It's a large freezing unit.
+; On opening freezer and finding shivering body inside
+FREEZE0008	What the hell?
+
+; Look at leg
+FREEZE0009	There's a leg sticking out from under whatever the hell that is.
+; Try to take leg
+FREEZE0010	If I want the leg... I'm gonna have to cut it off.
+; Try to scalpel leg
+FREEZE0011	No, it's not going to get through the bone.
+; Axe leg off
+FREEZE0012	Great... now I've got a severed leg.
+
+; Look at freezing man
+FREEZE0013	It looks like he's freezing. Maybe I could warm him up?
+; Use blanket on man
+FREEZE0014	A nice thought, but it probably won't help him at this point.
+; Use dr salt on man
+FREEZE0015	He looks cold enough already. I don't think a chilled soft drink is what he needs.
+; After player has touchd man and room has transformed
+FREEZE0016	Oh my god, this is beyond words.
+
+; Look at meat
+FREEZE0017	Fresh hanging meat. It looks vaguely edible.
+; Try to take meat
+FREEZE0018	That thing's probably heavier than I am. Raw meat isn't my thing anyway.
+; Axe down meat
+FREEZE0019	That would probably bring the slab of meat down but I don't really want to carry it with me.
+; Use scalpel on meat
+FREEZE0020	Maybe if I'm hungry later I could use the scalpel to cut out a nice chunk. Right now though I really don't want any.
+
+; Look at trapped corpse
+FREEZE0021	It looks like a body is trapped under that sheet. I hope for his sake he's already dead.
+; Touch trapped corpse
+FREEZE0022	What is this made of? It doesn't feel like plastic.
+; Axe trapped corpse
+FREEZE0023	Even the axe won't tear it open. It doesn't make sense.
+; Use scalpel on meat
+FREEZE0024	The scalpel won't even scratch it. I can't figure out what the sheet is made of.
+
+
+; //////////////////////////////////////////////////////////////////////
+; 19-26 - NORMAL STATION ROOMS
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+NORMAL0001	Door
+NORMAL0002	Fan
+NORMAL0018	Passage
+NORMAL0005	Shower
+NORMAL0009	Console
+NORMAL0013	Floor Panel
+NORMAL0017	Escape Pod
+
+; Look at fan
+NORMAL0003	I threw Dr. Goodwin into the fan. I didn't even need to do it but I felt sure he was on to me. He kept asking the Commander to eject the artefact.
+; Touch fan
+NORMAL0004	After what I did to Goodwin I'd be a fool to get any closer.
+
+; Look at shower #1
+NORMAL0006	Commander Trend gave me little choice. It was just me, him and Arthur left at that point. He didn't trust the spy but he didn't believe he was the killer.
+; Look at shower #2
+NORMAL0007	I think he saw it in my eyes... So I took his.
+; Touch shower
+NORMAL0008	I don't want to look inside.
+
+; Look at console #1
+NORMAL0010	Dick Lee was the first. He was my research assistant. He thought the artefact was too dangerous for us to work on alone.
+; Look at console #2
+NORMAL0011	We were arguing because he wanted a support team. I told him we could handle it. I didn't mean to... I knew they'd never understand.
+; Touch shower
+NORMAL0012	I couldn't face seeing his remains if they're still in there.
+
+; Look at floor panel #1
+NORMAL0014	Wyles was checking the video logs when I got to him. It was obvious he'd found Dick's body in the Nav console by how he was acting.
+; Look at floor panel #2
+NORMAL0015	Dick had been an accident so I guess this is when things went out of control. I was so trapped. All I could think about was the damn artefact.
+; Touch floor panel
+NORMAL0016	It's too late now. I don't want to see what's under there.
+
+; //////////////////////////////////////////////////////////////////////
+; 27 - STORE ROOM (MES)
+; //////////////////////////////////////////////////////////////////////
+
+; Room regions
+STOMES0001	Left
+STOMES0002	Explosive
+STOMES0003	Door
+STOMES0004	MES Console
+STOMES0005	Leave
+
+; Look at console
+STOMES0006	THE MES CONSOLE I'M PLAYING.
+; Use console
+STOMES0007	I CAN'T MAKE OUT THE BUTTONS TO SWITCH IT OFF.
+
+; Look at explosive
+STOMES0008	THEY ARE EXPLOSIVES... THEY LOOK DANGEROUS.
+; Use explosive
+STOMES0009	CANNOT CARRY ANY MORE ITEMS.
+
+; Walk to freezer door
+STOMES0010	THE DOOR IS CLOSED.
+; Look at freezer door
+STOMES0011	IT'S THE FREEZER DOOR.
+; Use freezer door
+STOMES0012	I CAN'T SEE THE HANDLE IT'S TOO PIXELLATED!
+
+; Try to leave room
+STOMES0013	THE SCREEN WON'T SCROLL. LOOKS LIKE I'M TRAPPED IN HERE! I NEED TO FIND SOME OTHER WAY TO END THE GAME.
+
+; On entering MES room
+STOMES0014	What the hell is going on? Don't tell me this is inside the game!
+
+; //////////////////////////////////////////////////////////////////////
+; 28 - DEBUG ROOM
+; //////////////////////////////////////////////////////////////////////
+
+; Room Regions
+DEBUGR0001	Corridor Sequence
+DEBUGR0002	Bloody Nav Room
+DEBUGR0003	Start Game
+DEBUGR0004	Droid Panel
+DEBUGR0005	White Chamber
+DEBUGR0006	Shower Head
+DEBUGR0007	Freezer
+DEBUGR0008	MedBay
+DEBUGR0009	Normal Station
+DEBUGR0010	Debug Room
+
+; Warning message
+DEBUGR0011	Welcome to the White Chamber debug room. This room has been left in to give you an insight into the development process.
+DEBUGR0012	Playing the game from this room is not advised. It is meant only for testing particular parts of the game.
+
+; //////////////////////////////////////////////////////////////////////
+; 29 - COMEDY ENDING
+; //////////////////////////////////////////////////////////////////////
+
+; Okay this is going to be quite difficult to translate into any language.
+; The comedy ending is meant to be surrealist humor and makes very little sense in English
+; so I don't know how well it will go into other languages. So just do your best really.
+
+; All the character shout surprise to reveal the whole game has been a surprise birthday prank
+COMEDY0001	SURPRISE!!!                   
+; The doctor is explaining it's been a well planned party
+COMEDY0002	We've been planning this surprise party secretly from the deepest shadows.
+; The captain is meant to sound very dumb
+COMEDY0003	Ho Ho... Well I like the candles. Ho ho ho...
+; This character is very excitable. Meant to be a bit like Beavis and Butthead
+COMEDY0004	Yeah! Yeah! Candles!
+; The doctor is talking about cutting the cake in very overly scientific manner.
+COMEDY0005	I have brought a protractor with which to scientifically requisition the cake.
+; This character talks in bad japanese accent and only talks about Japan
+COMEDY0006	Like Japanese ninja.
+; Again the captain makes a dumb comment
+COMEDY0007	I've never been to Japan before. Ho ho ho ho ho...
+; The excitable guy is eager for food
+COMEDY0008	Frack me! Cut the cake! Cut the cake you frackin' nad sack!
+; Another pointless japanese comment
+COMEDY0009	Like Japanese samurai.
+; The dumb captain is sad about no one attending his birthday.
+COMEDY0010	It's a shame no-one showed up for my birthday. Ho ho oooooh...
+; The doctor says this is because his birthday couldn't be divided by the mathematical value pi
+COMEDY0011	Well my fool. This is because your birthday fell on a day which was not divisable by the value of pi.
+; This all ends on a bad pun. The excitable guy assumes the doctor was talking about pie (instead of pi)
+; and comments it's a cake not a pie.
+COMEDY0012	It's not a frackin' pie! It's a frackin' cake! You frack-head! Yo' momma!	
+
+; //////////////////////////////////////////////////////////////////////
+; 30 - ENDING SCREEN
+; //////////////////////////////////////////////////////////////////////
+
+; Interface message
+ENDING0001	Thanks for playing...
+ENDING0002	Quit
+ENDING0003	Leave Game...
+
+; Ending descriptions
+ENDING0004	You suffered the 'damned' ending.
+ENDING0005	You earned the 'redemption' ending.
+ENDING0006	You endured the 'tormented' ending.
+ENDING0007	You were confused by the 'comedy' ending.
+ENDING0008	You're waiting for the 'decaying' ending.
+ENDING0009	You inhaled the 'venemous' ending.
+ENDING0010	You fell through the 'space' ending.
+ENDING0011	You couldn't escape the 'electrocution' ending.
+
+; Easter eggs
+ENDING0012	Try entering the droid code before you have the note.
+ENDING0013	Try using the MES console three times.
+ENDING0014	Try pressing HOME to use the developer's debug room.
+ENDING0015	Try F10 and F11 to switch to an alternate right-click interface.
+
+
+
+; //////////////////////////////////////////////////////////////////////
+; A1 - ITEM TEXT
+; //////////////////////////////////////////////////////////////////////
+
+; Looks at axe
+ANITEM0001	It's a sharp axe. This should be useful.
+; Touch axe
+ANITEM0002	I could hurt myself on this. I should be careful!
+
+; Look at batteries
+ANITEM0003	Industrial sized batteries. Very powerful. I should know.
+; Touch batteries
+ANITEM0004	I've had enough of a shock from these already.
+
+; Look at blanket
+ANITEM0005	A comfortable blanket.
+; Touch blanket
+ANITEM0006	It feels soft and squishy. But it smells...
+
+; Look at brown envelope
+ANITEM0007	There's something in the package.
+; Open brown envelope
+ANITEM0008	There was a video cassette inside.
+
+; Look at video disc
+ANITEM0009	It's a standard pre-recorded video disc. Microcosm disk, eh? That's quality for you.
+; Use video disc
+ANITEM0010	I'll need a proper playback screen to watch this.
+
+; Look at Dr Salt
+ANITEM0011	It's a reddish can of fizzy drink.
+; Use Dr Salt
+ANITEM0012	I'd drink it but it smells a little like dead fish.
+
+; Look at explosive
+ANITEM0013	It's marked as being a high-explosive.
+; Use explosive
+ANITEM0014	Play with fire, you get burned. Play with this... I don't even wanna think about it.
+
+; Look at extinguisher
+ANITEM0015	A bulky fire extinguisher.
+; Use extinguisher
+ANITEM0016	There isn't a fire here so I don't want to waste it.
+
+; Look at eyes
+ANITEM0017	A set of detached eyes. They look so intense.
+; Use eyes
+ANITEM0018	I have enough of a phobia of touching my own eyes.
+
+; Look at head
+ANITEM0019	A severed head. The eyes have been ripped out.
+; Use head
+ANITEM0020	It still feels a little damp from the shower, and the smell...
+
+; Look at ID card
+ANITEM0021	It's an ID card for use in security scanners.
+; Use ID card
+ANITEM0022	I can't really do much with it without a DNA sequencer.
+
+; Look at laser cutter
+ANITEM0023	It's a gun shaped laser torch, I don't think it's working.
+; Use laser cutter
+ANITEM0024	The battery compartment is empty.
+
+; Look at left arm
+ANITEM0025	A detached arm... Great!
+; Use left arm
+ANITEM0026	There's not much I can do with it.
+
+; Look at leg
+ANITEM0027	The leg I hacked off in the freezer room.
+; Use leg
+ANITEM0028	It still feels a little cold.
+
+; Look at mirror
+ANITEM0029	A shiny mirror.
+; Use mirror
+ANITEM0030	It looks smooth, but I don't want to risk smudging it.
+
+; Look at note
+; IMPORTANT NOTE: In English the first letters of the words Patience While You Grill Bacon Rind
+; correspond to Purple White Yellow Green Blue Red on the droid control computer. You will need
+; a nonsensical message that has words starting with the same letter as the words for those
+; colours in your language for the riddle to work. I'm not sure how best to handle this in pictorial
+; languages like Chinese/Japanese.
+ANITEM0031	It's a note I found. It says 'Patience While You Grill Bacon Rind'. That's rather strange. I wonder what it means.
+; Use note
+ANITEM0032	It could make a nice aeroplane but I might need it later.
+
+; Look at override key
+ANITEM0033	This is an override key.
+; Use override key
+ANITEM0034	I'd need to find a system this fits.
+
+; Look at right arm
+ANITEM0035	A human arm.
+; Use right arm
+ANITEM0036	It's a little soft.
+
+; Look at sample dish
+ANITEM0037	Some kind of tissue sample in an air-tight dish. The label says 'Commander Trend'. I hear these things are hard to find.
+; Use sample dish
+ANITEM0038	I don't want to open it and risk spoiling the sample.
+
+; Look at scalpel
+ANITEM0039	It's a blunt and rusty scalpel.
+; Use scalpel
+ANITEM0040	It's not that sharp but I should still be careful. Who knows what it was used for last?
+
+; Look at steel box
+ANITEM0041	A steel box that seems to be welded shut.
+; Use steel box
+ANITEM0042	I can't open it. I wonder what's inside.
+; Use scalpel on steel box
+ANITEM0043	Damn! It looks like it's welded shut. Even the axe can't break a box this strong.
+; Use axe on steel box
+ANITEM0044	It's welded shut. I'm more likely to break the scalpel than the box.
+; Use fire extinguisher on steel box
+ANITEM0045	It's not on fire, it's just sealed. That wouldn't make any sense.
+
+; Look at torso
+ANITEM0046	It's a full human torso. Even I'm surprised I can carry this.
+; Use torso
+ANITEM0047	There's nothing I want to do with it.
+
+; Look at VCR tape
+ANITEM0048	An unmarked video cassette.
+; Use VCR tape
+ANITEM0049	I'll need an old video player to watch this.
+
+
+; //////////////////////////////////////////////////////////////////////
+; A2 - ITEM NAMES
+; //////////////////////////////////////////////////////////////////////
+
+; Names of game items
+ITEMIS0001	Axe
+ITEMIS0002	Explosive
+ITEMIS0003	Extinguisher
+ITEMIS0004	ID Card
+ITEMIS0005	Override Key
+ITEMIS0006	Batteries
+ITEMIS0007	Blanket
+ITEMIS0008	Envelope
+ITEMIS0009	Video Disc #1
+ITEMIS0010	Video Disc #2
+ITEMIS0011	Video Disc #3
+ITEMIS0012	Dr Salt
+ITEMIS0013	Eyes
+ITEMIS0014	Head
+ITEMIS0015	Laser Cutter
+ITEMIS0016	Right Arm
+ITEMIS0017	Leg
+ITEMIS0018	Mirror
+ITEMIS0019	Note
+ITEMIS0020	Left Arm
+ITEMIS0021	Sample Dish
+ITEMIS0022	Scalpel
+ITEMIS0023	Steel Box
+ITEMIS0024	Torso
+ITEMIS0025	VCR Tape
+
+; //////////////////////////////////////////////////////////////////////
+; A3 - MISSED WORDS
+; //////////////////////////////////////////////////////////////////////
+
+; Text for the analyser in the computer room
+EXTRAS0001	Panel
+EXTRAS0002	Wire
+EXTRAS0003	Leave
+EXTRAS0004	Analyser

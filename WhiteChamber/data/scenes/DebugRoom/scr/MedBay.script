@@ -1,0 +1,20 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+  actor.GoToObject(this);
+  FireOut = true;
+  StationPowered = true;
+  CradleLowered = true;
+  LabBlown = true;
+  CardProgrammed = true;
+  Game.TakeItem("eyes");
+  Game.TakeItem("head");
+  Game.TakeItem("leftarm");
+  Game.TakeItem("leg");
+  Game.TakeItem("rightarm");
+  Game.TakeItem("torso");
+  Game.ChangeScene("scenes\medbay\medbay.scene");
+}

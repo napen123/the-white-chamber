@@ -1,0 +1,14 @@
+WINDOW
+{
+  STATIC
+  {
+    TEXT = ""
+    TEXT_ALIGN = "center"
+    NAME = "easter"
+    FONT = "primaryinvertttf.font"
+    X = 0
+    Y = 0
+    WIDTH = 0
+    HEIGHT = 20
+  }
+}

@@ -1,0 +1,62 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "take"
+{
+	if ((StationPowered) || (ComputerRoomKeyPos == 1))
+	{
+ 		actor.GoToObject(this);
+
+		var Overlay = Scene.GetNode("RegionBackupOverlay");
+		var Console = Scene.GetNode("DroidConsole");
+		var LeaveLeft = Scene.GetNode("DroidLeaveLeft");
+		var LeaveRight = Scene.GetNode("DroidLeaveRight");
+		var DroidRed = Scene.GetNode("DroidRed");
+		var DroidGreen = Scene.GetNode("DroidGreen");
+		var DroidPurple = Scene.GetNode("DroidPurple");
+		var DroidYellow = Scene.GetNode("DroidYellow");
+		var DroidWhite = Scene.GetNode("DroidWhite");
+		var DroidBlue = Scene.GetNode("DroidBlue");
+		Overlay.Active = true;
+		Console.Active = true;
+		LeaveLeft.Active = true;
+		LeaveRight.Active = true;
+		DroidRed.Active = true;
+		DroidGreen.Active = true;
+		DroidPurple.Active = true;
+		DroidYellow.Active = true;
+		DroidWhite.Active = true;
+		DroidBlue.Active = true;
+
+		SubWindow.Text = Game.ExpandString("/COMPUT0047/Droid Control Console - Enter colour code sequence");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = 70;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.BringToFont;
+		SubWindow.Focus();
+
+		// Reset the entry sequence
+		ComputerRoomColourPart = 0;
+		ComputerRoomMistake = false;
+	}
+	else
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_PISSED;
+		actor.Talk("/COMPUT0040/Damn! No power");	
+	}
+}
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/COMPUT0041/It's marked as being a droid control console");
+}

@@ -1,0 +1,11 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0013/THE SCREEN WON'T SCROLL. LOOKS LIKE I'M TRAPPED IN HERE! I NEED TO FIND SOME OTHER WAY TO END THE GAME.");
+}
+

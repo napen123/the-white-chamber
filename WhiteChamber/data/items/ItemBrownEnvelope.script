@@ -1,0 +1,21 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0007/There's something in the package");
+}
+
+on "take"
+{
+	Game.TakeItem("tape");
+	Game.DropItem("envelope");
+	Game.PlaySound("audio\sounds\medbay-shuffling.wav");
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0008/There was a video casette inside");
+}
+
+
+

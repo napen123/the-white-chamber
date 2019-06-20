@@ -1,0 +1,21 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0019/A severed head, the eyes have been torn out.");
+}
+
+on "take"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ANITEM0020/It still feels a little damp from the shower, and the smell...");
+}
+
+on "eyes"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("They might fit but I'd prefer to find somewhere to put this down if I'm going to 'assemble' it.");
+}

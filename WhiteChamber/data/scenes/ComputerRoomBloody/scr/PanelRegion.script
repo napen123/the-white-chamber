@@ -1,0 +1,57 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0011/This a control for the emergency tank cleansing system.");
+}
+
+on "take"
+{
+	if (ComputerRoomBodySucked)
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/CBLOOD0014/The tank is empty now, there'd be no point cleaning it.");
+	}
+	else
+	{
+		actor.GoToObject(this); 
+		Game.Interactive = false;
+		Game.PlaySound("audio\sounds\computerroom-suction.ogg");
+		var Body = Scene.GetNode("BodyTank");
+		var BodyRegion = Scene.GetNode("BodyRegion");
+		var BodySuck = Scene.GetNode("BodySuck");
+		var BodySuckRegion = BodySuck.GetSpriteObject();
+		var PipeArm1 = Scene.GetNode("PipeArm1");
+		var PipeArmRegion = Scene.GetNode("PipeArmRegion");
+		Body.Active = false;
+		BodyRegion.Active = false;
+		BodySuck.Active = true;
+		PipeArm1.Active = true;
+		PipeArmRegion.Active = true;
+
+	 	while(true)
+		{
+			if(BodySuckRegion.Finished) break;
+			Sleep(20); 
+		}
+		BodySuck.Active = false;
+
+		PortraitType = PORT_POCKING;
+		actor.Talk("/CBLOOD0012/Oh shit! I was trying to help him... I'm so sorry.");
+		Sleep(2000);
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/CBLOOD0013/It sounded like something got jammed in the pipes. What have I done?");
+		Game.Interactive = true;
+		
+		ComputerRoomBodySucked = true;
+	}
+}

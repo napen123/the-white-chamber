@@ -1,0 +1,135 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+//CorridorDirection = 0 (0=down)
+//CorridorSegment = 1;
+
+
+// Position actor based on previous room and direction (if previous room was corridor too)
+switch(Game.PrevScene)
+{
+	case "LivingRoomGrated":
+	{
+		actor.SkipTo(569, 381);
+		actor.Direction = DI_DOWN;
+		break;
+	}
+	case "NavigationCentreChasm":
+	{
+		actor.SkipTo(700, 757);
+		actor.Direction = DI_UP;
+		break;
+	}
+	case "Corridor":
+	{
+		if (CorridorDirection == 0)
+		{
+			actor.SkipTo(569, 381);
+			actor.Direction = DI_DOWN;
+		}
+		else
+		{
+			actor.SkipTo(700, 757);
+			actor.Direction = DI_UP;
+		}
+		break;
+	}
+}
+actor.Active = true;
+
+// Set up object on display
+var TrafficLight = Scene.GetNode("TrafficLight"); 
+var TrafficGreen = Scene.GetNode("TrafficGreen"); 
+var TrafficOrange = Scene.GetNode("TrafficOrange"); 
+var TrafficRed = Scene.GetNode("TrafficRed"); 
+var EyeClosed = Scene.GetNode("EyeClosed");
+var EyeSpin = Scene.GetNode("EyeSpin");
+switch(CorridorSegment )
+{
+	case 1:
+	{
+		PlayAmbient(AMBIENT_SILENCE, "SEQUENCE2");
+		TrafficLight.Active = false;
+		TrafficGreen.Active = false;
+		TrafficOrange.Active = false;
+		TrafficRed.Active = false;
+		EyeClosed.Active = true;
+		EyeSpin.Active = false;
+		break;
+	}
+	case 2:
+	{
+		PlayAmbient(AMBIENT_SILENCE, "SEQUENCE3");
+		TrafficLight.Active = true;
+		TrafficGreen.Active = false;
+		TrafficOrange.Active = false;
+		TrafficRed.Active = false;
+		EyeClosed.Active = true;
+		EyeSpin.Active = false;
+		break;
+	}
+	case 3:
+	{
+		PlayAmbient(AMBIENT_SILENCE, "SEQUENCE4");
+		TrafficLight.Active = true;
+		TrafficGreen.Active = true;
+		TrafficOrange.Active = false;
+		TrafficRed.Active = false;
+		EyeClosed.Active = false;
+		EyeSpin.Active = false;
+		break;
+	}
+	case 4:
+	{
+		PlayAmbient(AMBIENT_SILENCE, "SEQUENCE5");
+		TrafficLight.Active = true;
+		TrafficGreen.Active = false;
+		TrafficOrange.Active = true;
+		TrafficRed.Active = false;
+		EyeClosed.Active = false;
+		EyeSpin.Active = false;
+		break;
+	}
+	case 5:
+	{
+		PlayAmbient(AMBIENT_SILENCE, "SEQUENCE6");
+		TrafficLight.Active = true;
+		TrafficGreen.Active = false;
+		TrafficOrange.Active = false;
+		TrafficRed.Active = true;
+		EyeClosed.Active = false;
+		EyeSpin.Active = true;
+		break;
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateCorridor;
+
+
+// default values
+if(StateCorridor==null)
+{
+  StateCorridor.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateCorridor.Visited)
+{
+  StateCorridor.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

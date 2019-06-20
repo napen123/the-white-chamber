@@ -1,0 +1,75 @@
+#include "scripts\base.inc"
+
+// Opening door code
+on "LeftClick"
+{
+	if (!Strapped)
+	{
+		if (LabBlown)
+		{
+			// Move to door
+			actor.GoToObject(this); 
+			// Jump to different scene
+  			Game.ChangeScene("scenes\fanroom\fanroom.scene");
+		}
+		else
+		{
+			// Door closed
+			actor.GoToObject(this); 
+			actor.Talk("/THELAB0045/It's welded shut so I can't get through");
+		}
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+}
+
+on "take"
+{
+	if ((!Strapped) && (!LabBlown))
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0046/I'm going to need something really powerful do get through this door.");
+	}
+}
+
+on "lookat"
+{
+	if ((!Strapped) && (!LabBlown))
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/THELAB0047/The seal on the door has been welded shut. I wonder why?");
+	}
+}
+
+on "axe"
+{
+	if ((!Strapped) && (!LabBlown))
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0048/That's not going to do it. This is a very thick door that's been welded shut.");
+	}
+}
+
+on "explosive"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this); 
+
+		Game.DropItem("explosive");
+	
+		var Bomb = Scene.GetNode("Bomb");
+		Bomb.Active = true;
+
+		LabBomb = true;
+
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0049/There. Now if I could find some way to ignite this I could get through the door.");
+	}
+}

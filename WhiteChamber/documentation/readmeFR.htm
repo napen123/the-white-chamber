@@ -1,0 +1,255 @@
+<html>
+<head>
+<title>Studio Trophis - the white chamber</title>
+<style>
+/*	body {
+		background:#000;
+		margin:20px 20px 0px 20px;
+		color:white;
+		}-*/
+
+	#banner {
+		background:#000;
+		border-top:1px solid #fff;
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:150px;
+		}
+
+	#footer {
+		background:#000;
+		/*height:40px;*/
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:39px;
+		}
+
+	#main {
+		border:1px solid #fff;
+		background:#000;
+		}
+
+/* Looks like you have to specify the width of #menu
+or IE5 Mac stretches it all the way across the div, and
+Opera streches it half way. */
+
+	#main #menu {
+		border-right:1px solid #fff;
+		border-bottom:1px solid #fff;
+		float:left;
+		width:230px;
+		background:#888;
+		margin:0px 10px 10px 0px;
+		}
+
+	#menu p { font-size:10px}
+
+	#main #news {
+		border-left:1px solid #fff;
+		border-bottom:1px solid #fff;
+		float:right;
+		width:230px;
+		background:#888;
+		margin:0px 0px 10px 0px;
+		}
+
+
+	#news p { font-size:10px}
+
+
+/* THIS IS SOME  PREDEFINED  STUFF I  NICKED */
+body {
+
+
+	margin:20px 20px 0px 20px;
+	padding: 0;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	color:white;
+	background:#000;
+	}
+
+#content {
+	margin: 0em;
+	padding: 4em 6em 2em 6em;/* use padding instead of margin for multicolumn layouts because of a really odd ie5pc bug where it sometimes relates the width of an unrelated menu div to this div. i'll, uh, write about that somewhere. it was hard to figure out what was causing it, so i want this note here to remind me. */
+	}
+
+/*the following classes are to demonstrate better line heights for narrow columns*/
+.narrow1{
+	width: 50%;
+	line-height: 1.3em;
+	}
+.narrow2{
+	width: 50%;
+	line-height: 1.5em;
+	}
+
+/*typography*/
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	}
+a:link {
+	}
+a:visited {
+	}
+a:active {
+	}
+a:hover {
+	text-decoration: underline;
+	}
+h1 {
+	font-size: 26px;
+	line-height: 32px;
+	margin-top: 0px;
+	margin-bottom: 0px;/*both set to zero and padding in header div is used intead to deal with compound ie pc problems that are beyound summary in a simple comment.*/
+	}
+h2 {
+	font-size: 24px;
+	margin: 20px 5px 20px 5px;
+	font-weight: normal;
+	}
+h3 {
+	font-size: 20px;
+	margin: 10px 10px 10px 10px;
+	font-weight: normal;
+	}
+h4 {
+	font-size: 18px;
+	margin: 5px 5px 5px 5px;
+	font-weight: bold;
+	}
+h5 {
+	font-size: 16px;
+	margin: 20px 5px 20px 5px;
+	font-weight: bold;
+	}
+h6 {
+	font-size: 14px;
+	margin: 20px 5px 20px 5px;
+	font-weight: bold;
+	}
+img {
+	border: 0;
+	}
+ol, ul, li {/*
+	list-style: none;*/
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	}
+p {
+	font-size: 14px;
+	line-height: 20px;
+	margin: 20px 5px 20px 5px;
+	}
+li > p {
+	margin-top: 0.2em;
+	}
+pre {/*moz 1.0/1.1/1.2.1, net 7.0/7.01 make this way too small, but i'm not going to go larger because monospace tends to run you into overflow pretty quick. prior moz and net are okay.*/
+	font-family: monospace;
+	font-size: 1.0em;
+	}
+strong, b {
+	font-weight: bold;
+	}
+</style>
+</head>
+<body>
+
+<h1>the white chamber</h2>
+
+<hr>
+<h2>Aide - Tableau du Contenu</h2>
+<ul>
+<li><a href="#overview">Survol du jeu</a></li>
+<li><a href="#movement">Mouvement</a></li>
+<li><a href="#objects">Interaction avec des Objets</a></li>
+<li><a href="#symbols">Symboles</a></li>
+<li><a href="#menu">Menu du jeu</a></li>
+</ul>
+
+<hr>
+<a name="overview"></a><h2>Survol du jeu</h2>
+<p>The White Chamber est un jeu d'aventure point-and-click et de résolution d'énigmes.</p>
+<p>Votre personnage explorera des salles et des environnements, résoudera des énigmes et trouvera des indices pour découvrir le mystère de la ‘white chamber’.</p>
+<p>Elle y parviendra en explorant et inspectant son environnement.</p>
+<p>Ce jeu de genre horreur, sci-fi et mystère contient de la violence, du sang et d'autres scènes qui pourraient vous offenser.</p>
+<hr>
+<a name="movement"></a><h2>Mouvement</h2>
+<p>Vous pouvez déplacer votre personnage dans toutes les directions en cliquant avec le bouton gauche de votre souris sur la partie de l'écran vers lequel vous voulez qu'elle se dirige. </p>
+<center><img src="images\Readme1.png"></center>
+<p>Elle ne peut pas se déplacer vers un espace qui est bloqué par un obstacle. Si vous cliquez du bouton gauche sur un objet avec lequel votre personnage peut interagir, elle marchera vers cet objet et se tiendra en face de celui-ci.</p>
+<h3>Sorties</h3>
+<p>Quand le curseur survole une sortie, il devient un symbole de flèche.</p>
+<center><img src="images\Readme2.png"></center>
+<p>Cliquer du bouton de gauche quand votre curseur survole une sortie entraînera votre personnage dans la salle adjacente.</p>
+<p>Il peut y avaoir plus d'une sortie vers et dans chacune des salles.</p>
+<h3>Déplacer Autre Chose</h3>
+<p>Il peut y avoir des moments dans le jeu où vous pourrez déplacer des objets autres que votre personnage principal. Vous aurez besoin des flèches du clavier pour ça.</p>
+
+<hr>
+<a name="objects"></a><h2>Interaction avec des Objets</h2>
+<p>Votre personnage peut interagir avec des objets dans son environnement pour, soit les utiliser, soit obtenir des informations à propos de ceux-ci. </p>
+<p>Si votre personnage peut interagir avec un objet dans son environnement, son nom appraîtera dans le coin en bas à droite quand vous passerez le curseur au dessus.</p>
+<center><img src="images\Readme3.png"></center>
+<p>Il y a trois modes d'interaction entre votre personnage et les objets de son environnement:</p>
+<ul>
+<li>Cliquer du bouton gauche entrainera votre personnage à se tenir en face de l'objet.</li>
+<li>Cliquez du bouton droite et sélectionnez le symbole de l'oeil pour examiner l'objet.</li>
+<li>Cliquez du bouton droite et sélectionnez le symbole de la main pour prendre ou utiliser l'objet, selon le contexte. Les objets que votre personnage ramasse sont placées directement dans votre inventaire.</li>
+</ul>
+<h3>L'Inventaire</h3>
+<p>Vous pouvez accèder à l'inventaire de votre personnage en déplaçant votre curseur en haut de l'écran. La barre d'inventaire apparaîtera, exposant tous les objets que votre personnage transporte. Si elle transporte beaucoup d'objets, utilisez les flèches aux deux bouts de votre barre d'inventaire pour dérouler à gauche ou à droite.</p>
+<p>Quand un objet est dans votre inventaire, vous pouvez intéragir avec en deux façons:</p>
+<ul>
+<li>Cliquez du bouton droite et sélectionnez le symbole de l'oeil pour examiner l'objet. Cette description peut être différente de celle que votre personnage a vue avant de ramasser l'objet.</li>
+<li>Cliquez du bouton droite et sélectionnez le symbole de la main pour sortir l'objet de votre inventaire et utiliser l'objet des deux manières suivantes:
+<ul>
+<li>Cliquer sur un autre objet dans l'inventaire pour utiliser les deux ensemble.</li>
+<li>L'objet peut sortir de l'inventaire. Cliquez sur un objet dans la pièce avec un objet dans l'inventaire de votre personnage pour essayer d'utiliser les deux objets ensemble.</li>
+</ul>
+</li>
+</ul>
+<p>Pour remettre un objet dans l'inventaire, cliquez du bouton gauche sur l'écran.</p>
+<center><img src="images\Readme4.png"></center>
+<h3>Opérations à Distance</h3>
+<p>Il est possible qu'à un certain point certaines actions puissent êtres opérées avec la barre d'espacement.</p>
+<hr>
+
+<a name="symbols"></a><h2>Symboles</h2>
+<p>La liste qui suit est un résumé des symboles principaux que vous verrez et utiliserez dans le jeu.</p>
+<p><img src="images\Readme5.png"> L'apparence normale du curseur est une croix. Dans cette forme, il peut être utilisé pour déplacer votre personnage dans toutes les directions. Il n'y a pas d'objets avec lequel votre personnage peut interagir derrière le curseur quand il apparaît comme ceci.</p>
+<p><img src="images\Readme6.png"> Le curseur en forme de main indique qu'il y a un objet avec lequel votre personnage peut interagir directement derrière. Observez bien le texte dans le coin en  bas à droite de l'écran quand vous voyez ce curseur.</p>
+<p><img src="images\Readme7.png"> Le curseur en forme de flèche signifie que vous pointez au dessus d'une sortie. La direction de la flèche indique la direction vers lequel votre personnage se déplacera si elle prend cette sortie.</p>
+<p><img src="images\Readme8.png"> Le symbole 'oeil' est l'icone que vous devez sélectionner si vous voulez examiner un objet de plus près. Vous obtiendrez ainsi plus d'informations.</p>
+<p><img src="images\Readme9.png"> Le symbole 'main' est l'icone que vous devez sélectionner si vous voulez que votre personnage interagisse (utiliser, manipuler ou prendre) avec un objet.</p>
+
+<hr>
+<a name="menu"></a><h2>Menu du Jeu</h2>
+<p>Vous pouvez accèder au menu du jeu en appuyant soit sur ‘Escape’ ou sur ‘F1’ sur votre clavier. À partir de ce menu vous pouvez enregistrer, charger ou quitter la partie.</p>
+<h3>Retourner au Jeu</h3>
+<p>Sortir du menu et retourner jouer dans la partie en cours.</p>
+<h3>Sauvegarder</h3>
+<p>Sauvegardez votre progrès dans la partie pour pouvoir retourner au même point plus tard.</p>
+<p>Quand vous choisisez de sauvegarder la partie, vous verrez un écran avec plusieurs espaces disponibles. vous pouvez utiliser les flèches pour dérouler en haut et en bas la liste d'espaces disponibles.</p>
+<p>Vous pouvez soit réécrire par-dessus une partie déja sauvegardée. Vous pouvez aussi créer un nouveau fichier de sauvegarde en sélectionnant l'espace dans lequel vous voulez sauvegarder et en cliquant sur ‘OK’. Ça fera apparaître un autre écran où vous pourrez donner un nom au fichier de sauvegarde. Pour créer le fichier, cliquez sur 'OK'.</p>
+<p>Si vous décidez de ne pas sauvegarder votre partie, appuyez sur annuler à l'écran et vous retournerez au menu du jeu.</p>
+<h3>Charger</h3>
+<p>Chergez une partie déjà enregistrée et jouez à l'endroit ou vous étiez rendu.</p>
+<p>Quand vous choisiser 'Charger', une liste de parties sauvegardées apparait (aisni que les espaces de sauvegarde vides). En utilisant votre curseur, cliquez sur une des parties déja sauvegardée et appuyez sur 'OK' pour charger la partie.</p>
+<p>Si vous décidez de ne pas charger la partie, appuyez sur annuler à l'écran et vous retournerez au menu du jeu.</p>
+<h3>Quitter</h3>
+<p>Arrêter de jouer et fermer le jeu.</p>
+<p>On vous demandera si vous voulez vraiment quitter je jeu. Cliquez sur ‘Oui’ si vous voulez quitter et cliquez sur ‘Non’ si vous voulez retourner au menu du jeu.</p>
+
+</body>
+</html>
+
+
+

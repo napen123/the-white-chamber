@@ -1,0 +1,54 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+  actor.GoToObject(this);
+
+  if (BlackChamberWiresFixed)
+  {
+    PortraitType = PORT_NORMAL;
+    actor.Talk("/BLACKC0009/They're connected now");
+  }
+  else
+  {
+    PortraitType = PORT_NORMAL;
+    actor.Talk("/BLACKC0007/They seem to be disconnected");
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+  actor.GoToObject(this);
+
+  if (BlackChamberWiresFixed)
+  {
+    PortraitType = PORT_NORMAL;
+    actor.Talk("/BLACKC0010/I already fixed them");
+  }
+  else
+  {
+    BlackChamberWiresFixed = true;
+    var PanelBroken = Scene.GetNode("PanelBroken");
+    PanelBroken.Active = false;
+    Game.PlaySound("audio\sounds\blackchamber-wires&powerup.ogg");    
+    PortraitType = PORT_NORMAL;
+    actor.Talk("/BLACKC0008/There... I've reconnected the wires");
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+  actor.GoToObject(this);
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_PUZZLED;
+  actor.Talk("/BLACKC0025/I don't think I need to do anything more with these wires.");
+}

@@ -1,0 +1,75 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+var LeftDoorAnim = Scene.GetNode("AnimLeftDoor"); 
+LeftDoorAnim.Active = false; 
+LeftDoorAnim.Reset();
+
+actor.SkipTo(250, 330);
+actor.Direction = DI_RIGHT;
+actor.Active = true;
+
+PlayAmbient(AMBIENT_SCARY, "MEDBAY");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateMedBay;
+
+
+// default values
+if(StateMedBay==null)
+{
+  StateMedBay.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+// Show body parts if appropriate
+if ((MedBayBodyComplete) && (LabBlown) && (!MedBayQuarDone))
+{
+	var BodyEyes = Scene.GetNode("BodyEyes");
+	var BodyHead = Scene.GetNode("BodyHead");
+	var BodyLeftArm = Scene.GetNode("BodyLeftArm");
+	var BodyLeftLeg = Scene.GetNode("BodyLeftLeg");
+	var BodyRightArm = Scene.GetNode("BodyRightArm");
+	var BodyTorso = Scene.GetNode("BodyTorso");
+	var BodyBlanket = Scene.GetNode("BodyBlanket");
+
+	BodyEyes.Active = false;
+	BodyHead.Active = false;
+	BodyLeftArm.Active = false;
+	BodyLeftLeg.Active = false;
+	BodyRightArm.Active = false;
+	BodyTorso.Active = false;
+	BodyBlanket.Active = false;
+
+	var BodySits = Scene.GetNode("BodySits");
+	var BodySitsRegion = Scene.GetNode("BodySitsRegion");
+	BodySits.Active = true;
+	BodySitsRegion.Active = true;
+}
+
+// Put box on table if  required
+if (MedBayBoxOnDesk)
+{
+	var BoxOnDesk = Scene.GetNode("BoxOnDesk");
+	var RegionBoxOnDesk = Scene.GetNode("RegionBoxOnDesk");
+	BoxOnDesk.Active = true;
+	RegionBoxOnDesk.Active = true;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateMedBay.Visited)
+{
+  StateMedBay.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

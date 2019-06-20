@@ -1,0 +1,299 @@
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0001/Axe"
+   NAME = "axe"
+   IMAGE = "items\ItemAxe.png"
+   CURSOR = "items\ItemAxe.png"
+   CURSOR_HOVER = "items\ItemAxeHOVER.png"
+   SPRITE_HOVER = "items\ItemAxeHOVER.png"
+   SCRIPT = "items\ItemAxe.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0002/Explosive"
+   NAME = "explosive"
+   IMAGE = "items\ItemExplosive.png"
+   CURSOR = "items\ItemExplosive.png"
+   CURSOR_HOVER = "items\ItemExplosiveHOVER.png"
+   SPRITE_HOVER = "items\ItemExplosiveHOVER.png"
+   SCRIPT = "items\ItemExplosive.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0003/Extinguisher"
+   NAME = "fireext"
+   IMAGE = "items\ItemExtinguisher.png"
+   CURSOR = "items\ItemExtinguisher.png"
+   CURSOR_HOVER = "items\ItemExtinguisherHOVER.png"
+   SPRITE_HOVER = "items\ItemExtinguisherHOVER.png"
+   SCRIPT = "items\ItemExtinguisher.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0004/ID Card"
+   NAME = "idcard"
+   IMAGE = "items\ItemIDCard.png"
+   CURSOR = "items\ItemIDCard.png"
+   CURSOR_HOVER = "items\ItemIDCardHOVER.png"
+   SPRITE_HOVER = "items\ItemIDCardHOVER.png"
+   SCRIPT = "items\ItemIDCard.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0005/Override Key"
+   NAME = "overkey"
+   IMAGE = "items\ItemOverride.png"
+   CURSOR = "items\ItemOverride.png"
+   CURSOR_HOVER = "items\ItemOverrideHOVER.png"
+   SPRITE_HOVER = "items\ItemOverrideHOVER.png"
+   SCRIPT = "items\ItemOverride.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0006/Batteries"
+   NAME = "batteries"
+   IMAGE = "items\itembatteries.png"
+   CURSOR = "items\itembatteries.png"
+   CURSOR_HOVER = "items\itembatterieshover.png"
+   SPRITE_HOVER = "items\itembatterieshover.png"
+   SCRIPT = "items\itembatteries.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0007/Blanket"
+   NAME = "blanket"
+   IMAGE = "items\itemblanket.png"
+   CURSOR = "items\itemblanket.png"
+   CURSOR_HOVER = "items\itemblankethover.png"
+   SPRITE_HOVER = "items\itemblankethover.png"
+   SCRIPT = "items\itemblanket.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0008/Envelope"
+   NAME = "envelope"
+   IMAGE = "items\itembrownenvelope.png"
+   CURSOR = "items\itembrownenvelope.png"
+   CURSOR_HOVER = "items\itembrownenvelopehover.png"
+   SPRITE_HOVER = "items\itembrownenvelopehover.png"
+   SCRIPT = "items\itembrownenvelope.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0009/Video Disc #1"
+   NAME = "disc1"
+   IMAGE = "items\itemdiscblue.png"
+   CURSOR = "items\itemdiscblue.png"
+   CURSOR_HOVER = "items\itemdischover.png"
+   SPRITE_HOVER = "items\itemdischover.png"
+   SCRIPT = "items\itemdiscblue.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0010/Video Disc #2"
+   NAME = "disc2"
+   IMAGE = "items\itemdiscgreen.png"
+   CURSOR = "items\itemdiscgreen.png"
+   CURSOR_HOVER = "items\itemdiscgreenhover.png"
+   SPRITE_HOVER = "items\itemdiscgreenhover.png"
+   SCRIPT = "items\itemdiscgreen.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0011/Video Disc #3"
+   NAME = "disc3"
+   IMAGE = "items\itemdiscred.png"
+   CURSOR = "items\itemdiscred.png"
+   CURSOR_HOVER = "items\itemdiscredhover.png"
+   SPRITE_HOVER = "items\itemdiscredhover.png"
+   SCRIPT = "items\itemdiscred.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0012/Dr Salt"
+   NAME = "drsalt"
+   IMAGE = "items\itemdrsalt.png"
+   CURSOR = "items\itemdrsalt.png"
+   CURSOR_HOVER = "items\itemdrsalthover.png"
+   SPRITE_HOVER = "items\itemdrsalthover.png"
+   SCRIPT = "items\itemdrsalt.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0013/Eyes"
+   NAME = "eyes"
+   IMAGE = "items\itemeyes.png"
+   CURSOR = "items\itemeyes.png"
+   CURSOR_HOVER = "items\itemeyeshover.png"
+   SPRITE_HOVER = "items\itemeyeshover.png"
+   SCRIPT = "items\itemeyes.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0014/Head"
+   NAME = "head"
+   IMAGE = "items\itemhead.png"
+   CURSOR = "items\itemhead.png"
+   CURSOR_HOVER = "items\itemheadhover.png"
+   SPRITE_HOVER = "items\itemheadhover.png"
+   SCRIPT = "items\itemhead.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0015/Laser Cutter"
+   NAME = "laser"
+   IMAGE = "items\itemlasercuttergun.png"
+   CURSOR = "items\itemlasercuttergun.png"
+   CURSOR_HOVER = "items\itemlasercuttergunhover.png"
+   SPRITE_HOVER = "items\itemlasercuttergunhover.png"
+   SCRIPT = "items\itemlasercuttergun.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0016/Right Arm"
+   NAME = "rightarm"
+   IMAGE = "items\itemleftarm.png"
+   CURSOR = "items\itemleftarm.png"
+   CURSOR_HOVER = "items\itemleftarmhover.png"
+   SPRITE_HOVER = "items\itemleftarmhover.png"
+   SCRIPT = "items\itemleftarm.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0017/Leg"
+   NAME = "leg"
+   IMAGE = "items\itemleg.png"
+   CURSOR = "items\itemleg.png"
+   CURSOR_HOVER = "items\itemleghover.png"
+   SPRITE_HOVER = "items\itemleghover.png"
+   SCRIPT = "items\itemleg.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0018/Mirror"
+   NAME = "mirror"
+   IMAGE = "items\itemmirror.png"
+   CURSOR = "items\itemmirror.png"
+   CURSOR_HOVER = "items\itemmirrorhover.png"
+   SPRITE_HOVER = "items\itemmirrorhover.png"
+   SCRIPT = "items\itemmirror.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0019/Note"
+   NAME = "note"
+   IMAGE = "items\itemnote.png"
+   CURSOR = "items\itemnote.png"
+   CURSOR_HOVER = "items\itemnotehover.png"
+   SPRITE_HOVER = "items\itemnotehover.png"
+   SCRIPT = "items\itemnote.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0020/Left Arm"
+   NAME = "leftarm"
+   IMAGE = "items\itemrightarm.png"
+   CURSOR = "items\itemrightarm.png"
+   CURSOR_HOVER = "items\itemrightarmhover.png"
+   SPRITE_HOVER = "items\itemrightarmhover.png"
+   SCRIPT = "items\itemrightarm.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0021/Sample Dish"
+   NAME = "sample"
+   IMAGE = "items\itemsampledish.png"
+   CURSOR = "items\itemsampledish.png"
+   CURSOR_HOVER = "items\itemsampledishhover.png"
+   SPRITE_HOVER = "items\itemsampledishhover.png"
+   SCRIPT = "items\itemsampledish.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0022/Scalpel"
+   NAME = "scalpel"
+   IMAGE = "items\itemscalpel.png"
+   CURSOR = "items\itemscalpel.png"
+   CURSOR_HOVER = "items\itemscalpelhover.png"
+   SPRITE_HOVER = "items\itemscalpelhover.png"
+   SCRIPT = "items\itemscalpel.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0023/Steel Box"
+   NAME = "box"
+   IMAGE = "items\itemsteelbox.png"
+   CURSOR = "items\itemsteelbox.png"
+   CURSOR_HOVER = "items\itemsteelboxhover.png"
+   SPRITE_HOVER = "items\itemsteelboxhover.png"
+   SCRIPT = "items\itemsteelbox.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0024/Torso"
+   NAME = "torso"
+   IMAGE = "items\itemtorso.png"
+   CURSOR = "items\itemtorso.png"
+   CURSOR_HOVER = "items\itemtorsohover.png"
+   SPRITE_HOVER = "items\itemtorsohover.png"
+   SCRIPT = "items\itemtorso.script"
+}
+
+ITEM
+{
+   CURSOR_COMBINED = TRUE
+   CAPTION = "/ITEMIS0025/VCR Tape"
+   NAME = "tape"
+   IMAGE = "items\itemvcrtape.png"
+   CURSOR = "items\itemvcrtape.png"
+   CURSOR_HOVER = "items\itemvcrtapehover.png"
+   SPRITE_HOVER = "items\itemvcrtapehover.png"
+   SCRIPT = "items\itemvcrtape.script"
+}

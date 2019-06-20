@@ -1,0 +1,28 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0029/A strong box, it looks sealed");
+}
+
+on "Take"
+{
+	// Add the box to inventory
+	Game.TakeItem("box");
+
+	// Set global variable to indicate box has been taken
+	LivingRoomBoxTaken = true;
+
+	// Switch off the box sprite and region
+	var LeftCupboardBox = Scene.GetNode("LeftCupboardBox");
+	var RegionLeftCupboardBox = Scene.GetNode("RegionLeftCupboardBox");
+	LeftCupboardBox.Active = false;
+	RegionLeftCupboardBox.Active = false;
+
+	// Switching off the region means it's impossible to take the item twice,
+	// hence why there is no conditional logic at the start to check if the item
+	// has already been taken
+}

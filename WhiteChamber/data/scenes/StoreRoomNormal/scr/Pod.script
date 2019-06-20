@@ -1,0 +1,26 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	actor.GoToObject(this); 
+	actor.Active = false;
+
+	var PodClimb = Scene.GetNode("PodClimb");
+	var PodSprite= PodClimb.GetSpriteObject();
+	PodClimb.Active = true;
+ 	while(true)
+	{
+		if(PodSprite.Finished) break;
+		Sleep(20); 
+  	}
+
+
+
+	Sleep(500);
+
+	// Jump to finish screen
+	Game.ChangeScene("scenes\endingvideo\endingvideo.scene");
+
+}

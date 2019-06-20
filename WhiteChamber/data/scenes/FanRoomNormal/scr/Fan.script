@@ -1,0 +1,21 @@
+#include "scripts\base.inc"
+
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/NORMAL0003/I threw Dr. Goodwin into the fan. I didn't even need to do it but I felt sure he was on to me. He kept asking the Commander to eject the artefact.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NORMAL0004/After what I did to Goodwin I'd be a fool to get any closer.");
+}

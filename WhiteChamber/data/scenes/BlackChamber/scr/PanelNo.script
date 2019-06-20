@@ -1,0 +1,73 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "MouseEntry"
+{
+		var PanelGlowNO = Scene.GetNode("PanelGlowNO");
+		PanelGlowNO.Active = true;
+}
+
+on "MouseLeave"
+{
+		var PanelGlowNO = Scene.GetNode("PanelGlowNO");
+		PanelGlowNO.Active = false;
+}
+
+on "LeftClick"
+{
+	// Switch off all the console related images and regions
+	var PanelImage = Scene.GetNode("PanelCloseup");
+	var PanelImageScans = Scene.GetNode("PanelScanLines");
+	var PanelImageWhere = Scene.GetNode("PanelWhere");
+	var PanelImageRegret = Scene.GetNode("PanelRegret");
+	var PanelImageReady = Scene.GetNode("PanelReady");
+	var PanelImageYESNO = Scene.GetNode("PanelYESNO");
+	var PanelRegion = Scene.GetNode("PanelCloseRegion");
+	var PanelRegionYES = Scene.GetNode("PanelYes");
+	var PanelRegionNO = Scene.GetNode("PanelNo");
+	var PanelGlowNO = Scene.GetNode("PanelGlowNO");
+	PanelImage.Active = false;
+	PanelImageScans.Active = false;
+	PanelImageWhere.Active = false;
+	PanelImageRegret.Active = false;
+	PanelImageReady.Active = false;
+	PanelImageYESNO.Active = false;
+	PanelRegion.Active = false;
+	PanelRegionYES.Active = false;
+	PanelRegionNO.Active = false;
+	PanelGlowNO.Active = false;
+	SubWindow.Visible = false;
+
+	// If showing READY message
+	if (BlackChamberPanelState == 2)
+	{
+		// Do nothing
+	}
+
+	// If showing REGRET message
+	if (BlackChamberPanelState == 1)
+	{
+		BlackChamberPanelState = BlackChamberPanelState + 1;
+	}
+
+	// If showing WHERE message animate the windows opening
+	if (BlackChamberPanelState == 0)
+	{
+		BlackChamberPanelState = BlackChamberPanelState + 1;
+		Sleep(500);
+		BlackChamberWindowsOpen = true;
+		var WindowClosed = Scene.GetNode("WindowClosed");
+		var WindowAnim = Scene.GetNode("WindowAnim");
+		var WindowRegion = Scene.GetNode("Window");
+		WindowClosed.Active = false;
+		WindowAnim.Active = true;
+		WindowRegion.Active = true;
+		// CAN WE GET THE ACTOR TO FACE UPWARDS
+		Sleep(500);
+    		PortraitType = PORT_POCKING;
+		actor.Talk("/BLACKC0011/What the hell is going on? I'm in space");
+	}
+
+
+}

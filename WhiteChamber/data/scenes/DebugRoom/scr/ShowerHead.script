@@ -1,0 +1,13 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick" {
+  actor.GoToObject(this);
+  CorridorSequenceDone = true;
+  Game.TakeItem("disc1");
+  Game.TakeItem("disc2");
+  Game.TakeItem("disc3");
+  Game.ChangeScene("scenes\sleepingquarters\sleepingquarters.scene");
+}
+

@@ -1,0 +1,56 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+ 		actor.GoToObject(this);
+	}
+}
+
+on "lookat"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+ 		actor.GoToObject(this);
+	}
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/STORER0013/A canister of high explosive.");
+}
+
+on "take"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+		actor.GoToObject(this); 
+		Game.TakeItem("explosive");
+		var Explosive = Scene.GetNode("Explosive");
+		var BombSprite = Scene.GetNode("BombSprite");
+		var bombblock = Scene.GetNode("bombblock");
+		Explosive.Active = false;
+		BombSprite.Active = false;
+		bombblock.Active= false;
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0012/I can't reach it through the cage.");
+	}
+
+}
+
+on "default-use"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+ 		actor.GoToObject(this);
+	}
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/STORER0014/Doesn't seem like a good idea to try to tamper with this.");
+}

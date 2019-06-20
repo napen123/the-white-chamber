@@ -1,0 +1,25 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0060/There's something etched in the dirt.");
+
+	var Message1 = Scene.GetNode("Message1");
+	var Wall = Scene.GetNode("Wall");
+	var Yes = Scene.GetNode("Yes");
+	var No = Scene.GetNode("No");
+	Message1.Active = true;
+	Wall.Active = false;
+	Yes.Active = true;
+	No.Active = true;
+
+	SubWindow.Text = Game.ExpandString("/MEDBAY0061/Do you want to leave?");
+      	SubWindow.SizeToFit();
+	SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+	SubWindow.Y = Game.ScreenHeight - 100;
+	SubWindow.Visible = SubtitleSetting;
+	SubWindow.Focus();
+}

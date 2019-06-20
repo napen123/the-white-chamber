@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NAVCEN0029/It looks like this section of the station can be lowered down.");
+}
+
+on "Take"
+{
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/NAVCEN0030/I think it's controlled by the buttons below.");
+}

@@ -1,0 +1,231 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+var RightDoorAnim = Scene.GetNode("AnimRightDoor"); 
+RightDoorAnim.Active = false; 
+RightDoorAnim.Reset();
+var TopDoorAnim = Scene.GetNode("AnimTopDoor"); 
+TopDoorAnim.Active = false; 
+TopDoorAnim.Reset();
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(530, 750);
+actor.Direction = DI_UP;
+
+switch(Game.PrevScene)
+{
+	case "NavigationCentre":
+	{
+		actor.SkipTo(530, 750);
+		actor.Direction = DI_UP;
+		break;
+	}
+	case "Lab":
+	{
+		actor.SkipTo(480, 240);
+		actor.Direction = DI_DOWN;
+		break;
+	}
+	case "MedBay":
+	{
+		actor.SkipTo(850, 420);
+		actor.Direction = DI_LEFT;
+		break;
+	}
+	case "SleepingQuarters":
+	{
+		actor.SkipTo(140, 480);
+		actor.Direction = DI_RIGHT;
+		break;
+	}
+}
+actor.Active = true;
+
+PlayAmbient(AMBIENT_SCARY, "LIVINGROOM");
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateLivingRoom;
+
+
+// default values
+if(StateLivingRoom==null)
+{
+  StateLivingRoom.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+// Either show fridge stuff or set up the correct position of the centre table
+var TableSprite = Scene.GetNode("SpriteTableUp");
+var TableBlock = Scene.GetNode("TableBlock");
+var ScreenRegion = Scene.GetNode("Screen");
+var Mirror = Scene.GetNode("Mirror");
+if ((!LivingRoomFridgeDone) && (TortureDone))
+{
+	// Turn off table
+	TableSprite.Active = false;
+	ScreenRegion.Active = false;
+	Mirror.Active = false;
+	
+	// NOTE: Insert globals and handlers to deal with people wandering in and out during the phases
+
+	Game.PlayMusicChannel(3, "audio\sounds\livingroom-fridgeswing.ogg", true);
+
+	// Turn on hanging fridge
+	var Chain = Scene.GetNode("Chain");
+	var ChainRegion = Scene.GetNode("ChainRegion");
+	var FridgeSwing = Scene.GetNode("FridgeSwing");
+	var FridgeSwingRegion = Scene.GetNode("FridgeSwingRegion");
+	var ChainCut = Scene.GetNode("ChainCut");
+	var FridgeFell = Scene.GetNode("FridgeFell");
+	var TorsoRegion = Scene.GetNode("TorsoRegion");
+
+	if (!LivingRoomChainHacked)
+	{
+		Chain.Active = true;
+		ChainRegion.Active = true;
+		FridgeSwing.Active = true;
+		FridgeSwingRegion.Active = true;
+
+		ChainCut.Active = false;
+		FridgeFell.Active = false;
+		TorsoRegion.Active = false;
+		TableBlock.Active = false;
+	}
+	else
+	{
+		Chain.Active = false;
+		ChainRegion.Active = false;
+		FridgeSwing.Active = false;
+		FridgeSwingRegion.Active = false;
+
+		ChainCut.Active = true;
+		FridgeFell.Active = true;
+		TorsoRegion.Active = true;
+		TableBlock.Active = true;
+
+	}
+
+	PlayAmbient(AMBIENT_SCARY, "LIVINGFRIDGE");
+
+}
+else
+{
+	var MouthOpen = Scene.GetNode("MouthOpen");
+	var MouthRegion = Scene.GetNode("MouthRegion");
+	MouthOpen.Active = false;
+	MouthRegion.Active = false;
+
+	// Set up table in middle of room
+	if (!LivingRoomTableUp)
+	{
+		TableSprite.Active = false;
+		TableBlock.Active = false;
+		ScreenRegion.Active = false;
+	}
+	else
+	{
+		TableSprite.Active = true;
+		TableBlock.Active = true;
+		ScreenRegion.Active = true;
+		if (LivingRoomMirror)
+		{
+			Mirror.Active = true;
+		}
+	}
+}
+
+// Setup fire extinguisher depending on whether user has taken it
+var ExtSprite = Scene.GetNode("FireExt"); 
+var ExtRegion = Scene.GetNode("FireExtRegion"); 
+if(!LivingRoomExtTaken)
+{
+	ExtSprite.Active = true; 
+	ExtRegion.Active = true; 
+}
+else
+{
+	ExtSprite.Active = false; 
+	ExtRegion.Active = false; 
+}
+
+// Setup sealed notice
+var Sealed = Scene.GetNode("Sealed");
+Sealed.Active = !FireOut;
+
+// Setup blood pool
+var BloodPool = Scene.GetNode("BloodPool");
+BloodPool.Active = LivingRoomBloodyNav;
+
+// If body assembled but not yet walking play scuffling noise
+if ((MedBayBodyComplete) && (!deadManWalking) && (LabBlown))
+{
+	Game.PlaySound("audio\sounds\livingroom-scuffle.wav");
+}
+
+// Set up bloody footprints at end of game
+if (deadManWalking)
+{
+	var BloodPrints = Scene.GetNode("BloodPrints");
+	BloodPrints.Active = true;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateLivingRoom.Visited)
+{
+  StateLivingRoom.Visited = true;
+
+  // this is our first visit in this scene...
+}
+
+
+//Fridge message
+
+if ((!LivingRoomFridgeDone) && (TortureDone))
+{
+	LivingRoomSmellCount = LivingRoomSmellCount + 1;
+	if (LivingRoomSmellCount == 1)
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/LIVING0042/There's a horrible smell coming from that fridge. I'm feeling nauseous!");
+	}
+	if (LivingRoomSmellCount == 2)
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/LIVING0084/That smell is getting worse. It's truly disgusting!");
+	}
+	if (LivingRoomSmellCount == 3)
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/LIVING0085/My throat feels like it's burning. I don't think I can take this smell much longer.");
+	}
+	if (LivingRoomSmellCount == 4)
+	{
+		Game.Interactive = false;
+		actor.GoTo(560,718);
+		var DeathInFace = Scene.GetNode("DeathInFace");
+		var DeathInFaceSprite = DeathInFace.GetSpriteObject();
+		actor.Active = false;
+		DeathInFace.Active = true;
+ 		while(true)
+		{
+			if(DeathInFaceSprite.Finished) break;
+    			Sleep(20); 
+		}
+
+		Sleep(2000); // Wait
+
+		Game.Interactive = true;
+
+		// Jump to game over screen
+		EndingType = END_FRIDGE;
+		Game.ChangeScene("scenes\ending\ending.scene");
+	}
+}

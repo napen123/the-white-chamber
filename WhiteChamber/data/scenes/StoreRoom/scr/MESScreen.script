@@ -1,0 +1,48 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/STORER0038/A screen attached to that old console. I can't make out the image.");
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0011/I can't really see from here.");
+	}
+}
+
+on "take"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/STORER0039/I doubt I could get it down from there without breaking it.");
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0012/I can't reach it through the cage.");
+	}
+
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/STORER0040/I don't need to use that on the screen.");
+}

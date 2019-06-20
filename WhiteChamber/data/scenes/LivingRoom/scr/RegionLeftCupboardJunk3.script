@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0035/Used junk-food wrappers. They're covered in dirt.");
+}
+
+on "Take"
+{
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/LIVING0036/I don't need to carry garbage around with me.");
+}

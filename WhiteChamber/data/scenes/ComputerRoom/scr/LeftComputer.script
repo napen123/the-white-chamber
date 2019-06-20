@@ -1,0 +1,57 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+ 	actor.GoToObject(this);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "LookAt"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+    	actor.Talk("/COMPUT0032/It's a communications console");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "Take"
+{
+ 	actor.GoToObject(this);
+	if ((StationPowered) || (ComputerRoomKeyPos == 1))
+	{
+		var SpriteCommOverlay = Scene.GetNode("SpriteCommOverlay");
+		var RegionCommBackground = Scene.GetNode("RegionCommBackground");
+		var RegionCommLeaveLeft = Scene.GetNode("RegionCommLeaveLeft");
+		var RegionCommLeaveRight = Scene.GetNode("RegionCommLeaveRight");
+		var MessageRegion1 = Scene.GetNode("RegionMessage1");
+		var MessageRegion2 = Scene.GetNode("RegionMessage2");
+		var MessageRegion3 = Scene.GetNode("RegionMessage3");
+		var MessageRegion4 = Scene.GetNode("RegionMessage4");
+		SpriteCommOverlay.Active = true;
+		RegionCommBackground.Active = true;
+		RegionCommLeaveLeft.Active = true;
+		RegionCommLeaveRight.Active = true;
+		MessageRegion1.Active = true;
+		MessageRegion2.Active = true;
+		MessageRegion3.Active = true;
+		MessageRegion4.Active = true;
+
+		SubWindow.Text = Game.ExpandString("/COMPUT0042/Test");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = 70;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.BringToFont;
+		SubWindow.Focus();
+
+	}
+	else
+	{
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/COMPUT0033/Not working, I guess there's no power");
+
+	}
+
+}

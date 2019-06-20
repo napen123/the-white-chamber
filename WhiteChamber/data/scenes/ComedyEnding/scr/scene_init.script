@@ -1,0 +1,109 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(320, 300);
+actor.Direction = DI_DOWN;
+//actor.Active = false;
+actor.SkipTo(-100, 0);
+
+PlayAmbient(AMBIENT_SILENCE, "COMEDY");
+
+// Comedy ending sequences
+Game.Interactive = false;
+
+PortraitType = PORT_NONE;
+actor.Talk("/COMEDY0001/SURPRISE!!!                   ");
+Sleep(2000);
+
+Game.FadeOut();
+
+var Background2 = Scene.GetNode("backround2");
+Background2.Active = true;
+Sleep(800);
+
+Game.FadeIn();
+
+PortraitType = PORT_CREW3;
+actor.Talk("/COMEDY0002/We've been planning this surprise party secretly from the deepest shadows.");
+Sleep(800);
+
+PortraitType = PORT_CREW2;
+actor.Talk("/COMEDY0003/Ho Ho... Well I like the candles. Ho ho ho...");
+Sleep(800);
+
+PortraitType = PORT_CREW4;
+actor.Talk("/COMEDY0004/Yeah! Yeah! Candles!");
+Sleep(800);
+
+PortraitType = PORT_CREW3;
+actor.Talk("/COMEDY0005/I have brought a protractor with which to scientifically requisition the cake.");
+Sleep(800);
+
+PortraitType = PORT_CREW1;
+actor.Talk("/COMEDY0006/Like Japanese ninja.");
+Sleep(800);
+
+PortraitType = PORT_CREW2;
+actor.Talk("/COMEDY0007/I've never been to Japan before. Ho ho ho ho ho...");
+Sleep(800);
+
+PortraitType = PORT_CREW4;
+actor.Talk("/COMEDY0008/Frack me! Cut the cake! Cut the cake you frackin' nad sack!");
+Sleep(800);
+
+PortraitType = PORT_CREW1;
+actor.Talk("/COMEDY0009/Like Japanese samurai.");
+Sleep(800);
+
+PortraitType = PORT_CREW2;
+actor.Talk("/COMEDY0010/It's a shame no-one showed up for my birthday. Ho ho oooooh...");
+Sleep(800);
+
+PortraitType = PORT_CREW3;
+actor.Talk("/COMEDY0011/Well my fool. This is because your birthday fell on a day which was not divisable by the value of pi.");
+Sleep(800);
+
+PortraitType = PORT_CREW4;
+actor.Talk("/COMEDY0012/It's not a frackin' pie! It's a frackin' cake! You frack-head! Yo' moma!");
+Sleep(800);
+
+//Game.PlaySound("audio\speech\comedyending13-laugh.wav");
+//Sleep(800);
+Game.FadeOutAsync();
+
+// Jump to finish screen
+Game.ChangeScene("scenes\endingvideo\endingvideo.scene");
+
+//Game.Interactive = true;
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateComedyEnding;
+
+
+// default values
+if(StateComedyEnding==null)
+{
+  StateComedyEnding.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateComedyEnding.Visited)
+{
+  StateComedyEnding.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

@@ -1,0 +1,71 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "MouseEntry"
+{
+	// Highlight the YES button
+	var PanelGlowYES = Scene.GetNode("PanelGlowYES");
+	PanelGlowYES.Active = true;
+}
+
+on "MouseLeave"
+{
+	// Remove highlight from the YES button
+	var PanelGlowYES = Scene.GetNode("PanelGlowYES");
+	PanelGlowYES.Active = false;
+}
+
+on "LeftClick"
+{
+	// Switch off all the console related images and regions
+	var PanelImage = Scene.GetNode("PanelCloseup");
+	var PanelImageScans = Scene.GetNode("PanelScanLines");
+	var PanelImageWhere = Scene.GetNode("PanelWhere");
+	var PanelImageRegret = Scene.GetNode("PanelRegret");
+	var PanelImageReady = Scene.GetNode("PanelReady");
+	var PanelImageYESNO = Scene.GetNode("PanelYESNO");
+	var PanelRegion = Scene.GetNode("PanelCloseRegion");
+	var PanelRegionYES = Scene.GetNode("PanelYes");
+	var PanelRegionNO = Scene.GetNode("PanelNo");
+	var PanelGlowYES = Scene.GetNode("PanelGlowYES");
+	PanelImage.Active = false;
+	PanelImageScans.Active = false;
+	PanelImageWhere.Active = false;
+	PanelImageRegret.Active = false;
+	PanelImageReady.Active = false;
+	PanelImageYESNO.Active = false;
+	PanelRegion.Active = false;
+	PanelRegionYES.Active = false;
+	PanelRegionNO.Active = false;
+	PanelGlowYES.Active = false;
+	SubWindow.Visible = false;
+
+	// If showing READY message open door to next room
+	if (BlackChamberPanelState == 2)
+	{
+		BlackChamberPanelState = BlackChamberPanelState + 1;
+		BlackChamberDoorOpen = true;
+		var DoorAnim = Scene.GetNode("DoorAnim");
+		var DoorRegion = Scene.GetNode("Door");
+		DoorAnim.Active = true;
+		DoorRegion.Active = true;
+    		PortraitType = PORT_NORMAL;
+		actor.Talk("/BLACKC0012/It looks like there's a way out");
+	}
+
+	// If showing REGRET message increase ENDINGPOINTS
+	if (BlackChamberPanelState == 1)
+	{
+		BlackChamberPanelState = BlackChamberPanelState + 1;
+		EndingPoints = EndingPoints + 1;
+	}
+
+	// If showing WHERE message
+	if (BlackChamberPanelState == 0)
+	{
+		BlackChamberPanelState = BlackChamberPanelState + 1;
+	}
+
+
+}

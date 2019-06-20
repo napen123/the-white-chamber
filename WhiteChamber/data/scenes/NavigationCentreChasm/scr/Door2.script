@@ -1,0 +1,12 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Opening door code
+on "LeftClick" {
+	// Move to door
+	actor.GoToObject(this); 
+
+	// Jump to different scene
+  	Game.ChangeScene("scenes\computerroombloody\computerroombloody.scene");
+}

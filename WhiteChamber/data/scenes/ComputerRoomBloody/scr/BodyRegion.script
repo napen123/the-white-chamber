@@ -1,0 +1,36 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "axe"
+{
+	actor.GoToObject(this); 
+	AxeType = AXE_TUBE;
+	actor.PlayAnim("actors\thegirl\custom\axeswing.sprite");
+	if (ComputerRoomBloodyBodyAxed == false)
+	{
+		EndingPoints = EndingPoints + 1;
+		ComputerRoomBloodyBodyAxed = true;
+	}
+	PortraitType = PORT_PISSED;
+	actor.Talk("/CBLOOD0010/Damn, the chamber must be reinforced");
+}
+
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/CBLOOD0008/There's someone trapped in there. If only I could break the chamber open");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/CBLOOD0009/It's too strong to break by hand");
+}

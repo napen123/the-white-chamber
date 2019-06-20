@@ -1,0 +1,34 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var AnalyserBG = Scene.GetNode("AnalyserBG");
+	var AnalyserMessage1 = Scene.GetNode("AnalyserMessage1");
+	var AnalyserMessage2 = Scene.GetNode("AnalyserMessage2");
+	var AnalyserRegion = Scene.GetNode("AnalyserRegion");
+	var AnalyserPanel  = Scene.GetNode("AnalyserPanel");
+	var AnalyserLeaveRight = Scene.GetNode("AnalyserLeaveRight");
+	var AnalyserLeaveLeft = Scene.GetNode("AnalyserLeaveLeft");
+	var AnalyserHorizonLoop = Scene.GetNode("AnalyserHorizonLoop");
+	var AnalyserHorizon = Scene.GetNode("AnalyserHorizon");
+	var AnalyserWire = Scene.GetNode("AnalyserWire");
+	var AnalyserPanelCut = Scene.GetNode("AnalyserPanelCut");
+	var AnalyserPanelOpen = Scene.GetNode("AnalyserPanelOpen");
+
+	AnalyserBG.Active = false;
+	AnalyserRegion.Active = false;
+	AnalyserPanel.Active = false;
+	AnalyserLeaveRight.Active = false;
+	AnalyserLeaveLeft.Active = false;
+	AnalyserMessage1.Active = false;
+	AnalyserMessage2.Active = false;
+	AnalyserHorizonLoop.Active = false;
+	AnalyserHorizon.Active = false;
+	AnalyserWire.Active =  false;
+	AnalyserPanelCut.Active = false;
+	AnalyserPanelOpen.Active = false;
+
+	SubWindow.Visible = false;
+}

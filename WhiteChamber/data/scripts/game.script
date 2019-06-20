@@ -1,0 +1,271 @@
+﻿#include "scripts\base.inc"
+#include "scripts\keys.inc"
+#include "selectscreen\scr\lang.inc"
+
+// assign default values to global variables
+EndingPoints = 1;
+EndingType = END_NONE;
+MusicPlayingAmbient = 0;
+AxeType = 0;
+
+if (Game.ExpandString("/CONFIG0001/") == "true")
+{
+	SubtitleSetting = true;
+}
+else
+{
+	SubtitleSetting = false;
+}
+
+LangFile = "string.tab";
+TTFFont = false;
+VoiceActing = true;
+
+BlackChamberPanelState = 0;
+BlackChamberWiresFixed = false;
+BlackChamberWindowsOpen = false;
+BlackChamberDoorOpen = false;
+ComputerRoomKeyPos = 0;
+StationPowered = false;
+StationRotation = 1;
+CradleLowered = false;
+CradleSafety = true;
+LivingRoomTableUp = false;
+LivingRoomArmTaken = false;
+LivingRoomDiscTaken = false;
+LivingRoomBoxTaken = false;
+LivingRoomDrSaltTaken = false;
+LivingRoomTableUp = false;
+LivingRoomExtTaken = false;
+LivingRoomDisc1Seen = false;
+LivingRoomDisc2Seen = false;
+LivingRoomDisc3Seen = false;
+LivingRoomBloodyNav = false;
+LivingRoomFridgeDone = false;
+LivingRoomMirror = false;
+LivingRoomArmSeen = false;
+ComputerRoomColourPart = 0;
+ComputerRoomMistake = false;
+ComputerRoomBloodyBodyAxed = false;
+CorridorDirection = 0;
+CorridorSegment = 1;
+BeachSeen = false;
+ExtDoorCount = 0;
+FireOut = false;
+MedBayEnvTaken = false;
+LabAxeTaken = false;
+LabBomb = false;
+CorridorSequenceDone = false;
+ShowerHeadDone = false;
+TortureDone = false;
+MedBayLaserBatt = false;
+LabBlown = false;
+SampleInserted = false;
+CardProgrammed = false;
+MedBayBodyComplete = false;
+MedBayQuarDone = false;
+deadManWalking = false;
+gameFinished = false;
+SeenFanDeath = false;
+SeenNavDeath = false;
+SeenSleepDeath = false;
+SeenCompDeath = false;
+Strapped = false;
+AltMenu = false;
+AltMenuOn = false;
+CoatSearched =  false;
+ComputerRoomBodySucked = false;
+MedBayBoxOnDesk = false;
+MedBayEyesTaken = false;
+MESCounter = 0;
+LivingRoomSmellCount = 0;
+ComputerRoomCut = false;
+FreezerBlanketMan = false;
+LivingRoomChainHacked = false;
+
+// Create subtitle window
+var tempwin = Game.LoadWindow("interface\system\subtitlewindow.window");
+SubWindow = tempwin.GetWidget("subtitlewindow");
+
+// store some of the game's attributes in global variables for convenience
+Keyboard = Game.Keyboard;
+Scene = Game.Scene;
+
+// load the right-click menu
+WinMenu = Game.LoadWindow("interface\menu\altmenu.window");
+WinMenu.Visible = false;
+
+// load the "caption" window
+var win = Game.LoadWindow("interface\system\caption.window");
+WinCaption = win.GetWidget("caption");
+
+
+global MenuObject = null;
+
+
+// load our main actor
+actor = Game.LoadActor("actors\theGirl\theGirl.actor");
+Game.MainObject = actor;
+
+// run the "daemon" script
+Game.AttachScript("scripts\game_daemon.script");
+
+
+// which scene to load?
+Game.ChangeScene("selectscreen\selectscreen.scene");
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+  // what did we click?
+  var ActObj = Game.ActiveObject;
+  if(ActObj!=null)
+  {
+    // clicking an inventory item
+    if(ActObj.Type=="item" && Game.SelectedItem==null)
+    {
+      Game.SelectedItem = ActObj;
+    }
+    // using an inventory item on another object
+    else if(Game.SelectedItem != null && Game.SelectedItem!=ActObj)
+    {
+      var Item = Game.SelectedItem;
+      if(ActObj.CanHandleEvent(Item.Name)) ActObj.ApplyEvent(Item.Name);
+      else if(Item.CanHandleEvent("default-use")) Item.ApplyEvent("default-use");
+      else if(ActObj.CanHandleEvent("default-use")) ActObj.ApplyEvent("default-use");
+      else
+	{	
+		PortraitType = PORT_NORMAL;
+		if (Scene.Name == "StoreRoomMES"){
+		  actor.Talk("/COMMES0001/I can't use these things together.");
+		} else {
+		  actor.Talk("/COMMON0001/I can't use these things together.");
+		}
+	}
+    }
+    // just a simple click
+    else ActObj.ApplyEvent("LeftClick");
+  }
+  // else propagate the LeftClick event to a scene
+  else
+  {
+    Scene.ApplyEvent("LeftClick");
+  }
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "RightClick"
+{
+  // if inventory item selected? deselect it
+  if (Game.SelectedItem != null){
+    Game.SelectedItem = null;
+    return;
+  }
+
+  var ActObj = Game.ActiveObject;
+
+  // is the righ-click menu visible? hide it
+  if(WinMenu.Visible == true) WinMenu.Visible = false;
+  else if(ActObj!=null)
+  {
+    // if the clicked object can handle any of the "verbs", display the right-click menu
+    if(ActObj.CanHandleEvent("Take") || ActObj.CanHandleEvent("Talk") || ActObj.CanHandleEvent("LookAt"))
+    {
+	// easter egg
+	if (AltMenu && !AltMenuOn)
+	{
+		WinMenu = Game.LoadWindow("interface\menu\menu.window");
+		AltMenuOn = true;
+	}
+	if (!AltMenu && AltMenuOn)
+	{
+		WinMenu = Game.LoadWindow("interface\menu\altmenu.window");
+		AltMenuOn = false;
+	}
+
+      // store the clicked object in a global variable MenuObject
+      MenuObject = Game.ActiveObject;
+      var Caption = WinMenu.GetWidget("caption");
+      Caption.Text = MenuObject.Caption;
+
+      // adjust menu's position
+      WinMenu.X = Game.MouseX - WinMenu.Width / 2;
+      if(WinMenu.X < 0) WinMenu.X = 0;
+      if(WinMenu.X+WinMenu.Width>Game.ScreenWidth) WinMenu.X = Game.ScreenWidth-WinMenu.Width;
+
+      WinMenu.Y = Game.MouseY - WinMenu.Height / 2;
+      if(WinMenu.Y<0) WinMenu.Y = 0;
+      if(WinMenu.Y+WinMenu.Height>Game.ScreenHeight) WinMenu.Y = Game.ScreenHeight-WinMenu.Height;
+
+      // and show the right-click menu
+      WinMenu.Visible = true;
+
+      // stop the actor from whatever he was going to do
+      actor.Reset();
+    }
+    // no verbs supported, no menu is needed; just send the RightClick event to the object
+    else ActObj.ApplyEvent("RightClick");
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "Keypress"
+{
+  // on Esc or F1 key
+  if(Keyboard.KeyCode==VK_ESCAPE || Keyboard.KeyCode==VK_F1)
+  {
+      // load and display the main menu window	
+      WinCaption.Visible = false;
+      var WinMainMenu = Game.LoadWindow("interface\system\neomainmenu.window");		
+      WinMainMenu.Center();
+      WinMainMenu.GoSystemExclusive();
+      Game.UnloadObject(WinMainMenu);
+  }
+  if (Keyboard.KeyCode == VK_F10)
+  {
+     AltMenu = true;
+//    		Game.UnloadObject(WinMenu);
+//		WinMenu = Game.LoadWindow("interface\menu\menu.window");
+	}
+	if (Keyboard.KeyCode == VK_F11)
+	{
+		AltMenu = false;
+	}
+	if (Keyboard.KeyCode == VK_HOME)
+	{
+		Game.ChangeScene("scenes\debugroom\debugroom.scene");
+	}
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "QuitGame"
+{
+  // on Alt+F4 (window close)
+  // load and display the quit confirmation window
+  WinCaption.Visible = false;
+  var WinQuit = Game.LoadWindow("interface\system\neoquit.window");
+  WinQuit.Center();
+  WinQuit.GoSystemExclusive();
+
+  // and if the user selected Yes
+  if(WinQuit.xResult)
+  {
+    // quit the game
+    Game.QuitGame();
+  }
+  // otherwise just unload the quit window from memory
+  else Game.UnloadObject(WinQuit);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+on "AfterLoad"
+{
+    // edit by sychron: call not needed
+    // switchLocale();
+}

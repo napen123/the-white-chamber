@@ -1,0 +1,55 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/SLEEPQ0015/There's hair floating in the water");
+}
+
+on "take"
+{
+	actor.GoToObject(this); 
+
+	Game.Interactive = false;
+
+	var ShowerHead = Scene.GetNode("ShowerHead");
+	var ShowerTakeHead = Scene.GetNode("ShowerTakeHead");
+	var ShowerTakeHeadSprite = ShowerTakeHead.GetSpriteObject();
+	var ShowerOpen = Scene.GetNode("ShowerOpen");
+	var ShowerOpenNoHead = Scene.GetNode("ShowerOpenNoHead");
+	var RightDoor = Scene.GetNode("RightDoor");
+	RightDoor.Active = true;
+	ShowerOpen.Active = false;
+	actor.Active = false;
+	ShowerTakeHead.Active = true;
+ 	while(true)
+	{
+		if(ShowerTakeHeadSprite.Finished) break;
+		Sleep(20); 
+  	}
+
+	Game.PlayTheora("assets\data0002.ogg");
+
+	ShowerTakeHead.Active = false;
+	actor.Active = true;
+	ShowerOpenNoHead.Active = true;
+	ShowerHead.Active = false;
+
+	
+	Game.TakeItem("head");
+	ShowerHeadDone = true;
+
+	Game.Interactive = true;	
+
+	PortraitType = PORT_POCKING;
+	actor.Talk("/SLEEPQ0016/A severed head?");
+}
+

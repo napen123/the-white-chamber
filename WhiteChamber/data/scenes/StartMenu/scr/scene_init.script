@@ -1,0 +1,41 @@
+#include "scripts\base.inc"
+
+// here comes the stuff which initializes the scene
+
+actor.SkipTo(400, 400);
+actor.Direction = DI_DOWN;
+actor.Active = true;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateStartMenu;
+
+
+// default values
+if(StateStartMenu==null)
+{
+  StateStartMenu.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateStartMenu.Visited)
+{
+  StateStartMenu.Visited = true;
+
+  // this is our first visit in this scene...
+}
+
+WinCaption.Visible = false;
+var WinStartMenu = Game.LoadWindow("interface\system\neostartmenu.window");
+WinStartMenu.Center();
+WinStartMenu.GoSystemExclusive();
+Game.UnloadObject(WinStartMenu);

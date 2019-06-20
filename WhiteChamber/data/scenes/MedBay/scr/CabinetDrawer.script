@@ -1,0 +1,29 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0037/The seal on this drawer is broken");
+}
+
+on "take"
+{
+
+	Game.PlaySound("audio\sounds\medbay-filing.wav");
+
+	var CabinetDrawer = Scene.GetNode("CabinetDrawer");
+	var CabinetOpen = Scene.GetNode("CabinetOpen");
+	var CabinetEnvelope = Scene.GetNode("CabinetEnvelope");
+	var CabinetEnvRegion = Scene.GetNode("CabinetEnvRegion");
+
+	CabinetDrawer.Active = false;
+	CabinetOpen.Active = true;
+
+	if (!MedBayEnvTaken)
+	{
+		CabinetEnvelope.Active = true;
+		CabinetEnvRegion.Active = true;
+	}
+}

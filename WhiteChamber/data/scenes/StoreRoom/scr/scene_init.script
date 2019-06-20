@@ -1,0 +1,75 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+PlayAmbient(AMBIENT_SCARY, "STORE");
+Game.StopMusicChannel(3);
+
+
+// here comes the stuff which initializes the scene
+
+// Reset door animation
+var LeftDoorAnim = Scene.GetNode("LeftDoorAnim"); 
+LeftDoorAnim.Active = false; 
+LeftDoorAnim.Reset();
+
+actor.Active = false;
+
+if (Game.PrevScene == "NavigationCentre")
+{
+	actor.SkipTo(120, 420);
+	actor.Direction = DI_RIGHT;
+}
+
+if (Game.PrevScene == "Freezer")
+{
+	actor.SkipTo(1490, 460);
+	actor.Direction = DI_DOWN;
+}
+
+if (Game.PrevScene == "StoreRoomMES")
+{
+	//Game.UnloadObject(WinSubtitles);
+	//actor = Game.LoadActor("actors\thegirl\thegirl.actor");
+	actor.SkipTo(1187, 400);
+	actor.Direction = DI_DOWN;
+
+}
+
+actor.Active = true;
+Scene.SkipTo(actor);
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateStoreRoom;
+
+
+// default values
+if(StateStoreRoom==null)
+{
+  StateStoreRoom.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+var DarkLayer = Scene.GetNode("DarkLayer");
+DarkLayer.Active = !StationPowered;
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateStoreRoom.Visited)
+{
+  StateStoreRoom.Visited = true;
+
+  // this is our first visit in this scene...
+}
+
+if (Game.PrevScene == "StoreRoomMES")
+{
+
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/STORER0041/I'm back! How was that possible?");
+
+}

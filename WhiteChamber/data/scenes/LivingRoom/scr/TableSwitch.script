@@ -1,0 +1,117 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0080/This should control the table");
+}
+
+on "Take"
+{
+ 	actor.GoToObject(this);
+
+	// First check if mouth is open, if so disable switch
+	var TableBlock = Scene.GetNode("TableBlock");
+	var MouthOpen = Scene.GetNode("MouthOpen");
+	if (MouthOpen.Active)
+	{
+		PortraitType = PORT_PUZZLED;
+		actor.Talk("/LIVING0081/It's not working. I can't close the mouth.");
+	}
+	else
+	{
+		Game.Interactive = false;
+
+		// Then check if we're in fridge sequence but mouth isn't open
+		if ((!LivingRoomFridgeDone) && (TortureDone))
+		{
+			var MouthOpening = Scene.GetNode("MouthOpening");
+			var MouthOpeningSprite = MouthOpening.GetSpriteObject();
+			//var MouthOpen = Scene.GetNode("MouthOpen");
+			var MouthRegion = Scene.GetNode("MouthRegion");
+			MouthOpening.Active = true;
+	 		while(true)
+			{
+				if(MouthOpeningSprite.Finished) break;
+	    		Sleep(20); 
+			}
+			MouthOpening.Active = false;
+			MouthOpen.Active = true;
+			MouthRegion.Active = true;
+			TableBlock.Active = true;
+		}
+		else
+		{
+			// Otherwise run the normal living room table code
+		
+			// if  the mirror is on the table don't run this  code
+			if (!(LivingRoomMirror && LivingRoomTableUp))
+			{
+				var AnimTableUp = Scene.GetNode("AnimTableUp");
+				var AnimTableDown = Scene.GetNode("AnimTableDown");
+				var TableSprite = Scene.GetNode("SpriteTableUp");
+				var ScreenRegion = Scene.GetNode("Screen");
+				AnimTableDown.SetSprite("scenes\livingroom\sprites\tablelower.sprite");
+				AnimTableUp.SetSprite("scenes\livingroom\sprites\tableraise.sprite");
+				AnimTableUp.Active = false;
+				AnimTableDown.Active = false;
+				//AnimTableUp.Reset();
+				//AnimTableDown.Reset();
+
+				if (LivingRoomTableUp == false)
+				{
+					var TableRiseSprite = AnimTableUp.GetSpriteObject();
+					AnimTableUp.Active = true;
+	
+			 		while(true)
+					{
+						if(TableRiseSprite.Finished) break;
+	    				Sleep(20); 
+			  		}
+
+
+					TableSprite.Active = true;
+					TableBlock.Active = true;
+					ScreenRegion.Active = true;
+				}
+				else
+				{
+					var TableLowerSprite = AnimTableDown.GetSpriteObject();
+					AnimTableDown.Active = true;
+
+			 		while(true)
+					{	
+						if(TableLowerSprite.Finished) break;
+	    				Sleep(20); 
+			  		}
+	
+					TableSprite.Active = false;
+					TableBlock.Active = false;
+					ScreenRegion.Active = false;
+				}
+				LivingRoomTableUp = !LivingRoomTableUp;
+
+				AnimTableUp.Active = false;
+				AnimTableDown.Active = false;
+
+			}
+			else
+			{
+				PortraitType = PORT_PUZZLED;
+				actor.Talk("/LIVING0082/It won't work with the mirror in place");
+			}
+		}
+		Game.Interactive = true;
+	}
+}
+
+
+// LivingRoomTableUp

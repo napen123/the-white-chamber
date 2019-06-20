@@ -1,0 +1,47 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/NAVCEN0014/It seems to be some kind of navigation console");
+}
+
+on "Take"
+{
+ 	actor.GoToObject(this);
+
+	if ((ComputerRoomKeyPos == 3) || (StationPowered))
+	{
+		var ConsoleOffline = Scene.GetNode("ConsoleOffline");
+		var ConsoleRegionBackground = Scene.GetNode("ConsoleRegionBackground");
+		var ConsoleRegionLeave = Scene.GetNode("ConsoleRegionLeave");
+		var ConsoleRegionOn = Scene.GetNode("ConsoleRegionOn");
+		var ConsoleRegionOff = Scene.GetNode("ConsoleRegionOff");
+		ConsoleOffline.Active = true;
+		ConsoleRegionBackground.Active = true;
+		ConsoleRegionLeave.Active = true;
+		ConsoleRegionOn.Active = true;
+		ConsoleRegionOff.Active = true;
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/NAVCEN0015/It doesn't seem to be working at the moment. I'll need find some way to power it up.");
+	}
+
+}
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/NAVCEN0016/I doubt using anyting here will be helpful.");
+}

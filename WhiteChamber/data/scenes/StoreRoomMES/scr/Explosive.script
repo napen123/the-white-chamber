@@ -1,0 +1,49 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0008/THEY ARE EXPLOSIVES... THEY LOOK DANGEROUS.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0009/CANNOT CARRY ANY MORE ITEMS.");
+}
+
+on "axe"
+{
+ 	actor.GoToObject(this);
+
+	var Yellow = Scene.GetNode("Yellow");
+	var Red = Scene.GetNode("Red");
+	var GameOver = Scene.GetNode("GameOver");
+	var LeaveMES = Scene.GetNode("LeaveMES");
+
+	Game.PlaySound("audio\sounds\storeroommesexplosion.ogg");
+
+	Yellow.Active =  true;
+	Sleep(300);
+	Red.Active =  true;
+	Sleep(300);
+	Red.Active =  false;
+	Sleep(300);
+	Red.Active =  true;
+	Sleep(300);
+	Red.Active =  false;
+	Sleep(300);
+	Red.Active =  true;
+	Sleep(300);
+	GameOver.Active = true;
+	LeaveMES.Active =  true;
+}

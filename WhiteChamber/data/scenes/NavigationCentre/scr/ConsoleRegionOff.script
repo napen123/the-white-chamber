@@ -1,0 +1,52 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "LeftClick"
+{
+	Game.PlaySound("audio\sounds\computerbuttonpress.wav");	
+
+	var ConsoleOffline = Scene.GetNode("ConsoleOffline");
+	var ConsoleActive = Scene.GetNode("ConsoleActive");
+	var ConsolePattern = Scene.GetNode("ConsolePattern");
+	var ConsoleNumbers = Scene.GetNode("ConsoleNumbers");
+	var ConsoleRegionLeft = Scene.GetNode("ConsoleRegionLeft");
+	var ConsoleRegionRight = Scene.GetNode("ConsoleRegionRight");
+	var ConsolePowerLight = Scene.GetNode("ConsolePowerLight");
+
+
+	var ConsoleRotate1 = Scene.GetNode("ConsoleRotate1");
+	var ConsoleRotate2 = Scene.GetNode("ConsoleRotate2");
+	var ConsoleRotate3 = Scene.GetNode("ConsoleRotate3");
+	var ConsoleRotate4 = Scene.GetNode("ConsoleRotate4");
+	var ConsoleRotate5 = Scene.GetNode("ConsoleRotate5");
+
+	ConsoleOffline.Active = true;
+	ConsoleActive.Active = false;
+	ConsolePattern.Active = false;
+	ConsoleNumbers.Active = false;
+	ConsoleRegionLeft.Active = false;
+	ConsoleRegionRight.Active = false;
+	ConsolePowerLight.Active = false;
+
+	ConsoleRotate1.Active = false;
+	ConsoleRotate2.Active = false;
+	ConsoleRotate3.Active = false;
+	ConsoleRotate4.Active = false;
+	ConsoleRotate5.Active = false;
+
+}
+
+on "MouseEntry"
+{
+	// Highlight the OFF button
+	var ConsoleOffLight = Scene.GetNode("ConsoleOffLight");
+	ConsoleOffLight.Active = true;
+}
+
+on "MouseLeave"
+{
+	// Remove highlight from the OFF button
+	var ConsoleOffLight = Scene.GetNode("ConsoleOffLight");
+	ConsoleOffLight.Active = false;
+}

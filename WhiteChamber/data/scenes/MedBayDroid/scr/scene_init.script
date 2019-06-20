@@ -1,0 +1,303 @@
+#include "scripts\base.inc"
+#include "scripts\keys.inc"
+#include "scripts\music.inc"
+
+PlayAmbient(AMBIENT_SCARY, "COMPUTER");
+
+
+// here comes the stuff which initializes the scene
+
+actor.Active = false;
+
+// load the droid
+var droidActor;
+droidActor = Game.LoadActor("actors\droid\droid.actor");
+droidActor.SkipTo(540, 520);
+droidActor.Direction = DI_DOWN;
+droidActor.Active = true;
+
+// Load response and action text bars
+var tempwina = Game.LoadWindow("interface\system\droidactionwindow.window");
+var ActionWindow = tempwina.GetWidget("actionwindow");
+
+var tempwinb = Game.LoadWindow("interface\system\droidresponsewindow.window");
+var ResponseWindow = tempwinb.GetWidget("responsewindow");
+
+
+var TargetX, TargetY;
+
+var LastDir = -1;
+var CurrentDir = -1;
+
+var ContextRegion;
+
+while(true)
+{
+	// get a requested direction depending on pressed-down keys
+	if (Keyboard.IsKeyDown(VK_LEFT)	&& Keyboard.IsKeyDown(VK_UP)) CurrentDir = DI_UPLEFT;
+	else if(Keyboard.IsKeyDown(VK_LEFT) && Keyboard.IsKeyDown(VK_DOWN)) CurrentDir = DI_DOWNLEFT;
+	else if(Keyboard.IsKeyDown(VK_RIGHT) && Keyboard.IsKeyDown(VK_UP)) CurrentDir = DI_UPRIGHT;
+	else if(Keyboard.IsKeyDown(VK_RIGHT) && Keyboard.IsKeyDown(VK_DOWN)) CurrentDir = DI_DOWNRIGHT;
+
+	else if(Keyboard.IsKeyDown(VK_LEFT)) CurrentDir = DI_LEFT;
+	else if(Keyboard.IsKeyDown(VK_RIGHT)) CurrentDir = DI_RIGHT;
+	else if(Keyboard.IsKeyDown(VK_UP)) CurrentDir = DI_UP;
+	else if(Keyboard.IsKeyDown(VK_DOWN)) CurrentDir = DI_DOWN;
+	else CurrentDir = -1;
+
+	if(CurrentDir==LastDir)
+	{
+		// check for blocked areas
+		if(!CanMoveThere(CurrentDir)) droidActor.Reset();
+	}
+	else
+	{
+		// start walking
+		if(CurrentDir==-1 || !CanMoveThere(CurrentDir)) droidActor.Reset();
+		else
+		{
+			droidActor.TurnTo(CurrentDir);
+			switch(CurrentDir)
+			{
+				case DI_LEFT:
+					droidActor.PlayAnimAsync("actors\droid\ll\walk.sprite");
+					break;
+				case DI_RIGHT:
+					droidActor.PlayAnimAsync("actors\droid\rr\walk.sprite");
+					break;
+				case DI_UP:
+					droidActor.PlayAnimAsync("actors\droid\uu\walk.sprite");
+					break;
+				case DI_DOWN:
+					droidActor.PlayAnimAsync("actors\droid\dd\walk.sprite");
+					break;
+				case DI_UPRIGHT:
+					droidActor.PlayAnimAsync("actors\droid\ur\walk.sprite");
+					break;
+				case DI_UPLEFT:
+					droidActor.PlayAnimAsync("actors\droid\ul\walk.sprite");
+					break;
+				case DI_DOWNRIGHT:
+					droidActor.PlayAnimAsync("actors\droid\dr\walk.sprite");
+					break;
+				case DI_DOWNLEFT:
+					droidActor.PlayAnimAsync("actors\droid\dl\walk.sprite");
+				break;
+			}
+		}
+	}
+	
+	LastDir = CurrentDir;
+	
+
+	var SpaceQuar = Scene.GetNode("SpaceQuar");
+	var SpaceExt =  Scene.GetNode("SpaceExt");
+	var SpaceFire = Scene.GetNode("SpaceFire");
+	var SpaceGlass = Scene.GetNode("SpaceGlass");
+	var RespQuar = Scene.GetNode("RespQuar");
+	var RespFire = Scene.GetNode("RespFire");
+	var RespGlass = Scene.GetNode("RespGlass");
+	SpaceQuar.Active = false;
+	SpaceExt.Active = false;
+	SpaceFire.Active = false;
+	SpaceGlass.Active = false;
+	ActionWindow.Visible = false;
+
+	ContextRegion = Scene.GetRegionAt(droidActor.X,droidActor.Y);
+	if (ContextRegion!=null)
+	{
+		//if (ContextRegion.name == "floor")
+		//{
+		//	ActionWindow.Visible = false;
+		//}
+
+		if (ContextRegion.Name == "contextQuar")
+		{
+			ActionWindow.Text = Game.ExpandString("/MEDBDR0002/Open Chamber");
+			ActionWindow.SizeToFit();
+			ActionWindow.X = ((Game.ScreenWidth / 2) - (ActionWindow.Width / 2)) - 320;
+			ActionWindow.Y = Game.ScreenHeight - 125;
+			ActionWindow.Visible = true;
+			ActionWindow.Focus();
+
+			if(Keyboard.IsKeyDown(VK_SPACE))
+			{
+				Game.PlaySound("audio\sounds\computerbuttonpress.wav");
+				//RespQuar.Active = true;
+				//RespFire.Active = false;
+				//RespGlass.Active = false;
+				ResponseWindow.Text = Game.ExpandString("/MEDBDR0004/Not authorized to break a quarantine seal.");
+				ResponseWindow.SizeToFit();
+				ResponseWindow.X = ((Game.ScreenWidth / 2) - (ResponseWindow.Width / 2))-100;
+				ResponseWindow.Y = Game.ScreenHeight - 55;
+				ResponseWindow.Visible = true;
+				ResponseWindow.Focus();
+
+			}
+		}
+
+		if (ContextRegion.Name == "contextFire")
+		{
+			ActionWindow.Text = Game.ExpandString("/MEDBDR0003/Extinguish Fire");
+			ActionWindow.SizeToFit();
+			ActionWindow.X = ((Game.ScreenWidth / 2) - (ActionWindow.Width / 2)) - 320;
+			ActionWindow.Y = Game.ScreenHeight - 125;
+			ActionWindow.Visible = true;
+			ActionWindow.Focus();
+
+			if(Keyboard.IsKeyDown(VK_SPACE))
+			{
+				Game.PlaySound("audio\sounds\computerbuttonpress.wav");
+				ResponseWindow.Text = Game.ExpandString("/MEDBDR0005/Unit not equipped with fire suppresor.");
+				ResponseWindow.SizeToFit();
+				ResponseWindow.X = ((Game.ScreenWidth / 2) - (ResponseWindow.Width / 2))-100;
+				ResponseWindow.Y = Game.ScreenHeight - 55;
+				ResponseWindow.Visible = true;
+				ResponseWindow.Focus();
+			}
+		}
+
+		if (ContextRegion.Name == "contextSeal")
+		{
+			ActionWindow.Text = Game.ExpandString("/MEDBDR0001/Open Door");
+			ActionWindow.SizeToFit();
+			ActionWindow.X = ((Game.ScreenWidth / 2) - (ActionWindow.Width / 2)) - 320;
+			ActionWindow.Y = Game.ScreenHeight - 125;
+			ActionWindow.Visible = true;
+			ActionWindow.Focus();
+
+			if(Keyboard.IsKeyDown(VK_SPACE))
+			{
+				Game.PlaySound("audio\sounds\computerbuttonpress.wav");
+				//RespQuar.Active = false;
+				//RespFire.Active = false;
+				//RespGlass.Active = true;
+				ResponseWindow.Text = Game.ExpandString("/MEDBDR0006/Door has been sealed due to a fire hazard.");
+				ResponseWindow.SizeToFit();
+				ResponseWindow.X = ((Game.ScreenWidth / 2) - (ResponseWindow.Width / 2))-100;
+				ResponseWindow.Y = Game.ScreenHeight - 55;
+				ResponseWindow.Visible = true;
+				ResponseWindow.Focus();
+
+
+			}
+		}
+
+		if ((ContextRegion.Name == "contextDoor") && (FireOut == false))
+		{
+			ActionWindow.Text = Game.ExpandString("/MEDBDR0001/Open Door");
+			ActionWindow.SizeToFit();
+			ActionWindow.X = ((Game.ScreenWidth / 2) - (ActionWindow.Width / 2)) - 320;
+			ActionWindow.Y = Game.ScreenHeight - 125;
+			ActionWindow.Visible = true;
+			ActionWindow.Focus();
+			
+			if(Keyboard.IsKeyDown(VK_SPACE))
+			{
+				FireOut = true;
+
+				Game.PlaySound("audio\sounds\computerbuttonpress.wav");
+				//RespQuar.Active = false;
+				//RespFire.Active = false;
+				//RespGlass.Active = false;
+				ResponseWindow.Visible = false;
+				ActionWindow.Visible = false;
+
+				var SuckedAnim = Scene.GetNode("Sucked");
+				var Fire = Scene.GetNode("Fire");
+				var FireOutAnim = Scene.GetNode("FireOut");
+				var SuckedSprite = SuckedAnim.GetSpriteObject();
+
+				droidActor.Active = false;
+				Fire.Active = false;
+				FireOutAnim.Active = true;
+				SuckedAnim.Active = true;
+
+
+			 	while(true)
+				{
+					if(SuckedSprite.Finished) break;
+    					Sleep(20); 
+  				}
+
+				ActionWindow.Active = false;
+				ResponseWindow.Active = false;
+					
+				Game.ChangeScene("scenes\computerroom\computerroom.scene");
+
+
+			}
+		}
+	}
+	//else
+	//{
+	//	ActionWindow.Visible = false;
+	//}
+
+	Sleep(20);
+}
+
+
+function CanMoveThere(Direction)
+{
+	var CanMove = true;
+
+	switch(Direction)
+	{
+		case DI_LEFT:
+			if(!Scene.IsWalkableAt(droidActor.X-15,droidActor.Y)) CanMove = false;
+			break;
+		case DI_RIGHT:
+			if(!Scene.IsWalkableAt(droidActor.X+15,droidActor.Y)) CanMove = false;
+			break;
+		case DI_UP:
+			if(!Scene.IsWalkableAt(droidActor.X,droidActor.Y-15)) CanMove = false;
+			break;
+		case DI_DOWN:
+			if(!Scene.IsWalkableAt(droidActor.X,droidActor.Y+15)) CanMove = false;
+			break;
+		case DI_UPRIGHT:
+			if(!Scene.IsWalkableAt(droidActor.X+15,droidActor.Y-15)) CanMove = false;
+			break;
+		case DI_UPLEFT:
+			if(!Scene.IsWalkableAt(droidActor.X-15,droidActor.Y-15)) CanMove = false;
+			break;
+		case DI_DOWNRIGHT:
+			if(!Scene.IsWalkableAt(droidActor.X+15,droidActor.Y+15)) CanMove = false;
+			break;
+		case DI_DOWNLEFT:
+			if(!Scene.IsWalkableAt(droidActor.X-15,droidActor.Y+15)) CanMove = false;
+		break;
+	}
+	
+	return CanMove;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// scene state
+global StateMedBayDroid;
+
+
+// default values
+if(StateMedBayDroid==null)
+{
+  StateMedBayDroid.Visited = false;
+  // add scene states here
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// setup scene according to state variables
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+if(!StateMedBayDroid.Visited)
+{
+  StateMedBayDroid.Visited = true;
+
+  // this is our first visit in this scene...
+}
+

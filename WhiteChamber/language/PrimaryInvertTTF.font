@@ -1,0 +1,59 @@
+; $EDITOR_PROJECT_ROOT_DIR$ ..\..\
+
+TTFONT
+{
+  SIZE = 20  
+  FACE = "Arial"
+  FILENAME = "assets\cyberbit.ttf"
+
+  BOLD = TRUE
+  ITALIC = FALSE
+  UNDERLINE = FALSE
+  STRIKE = FALSE
+
+  CHARSET = 1
+
+  COLOR { 255, 255, 255 }
+  ALPHA = 255
+  
+  LAYER
+  {
+    OFFSET_X = 1
+    OFFSET_Y = 1
+    COLOR { 255, 255, 255 }
+    ALPHA = 255
+  }
+
+  LAYER
+  {
+    OFFSET_X = -1
+    OFFSET_Y = -1
+    COLOR { 255, 255, 255 }
+    ALPHA = 255
+  }
+
+  LAYER
+  {
+    OFFSET_X = -1
+    OFFSET_Y = 1
+    COLOR { 255, 255, 255 }
+    ALPHA = 255
+  }
+
+  LAYER
+  {
+    OFFSET_X = 1
+    OFFSET_Y = -1
+    COLOR { 255, 255, 255 }
+    ALPHA = 255
+  }
+
+
+  LAYER
+  {
+    OFFSET_X = 0
+    OFFSET_Y = 0
+    COLOR { 0, 0, 0 }
+    ALPHA = 255
+  }
+}

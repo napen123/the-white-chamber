@@ -1,0 +1,30 @@
+#include "scripts\base.inc"
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	if (VoiceActing){
+	
+	// Voice acting is active
+	// Check wether it's english voice acting
+	
+	  if (!GermanVoice){	  	
+	    // english voice, switch to german
+	    GermanVoice = true;
+	    
+	  } else {
+	    // english voice, turn it off
+  	    VoiceActing = false;
+	  }
+	} else {
+	  // voice acting off, turn it on
+  	    VoiceActing = true;
+  	    GermanVoice = true;
+	}
+	
+	
+	var cross = Scene.GetNode("cross");	
+	cross.Active = (VoiceActing && !GermanVoice);
+	cross = Scene.GetNode("germancross");
+  	cross.Active = (VoiceActing && GermanVoice);	
+}

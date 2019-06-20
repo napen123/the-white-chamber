@@ -1,0 +1,14 @@
+WINDOW
+{
+  STATIC
+  {
+    TEXT = "/ENDING0002/Quit"
+    TEXT_ALIGN = "center"
+    NAME = "quit"
+    FONT = "secondaryttf.font"
+    X = 400
+    Y = 570
+    WIDTH = 200
+    HEIGHT = 50
+  }
+}

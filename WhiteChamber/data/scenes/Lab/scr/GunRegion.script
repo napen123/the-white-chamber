@@ -1,0 +1,38 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	//actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/THELAB0025/I might be able to reach it");
+}
+
+on "take"
+{
+	// Turn off torture animation
+	var Elec = Scene.GetNode("Elec");
+	Elec.Active = false;
+
+	// Turn on torture animation with gun
+	var ElecWithGun = Scene.GetNode("ElecWithGun");
+	ElecWithGun.Active = true;
+
+	// Remove gun from screen
+	var Gun = Scene.GetNode("Gun");
+	var GunRegion = Scene.GetNode("GunRegion");
+	Gun.Active = false;
+	GunRegion.Active = false;
+
+	// Add gun to inventory
+	Game.TakeItem("laser");
+
+	PortraitType = PORT_PISSED;
+	actor.Talk("/THELAB0026/Damn it, I got the cutter but it's not working");
+}

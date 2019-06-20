@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/ABEACH0004/This seems like a real forest, but how is that possible?");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PISSED;
+	actor.Talk("/ABEACH0005/I can't make a path through, the forest is too dense");
+}

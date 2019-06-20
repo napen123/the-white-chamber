@@ -1,0 +1,69 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+ 		actor.GoToObject(this);
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/STORER0026/An M.E.S. It's a really old video gaming console.");
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0011/I can't really see from here.");
+	}
+}
+
+on "take"
+{
+	var floor = Scene.GetNode("gateBlock");
+	if (!floor.Active)
+	{
+		actor.GoToObject(this);
+		MESCounter = MESCounter + 1;
+		if (MESCounter == 1)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/STORER0027/I don't really have time to play games.");
+		}
+		if (MESCounter == 2)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/STORER0028/I don't want to. Those old games seems so stupid. The only way I finish is by dying.");
+		}
+		if (MESCounter == 3)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/STORER0029/I guess I can have a quick look. What harm can it do?");
+			Game.ChangeScene("scenes\storeroommes\storeroommes.scene");
+		}
+		if (MESCounter > 3)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/STORER0030/Not again... Not after last time!");
+		}
+	}
+	else
+	{
+		PortraitType = PORT_PISSED;
+		actor.Talk("/STORER0012/I can't reach it through the cage.");
+	}
+
+}
+
+
+on "default-use"
+{
+  actor.GoToObject(this);
+  PortraitType = PORT_NORMAL;
+  actor.Talk("/STORER0025/It's already got a game loaded into it.");
+}

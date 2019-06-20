@@ -1,0 +1,86 @@
+#include "scripts\base.inc"
+#include "scripts\music.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	var Message1 = Scene.GetNode("Message1");
+	var Message2 = Scene.GetNode("Message2");
+	var Message3 = Scene.GetNode("Message3");
+
+
+	if (Message2.Active)
+	{
+		MedBayQuarDone = true;
+
+		Game.PlaySound("audio\sounds\medbay-field.wav");
+
+		EndingPoints = EndingPoints + 1;
+
+		Message2.Active = false;
+		Message3.Active = true;
+
+		var doorFloor = Scene.GetNode("doorFloor");
+		var DoorRed = Scene.GetNode("DoorRed");
+		var DoorGreen = Scene.GetNode("DoorGreen");
+		var Yes = Scene.GetNode("Yes");
+		var No = Scene.GetNode("No");
+
+		Yes.Active = false;
+		No.Active = false;
+		doorFloor.Active = true; 
+		DoorRed.Active = false;
+		DoorGreen.Active = true;
+
+		// turn ambient back on
+		PlayAmbient(AMBIENT_SCARY, "MEDBAY");
+
+		SubWindow.Text = Game.ExpandString("/MEDBAY0063/Leave... Accept the consequences!");
+      		SubWindow.SizeToFit();
+		SubWindow.X = (Game.ScreenWidth / 2) - (SubWindow.Width / 2);
+		SubWindow.Y = Game.ScreenHeight - 100;
+		SubWindow.Visible = SubtitleSetting;
+		SubWindow.Focus();
+
+	}
+
+	if (Message1.Active)
+	{
+		Game.Interactive = false;
+
+		Sleep(1200); // Wait
+
+		// Quarantine death sequence!
+		var QuarBlack = Scene.GetNode("QuarBlack");
+		var QuarBlackSprite = QuarBlack.GetSpriteObject();
+		var QuarDeath = Scene.GetNode("QuarDeath");
+		var QuarDeathSprite = QuarDeath.GetSpriteObject();
+
+		QuarBlack.Active = true;
+		while(true)
+		{
+			if(QuarBlackSprite.Finished) break;
+			Sleep(20); 
+	 	}
+
+		Sleep(1200); // Wait
+
+		QuarDeath.Active = true;
+		while(true)
+		{
+			if(QuarDeathSprite.Finished) break;
+			Sleep(20); 
+	 	}
+
+		Sleep(2000); // Wait
+
+		Game.Interactive = true;
+
+		// Jump to game over screen
+		EndingType = END_QUAR;
+		Game.ChangeScene("scenes\ending\ending.scene");
+
+	}
+
+}

@@ -1,0 +1,35 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	actor.GoToObject(this); 
+
+	Game.Interactive = false;
+
+	var DeathScene = Scene.GetNode("MonsterDeath");	
+	var Monster = Scene.GetNode("Monster");
+	var Flash = Scene.GetNode("FlashOn");
+
+	actor.Active = false;
+	Monster.Active = false;
+
+	var DeathSceneSprite = DeathScene.GetSpriteObject();
+	DeathScene.Active = true;
+ 	while(true)
+	{
+		if(DeathSceneSprite.Finished) break;
+		Sleep(20); 
+	}
+
+	var FlashSprite = Flash.GetSpriteObject();
+	Flash.Active = true;
+ 	while(true)
+	{
+		if(FlashSprite.Finished) break;
+		Sleep(20); 
+	}
+
+  	Game.ChangeScene("scenes\sleepingquarters\sleepingquarters.scene");
+}

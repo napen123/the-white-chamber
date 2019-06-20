@@ -1,0 +1,15 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_PISSED;
+	actor.Talk("/LIVING0031/This food stinks. It's all gone mouldy.");
+}
+
+on "Take"
+{
+	PortraitType = PORT_PISSED;
+	actor.Talk("/LIVING0032/I'm not touching that! Who knows what I might catch.");
+}

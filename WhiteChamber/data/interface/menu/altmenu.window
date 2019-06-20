@@ -1,0 +1,26 @@
+WINDOW
+{
+  NAME = ""
+  IMAGE = "interface\menu\AltInterfaceScan.png"
+  SCRIPT = "interface\menu\menu.script"
+  MENU = TRUE
+
+  BUTTON
+  {
+    NAME = "LookAt"
+    X = 140
+    Y = 20
+    IMAGE_HOVER = "interface\menu\AltInterfaceEyeScan.png"
+    PARENT_NOTIFY = TRUE
+  }
+
+  BUTTON
+  {
+    NAME = "Take"
+    X = 45
+    Y = 30
+    IMAGE_HOVER = "interface\menu\AltInterfaceHandScan.png"
+    PARENT_NOTIFY = TRUE
+  }
+  
+}

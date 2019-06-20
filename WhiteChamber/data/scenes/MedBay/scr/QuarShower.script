@@ -1,0 +1,31 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0056/It's a standard shower unit.");
+}
+
+on "take"
+{
+	if (deadManWalking)
+	{
+		actor.GoToObject(this); 
+		PortraitType = PORT_PISSED;
+		actor.Talk("/MEDBAY0057/I think it's broken. I can't get it to open.");
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/MEDBAY0058/I can't get inside the chamber");
+	}
+
+}

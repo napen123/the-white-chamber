@@ -1,0 +1,22 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "lookat"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/MEDBAY0042/A brown envelope with something inside");
+}
+
+on "take"
+{
+	Game.TakeItem("envelope");
+	Game.PlaySound("audio\sounds\medbay-shuffling.wav");
+	var CabinetEnvelope = Scene.GetNode("CabinetEnvelope");
+	var CabinetEnvRegion = Scene.GetNode("CabinetEnvRegion");
+	CabinetEnvelope.Active = false;
+	CabinetEnvRegion.Active = false;
+	MedBayEnvTaken = true;
+
+
+}

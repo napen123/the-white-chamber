@@ -1,0 +1,18 @@
+#include "scripts\base.inc"
+#include "selectscreen\scr\lang.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftClick"
+{
+	// Set global options for this language
+	SubtitleSetting = true;
+	TTFFont = true;
+	LangFile = "frenchstring.tab";
+
+	switchLocale();
+
+	// Load next scene
+	Game.ChangeScene("scenes\introvideo\introvideo.scene");
+
+}

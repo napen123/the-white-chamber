@@ -1,0 +1,48 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0009/A leg is sticking out from under the cover");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0010/If want the leg I'll need something sharper");
+}
+
+on "axe"
+{
+	actor.GoToObject(this);
+
+	AxeType = AXE_LEG;
+	actor.PlayAnim("actors\thegirl\custom\axeswing.sprite");
+
+	var leg = Scene.GetNode("leg");
+	var legRegion = Scene.GetNode("legRegion");
+	leg.Active = false;
+	legRegion.Active = false;
+
+	Game.TakeItem("leg");
+
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/FREEZE0012/Great... now I've got a severed leg.");
+
+}
+
+on "scalpel"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PISSED;
+	actor.Talk("/FREEZE0011/No, it's not going to get through the bone.");
+}

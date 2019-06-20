@@ -1,0 +1,154 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0043/It's a console for viewing video discs");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0044/It won't do anything without a video disc");
+}
+
+on "disc1"
+{
+ 	actor.GoToObject(this);
+
+	Game.Interactive = false;
+
+	Game.PlaySound("audio\sounds\livingroom-insertdisc.wav");
+
+	var ArthurBG = Scene.GetNode("ArthurBG");
+	var ArthurTalk = Scene.GetNode("ArthurTalk");
+	var ArthurScan = Scene.GetNode("ArthurScan");
+	ArthurScan.Active = true;
+	ArthurBG.Active = true;
+	ArthurTalk.Active = true;
+	PortraitType = PORT_BLUEDISC;
+	
+	actor.Talk("/LIVING0047/This is Replacement Lab Technician Arthur Anderson making my first scheduled report. I've been here a week and things haven't been as I expected.");
+	actor.Talk("/LIVING0048/They keep me working in the upper lab doing routine sample analysis. It's a waste of my time but they don't want me to go into the main lab chamber.");
+	actor.Talk("/LIVING0049/I told Commander Artemis Trend that I didn't travel all this way to do monkey work but he wasn't interested.");
+	actor.Talk("/LIVING0050/The work wouldn't be so bad were it not for the tension on board. Everyone is keeping to themselves and none of them want to talk much...");
+	actor.Talk("/LIVING0051/They're quick to dismiss any talk about what happened to my predecessor or what it is they're working on down there.");
+	actor.Talk("/LIVING0052/One thing I'm sure of is that they really don't want me here. Only Professor Ericson is remotely hospitable towards me.");
+	actor.Talk("/LIVING0053/Even she's evasive, but at least she's kind to me. Something is definitely going on here, they're scared of something.");
+	actor.Talk("/LIVING0054/I've heard them calling the main lab the White Chamber, I don't know why since I'm not allowed in there.");
+	actor.Talk("/LIVING0055/Goodwin and Wyles hate going anywhere near it. I've seen Goodwin go in a couple of times when they've needed him but always briefly and reluctantly.");
+	actor.Talk("/LIVING0056/I'll keep investigating, but I don't want to push them too hard. The tensions around here are strained enough as it is.");
+
+	ArthurBG.Active = false;
+	ArthurTalk.Active = false;
+	ArthurScan.Active = false;
+
+
+	LivingRoomDisc1Seen = true;
+
+	Game.Interactive = true;
+}
+
+on "disc2"
+{
+ 	actor.GoToObject(this);
+
+	Game.Interactive = false;
+
+	Game.PlaySound("audio\sounds\livingroom-insertdisc.wav");
+
+	var ArthurBG = Scene.GetNode("ArthurBG");
+	var ArthurTalk = Scene.GetNode("ArthurTalk");
+	var ArthurScan = Scene.GetNode("ArthurScan");
+	ArthurScan.Active = true;
+	ArthurBG.Active = true;
+	ArthurTalk.Active = true;
+	PortraitType = PORT_GREENDISC;
+
+	actor.Talk("/LIVING0057/Officer Richard Wyles is missing! Prof. Ericson woke me up yesterday morning for a meeting in the living room to discuss what had happened..");
+	actor.Talk("/LIVING0058/Dr. Goodwin said he was working late into the night and went looking for Wyles when he realised his medical laser wasn't working.");
+	actor.Talk("/LIVING0059/This place is small so it wasn't long before he realised he wasn't anywhere to be found.");
+	actor.Talk("/LIVING0060/He said he woke the Commander and the pair spent the night searching the station to no avail; even the lifepod is still docked.");
+	actor.Talk("/LIVING0061/With no answers to this mystery everyone's reaching their breaking points. Even I'm starting to feel just as paranoid and tense as the rest of them.");
+	actor.Talk("/LIVING0062/I think at this point it's becoming just a question of who will snap under the pressure first. I strongly urge you to send a new team here.");
+	actor.Talk("/LIVING0063/If these guys don't get away from this place I fear things are only going to get worse. No one trusts anyone anymore.");
+	actor.Talk("/LIVING0064/They're particularly suspicious of me as I'm the new arrival. Even Sarah... I mean Prof. Ericson is growing more weary of talking to me.");
+	actor.Talk("/LIVING0065/She's been spending more and more of her time down in the White Chamber. It's not scientific but when I look in her eyes she seems lost somehow.");
+	actor.Talk("/LIVING0066/I had a drink with Dr. Goodwin. It's the first time he's really talked to me properly since I arrived. Though what he said made little sense.");
+	actor.Talk("/LIVING0067/He's convinced Wyles was taken by the 'artefact' they're studying down there. Apparently Wyles wanted them to get rid of it.");
+	actor.Talk("/LIVING0068/Since my last report I've overheard mention of the artefact several times. Their opinions on it seem mixed and conflicting.");
+	actor.Talk("/LIVING0069/This all worries me. Again I urge you please send a relief crew as soon as possible.");
+
+	ArthurBG.Active = false;
+	ArthurTalk.Active = false;
+	ArthurScan.Active = false;
+
+	LivingRoomDisc2Seen = true;
+
+	Game.Interactive = true;
+
+}
+
+on "disc3"
+{
+ 	actor.GoToObject(this);
+
+	Game.Interactive = false;
+
+	Game.PlaySound("audio\sounds\livingroom-insertdisc.wav");
+
+	var ArthurBG = Scene.GetNode("ArthurBG");
+	var ArthurTalk = Scene.GetNode("ArthurTalk");
+	var ArthurScan = Scene.GetNode("ArthurScan");
+	ArthurBG.Active = true;
+	ArthurScan.Active = true;
+	ArthurTalk.Active = true;
+	PortraitType = PORT_REDDISC;
+
+	actor.Talk("/LIVING0070/I'm making this recording for posterity, but I don't know if anyone will ever see this. I hope someone does. I want people to know what happened here.");
+	actor.Talk("/LIVING0071/I found out the Commander intercepted my last two reports. I confronted him about it, but he's convinced I'm a corporate agent.");
+	actor.Talk("/LIVING0072/I argued with him but he thinks he's being generous enough by not just spacing me the moment he found out I was sending reports back.");
+	actor.Talk("/LIVING0073/I tried explaining the company had just asked me to submit observations, but he wasn't really listening. I suppose I can't blame him.");
+	actor.Talk("/LIVING0074/All of that is unimportant now as I'll be lucky if I'm alive much longer. Dr. Goodwin is dead. Sarah found him chewed up in the main ventilation system.");
+	actor.Talk("/LIVING0075/No one thinks it was an accident. We're all being killed out here. Inevitably they turned on me. Trend thinks it all started when I came on board.");
+	actor.Talk("/LIVING0076/They've locked me here in the quarantine chamber. I think they're sealing off the vent room. I'm not sure what they think that will achieve.");
+	actor.Talk("/LIVING0077/I don't know what's going on here, I'm scared and alone. I don't know if one of them is a murderer or if that damned artefact is responsible.");
+	actor.Talk("/LIVING0078/Either way I no longer care... I just want to get off this cursed station. I found a way to open the quarantine seal and I'll be heading for the life-pod.");
+	actor.Talk("/LIVING0079/I don't know if I'll make it so I'm leaving this final recording as a record of what happened here. To whoever finds this... good luck.");
+
+	ArthurBG.Active = false;
+	ArthurTalk.Active = false;
+	ArthurScan.Active = false;
+
+
+	LivingRoomDisc3Seen = true;
+
+	Game.Interactive = true;
+}
+
+on "mirror"
+{
+ 	actor.GoToObject(this);
+	Game.DropItem("mirror");
+	LivingRoomMirror = true;
+	var Mirror = Scene.GetNode("Mirror");
+	Mirror.Active = true;
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/LIVING0045/Seems to fit perfectly on there");
+}
+
+on  "box"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/LIVING0046/That's not right, I don't need the box there. Maybe I'm thinking about things too indirectly.");
+}

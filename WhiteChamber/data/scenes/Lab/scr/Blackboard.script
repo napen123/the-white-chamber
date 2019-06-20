@@ -1,0 +1,66 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	if (!Strapped) actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	if (!Strapped)
+	{
+		actor.GoToObject(this);
+		if (EndingPoints == 0)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/THELAB0018/The blackboard looks clean. Somehow that feels ominous.");
+		}
+		if ((EndingPoints > 0) && (EndingPoints < 4))
+		{
+			PortraitType = PORT_PUZZLED;
+			actor.Talk("/THELAB0019/There are some strange chalk marks on the board.");
+		}
+		if ((EndingPoints > 3) && (EndingPoints < 6))
+		{
+			PortraitType = PORT_PUZZLED;
+			actor.Talk("/THELAB0020/That shape. I know I remember it... but from where?");
+		}
+		if (EndingPoints > 5)
+		{
+			PortraitType = PORT_PUZZLED;
+			actor.Talk("/THELAB0051/That's the artefact. I remember now. I'm sure I've seen all of this before.");
+			actor.Talk("/THELAB0052/But I feel like something is coming. Something different... something surprising!");
+		}
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0014/I can't see from here");
+	}
+}
+
+on "take"
+{
+	if (!Strapped)
+	{
+		actor.GoToObject(this);
+		if (EndingPoints == 0)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/THELAB0021/The blackboard is clean already.");
+		}
+		if (EndingPoints > 0)
+		{
+			PortraitType = PORT_NORMAL;
+			actor.Talk("/THELAB0022/I don't want to wipe away the chalk markings. I think they mean something.");
+		}
+	}
+	else
+	{
+		PortraitType = PORT_NORMAL;
+		actor.Talk("/THELAB0015/I can't reach it");
+	}
+}
+

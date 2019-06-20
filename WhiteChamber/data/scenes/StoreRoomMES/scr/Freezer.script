@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0010/THE DOOR IS CLOSED.");
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0011/IT'S THE FREEZER DOOR.");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_MES;
+	actor.Talk("/STOMES0012/I CAN'T  SEE THE HANDLE IT'S TOO PIXELATED!");
+}

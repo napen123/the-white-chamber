@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/WCHAMB0005/So this is it. This is the artefact. I don't know what to say.");
+}
+
+on "take"
+{
+
+	actor.GoToObject(this);
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/WCHAMB0006/It's warm and vibrating. It doesn't feel like a machine.");
+
+}

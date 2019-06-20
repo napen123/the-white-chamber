@@ -1,0 +1,10 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/DEBUGR0011/Welcome to the White Chamber debug room. This room has been left in to give you an insight into the development process.");
+	actor.Talk("/DEBUGR0012/Playing the game from this room is not advised. It is meant only for testing particular parts of the game.");
+}

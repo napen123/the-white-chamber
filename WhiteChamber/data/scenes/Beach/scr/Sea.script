@@ -1,0 +1,24 @@
+#include "scripts\base.inc"
+
+
+////////////////////////////////////////////////////////////////////////////////
+on "leftclick"
+{
+ 	actor.GoToObject(this);
+}
+
+on "lookat"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_PUZZLED;
+	actor.Talk("/ABEACH0006/This really looks like the sea. What's going on?");
+}
+
+on "take"
+{
+ 	actor.GoToObject(this);
+	PortraitType = PORT_POCKING;
+	actor.Talk("/ABEACH0007/This feels like real water... I don't understand how any of this is possible. I was on a space station...");
+	PortraitType = PORT_NORMAL;
+	actor.Talk("/ABEACH0008/Maybe I could swim away from here, but it doesn't look there's anything around to swim to.");
+}
