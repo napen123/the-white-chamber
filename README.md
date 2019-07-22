@@ -8,7 +8,7 @@ These files were obtained from the official [Studio Trophis](http://www.studiotr
 * [Itch.io](https://lockeddoorpuzzle.itch.io/the-white-chamber)
 
 ## Attribution
-__"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://www.studiotrophis.com/))__
+__"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://www.studiotrophis.com/))__.
 
 * __Design and Programming |__ Richard Perrin ([Twitter](https://twitter.com/PerrinAshcroft), [Website](http://www.lockeddoorpuzzle.com/))
 
@@ -19,5 +19,7 @@ __"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://
 * __Sarah Voice Actor |__ Kira Buckland ([Twitter](https://twitter.com/KiraBuckland), [Website](http://kirabuckland.com/))
 
 * __Arthur Voice Actor |__ Phillip Sacramento ([Twitter](https://twitter.com/philinthebooth), [YouTube](https://www.youtube.com/user/Lioncourt110))
+
+_the white chamber_'s source code and assets are licensed under the [Creative Commons Attribution-Non-Commercial-Share Alike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-nc-sa/2.0/uk/).
 
 Created using the [Wintermute Engine](http://dead-code.org/) by Jan Nedoma.
