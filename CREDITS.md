@@ -47,15 +47,15 @@ __"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://
 Mike Beanland, Gemma Collinge, Lindsey Davies, Gareth Dineen, Matt Francis, Ioannis Gaitanidis, Leah Holmes, Sakiko Honke, Misaku Matsui, Stuart Moore, Chris Norman, Jane Symonds, Yvonne Tsang, Ian Walshaw, Chris Ward, and Ben Wood.
 
 ## Special Thanks
-Jan Nedoma of DEAD:CODE for the wonderful WME engine
+Jan Nedoma of DEAD:CODE for the wonderful WME engine.
 
-Gackt, the pillows, Asian Kung-Fu Generation, and Akira Yamaoka for inspirational music
+Gackt, the pillows, Asian Kung-Fu Generation, and Akira Yamaoka for inspirational music.
 
-Harry's Fish Bar for low quality food at reasonable prices
+Harry's Fish Bar for low quality food at reasonable prices.
 
-Scrubs, Futurama and Chris Morris for helping to keep our sanity during crunch
+Scrubs, Futurama, and Chris Morris for helping to keep our sanity during crunch.
 
-Everyone who has supported Studio Trophis over the years
+Everyone who has supported Studio Trophis over the years.
 
 ## Licensing
 _the white chamber_'s source code and assets are licensed under the [Creative Commons Attribution-Non-Commercial-Share Alike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-nc-sa/2.0/uk/).
