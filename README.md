@@ -7,7 +7,7 @@ These files were obtained from the official [Studio Trophis](http://www.studiotr
 * [the white chamber website](http://www.studiotrophis.com/site/projects/thewhitechamber)
 * [Itch.io](https://lockeddoorpuzzle.itch.io/the-white-chamber)
 
-## Attribution
+## Credits
 __"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://www.studiotrophis.com/))__.
 
 * __Design and Programming |__ Richard Perrin ([Twitter](https://twitter.com/PerrinAshcroft), [Website](http://www.lockeddoorpuzzle.com/))
