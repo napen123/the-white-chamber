@@ -23,3 +23,5 @@ __"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://
 _the white chamber_'s source code and assets are licensed under the [Creative Commons Attribution-Non-Commercial-Share Alike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-nc-sa/2.0/uk/).
 
 Created using the [Wintermute Engine](http://dead-code.org/) by Jan Nedoma.
+
+_For a complete list of credits, see the [Credits](CREDITS.md) document._
