@@ -1,4 +1,4 @@
-# The White Chamber
+![The White Chamber](res/logo.png)
 ## About
 This repository contains the original source code and asset files for the video game _the white chamber_. The sources are in the [Original](Original/) directory.
 
@@ -6,6 +6,8 @@ These files were obtained from the official [Studio Trophis](http://www.studiotr
 
 * [the white chamber website](http://www.studiotrophis.com/site/projects/thewhitechamber)
 * [Itch.io](https://lockeddoorpuzzle.itch.io/the-white-chamber)
+
+![the white chamber cover](res/cover.png)
 
 ## Credits
 __"the white chamber" created by Studio Trophis ([www.studiotrophis.com](http://www.studiotrophis.com/))__.
