@@ -1,0 +1,9 @@
+# General
+/ignore
+
+*.tmp
+
+# Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
