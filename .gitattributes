@@ -1,0 +1,52 @@
+# General
+*          text=auto
+
+*.md       text diff=markdown
+*.txt      text
+*.htm      text
+*.html     text
+
+# Wintermute
+._*        text
+*.bak      text
+*.wpr      text diff=ini
+
+*.inc      text
+*.def      text
+*.dcs      text
+*.tab      text
+*.game     text
+*.actor    text
+*.scene    text
+*.image    text
+*.sprite   text
+*.button   text
+*.script   text
+*.settings text
+
+# Graphics
+*.ico      binary
+*.bmp      binary
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+
+# Fonts
+*.font         text
+*.ttf          binary
+
+# Audio
+*.[wW][aA][vV] binary
+*.[oO][gG][gG] binary
+
+# Video
+*.[aA][vV][iI] binary
+
+# Miscellaneous
+*.patch    -text
+
+# Exclude
+.gitattributes export-ignore
+.gitignore     export-ignore
+.gitkeep       export-ignore
